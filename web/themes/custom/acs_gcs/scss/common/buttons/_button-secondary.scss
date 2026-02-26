@@ -1,0 +1,38 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+$tonal-text-color: #D86C37;
+
+.btn-secondary {
+  background-color: $gcs-orange-rgb;
+  color: $white-rgb;
+
+  &:active,
+  &:hover {
+    background-color: $dark-orange-rgb !important;
+    color: $white-rgb !important;
+  }
+
+  &.btn-tonal-secondary,
+  &.btn-secondary-tonal {
+    background-color: $light-orange-rgb;
+    color: $dark-orange-rgb;
+    &:active,
+    &:hover {
+      background-color: $tonal-text-color !important;
+      color: $white-rgb !important;
+    }
+  }
+
+  &.btn-outline-secondary,
+  &.btn-secondary-outlined {
+    background-color: $white-rgb;
+    color: #D86C37;
+    border: 1px solid #D86C37;
+    &:active,
+    &:hover {
+      background-color: $light-orange-rgb !important;
+      color: $dark-blue-rgb !important;
+    }
+  }
+}

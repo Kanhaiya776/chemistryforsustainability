@@ -1,0 +1,49 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.page-user-login {
+  #user-login-form, #block-acs-gcs-jointhenetworkloginpage {
+    width: 40%;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include media-breakpoint-down($extra-extra-extra-desktop) {
+    }
+
+    @include media-breakpoint-down($extra-extra-desktop) {
+      width: 50%;
+    }
+
+    @include media-breakpoint-down($extra-desktop) {
+      width: 60%;
+    }
+
+    @include media-breakpoint-down($desktop-breakpoint) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-down($tablet-breakpoint) {
+      width: 100%;
+    }
+  }
+  #block-acs-gcs-jointhenetworkloginpage {
+    @include media-breakpoint-down($tablet-breakpoint) {
+      width: 97%;
+    }
+    @include media-breakpoint-down($mobile-breakpoint) {
+      width: 96%;
+    }
+  }
+
+  nav.tabs {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+
+    @include media-breakpoint-down($tablet-breakpoint) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

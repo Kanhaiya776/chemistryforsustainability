@@ -1,0 +1,11 @@
+<div class="py-4 px-3 people-connected">
+  <h4 class="section-title mb-4">
+    People Connected to this Organization
+  </h4>
+
+  {% if rows %}
+    <div class="row gx-5 gy-5">
+      {{ rows }}
+    </div>
+  {% endif %}
+</div>

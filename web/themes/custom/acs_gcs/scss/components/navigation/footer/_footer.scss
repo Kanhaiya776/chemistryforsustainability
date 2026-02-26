@@ -1,0 +1,131 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+footer.site-footer {
+  background-color: $gcs-blue-rgba;
+  padding-bottom: 0;
+
+  .region-footer-first {
+    width: 100%;
+  }
+
+  .nav-item {
+    color: $white-rgb;
+    text-decoration: underline;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  .col-container {
+    position: relative;
+
+    padding-left: 140px;
+
+    @include media-breakpoint-down($extra-extra-extra-desktop) {
+      padding-left: 120px;
+    }
+
+    @include media-breakpoint-down($extra-extra-desktop) {
+      padding-left: 100px;
+    }
+
+    @include media-breakpoint-down($extra-desktop) {
+      padding-left: 80px;
+    }
+
+    @include media-breakpoint-down($desktop-breakpoint) {
+      padding-left: 40px;
+    }
+
+    @include media-breakpoint-down($tablet-breakpoint) {
+      padding-left: 20px;
+    }
+  }
+
+  .footer-row {
+    padding-bottom: 90px;
+
+    @include media-breakpoint-down($tablet-breakpoint) {
+      padding-bottom: 50px;
+    }
+  }
+
+  .first-row {
+    @include media-breakpoint-down($tablet-breakpoint) {
+      padding-bottom: 100px;
+    }
+  }
+
+  .bottom-row {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .social-wrapper {
+    color: $white-rgb;
+    font-size: $font-size-lg-mediumlarge;
+    line-height: $line-height-lg-mediumlarge;
+    display: flex;
+    flex-direction: row;
+
+    .logos {
+      padding-left: 30px;
+      @include media-breakpoint-down($desktop-breakpoint) {
+        padding-left: 14px;
+      }
+      a, a:visited {
+        color: $white-rgb;
+      }
+    }
+
+    .bi {
+      font-size: 35px;
+
+      &.bi-instagram,
+      &.bi-twitter-x,
+      &.bi-facebook,
+      &.bi-youtube {
+        padding-right: 80px;
+
+        @include media-breakpoint-down($extra-extra-extra-desktop) {
+          padding-right: 70px;
+        }
+
+        @include media-breakpoint-down($extra-extra-desktop) {
+          padding-right: 60px;
+        }
+
+        @include media-breakpoint-down($extra-desktop) {
+          padding-right: 30px;
+        }
+
+        @include media-breakpoint-down($desktop-breakpoint) {
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+
+  .logo-wrapper {
+    border-bottom: 1px solid $white-rgb;
+    img {
+      padding-bottom: 20px;
+      max-width: 400px;
+    }
+  }
+
+  .logo-text {
+    color: $white-rgb;
+    font-size: $font-size-sm-extralarge;
+    line-height: 24px;
+    padding-top: 50px;
+    font-weight: $font-weight-normal;
+  }
+}
+
+.site-footer__bottom {
+  margin-top: 0;
+  border-top: 0 none;
+  border-color: 0 none;
+}

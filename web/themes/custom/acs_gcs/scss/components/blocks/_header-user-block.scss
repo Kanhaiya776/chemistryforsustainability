@@ -1,0 +1,45 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+$card-header-font-size: 3.125rem;
+$card-header-line-height:  4.25rem;
+
+.header-user--block {
+  margin-right: 20px;
+
+  &__container {
+    .user-profile-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 10px;
+      margin-left: 10px;
+      
+      a.btn {
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+      }
+
+      .user-profile-header-search {
+        a {
+          text-decoration: underline !important;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
+          color: $gcs-blue-rgb;
+          text-transform: uppercase;
+
+          .bi-search {
+            margin-right: 10px;
+            &::before {
+              font-size: 20px;
+              line-height: 22px;
+              margin-top: 3px;
+              color: $gcs-blue-rgb;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

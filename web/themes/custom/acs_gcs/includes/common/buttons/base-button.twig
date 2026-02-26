@@ -1,0 +1,10 @@
+{% set attributes = attributes|default(create_attribute({'class': ''})) %}
+{% set button_base_class = button_base_class|default('btn') %}
+{% set button_extra_classes = button_extra_classes|default([]) %}
+{% set my_classes = [button_base_class]|merge(button_extra_classes) %}
+
+{% if link is not empty %}
+  <a{{ attributes.addClass(my_classes) }} href="{{ link }}" {% if internal is empty %}target="_blank"{% endif %}>{{ safe_value_label | raw }}</a>{{ children }}
+{% else %}
+<button{{ attributes.addClass(my_classes) }}>{{ safe_value_label | raw }}</button>{{ children }}
+{% endif %}

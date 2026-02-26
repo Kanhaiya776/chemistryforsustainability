@@ -1,0 +1,13 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.webform-submission-form {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include media-breakpoint-down($tablet-breakpoint) {
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+}

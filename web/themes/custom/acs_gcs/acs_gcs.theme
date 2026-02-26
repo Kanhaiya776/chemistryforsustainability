@@ -1,0 +1,833 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+use Drupal\user\Entity\User;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\node\Entity\Node;
+use Drupal\user\UserInterface;
+use Drupal\address\Repository\SubdivisionRepository;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function acs_gcs_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['open_sans_custom'] = 'Open Sans Skvare';
+}
+
+/**
+ * Implements hook_views_view_fields().
+ */
+function acs_gcs_preprocess_views_view_fields(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+
+  if ($view->id() === 'recent_activity' && $view->current_display === 'block_1') {
+    $title = $variables['fields']['title'];
+  }
+
+  if ($view->id() === 'user_profile' && $view->current_display === 'all_user_details') {
+    $routeMatch = \Drupal::routeMatch();
+
+    $routeName = $routeMatch->getRouteName();
+
+    if ($routeName === "entity.user.canonical") {
+      $user = $routeMatch->getParameter('user');
+      if ($user instanceof UserInterface) {
+        $accountData = \Drupal::service('user.data')->get('contact', $user->id(), 'enabled');
+        $allow_dm = $user->get('field_allow_direct_messaging')->value;
+        // $showContact = $accountData ?? FALSE;
+        $showContact = $allow_dm ?? FALSE;
+        $userId = $user->id();
+        $currentUser = \Drupal::currentUser();
+        $url = Url::fromRoute('entity.user.contact_form', ['user' => $userId]);
+        $variables['fields']['contactFormUrl'] = $url->toString();
+        $variables['fields']['showContact'] = $allow_dm == 1  &&  $showContact;
+        $variables['fields']['ownProfile'] = $userId === $currentUser->id();
+
+        if ($userId !== $currentUser->id()) {
+          unset($variables['fields']['nothing']);
+        }
+
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function acs_gcs_preprocess_page(&$variables) {
+  $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
+  if ($fonts === 'open_sans_custom') {
+    $variables['#attached']['library'][] = 'acs_gcs/open_sans_custom';
+  }
+
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['#attached']['html_head'][] = [
+        [
+          '#tag' => 'title',
+          '#value' => "Green Chemistry For Sustainability",
+        ], 'custom_frontpage_title',
+    ];
+  }
+
+  $request = \Drupal::request();
+  $path_info = $request->getPathInfo();
+
+  if ($path_info === '/form/update-organization-form') {
+    $url = Url::fromUri('internal:/non-existent-path')->toString();
+    $response = new RedirectResponse($url, 302);
+    $response->send();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function acs_gcs_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  $suggestions[] = 'views_view__' . $view->id();
+  $suggestions[] = 'views_view__' . $view->id() . '__' . $view->current_display;
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_unformatted_alter().
+ */
+function acs_gcs_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  if ($view instanceof ViewExecutable && $view_id = $view->id() && $display_id = $view->current_display) {
+    $suggestions[] = 'views_view_unformatted__' . $view_id . '__' . $display_id;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_form_alter().
+ */
+function acs_gcs_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $routeMatch = \Drupal::routeMatch();
+  $routeName = $routeMatch->getRouteName();
+  if ($routeName === 'entity.node.add_form' || $routeName === 'entity.node.edit_form' ||
+  $routeName === 'node.add' || $routeName === 'node.edit') {
+    $node = $routeMatch->getParameter('node');
+
+    $type = $node instanceof NodeInterface ? $node->getType() : NULL;
+
+    if ($type) {
+      $suggestions[] = 'form__custom_node_template__' . $type;
+    }
+    $suggestions[] = 'form__custom_node_template';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_fields_alter().
+ */
+function acs_gcs_theme_suggestions_views_view_fields_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  if ($view instanceof ViewExecutable && $view_id = $view->id() && $current_display = $view->current_display) {
+    $suggestions[] = 'views_view_fields__' . $view_id . '__' . $current_display;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function acs_gcs_preprocess_paragraph__amounts__sign_and_amount(&$variables) {
+  $amount = '';
+  if (!empty($variables['content']['field_amount'][0]['#markup'])) {
+    $amount = $variables['content']['field_amount'][0]['#markup'];
+  }
+  if (!empty($variables['content']['field_currency'][0]['#entity'])) {
+    $currency = $variables['content']['field_currency'][0]['#entity'];
+    if (method_exists($currency, 'getSign')) {
+      $sign = $currency->getSign();
+      if (!empty($amount)) {
+        $variables['currency_and_amount'] = $sign . $amount;
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+// function acs_gcs_preprocess_civicrm_entity(&$variables) {
+//   if ($variables['entity_type'] == 'civicrm_contact' && $variables['view_mode'] == 'full') {
+//     $contact = $variables['elements']['#civicrm_contact'];
+//     $variables['#cache']['max-age'] = 0;
+//     $contact_id = $contact->id();
+//     $variables['contact_id'] = $contact_id;
+//     $civicrm_api = \Drupal::service('civicrm_entity.api');
+//     $current_user = \Drupal::currentUser();
+
+//     $fields_of_interest = [];
+//     $specific_fields_of_interest = [];
+//     $fields_of_interest_fields = [
+//       'custom_72',
+//       'custom_73',
+//       'custom_74',
+//       'custom_75',
+//       'custom_76',
+//       'custom_77',
+//       'custom_78',
+//       'custom_79',
+//       'custom_80',
+//       'custom_81',
+//       'custom_82',
+//       'custom_83',
+//       'custom_84',
+//       'custom_85',
+//     ];
+//     foreach ($fields_of_interest_fields as $field) {
+//       foreach ($variables['content'][$field] as $key => $item) {
+//         if (is_numeric($key) && !empty($item['#markup'])) {
+//           if ($field == 'custom_72') {
+//             $fields_of_interest[] = $item['#markup'];
+//           }
+//           else {
+//             $specific_fields_of_interest[] = $item['#markup'];
+//           }
+//         }
+//       }
+//     }
+//     $variables['fields_of_interest'] = implode(', ', $fields_of_interest);
+//     $variables['specific_fields_of_interest'] = implode(', ', $specific_fields_of_interest);
+
+//     $sector_fields = [
+//       'custom_87',
+//       'custom_106',
+//       'custom_107',
+//       'custom_108',
+//     ];
+//     $sectors = [];
+//     $subsectors = [];
+//     foreach ($sector_fields as $field) {
+//       foreach ($variables['content'][$field] as $key => $item) {
+//         if (is_numeric($key) && !empty($item['#markup'])) {
+//           if ($field == 'custom_87') {
+//             $sectors[] = $item['#markup'];
+//           }
+//           else {
+//             $subsectors[] = $item['#markup'];
+//           }
+//         }
+//       }
+//     }
+//     $variables['sectors'] = implode(', ', $sectors);
+//     $variables['subsectors'] = implode(', ', $subsectors);
+//     try {
+//       $address = $civicrm_api->get('Address', [
+//         'sequential' => TRUE,
+//         'contact_id' => $contact_id,
+//         'is_primary' => TRUE,
+//       ]);
+//     }
+//     catch (\Exception $e) {
+
+//     }
+//     $geographic_location = [
+//       '#type' => '#markup',
+//       '#markup' => '',
+//     ];
+//     if (!empty($address[0]['id'])) {
+//       if (!empty($address[0]['city'])) {
+//         $geographic_location['#markup'] .= $address[0]['city'];
+//       }
+//       if (!empty($address[0]['state_province_id'])) {
+//         $state = $civicrm_api->getValue('StateProvince', [
+//           'id' => $address[0]['state_province_id'],
+//           'return' => "name",
+//         ]);
+//         if (!empty($address[0]['city'])) {
+//           $geographic_location['#markup'] .= ', ';
+//         }
+//         $geographic_location['#markup'] .= $state;
+//       }
+//       if (!empty($address[0]['country_id'])) {
+//         $country = $civicrm_api->getValue('Country', [
+//           'id' => $address[0]['country_id'],
+//           'return' => "name",
+//         ]);
+//         if (!empty($geographic_location['#markup'])) {
+//           $geographic_location['#markup'] .= "<br/>";
+//         }
+//         $geographic_location['#markup'] .= $country;
+//       }
+//     }
+//     $variables['geographic_location'] = $geographic_location;
+//     $website_array = [];
+//     try {
+//       $websites = $civicrm_api->get('Website', [
+//         'sequential' => TRUE,
+//         'contact_id' => $contact_id,
+//       ]);
+//       if (!empty($websites)) {
+//         $count = 1;
+//         foreach ($websites as $website) {
+//           if ($website['website_type_id'] == 15 && !isset($website_array[0])) {
+//             $website_array[0] = $website['url'];
+//             $count++;
+//           }
+//           else {
+//             $website_array[$count] = $website['url'];
+//             $count++;
+//           }
+//         }
+//       }
+//     }
+//     catch (\Exception $e) {
+
+//     }
+//     $variables['websites'] = $website_array;
+//     if (!empty($website_array)) {
+//       $variables['websites_label'] = 'Websites';
+//     }
+//     // People block.
+//     try {
+//       $limit = 12;
+//       $people = [];
+
+//       $relationship_results = $civicrm_api->get('Relationship', [
+//         'sequential' => 1,
+//         'contact_id_b' => $contact_id,
+//         'is_active' => 1,
+//         'relationship_type_id' => ['IN' => [12, 13]],
+//       ]);
+
+//       // Initialize pager through the pager.manager service.
+//       $pager_manager = \Drupal::service('pager.manager');
+//       $pager_manager->createPager(count($relationship_results), $limit);
+//       $current_page = \Drupal::request()->query->get('page', 0);
+
+//       // Get paginated results.
+//       $paginated_relationships = $civicrm_api->get('Relationship', [
+//         'sequential' => 1,
+//         'contact_id_b' => $contact_id,
+//         'is_active' => 1,
+//         'relationship_type_id' => ['IN' => [12, 13]],
+//         'options' => [
+//           'limit' => $limit,
+//           'offset' => $current_page * $limit,
+//         ],
+//       ]);
+
+//       if (!empty($paginated_relationships[0]['id'])) {
+//         foreach ($paginated_relationships as $rel_result) {
+//           $roles = [];
+//           $contact_result = $civicrm_api->get('Contact', [
+//             'sequential' => 1,
+//             'id' => $rel_result['contact_id_a'],
+//             'is_deleted' => FALSE,
+//             'return' => 'image_URL,first_name,last_name',
+//           ]);
+
+//           $checkIsUserCreator = $civicrm_api->get('Relationship', [
+//             'sequential' => 1,
+//             'contact_id_a' => $rel_result['contact_id_a'],
+//             'contact_id_b' => $contact_id,
+//             'relationship_type_id' => 13,
+//           ]);
+
+//           // Skip invalid/deleted contacts.
+//           if (empty($contact_result[0])) {
+//             continue;
+//           }
+
+//           $image_url = !empty($contact_result[0]['image_URL']) ? $contact_result[0]['image_URL'] : '';
+//           $first_name = !empty($contact_result[0]['first_name']) ? $contact_result[0]['first_name'] : NULL;
+//           $last_name = !empty($contact_result[0]['last_name']) ? $contact_result[0]['last_name'] : NULL;
+//           $relationship = !empty($checkIsUserCreator[0]['relationship_type_id']) ? TRUE : FALSE;
+//           // Registered user, show only to authenticated.
+//           // Country.
+//           $address_result = $civicrm_api->get('Address', [
+//             'sequential' => 1,
+//             'contact_id' => $rel_result['contact_id_a'],
+//             'is_primary' => TRUE,
+//           ]);
+
+//           $person_country = '';
+//           if (!empty($address_result[0]['country_id'])) {
+//             $person_country = $civicrm_api->getValue('Country', [
+//               'id' => $address_result[0]['country_id'],
+//               'return' => "name",
+//             ]);
+//           }
+
+//           // User id.
+//           $uf_match_result = $civicrm_api->get('UfMatch', [
+//             'sequential' => TRUE,
+//             'contact_id' => $rel_result['contact_id_a'],
+//           ]);
+//           $username = '';
+//           $uid = '';
+//           $user_url = '';
+//           if (!empty($uf_match_result[0]['uf_id'])) {
+//             $account = User::load($uf_match_result[0]['uf_id']);
+//             if ($account) {
+//               $uid = $account->id();
+//               $username = $account->getAccountName();
+//               $user_url = '/user/' . $uid;
+//             }
+//           }
+//           $people[$rel_result['contact_id_a']] = [
+//             'image_url' => $image_url,
+//             'name' => (!empty($first_name) && !empty($last_name)) ? $first_name . ' ' . $last_name : $username,
+//             'uid' => $uid,
+//             'roles' => implode(', ', $roles),
+//             'country' => $person_country,
+//             'user_url' => $user_url,
+//             'relationship_type' => $relationship,
+//           ];
+
+//         }
+//       }
+//       $variables['people'] = $people;
+//       if (!empty($people)) {
+//         $variables['people_label'] = 'People';
+//       }
+
+//       // Build pager render array.
+//       $variables['pager'] = [
+//         '#type' => 'pager',
+//         '#element' => 0,
+//         // Important for multiple pagers.
+//       ];
+
+//     }
+//     catch (\Exception $e) {
+//       \Drupal::logger('people_block')->error('Error loading people: @message', ['@message' => $e->getMessage()]);
+//     }
+//     \Drupal::service('civicrm')->initialize();
+
+//     $session = CRM_Core_Session::singleton();
+//     $civiuserId = $session->get('userID');
+//     $allowOrganizationEdit = acs_gcs_check_organization_relations_allow_update($civiuserId, $contact_id);
+
+//     $variables['user_belongs_to_org'] = $allowOrganizationEdit;
+//   }
+// }
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function acs_gcs_preprocess_views_view_field(&$variables) {
+  // Event date time & timezone formating.
+  if ($variables['field']->field == 'field_event_date_s_2') {
+    try {
+      $entity = $variables['row']->_entity;
+      $start_date = $entity->field_event_date_s_2->value;
+      $end_date = $entity->field_event_date_s_2->end_value;
+      $start_time = '';
+      $end_time = '';
+      $timezone = '';
+      if (!empty($entity->field_event_time)) {
+        $start_time = $entity->field_event_time->getValue()[0]['from'];
+        $end_time = $entity->field_event_time->getValue()[0]['to'];
+      }
+
+      if (!empty($entity->field_timezone->value)) {
+        $timezone = $entity->field_timezone->value;
+      }
+
+      $sdate = new DrupalDateTime($start_date);
+      $edate = new DrupalDateTime($end_date);
+
+      if (!empty($start_time) && !empty($end_time)) {
+        $formatter = \Drupal::service('date.formatter');
+        $formatted_start = \Drupal::service('date.formatter')->format($sdate->getTimestamp(), 'custom', 'F j, Y');
+
+        $output = "<b>Event Dates:</b> $formatted_start, " . $formatter->format(strtotime($start_time), 'custom', 'g:i a');
+        if ($end_date && $end_time) {
+          $formatted_end = \Drupal::service('date.formatter')->format($edate->getTimestamp(), 'custom', 'F j, Y');
+          $output .= " - $formatted_end, " . $formatter->format(strtotime($end_time), 'custom', 'g:i a') . " " . $timezone;
+        }
+
+        $variables['output'] = [
+          '#markup' => $output,
+          '#cache' => [
+            'contexts' => ['timezone'],
+            'tags' => ['node:' . $entity->id()],
+          ],
+        ];
+      }
+      else {
+        $formatted_start = \Drupal::service('date.formatter')->format($sdate->getTimestamp(), 'custom', 'F j, Y');
+        $formatted_end = \Drupal::service('date.formatter')->format($edate->getTimestamp(), 'custom', 'F j, Y');
+        $output = "<b>Event Dates:</b> $formatted_start" . " - " . $formatted_end . " " . $timezone;
+        $variables['output'] = [
+          '#markup' => $output,
+          '#cache' => [
+            'contexts' => ['timezone'],
+            'tags' => ['node:' . $entity->id()],
+          ],
+        ];
+      }
+    }
+    catch (\Exception $e) {
+      $variables['output'] = [
+        '#markup' => t('Event dates are not available'),
+      ];
+    }
+  }
+}
+
+/**
+ * Check if the user is creator and allow the organization to be edit.
+ */
+function acs_gcs_check_organization_relations_allow_update($civiuserId, $contact_id) {
+  $allowOrganizationEdit = FALSE;
+
+  if (!empty($civiuserId) && !empty($contact_id)) {
+    $result = civicrm_api3('Relationship', 'get', [
+      'sequential' => 1,
+      'contact_id_a' => $civiuserId,
+      'contact_id_b' => $contact_id,
+    ]);
+
+    $allowededRelations = ["13"];
+    if (count($result["values"]) > 0) {
+      foreach ($result["values"] as $res) {
+        if (in_array($res["relationship_type_id"], $allowededRelations)) {
+          $allowOrganizationEdit = TRUE;
+        }
+      }
+    }
+  }
+
+  return $allowOrganizationEdit;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function acs_gcs_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == "node_professional_development_form" || $form_id == "node_professional_development_edit_form") {
+    $form['#after_build'][] = 'acs_gcs_add_paragraph';
+    if (isset($form['field_target_audience'])) {
+      $options = [];
+      $terms = \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->loadByProperties(['vid' => 'target_audience', 'status' => 1]);
+
+      foreach ($terms as $term) {
+        $options[$term->id()] = $term->label();
+      }
+      if (isset($form['field_target_audience']['widget']['#options'])) {
+        $form['field_target_audience']['widget']['#options'] = $options;
+      }
+    }
+    // Target node forms (both create and edit).
+    if (str_starts_with($form_id, 'node_') && str_ends_with($form_id, '_form')) {
+      // Check if user has permission to administer nodes.
+      $account = \Drupal::currentUser();
+      if (!$account->hasPermission('administer nodes')) {
+        // Hide the revision vertical tab.
+        if (isset($form['revision_information'])) {
+          $form['revision_information']['#access'] = FALSE;
+        }
+        $form['#prefix'] = '<div class="container mt-4">';
+        $form['#suffix'] = '</div>';
+      }
+    }
+    $form['field_length_time_of_training']['#access'] = FALSE;
+    $form['field_location_name']['#states'] = [
+      'visible' => [
+        [
+          ':input[name="field_training_format"]' => ['value' => '544'],
+        ],
+        'or',
+        [
+          ':input[name="field_training_format"]' => ['value' => '545'],
+        ],
+      ],
+    ];
+
+    $form['field_location_address']['#states'] = [
+      'visible' => [
+        [
+          ':input[name="field_training_format"]' => ['value' => '544'],
+        ],
+        'or',
+        [
+          ':input[name="field_training_format"]' => ['value' => '545'],
+        ],
+      ],
+    ];
+
+    $form['field_location_country']['#states'] = [
+      'visible' => [
+        [
+          ':input[name="field_training_format"]' => ['value' => '544'],
+        ],
+        'or',
+        [
+          ':input[name="field_training_format"]' => ['value' => '545'],
+        ],
+      ],
+    ];
+  }
+
+  // Add helper text for password.
+  if ($form_id == "user_login_form") {
+    $form['pass']['#description'] = t('Enter your password.');
+  }
+}
+
+/**
+ * Get similar nodes based for professional devleopment.
+ */
+function acs_gcs_get_similar_nodes(Node $node, $limit = 3) {
+  $similar_nodes = [];
+
+  $query = \Drupal::entityQuery('node')
+    ->accessCheck(TRUE)
+    ->condition('status', 1)
+    ->condition('type', $node->bundle())
+    ->condition('nid', $node->id(), '!=')
+    ->range(0, $limit)
+    ->sort('created', 'DESC');
+
+  $nids = $query->execute();
+
+  if (!empty($nids)) {
+    $nodes = Node::loadMultiple($nids);
+    $similar_nodes = array_values($nodes);
+  }
+
+  return $similar_nodes;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document.
+ */
+function acs_gcs_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  // Only for professional development content type.
+  if ($node->bundle() === 'professional_development') {
+    $similar_nodes = acs_gcs_get_similar_nodes($node);
+    $countries = \Drupal::service('country_manager')->getList();
+    foreach ($similar_nodes as $key => $similar_node) {
+
+      // Get raw DB datetime value (string)
+      $raw = $similar_node->get('field_time_of_training')->value;
+      $raw1 = $similar_node->get('field_time_of_training')->end_value;
+      $rawRegistrationEnd = $similar_node->get('field_registrations_date_time')->end_value;
+
+      $country_name = '';
+      if (
+        $similar_node->hasField('field_location_country') &&
+        !$similar_node->get('field_location_country')->isEmpty()
+      ) {
+        $code = $similar_node->get('field_location_country')->value;
+        $country_name = $countries[$code] ?? $code;
+      }
+
+      if ($raw) {
+        // Create DrupalDateTime assuming DB value is UTC.
+        $datetime = new DrupalDateTime($raw, new \DateTimeZone('UTC'));
+
+        // Convert to CST (America/Chicago)
+        $datetime->setTimezone(new \DateTimeZone('America/Chicago'));
+
+        // Add formatted string to node object for Twig.
+        $similar_node->converted_training_start_time = $datetime->format('F j, Y');
+      }
+
+      if ($raw1) {
+        $datetime1 = new DrupalDateTime($raw1, new \DateTimeZone('UTC'));
+        $datetime1->setTimezone(new \DateTimeZone('America/Chicago'));
+        $similar_node->converted_training_end_time = $datetime1->format('F j, Y');
+      }
+
+      if ($rawRegistrationEnd) {
+        $datetime2 = new DrupalDateTime($rawRegistrationEnd, new \DateTimeZone('UTC'));
+        $datetime2->setTimezone(new \DateTimeZone('America/Chicago'));
+        $similar_node->converted_registration_end_time = $datetime2->format('F j, Y');
+      }
+
+      $similar_node->location_country_name = $country_name;
+    }
+    $variables['similar_nodes'] = $similar_nodes;
+  }
+  if ($variables['node']->bundle() === 'organization') {
+
+    $address = $variables['node']->get('field_state')->first();
+    if ($address) {
+      $country_code = $address->getCountryCode();
+      $state = $address->getAdministrativeArea();
+      $city = $address->getLocality();
+
+      // Get country name.
+      $country_manager = \Drupal::service('country_manager');
+      $countries = $country_manager->getList();
+      $country_name = $countries[$country_code] ?? $country_code;
+
+      $variables['organization_location'] = [
+        'city' => $city,
+        'state' => $state,
+        'country' => $country_name,
+      ];
+    }
+  }
+  if ($node->bundle() === 'organization') {
+    $address = $variables['node']->get('field_state')->first();
+
+    if ($address) {
+      $country_code = $address->getCountryCode();
+      $state_code = $address->getAdministrativeArea();
+      $city = $address->getLocality();
+
+      // Country label.
+      $country_manager = \Drupal::service('country_manager');
+      $countries = $country_manager->getList();
+      $country_name = $countries[$country_code] ?? $country_code;
+
+      // State / province label (Address module).
+      $state_name = $state_code;
+      if ($country_code && $state_code) {
+        /** @var \Drupal\address\Repository\SubdivisionRepository $subdivision_repository */
+        $subdivision_repository = \Drupal::service('address.subdivision_repository');
+
+        $subdivisions = $subdivision_repository->getList([$country_code]);
+
+        if (!empty($subdivisions[$state_code])) {
+          $state_name = $subdivisions[$state_code];
+        }
+      }
+
+      $variables['organization_location'] = [
+        'city' => $city,
+        'state' => $state_name,
+        'country' => $country_name,
+      ];
+    }
+    $uid = 0;
+
+    // 1. Prefer explicit creator field.
+    if (
+      $node->hasField('field_creator_user') &&
+      !$node->get('field_creator_user')->isEmpty()
+    ) {
+      $uid = (int) $node->get('field_creator_user')->target_id;
+    }
+
+    // 2. Fallback for legacy nodes.
+    if ($uid <= 0) {
+      $uid = (int) $node->getOwnerId();
+    }
+
+    /** @var \Drupal\custom_organization\Service\OrganizationCreatorService $creatorService */
+    $creatorService = \Drupal::service('custom_organization.organization_creator');
+
+    $creator = $creatorService->getCreatorByUid($uid);
+
+    if ($creator) {
+      $variables['organization_creator'] = $creator;
+    }
+    /** @var \Drupal\custom_organization\Service\OrganizationPeopleService $peopleService */
+    $peopleService = \Drupal::service('custom_organization.organization_people');
+
+    $related_people = $peopleService->getRelatedPeople($node);
+
+    // Optional: exclude creator from related list.
+    if (!empty($uid)) {
+      $related_people = array_values(array_filter(
+        $related_people,
+        fn($person) => (int) $person['uid'] !== $uid
+      ));
+    }
+
+    // $current_page = (int) \Drupal::request()->query->get('page', 0);
+
+    // $limit = ($current_page === 0) ? 11 : 12;
+
+    // $total = count($related_people);
+
+    // $pager_manager = \Drupal::service('pager.manager');
+    // $pager_manager->createPager($total, $limit);
+
+    // $variables['related_people'] = array_slice(
+    //   $related_people,
+    //   $current_page * $limit,
+    //   $limit
+    // );
+
+    $current_page = (int) \Drupal::request()->query->get('page', 0);
+
+    $first_page_limit = 11;
+    $other_pages_limit = 12;
+
+    $total = count($related_people);
+
+    $pager_manager = \Drupal::service('pager.manager');
+
+    $pager_manager->createPager($total, $other_pages_limit);
+
+    // Calculate offset correctly.
+    if ($current_page === 0) {
+      $offset = 0;
+      $limit = $first_page_limit;
+    }
+    else {
+      $offset = $first_page_limit + (($current_page - 1) * $other_pages_limit);
+      $limit = $other_pages_limit;
+    }
+
+    $variables['related_people'] = array_slice($related_people, $offset, $limit);
+
+    // Hide creator after page 1.
+    if ($current_page > 0) {
+      unset($variables['organization_creator']);
+    }
+
+    $variables['pager'] = [
+      '#type' => 'pager',
+    ];
+
+  }
+  if ($node->hasField('field_location_country') && !$node->get('field_location_country')->isEmpty()) {
+    $code = $node->get('field_location_country')->value;
+    $countries = \Drupal::service('country_manager')->getList();
+    $variables['location_country_name'] = $countries[$code] ?? $code;
+  }
+}
+
+/**
+ * Custom function to add a <p> tag at the end of the form.
+ */
+function acs_gcs_add_paragraph(array $form, FormStateInterface $form_state) {
+  $form['field_pf_accept_terms']['#weight'] = 9999;
+
+  return $form;
+}

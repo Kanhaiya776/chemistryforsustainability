@@ -1,0 +1,149 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.node--type-front-page {
+  .block-views-blockfeatured-content-featured-content-block {
+    margin-top: -70px;
+    padding-top: 70px;
+    z-index: 50;
+  }
+}
+
+.block-views-blockfeatured-content-featured-content-block-resources,
+.block-views-blockfeatured-content-upcoming-events,
+.block-views-blockfeatured-content-featured-content-block {
+  display: flex;
+  flex-direction: column;
+  padding-left: 177px;
+  padding-right: 177px;
+  background-color: $box-color-rgb;
+
+  .views-row {
+    position: relative;
+  }
+
+  .link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include media-breakpoint-down($extra-extra-extra-desktop) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  @include media-breakpoint-down($extra-extra-desktop) {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  @include media-breakpoint-down($extra-desktop) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include media-breakpoint-down($desktop-breakpoint) {
+    padding: 0;
+  }
+
+  .views-field-field-featured-image-pub,
+  .views-field-field-image {
+    border-radius: 10px;
+  }
+
+  span.display-medium {
+    align-self: center;
+    padding-top: 95px;
+    padding-bottom: 60px;
+  }
+
+  .featured-content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding-bottom: 160px;
+
+    @include media-breakpoint-down($extra-extra-desktop) {
+      gap: 10px;
+    }
+
+    @include media-breakpoint-down($desktop-breakpoint) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .featured-content-col {
+        min-width: 70% !important;
+      }
+    }
+
+    .featured-content-col {
+      max-width: 490px;
+      background: $white-rgb;
+      border-radius: 10px;
+      border: 1px solid $light-blue-rgb;
+      min-width: 33%;
+
+      .views-field-field-featured-image-pub,
+      .views-field-field-image {
+        margin-bottom: 15px;
+
+        &:not(:has(img)) {
+          min-height: 245px;
+          background: grey;
+
+          &::before {
+            content: ""; /* To trigger min-height when the container is empty */
+            display: block;
+          }
+        }
+
+        .field-content {
+          display: flex;
+          justify-content: center;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .views-field-title {
+        font-size: $font-size-lg-mediumlarge;
+        line-height: $line-height-lg-mediumlarge;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 5px;
+
+        .field-content {
+          font-size: $font-size-lg-mediumlarge;
+          line-height: $line-height-lg-mediumlarge;
+
+          a {
+            color: #031121;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .views-field-body,
+      .views-field-field-description {
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: #505050;
+
+        .field-content {
+          font-size: $font-size-base;
+          line-height: $line-height-base;
+        }
+      }
+    }
+  }
+}

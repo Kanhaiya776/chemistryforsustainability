@@ -1,0 +1,50 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+#header {
+  margin-top: 0;
+}
+#navbar-top {
+  &.navbar {
+    justify-content: space-evenly;
+
+    .region-top-header {
+      display: flex;
+      margin-top: -15px;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+}
+.region-top-header {
+  #block-skvare-custom-bootstrap- {
+    background: $bright-orange-rgb;
+    color: $gcs-blue;
+    min-height: 45px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .content {
+      display: flex;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      align-items: center;
+
+      p {
+        margin-bottom: 0;
+
+        @include media-breakpoint-down($extra-extra-extra-desktop) {
+          font-size: $font-size-base;
+        }
+
+        @include media-breakpoint-down($desktop-breakpoint) {
+          font-size: $font-size-small;
+        }
+      }
+    }
+  }
+}

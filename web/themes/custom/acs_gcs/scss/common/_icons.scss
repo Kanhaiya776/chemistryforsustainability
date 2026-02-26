@@ -1,0 +1,16 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+.pencil-square-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 25px;
+  color: $gcs-blue-rgba;
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}

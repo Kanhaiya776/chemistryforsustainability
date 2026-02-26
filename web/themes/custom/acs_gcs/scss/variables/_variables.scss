@@ -1,0 +1,91 @@
+@import "scss/variables/imports";
+
+$chevron-down-icon: url('images/icons/chevron-down.svg');
+$chevron-up-icon: url('images/icons/chevron-up.svg');
+
+// Font family
+$font-family: 'Open Sans';
+
+// Colors
+$gcs-blue: #204B7D;
+$dark-blue: #092038;
+$bright-blue: #59C2E4;
+$bright-orange: #E6964A;
+$light-orange: #F7E2D7;
+$light-blue: #D2DBE5;
+$gcs-orange: #BA5C2E;
+$gcs-green: #2F864F;
+$white: #ffffff;
+$dark-orange: #6C361C;
+$gcs-light-blue: #F2FCFF;
+
+// Color Variables
+$gcs-blue-rgb: $gcs-blue;
+$dark-blue-rgb: $dark-blue;
+$bright-blue-rgb: $bright-blue;
+$bright-orange-rgb: $bright-orange;
+$light-orange-rgb: $light-orange;
+$light-blue-rgb: $light-blue;
+$gcs-orange-rgb: $gcs-orange;
+$gcs-green-rgb: $gcs-green;
+$white-rgb: $white;
+$dark-orange-rgb: $dark-orange;
+$text-grey: #656565;
+$text-main: rgb(3, 17, 33);
+$text-main-highlighted: lighten($text-main, 30%);
+$box-color-rgb: #EDEDED;
+
+// Color Variables with RGBA
+$gcs-blue-rgba: rgba($gcs-blue, 1);
+$dark-blue-rgba: rgba($dark-blue, 1);
+$bright-blue-rgba: rgba($bright-blue, 1);
+$bright-orange-rgba: rgba($bright-orange, 1);
+$light-orange-rgba: rgba($light-orange, 1);
+$light-blue-rgba: rgba($light-blue, 1);
+$gcs-orange-rgba: rgba($gcs-orange, 1);
+$gcs-green-rgba: rgba($gcs-green, 1);
+$white-rgba: rgba($white, 1);
+$dark-orange-rgba: rgba($dark-orange, 1);
+
+$primary-color: $gcs-blue-rgb;
+$secondary-color: $gcs-orange-rgba;
+
+// Font weight
+$font-weight-extrabold: 800;
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-medium: 500;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+// Font size
+$font-size-lg-extralarge: 3.563rem; // 57px
+$font-size-lg-large: 2.813rem; // 45px
+$font-size-xxs-mediumlarge: 2.25rem; // 36px
+$font-size-xs-mediumlarge: 2rem; // 32px
+$font-size-md-mediumlarge: 1.75rem; // 28px
+$font-size-lg-mediumlarge: 1.5rem; // 24px
+$font-size-header: 1.25rem;
+$font-size-sm-extralarge: 1.125rem; // 18px
+$font-size-base: 1rem; // 16px
+$font-size-small: 0.875rem; // 14px
+$font-size-extrasmall: 0.75rem; // 12px
+
+//Line height
+$line-height-lg-extralarge: 4rem; // 64px
+$line-height-lg-large: 3.25rem; // 52px
+$line-height-xxs-mediumlarge: 2.75rem; // 44px
+$line-height-lg-mediumlarge: 2.063rem; // 33px
+$line-height-sm-extralarge: 1.688rem; //27px
+$line-height-base: 1.375rem; //22px
+$line-height-small: 18px; //@todo
+
+// Breakpoints.
+$mobile-breakpoint: sm;
+$tablet-breakpoint: md;
+$desktop-breakpoint: lg;
+$extra-desktop: xl;
+$extra-extra-desktop: xxl;
+$extra-extra-extra-desktop: xxxl;
+
+$laptop-breakpoint: 1300px;

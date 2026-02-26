@@ -1,0 +1,111 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.block--new-resources {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 130px;
+
+  .views-row {
+    position: relative;
+  }
+
+  .link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include promote-block('right');
+
+  .content {
+    margin-top: 40px;
+  }
+
+  .view-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .views-field-title {
+    font-size: $font-size-lg-mediumlarge;
+    line-height: $line-height-lg-mediumlarge;
+    padding-bottom: 5px;
+
+    .field-content {
+      font-size: $font-size-lg-mediumlarge;
+      line-height: $line-height-lg-mediumlarge;
+
+      a {
+        color: #031121;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .views-field-field-description {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-grey;
+
+    .field-content {
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      color: $text-grey;
+    }
+  }
+
+  .views-row {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 760px;
+
+    &:first-child {
+      margin-left: 50px;
+      border: 1px solid $light-blue-rgb;
+      border-radius: 5px;
+      min-height: 400px;
+
+      .views-field-title {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+      }
+
+      .views-field-field-image {
+        height: 250px;
+        border-radius: 10px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        &:not(:has(img)) {
+          min-height: 245px;
+          background: grey;
+
+          &::before {
+            content: ""; /* To trigger min-height when the container is empty */
+            display: block;
+          }
+        }
+      }
+
+      .views-field-field-description {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    &:not(:first-child) {
+      border-bottom: 1px solid $gcs-blue-rgb;
+    }
+  }
+
+  .btn {
+    margin-top: 80px;
+  }
+}

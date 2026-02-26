@@ -1,0 +1,266 @@
+{#
+/**
+ * Custom Organization Node Full Page Template
+ */
+#}
+
+<div class="container py-5 organization-profile">
+
+<div class="mb-5 px-4 text-start">
+
+{% if node.field_add_update_org_logo is not empty and node.field_add_update_org_logo.entity is not empty %}
+  {% set logo = node.field_add_update_org_logo.entity %}
+  <img
+    src="{{ file_url(logo.uri.value) }}"
+    class="org-logo-wrapper mb-3"
+    alt="{{ node.label }}"
+    loading="lazy"
+  >
+{% endif %}
+
+
+
+
+<div class="mb-5">
+  <h2 class="section-title">{{ label }}</h2>
+
+  {# Website #}
+  {% if node.field_organization_website.value %}
+    <a href="{{ node.field_organization_website.uri }}" target="_blank" rel="noreferrer" class="org-social-link">
+      <img src="/themes/custom/acs_gcs/images/icons/icon-web.png"
+           alt="Website Icon"
+           class="mx-1 org-social-icons">
+    </a>
+  {% endif %}
+
+  {# LinkedIn #}
+  {% if node.field_linkedin_profile.value %}
+    <a href="{{ node.field_linkedin_profile.uri }}" target="_blank" rel="noreferrer" class="org-social-link">
+      <img src="/themes/custom/acs_gcs/images/icons/icon-linkedin.png"
+           alt="LinkedIn Icon"
+           class="mx-1 org-social-icons">
+    </a>
+  {% endif %}
+
+  {# Facebook #}
+  {% if node.field_facebook_profile.value %}
+    <a href="{{ node.field_facebook_profile.uri }}" target="_blank" rel="noreferrer" class="org-social-link">
+      <img src="/themes/custom/acs_gcs/images/icons/icon-facebook.png"
+           alt="Facebook Icon"
+           class="mx-1 org-social-icons">
+    </a>
+  {% endif %}
+
+  {# Instagram #}
+  {% if node.field_instagram_profile.value %}
+    <a href="{{ node.field_instagram_profile.uri }}" target="_blank" rel="noreferrer" class="org-social-link">
+      <img src="/themes/custom/acs_gcs/images/icons/icon-instagram.png"
+           alt="Instagram Icon"
+           class="mx-1 org-social-icons">
+    </a>
+  {% endif %}
+
+  {# WeChat #}
+  {% if node.field_wechat_profile.value %}
+    <a href="{{ node.field_wechat_profile.uri }}" target="_blank" rel="noreferrer" class="org-social-link">
+      <img src="/themes/custom/acs_gcs/images/icons/icon-wechat.png"
+           alt="WeChat Icon"
+           class="mx-1 org-social-icons">
+    </a>
+  {% endif %}
+</div>
+
+  {# Description #}
+  {% set desc = node.field_organization_description.value %}
+
+  {% if desc is not empty %}
+    <div class="py-4 px-4 bg-lightblue">
+      <p class="intro-text">{{ node.field_organization_description.value }}</p>
+    </div>
+  {% endif %}
+
+
+    <!-- Section 3 -->
+  <div class="bg-white py-4 px-4">
+
+    {% if node.field_sector_custom_select.value %}
+      <h5 class="section-title">Sector</h5>
+      <p class="custom-text mb-3">
+        {{ node.field_sector_custom_select.value | replace({'_': ' '}) | title}}
+      </p>
+
+    {# -------- Sub-sector -------- #}
+
+      {# Academia #}
+      {% if node.field_sector_custom_select.value == 'academia'
+        and node.field_academia_sub_sector is not empty %}
+        <h5 class="section-title">Sub Sector</h5>
+        <p class="custom-text mb-3"> {{ node.field_academia_sub_sector.entity.label }}
+        </p>
+      {% endif %}
+
+      {# Government #}
+      {% if node.field_sector_custom_select.value == 'government_sector'
+        and node.field_government_sub_sector is not empty %}
+            <h5 class="section-title">Sub Sector</h5>
+        <p class="custom-text mb-3"> {{ node.field_government_sub_sector.entity.label }}</p>
+      {% endif %}
+
+      {# Industry #}
+      {% if node.field_sector_custom_select.value == 'industry'
+        and node.field_industry_sub_sector is not empty %}
+          <h5 class="section-title">Sub Sector</h5>
+        <p class="custom-text mb-3"> {{ node.field_industry_sub_sector.entity.label }}
+        </p>
+      {% endif %}
+    {% endif %}
+
+    {% if node.field_of_interest is not empty %}
+      <div class="fields-of-research">
+        <h5 class="section-title">Fields of Interest</h5>
+        <p class="custom-text mb-3">
+          {{ node.field_of_interest
+            |map(term => term.entity.label)
+            |join(', ')
+          }}
+        </p>
+      </div>
+    {% endif %}
+
+
+    {# {% if organization_location %}
+      <div class="geographic-location">
+        <h5 class="section-title">Geographic Location</h5>
+        <p class="custom-text mb-3">
+          {% if organization_location.city %}
+            {{ organization_location.city }},
+          {% elseif organization_location.state %}
+            {{ organization_location.state }},
+          {% endif %}
+          {{ organization_location.country }}
+        </p>
+      </div>
+    {% endif %} #}
+    {% if organization_location %}
+      <div class="geographic-location">
+        <h5 class="section-title">Geographic Location</h5>
+        <p class="custom-text mb-3">
+          {% set location = [] %}
+           {% if node.field_city is not empty %}
+               {{node.field_city.value }}, 
+            {% endif %}
+
+          {% if organization_location.state %}
+            {% set location = location|merge([organization_location.state]) %}
+          {% endif %}
+
+          {% if organization_location.country %}
+            {% set location = location|merge([organization_location.country]) %}
+          {% endif %}
+
+          {{ location|join(', ') }}
+        </p>
+      </div>
+  {% endif %}
+  </div>
+
+  <!-- Edit Button (Only for Owner) -->
+ {% if user.isAuthenticated() and node.getOwnerId() == user.id %}
+    <div class="d-flex align-items-center suggest-edit mb-4">
+      <a href="/form/new-organization?source_entity_type=node&amp;source_entity_id={{ node.id }}&amp;redirect=/organization/{{ node.id }}" class="webform-dialog webform-dialog-normal button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.798" viewBox="0 0 20 19.798">
+          <path d="M20.825,1.967a.682.682,0,0,1,0,.963L19.4,4.356l-2.73-2.73L18.094.2a.683.683,0,0,1,.966,0l1.766,1.766ZM18.436,5.32l-2.73-2.73L6.4,11.894a.678.678,0,0,0-.166.267l-1.1,3.3a.342.342,0,0,0,.432.432l3.3-1.1a.678.678,0,0,0,.267-.163l9.3-9.3Z"/>
+          <path d="M0,17.922a2.048,2.048,0,0,0,2.047,2.047H17.068a2.048,2.048,0,0,0,2.047-2.047v-8.2a.682.682,0,0,0-1.365,0v8.189a.682.682,0,0,1-.682.682H2.047a.682.682,0,0,1-.682-.682V2.9a.683.683,0,0,1,.682-.682h8.871a.682.682,0,1,0,0-1.365H2.047A2.048,2.048,0,0,0,0,2.9Z"/>
+        </svg>
+        &nbsp;<span>Edit Organization</span>
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="py-4 px-3 people-connected">
+  <h4 class="section-title mb-4">People Connected to this Organization</h4>
+
+  <div class="row gx-5 gy-5">
+
+    {# Creator #}
+    {% if organization_creator %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="text-center">
+
+          <a href="{{ path('entity.user.canonical', {'user': organization_creator.uid}) }}">
+            <img
+              class="mb-2 connected-people-img img-fluid"
+              src="{{ organization_creator.picture }}"
+              alt="{{ organization_creator.name }}"
+              loading="lazy"
+            >
+          </a>
+
+          <h5 class="mb-0">
+            <a href="{{ path('entity.user.canonical', {'user': organization_creator.uid}) }}"
+               class="username">
+              {{ organization_creator.name }}<sup>*</sup>
+            </a>
+          </h5>
+
+          {% if organization_creator.country %}
+            <p class="custom-text mb-0">
+              {{ organization_creator.country }}
+            </p>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endif %}
+
+    {# Related people #}
+    {% for person in related_people %}
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="text-center">
+
+          <a href="{{ path('entity.user.canonical', {'user': person.uid}) }}">
+            <img
+              class="mb-2 connected-people-img img-fluid"
+              src="{{ person.picture }}"
+              alt="{{ person.name }}"
+              loading="lazy"
+            >
+          </a>
+
+          <h5 class="mb-0">
+            <a href="{{ path('entity.user.canonical', {'user': person.uid}) }}"
+               class="username">
+              {{ person.name }}
+            </a>
+          </h5>
+
+          {% if person.country %}
+            <p class="custom-text mb-0">
+              {{ person.country }}
+            </p>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endfor %}  
+    <p class="custom-text">
+      *Organization Page Editor. Contact the page editor to update the information.
+      <a href="/form/contactus" class="webform-dialog webform-dialog-normal button"
+         data-once="webform-dialog">Contact us</a>
+      to change/assigned editors
+    </p>
+      {% if pager is not empty %}
+        <div class="peoples-pager">
+          {{ pager }}
+        </div>
+      {% endif %}
+  </div>
+  </div>
+
+  <!-- Related Content Section -->
+  <div class="py-4 px-3">
+    {{ drupal_view('organization_related_content', 'block_1', node.id) }}
+  </div>
+
+</div>
+</div>

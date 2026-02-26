@@ -1,0 +1,63 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.block-tb-megamenu {
+  .tbm {
+    background-color: transparent;
+  }
+
+  .tbm-custom-user-account-menu,
+  .tbm-main {
+    .tbm-nav {
+      .tbm-item {
+        border-right: 0 none;
+
+        .tbm-link.no-link {
+          &:focus,
+          &:hover {
+            background: transparent !important;
+          }
+        }
+
+        a.tbm-link {
+          font-size: $font-size-header;
+          line-height: $line-height-base;
+          text-decoration: none;
+          font-weight: $font-weight-normal;
+
+          &.level-1 {
+            //@media (max-width: $laptop-breakpoint) {
+            //  padding: 0.5rem 0.5rem;
+            //}
+            ////padding: 0.5rem 0.5rem;
+          }
+
+          &:focus,
+          &:hover {
+            background: transparent !important;
+          }
+        }
+
+        &.tbm-item--has-dropdown {
+          a.tbm-link.level-1 {
+            @include chevron-icon($chevron-down-icon);
+
+            &::after {
+              margin-bottom: 5px;
+            }
+          }
+
+          &.open {
+            a.tbm-link.level-1 {
+              @include chevron-icon($chevron-up-icon);
+
+              &::after {
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

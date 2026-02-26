@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Displays fields for each row of the Related Content block.
+ */
+#}
+{# views-view-fields--organization-related-content--block-1.html.twig #}
+<div class="related-content-block">
+
+  {# TITLE #}
+  {% if fields.title %}
+    <h4 class="mb-2">
+      <a href="{{ fields.title.content|striptags('a') }}">
+        {{ fields.title.content }}
+      </a>
+    </h4>
+  {% endif %}
+
+  {# CONTENT TYPE NAME (e.g., Event, Announcement, Tool) #}
+  {% if fields.type %}
+    <p class="mb-1 related-content-source">
+      {{ fields.type.content }}
+    </p>
+  {% endif %}
+
+  {# DATE (created date field) #}
+  {% if fields.created %}
+    <p class="related-content-date">
+      {{ fields.created.content }}
+    </p>
+  {% endif %}
+
+</div>

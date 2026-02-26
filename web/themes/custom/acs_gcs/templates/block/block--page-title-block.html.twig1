@@ -1,0 +1,20 @@
+{#
+  Custom override for Page title block
+#}
+<div{{ attributes.addClass('block block-core header-section') }}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ title_prefix }}
+        {% if label %}
+            <h2 {{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
+        {{ title_suffix }}
+        
+        {% block content %}
+        {{ content }}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

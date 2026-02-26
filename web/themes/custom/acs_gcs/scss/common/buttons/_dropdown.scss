@@ -1,0 +1,12 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.dropdown {
+  .btn {
+    &.btn-dropdown-primary {
+      color: black;
+      border: 1px solid #999;
+      border-radius: 2px;
+    }
+  }
+}

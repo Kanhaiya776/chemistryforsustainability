@@ -1,0 +1,101 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+
+.block--acs-gcs-frontpagebanner {
+  height: 270px;
+  position: relative;
+
+  .background-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background:
+      linear-gradient(0deg, #092038, #0B223AE3, rgba($dark-blue, 0.4)),
+      url('images/background/banner-frontpage.png') center/cover;
+    background-size: cover;
+
+    .scroll-icon {
+      width: 40px;
+      height: 80px;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      box-shadow: inset 0 0 0 1px $light-blue-rgb;
+      border-radius: 25px;
+
+      &.fade-element {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      &.fade-out {
+        opacity: 0;
+      }
+
+      &:before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        background: $light-blue-rgb;
+        margin-left: -3px;
+        top: 14px;
+        border-radius: 999px;
+        position: absolute;
+        right: 30%;
+        display: block;
+        animation-name: scroll;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+
+        @keyframes scroll {
+          0% {
+            opacity: 1;
+            transform: translateY(0); /* Initial state */
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(300%); /* Final state */
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    z-index: 2;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .banner-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $white-rgba;
+
+    .heading {
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .body-text {
+      font-size: $font-size-lg-mediumlarge;
+      line-height: $line-height-lg-mediumlarge;
+      font-weight: $font-weight-normal;
+      text-align: center;
+
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

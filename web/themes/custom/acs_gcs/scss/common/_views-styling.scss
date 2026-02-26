@@ -1,0 +1,177 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.cards-responsive-grid {
+  padding: 20px;
+
+  .views-exposed-form {
+    padding: 0;
+    padding-top: 20px;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    color: #3b3b3b;
+    background: #292929;
+    overflow-x: hidden;
+    max-width:100%;
+  }
+  .view-content,
+  .views-view-responsive-grid {
+    padding-top: 50px;
+
+    .views-row,
+   .views-view-responsive-grid__item {
+     margin-bottom: 20px;
+     padding: 20px;
+
+     background: $white-rgb;
+     box-shadow: 0px 3px 10px #00000029;
+     border: 1px solid #D2DBE5;
+     border-radius: 5px;
+   }
+  }
+
+  .views-view-responsive-grid {
+    .views-view-responsive-grid__item {
+      .view-content {
+        padding-top: 0;
+      }
+    }
+  }
+}
+.facets-widget-dropdown {
+  padding: 20px;
+}
+
+.views-exposed-form {
+  padding: 20px;
+  padding-bottom: 10px;
+
+  .js-form-item {
+    padding-right: 20px;
+  }
+
+  .js-form-type-checkbox {
+    padding-right: 5px;
+  }
+
+  h2 {
+    font-size: $font-size-sm-extralarge;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-sm-extralarge;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+  }
+}
+
+.views-exposed-form-box {
+  column-gap: 20px;
+}
+
+
+.views-element-container {
+  .cards-responsive-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.sidebar {
+  h2 {
+    border-bottom: 1px solid #D2DBE5;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .block-views-blockacs-pub-api-prototype-block-2 {
+    background: $white-rgb;
+    box-shadow: 0px 3px 10px #00000029;
+    border: 1px solid #D2DBE5;
+    border-radius: 5px;
+
+    .views-row {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #D2DBE5;
+
+      h4 {
+        &.result-title {
+          font-size: $font-size-lg-mediumlarge;
+          line-height: $line-height-lg-mediumlarge;
+          padding-bottom: 15px;
+        }
+      }
+
+      .row {
+        .col-md-3 {
+          font-size: $font-size-sm-extralarge !important;
+        }
+        .col-md-9 {
+          font-size: $font-size-sm-extralarge !important;
+        }
+      }
+    }
+  }
+}
+
+
+.view-publications {
+  &.view-display-id-page_1 {
+    .views-view-responsive-grid__item {
+      .field--name-title {
+        font-size: $font-size-lg-mediumlarge;
+        line-height: $line-height-lg-mediumlarge;
+        padding-bottom: 15px;
+      }
+
+      .field__label {
+        font-weight: $font-weight-bold;
+        padding-bottom: 5px;
+        padding-top: 10px;
+      }
+
+      .field {
+        font-size: $font-size-sm-extralarge !important;
+        margin: 0;
+      }
+
+      .field--name-body {
+        p {
+          font-size: $font-size-base;
+        }
+      }
+    }
+  }
+}
+
+.view-id-gctlc_search {
+  padding: 20px;
+  font-size: $font-size-sm-extralarge !important;
+
+  .views-field-title {
+    .field-content {
+      font-size: $font-size-lg-mediumlarge;
+      line-height: $line-height-lg-mediumlarge;
+      padding-bottom: 15px;
+    }
+  }
+
+  .views-field-nothing {
+    .field-content {
+      font-size: $font-size-sm-extralarge !important;
+      margin: 0;
+    }
+  }
+}
+
+.view-people-search {
+  .view-people-search-affiliate-subview {
+    display:inline;
+
+    div {
+      display:inline;
+    }
+  }
+}

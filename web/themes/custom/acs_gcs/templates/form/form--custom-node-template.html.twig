@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{{ attach_library('bootstrap_barrio/form') }}
+{% set classes = ['form-node-template'] %}
+{% if 'authenticated' in user.roles and user.roles|length == 1 %}
+  {% set classes = classes|merge(['no-revision-region', 'container']) %}
+{% endif %}
+
+<form{{ attributes.addClass(classes) }}>
+  {{ children }}
+</form>

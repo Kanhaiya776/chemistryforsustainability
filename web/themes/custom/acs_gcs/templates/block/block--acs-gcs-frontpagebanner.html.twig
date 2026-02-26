@@ -1,0 +1,33 @@
+{%
+  set classes = [
+  'block',
+  'block--acs-gcs-frontpagebanner',
+  'block-' ~ configuration.provider|clean_class,
+  'block-' ~ plugin_id|clean_class,
+  'g-0'
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="background-image">
+    </div>
+    <div{{ content_attributes.addClass('content') }}>
+      <div class="banner-content">
+        <div class="heading">
+          <span class="display-large">
+            {{ content.field_heading }}
+          </span>
+        </div>
+        <div class="body-text">
+          {{ content.body }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</div>

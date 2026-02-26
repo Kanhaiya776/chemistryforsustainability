@@ -1,0 +1,192 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.block-visit-our-sister-sites {
+  background-color: $gcs-orange-rgb;
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    position: relative;
+
+    @include media-breakpoint-down($extra-desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+
+    }
+
+    @include media-breakpoint-down($desktop-breakpoint) {
+      justify-content: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .background-image-container {
+      position: relative;
+      flex: 0 0 25%;
+
+      @include media-breakpoint-down($extra-desktop) {
+        display: none;
+      }
+    }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 870px;
+      transform: translateY(-50px);
+      background-size: cover; /* or background-size: contain; */
+      background: url('images/blocks/visit_our_sister_sites/background-image.png') no-repeat right;
+    }
+
+    .tiles-box {
+      display: flex;
+      flex-direction: column;
+      padding-top: 150px;
+      padding-bottom: 260px;
+      padding-left: 80px;
+
+      @include media-breakpoint-down($extra-desktop) {
+        padding-left: 0;
+      }
+
+      @include media-breakpoint-down($desktop-breakpoint) {
+        padding: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      &--unido {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        .logo-wrapper {
+          display: flex;
+          position: relative;
+          max-width: 100%;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+
+          .logo2,
+          .logo {
+            max-width: 140px;
+          }
+
+          .logo2 {
+            img {
+              min-width: 240px;
+              transform: translate(-10%, 2px);
+            }
+          }
+        }
+
+        @include media-breakpoint-down($extra-desktop) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .display-medium-container {
+        width: 100%;
+        color: $white-rgb;
+        padding-bottom: 60px;
+        font-weight: $font-weight-bold;
+        box-sizing: border-box;
+      }
+
+      .tiles-box-row {
+        display: flex;
+        flex-direction: row;
+
+        .tiles-box-container {
+          flex: 1;
+          height: 380px;
+          max-height: 380px;
+          box-sizing: border-box;
+          background-color: $white-rgb;
+          margin-right: 30px;
+          border-radius: 10px;
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          align-items: center;
+
+          @include media-breakpoint-down($extra-desktop) {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          &.tiles-box--acs {
+            margin-right: 80px;
+
+            @include media-breakpoint-down($extra-desktop) {
+              margin-left: 0;
+              margin-right: 0;
+            }
+
+          }
+
+          .logo2,
+          .logo {
+            min-height: 250px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            max-width: 100%;
+
+            img {
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              max-width: 100%;
+
+              &.double {
+                max-width: 50%;
+              }
+            }
+          }
+
+          .logo-text {
+            text-align: center;
+            padding-bottom: 60px;
+            font-size: $font-size-lg-mediumlarge;
+            line-height: $line-height-lg-mediumlarge;
+            color: #031121;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down($extra-desktop) {
+    .tiles-box {
+      .display-medium-container,
+      .tiles-box-row {
+        gap: 20px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down($desktop-breakpoint) {
+    .tiles-box {
+      .display-medium-container,
+      .tiles-box-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .tiles-box-row {
+        margin-top: 10px;
+      }
+    }
+  }
+}

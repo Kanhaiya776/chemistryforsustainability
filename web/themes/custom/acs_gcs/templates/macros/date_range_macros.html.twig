@@ -1,0 +1,54 @@
+{% macro training_date_range(item, show_time = true) %}
+  {% set start = item.start_date %}
+  {% set end = item.end_date %}
+
+  {# Format dates (always shown) #}
+  {% set start_date = start|date('F j, Y') %}
+  {% set end_date = end ? end|date('F j, Y') : null %}
+
+  {# Time formatting (conditional) #}
+  {% set show_time = show_time %}
+
+  {% if show_time %}
+    {% set start_time = start|date('H:i') %}
+    {% set start_time_formatted = start|date('g:i A') %}
+    {% set show_start_time = start_time != '00:01' %}
+
+    {% set end_time = end ? end|date('H:i') : null %}
+    {% set end_time_formatted = end ? end|date('g:i A') : null %}
+    {% set show_end_time = end and end_time != '00:01' %}
+  {% else %}
+    {# Explicitly hide time #}
+    {% set show_start_time = false %}
+    {% set show_end_time = false %}
+  {% endif %}
+
+  <div class="training-daterange">
+    {# Single date (no end) #}
+    {% if not end %}
+      {{ start_date }}
+      {% if show_time and show_start_time %}
+        , {{ start_time_formatted }}
+      {% endif %}
+
+    {# Date range #}
+    {% else %}
+      {{ start_date }}
+      {% if start_date != end_date %}
+        &ndash; {{ end_date }}
+      {% endif %}
+
+      {# Time range (only if show_time=true and times are meaningful) #}
+      {% if show_time and (show_start_time or show_end_time) %}
+        , 
+        {% if show_start_time %}
+          {{ start_time_formatted }}
+          {% if show_end_time %}&ndash;{% endif %}
+        {% endif %}
+        {% if show_end_time %}
+          {{ end_time_formatted }}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}

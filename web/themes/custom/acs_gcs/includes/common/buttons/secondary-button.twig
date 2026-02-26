@@ -1,0 +1,10 @@
+{# secondary-button.twig #}
+
+{% include '@acs_gcs/includes/common/buttons/base-button.twig' with {
+  'button_base_class': 'btn',
+  'button_extra_classes': ['btn-secondary'],
+  'safe_value_label': label,
+  'children': children,
+  'link': link,
+  'internal': internal
+} only %}

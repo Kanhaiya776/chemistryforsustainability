@@ -1,0 +1,112 @@
+{{ attach_library('ggcp_styler/resources_banner') }}
+
+{% set classes = [
+  'block',
+  'block--acs-gcs-resourcesbanner',
+  'block-' ~ configuration.provider|clean_class,
+  'block-' ~ plugin_id|clean_class,
+  'g-0'
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content') }}>
+      <div class="row g-0">
+        <div class="col-lg-6 col-12 g-0 left-column">
+          <div class="box show" id="resources-main">
+            <div class="background-image">
+            </div>
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">{{ content.field_title }}</span>
+              </div>
+              <div class="content-section-body">
+                {{ content.body }}
+              </div>
+            </div>
+          </div>
+          <div class="box hover-box hidden" id="resources-funding">
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">Funding</span>
+              </div>
+              <div class="content-section-body">
+                Search our database of green chemistry and engineering funding opportunites to support fundamental and applied research, conference travel, green labs, technology development, and more.
+              </div>
+            </div>
+            <span class="triangle-right">&nbsp;</span>
+          </div>
+          <div class="box hover-box hidden" id="resources-education">
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">Chemical Policies</span>
+              </div>
+              <div class="content-section-body">
+                Search regional and global policies related to chemicals management and sustianability. Learn how policy shapes the research landscape. 
+              </div>
+            </div>
+            <span class="triangle-right">&nbsp;</span>
+          </div>
+          <div class="box hover-box hidden" id="resources-tools">
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">Tools & Metrics</span>
+              </div>
+              <div class="content-section-body">
+                Make better informed chemistry decisions to access and quantify impacts and improve outcomes. 
+              </div>
+            </div>
+            <span class="triangle-right">&nbsp;</span>
+          </div>
+          <div class="box hover-box hidden" id="resources-publications">
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">Publications & Reports</span>
+              </div>
+              <div class="content-section-body">
+                Search a global database of green chemistry and sustainability journal articles. Plus, share your own content, and read documents uploaded by community members.
+              </div>
+            </div>
+            <span class="triangle-right">&nbsp;</span>
+          </div>
+          <div class="box hover-box hidden" id="resources-case">
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">Safer Alternatives</span>
+              </div>
+              <div class="content-section-body">
+                Explore our directory of green chemistry and engineering solutions from around the world. New technologies are added regularly.
+              </div>
+            </div>
+            <span class="triangle-right">&nbsp;</span>
+          </div>
+          
+          <div class="box hover-box hidden" id="resources-accelerator">
+            <div class="block-content">
+              <div class="content-section-title">
+                <span class="display-medium">Global Greenchem Accelerator</span>
+              </div>
+              <div class="content-section-body">
+                The Accelerator program identifies promising green chemistry technologies around the world and advances them with financial support and mentorship.
+              </div>
+            </div>
+            <span class="triangle-right">&nbsp;</span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 g-0 right-column">
+          <span class="display-small">
+            {{ "Explore Resources"|t }}
+          </span>
+          <div class="links">
+            {{ content.field_links }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+</div>

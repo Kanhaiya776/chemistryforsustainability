@@ -1,0 +1,145 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+$form-check-input-checked-bg-image-skvare:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$dark-blue-rgb}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>") !default;
+/* Style for the checkboxes */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid $gcs-blue-rgba;
+  background-color: $white-rgb;
+  outline: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+
+  &:checked {
+    border-radius: 3px;
+    background-color: $gcs-blue-rgba;
+
+    &:hover {
+      outline: 0;
+    }
+  }
+
+  &:not(:checked) {
+    border-radius: 3px;
+    &:hover {
+      outline: $gcs-blue-rgba 2px;
+      background-color: $light-blue-rgb;
+      --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image-skvare)};
+      border-color: black;
+
+    }
+  }
+
+  &.error{
+    border: 2px solid rgb(255, 0, 0);
+  }
+}
+
+
+input[type="radio"] {
+  background-color: $white-rgb;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $gcs-blue-rgba;
+  }
+
+  &:not(:checked) {
+    &:hover {
+      background-color: $light-blue-rgb;
+      --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+
+    }
+  }
+}
+
+
+select,
+.select2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #204B7D;
+  border-radius: 0.25rem;
+
+  .select2-selection {
+    display: flex;
+    min-height: 38px;
+
+    &.select2-selection--single {
+      display: flex;
+      align-items: center;
+      position: relative;
+      border: 2px solid $gcs-blue-rgba;
+      .select2-selection__arrow {
+        transform: translate(0, -50%);
+        top: 50%;
+        // height: 48px;
+      }
+    }
+  }
+}
+
+select {
+  &.form-select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #204B7D;
+    border: 1px solid #204B7D;
+    padding: .375rem .75rem;
+    border-radius: 0.25rem;
+
+    &::placeholder {
+      color: #C3C3C3;
+    }
+
+    &:focus {
+      border-color: $light-blue-rgba;
+    }
+  }
+
+  &.error {
+    border: 2px solid rgb(255, 0, 0) !important;
+  }
+}
+
+.facets-widget-dropdown {
+  select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #204B7D;
+    border: 1px solid #204B7D !important;
+    padding: .375rem .75rem;
+    border-radius: 0.25rem;
+
+    &::placeholder {
+      color: #C3C3C3;
+    }
+    &:focus {
+      border-color: $light-blue-rgba;
+    }
+  }
+}
+
+input[type="text"], input[type="email"], textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #204B7D;
+  border: 1px solid #204B7D !important;
+  padding: .375rem .75rem;
+  border-radius: 0.25rem;
+
+  &::placeholder {
+    color: #C3C3C3;
+  }
+
+  &:focus {
+    border-color: $light-blue-rgba;
+    // box-shadow: 0 0 0 0.25rem $light-blue-rgba;
+  }
+}

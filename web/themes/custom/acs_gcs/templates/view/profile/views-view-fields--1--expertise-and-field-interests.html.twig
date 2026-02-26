@@ -1,0 +1,81 @@
+{# ---------------------------- #}
+{# Helper Macro: Clean & Merge Fields #}
+{# ---------------------------- #}
+{% macro clean_field_values(primary, secondary) %}
+  {% set parts = [] %}
+  {% set clean_primary = (primary|default('')|replace({'&amp;':'&'})|replace({'Other,': '', 'Other': ''})|split(',')|map(v => v|trim)|filter(v => v)|join(', ')) %}
+  {% if clean_primary %}{% set parts = parts|merge([clean_primary]) %}{% endif %}
+  {% set clean_secondary = (secondary|default('')|trim) %}
+  {% if clean_secondary %}{% set parts = parts|merge([clean_secondary]) %}{% endif %}
+  {{ parts|join(', ')|e('html') }}
+{% endmacro %}
+
+{# Import macro #}
+{% from _self import clean_field_values %}
+
+{# Get the full user entity for this row #}
+{% set user = row._entity %}
+
+{# Safely extract all term labels for field of expertise #}
+{% if user.field_field_of_expertise is not empty %}
+  {% set expertise_terms = [] %}
+  {% for item in user.field_field_of_expertise %}
+    {% if item.entity %}
+      {% set expertise_terms = expertise_terms|merge([item.entity.label()]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{# Safely extract all term labels for field of interest #}
+{% if user.field_field_of_interest is not empty %}
+  {% set interest_terms = [] %}
+  {% for item in user.field_field_of_interest %}
+    {% if item.entity %}
+      {% set interest_terms = interest_terms|merge([item.entity.label()]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+
+{# ---------------------------- #}
+{# Extract Field Values Once #}
+{# ---------------------------- #}
+{% set expertise_primary =  expertise_terms|join(', ') %}
+{% set expertise_secondary = fields.field_other_fields_of_expertise.handler.original_value %}
+{% set interest_primary = interest_terms|join(', ') %}
+{% set interest_secondary = fields.field_specify_other_interest.handler.original_value %}
+
+{# ---------------------------- #}
+{# Determine if Any Field Has Content #}
+{# ---------------------------- #}
+{% set has_expertise = expertise_primary|default('')|trim or expertise_secondary|default('')|trim %}
+{% set has_interest = interest_primary|default('')|trim or interest_secondary|default('')|trim %}
+{% set has_any = has_expertise or has_interest %}
+
+{# ---------------------------- #}
+{# Render Section #}
+{# ---------------------------- #}
+<div class="row profile-row {{ has_any ? 'bg-lightblue' : '' }} p-4 mb-4">
+  <div class="col-12">
+
+    {# Fields of Expertise #}
+    {% if has_expertise %}
+      <div class="section-header">
+        {{ 'Fields of Expertise'|t }}
+      </div>
+      <p class="summary-text">
+        {{ clean_field_values(expertise_primary, expertise_secondary) }}
+      </p>
+    {% endif %}
+
+    {# Fields of Interest #}
+    {% if has_interest %}
+      <div class="section-header mt-4">
+        {{ 'Fields of Interest'|t }}
+      </div>
+      <p class="summary-text">
+        {{ clean_field_values(interest_primary, interest_secondary) }}
+      </p>
+    {% endif %}
+  </div>
+</div>

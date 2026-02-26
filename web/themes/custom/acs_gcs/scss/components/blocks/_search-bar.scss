@@ -1,0 +1,80 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.block-search-bar-block {
+  position: relative;
+}
+
+.block-search-bar {
+  padding-top: 80px;
+  padding-bottom: 130px;
+
+  .display-medium {
+    color: $white-rgba;
+    padding-bottom: 20px;
+  }
+
+  .background-image-search-wrapper {
+    position: absolute;
+    background: url("images/blocks/banner_wrapper/background.png") no-repeat;
+    background-position-y: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__container {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+
+    form {
+      width: 100%;
+    }
+
+    .input-group {
+      margin-right: 70px;
+      position: relative;
+
+      input {
+        height: 60px;
+        border-radius: 3vmin !important;
+        padding-right: 70px;
+      }
+
+      .icon-search {
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url('images/icons/search.svg');
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        z-index: 999;
+        transform: translateY(-30%) scale(1.5);
+      }
+    }
+    .form-check {
+      margin-bottom: 0;
+      color: $white-rgb;
+
+      &.first {
+        padding-right: 45px;
+      }
+
+
+    }
+  }
+
+  &.resources-page {
+    background: $gcs-orange-rgb 0 0 no-repeat padding-box;
+    padding-bottom: 195px;
+  }
+}

@@ -1,0 +1,191 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.block-acs-search-react-block {
+  .no-results {
+    padding-bottom: 40px;
+  }
+  .app-wrapper-content {
+    min-height: 600px;
+    padding: 10px 20px;
+  }
+
+  .disclaimer-text {
+    color: $text-grey;
+    font-size: $font-size-small;
+  }
+
+  .search-bar {
+    height: 586px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title-page {
+      color: $white-rgb;
+      z-index: 2;
+      padding-bottom: 25px;
+    }
+
+    .background-image {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      background:
+        linear-gradient(0deg, #092038, #0B223AE3, rgba($dark-blue, 0.4)),
+        url('images/background/banner-frontpage.png') center/cover;
+      background-size: cover;
+      background-position-y: 48%;
+
+      .scroll-icon {
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        box-shadow: inset 0 0 0 1px $light-blue-rgb;
+        border-radius: 25px;
+
+        &.fade-element {
+          opacity: 1;
+          transition: opacity 0.5s ease-in-out;
+        }
+
+        &.fade-out {
+          opacity: 0;
+        }
+
+        &:before {
+          content: '';
+          width: 14px;
+          height: 14px;
+          background: $light-blue-rgb;
+          margin-left: -3px;
+          top: 14px;
+          border-radius: 999px;
+          position: absolute;
+          right: 30%;
+          display: block;
+          animation-name: scroll;
+          animation-duration: 1.5s;
+          animation-timing-function: ease-out;
+          animation-iteration-count: infinite;
+
+          @keyframes scroll {
+            0% {
+              opacity: 1;
+              transform: translateY(0); /* Initial state */
+            }
+            100% {
+              opacity: 0;
+              transform: translateY(300%); /* Final state */
+            }
+          }
+        }
+      }
+    }
+
+    .input-group {
+      position: relative;
+      z-index: 2;
+      width: 50%;
+
+      input {
+        height: 60px;
+        border-radius: 3vmin !important;
+        padding-right: 70px;
+      }
+
+      .icon-search {
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url('images/icons/search.svg');
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        z-index: 999;
+        transform: translateY(-30%) scale(1.5);
+      }
+    }
+  }
+
+  .dropdowns-wrapper {
+    display:flex;
+    justify-content: end;
+    flex-direction: row;
+    column-gap: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $gcs-blue-rgba;
+
+    .form-check {
+      label {
+        width: 100%;
+      }
+    }
+  }
+
+  .data-list-container {
+
+
+    .data-list-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+
+      @include media-breakpoint-down($extra-extra-extra-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include media-breakpoint-down($extra-extra-desktop) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include media-breakpoint-down($extra-desktop) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media-breakpoint-down($tablet-breakpoint) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .data-item {
+        margin-bottom: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .tab-label {
+          color: $text-grey;
+          font-size: $font-size-small;
+          line-height: $line-height-small;
+          padding-bottom: 5px;
+        }
+
+        background: $white-rgb;
+        box-shadow: 0px 3px 10px #00000029;
+        border: 1px solid #D2DBE5;
+        border-radius: 5px;
+        h2 {
+          font-size: $font-size-sm-extralarge;
+        }
+
+        .description-wrapper {
+          font-size: $font-size-small;
+          line-height: $line-height-small;
+          color: $text-grey;
+        }
+      }
+    }
+  }
+
+}

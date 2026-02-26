@@ -1,0 +1,8 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.navbar {
+  .nav-link {
+    color: $gcs-blue-rgb;
+  }
+}

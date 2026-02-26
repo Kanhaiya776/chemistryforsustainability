@@ -1,0 +1,46 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.form-node-template, .webform-submission-form {
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &.no-revision-region{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  label, legend > span{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 900;
+    color: $gcs-blue;
+  }
+  
+  input[type=text], input[type=email], input[type=phone], textarea, input[type=file], input[type=url], input[type=date], input[type=time] {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $gcs-blue;
+    border: 1px solid $gcs-blue;
+    border-radius: 0.25rem !important;
+
+    &::placeholder {
+      color: #C3C3C3;
+    }
+
+    &.error{
+      border: 2px solid #ff0000 !important;
+    }
+  }
+
+  input[type=search]{
+    border: none !important;
+  }
+
+  .list-group-item {
+    border: none !important;
+  }
+}

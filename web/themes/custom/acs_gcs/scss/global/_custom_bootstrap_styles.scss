@@ -1,0 +1,234 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: #3b3b3b;
+  background: #292929;
+  overflow-x: hidden;
+  max-width:100%;
+}
+
+// Background
+.gcs-blue {
+  background-color: $gcs-blue-rgba !important;
+}
+.gcs-orange {
+  background-color: $gcs-orange-rgba !important;
+}
+.gcs-green {
+  background-color: $gcs-green-rgba !important;
+}
+.gcs-white {
+  background-color: $white-rgba !important;
+}
+.gcs-dark-blue {
+  background-color: $dark-blue-rgba !important;
+}
+.gcs-bright-blue {
+  background-color: $bright-blue-rgba !important;
+}
+.gcs-light-blue {
+  background-color: $light-blue-rgba !important;
+}
+.gcs-dark-orange {
+  background-color: $dark-orange-rgba !important;
+}
+.gcs-bright-orange {
+  background-color: $bright-orange-rgba !important;
+}
+.gcs-light-orange {
+  background-color: $light-orange-rgba !important;
+}
+
+// Typography
+.font-gcs-blue {
+  color: $gcs-blue-rgba !important;
+}
+.font-gcs-orange {
+  color: $gcs-orange-rgba !important;
+}
+.font-gcs-green {
+  color: $gcs-green-rgba !important;
+}
+.font-gcs-white {
+  color: $white-rgba !important;
+}
+.font-gcs-dark-blue {
+  color: $dark-blue-rgba !important;
+}
+.font-gcs-bright-blue {
+  color: $bright-blue-rgba !important;
+}
+.font-gcs-light-blue {
+  color: $light-blue-rgba !important;
+}
+.font-gcs-dark-orange {
+  color: $dark-orange-rgba !important;
+}
+.font-gcs-bright-orange {
+  color: $bright-orange-rgba !important;
+}
+.font-gcs-light-orange {
+  color: $light-orange-rgba !important;
+}
+
+// Borders
+.border-gcs-blue {
+  border-color: $gcs-blue-rgba !important;
+}
+.border-gcs-orange {
+  border-color: $gcs-orange-rgba !important;
+}
+.border-gcs-green {
+  border-color: $gcs-green-rgba !important;
+}
+.border-gcs-white {
+  border-color: $white-rgba !important;
+}
+.border-gcs-dark-blue {
+  border-color: $dark-blue-rgba !important;
+}
+.border-gcs-bright-blue {
+  border-color: $bright-blue-rgba !important;
+}
+.border-gcs-light-blue {
+  border-color: $light-blue-rgba !important;
+}
+.border-gcs-dark-orange {
+  border-color: $dark-orange-rgba !important;
+}
+.border-gcs-bright-orange {
+  border-color: $bright-orange-rgba !important;
+}
+.border-gcs-light-orange {
+  border-color: $light-orange-rgba !important;
+}
+
+
+.border-left-gcs-blue {
+  border-left-color: $gcs-blue-rgba !important;
+}
+.border-left-gcs-orange {
+  border-left-color: $gcs-orange-rgba !important;
+}
+.border-left-gcs-green {
+  border-left-color: $gcs-green-rgba !important;
+}
+.border-left-gcs-white {
+  border-left-color: $white-rgba !important;
+}
+.border-left-gcs-dark-blue {
+  border-left-color: $dark-blue-rgba !important;
+}
+.border-left-gcs-bright-blue {
+  border-left-color: $bright-blue-rgba !important;
+}
+.border-left-gcs-light-blue {
+  border-left-color: $light-blue-rgba !important;
+}
+.border-left-gcs-dark-orange {
+  border-left-color: $dark-orange-rgba !important;
+}
+.border-left-gcs-bright-orange {
+  border-left-color: $bright-orange-rgba !important;
+}
+.border-left-gcs-light-orange {
+  border-left-color: $light-orange-rgba !important;
+}
+
+.border-right-gcs-blue {
+  border-right-color: $gcs-blue-rgba !important;
+}
+.border-right-gcs-orange {
+  border-right-color: $gcs-orange-rgba !important;
+}
+.border-right-gcs-green {
+  border-right-color: $gcs-green-rgba !important;
+}
+.border-right-gcs-white {
+  border-right-color: $white-rgba !important;
+}
+.border-right-gcs-dark-blue {
+  border-right-color: $dark-blue-rgba !important;
+}
+.border-right-gcs-bright-blue {
+  border-right-color: $bright-blue-rgba !important;
+}
+.border-right-gcs-light-blue {
+  border-right-color: $light-blue-rgba !important;
+}
+.border-right-gcs-dark-orange {
+  border-right-color: $dark-orange-rgba !important;
+}
+.border-right-gcs-bright-orange {
+  border-right-color: $bright-orange-rgba !important;
+}
+.border-right-gcs-light-orange {
+  border-right-color: $light-orange-rgba !important;
+}
+
+.border-top-gcs-blue {
+  border-top-color: $gcs-blue-rgba !important;
+}
+.border-top-gcs-orange {
+  border-top-color: $gcs-orange-rgba !important;
+}
+.border-top-gcs-green {
+  border-top-color: $gcs-green-rgba !important;
+}
+.border-top-gcs-white {
+  border-top-color: $white-rgba !important;
+}
+.border-top-gcs-dark-blue {
+  border-top-color: $dark-blue-rgba !important;
+}
+.border-top-gcs-bright-blue {
+  border-top-color: $bright-blue-rgba !important;
+}
+.border-top-gcs-light-blue {
+  border-top-color: $light-blue-rgba !important;
+}
+.border-top-gcs-dark-orange {
+  border-top-color: $dark-orange-rgba !important;
+}
+.border-top-gcs-bright-orange {
+  border-top-color: $bright-orange-rgba !important;
+}
+.border-top-gcs-light-orange {
+  border-top-color: $light-orange-rgba !important;
+}
+
+.border-bottom-gcs-blue {
+  border-bottom-color: $gcs-blue-rgba !important;
+}
+.border-bottom-gcs-orange {
+  border-bottom-color: $gcs-orange-rgba !important;
+}
+.border-bottom-gcs-green {
+  border-bottom-color: $gcs-green-rgba !important;
+}
+.border-bottom-gcs-white {
+  border-bottom-color: $white-rgba !important;
+}
+.border-bottom-gcs-dark-blue {
+  border-bottom-color: $dark-blue-rgba !important;
+}
+.border-bottom-gcs-bright-blue {
+  border-bottom-color: $bright-blue-rgba !important;
+}
+.border-bottom-gcs-light-blue {
+  border-bottom-color: $light-blue-rgba !important;
+}
+.border-bottom-gcs-dark-orange {
+  border-bottom-color: $dark-orange-rgba !important;
+}
+.border-bottom-gcs-bright-orange {
+  border-bottom-color: $bright-orange-rgba !important;
+}
+.border-bottom-gcs-light-orange {
+  border-bottom-color: $light-orange-rgba !important;
+}

@@ -1,0 +1,89 @@
+<div class="row profile-row p-4 mb-4 align-items-start">
+  <div class="col-md-3 text-center">
+    {% if fields.user_picture.handler.original_value != "" %}
+      <img src="{{ fields.user_picture.handler.original_value }}" alt="Profile Image" class="img-fluid user-profile-img" />
+    {% else %}
+      <img src="{{ app.request.basePath }}/{{ base_path ~ directory ~ '/images/background/profile-placeholder.png' }}" alt="Profile Image" class="img-fluid user-profile-img" />
+    {% endif %}
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-12">
+      <div class="row">
+          <div class="col-md-8">
+          <div class="profile-name">
+              {{ fields.field_first_name.content }}
+              {{ fields.field_last_name.content }}
+            </div>
+          </div>
+          <div class="col-md-4">
+        </div>
+      </div>
+    </div>
+    <div class="pronouns">
+      {{ fields.field_pronouns.content }}
+    </div>
+    <ul class="info-list mt-3">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="23.438" height="25" viewBox="0 0 23.438 25">
+          <g id="buildings" transform="translate(0 0)">
+            <path id="Path_326" data-name="Path 326" d="M23.067.117a.781.781,0,0,1,.37.664V24.219a.781.781,0,0,1-.781.781H17.969a.781.781,0,0,1-.781-.781V21.875H15.625v2.344a.781.781,0,0,1-.781.781H.781A.781.781,0,0,1,0,24.219V15.625a.781.781,0,0,1,.534-.741l8.841-2.947V7.031a.781.781,0,0,1,.431-.7l12.5-6.25a.781.781,0,0,1,.761.034M9.375,13.584l-7.813,2.6v7.25H9.375Zm1.563,9.853h3.125V21.094a.781.781,0,0,1,.781-.781h3.125a.781.781,0,0,1,.781.781v2.344h3.125V2.045L10.938,7.514Z" fill="#204b7d" />
+            <path id="Path_327" data-name="Path 327" d="M2,16.75H3.506v1.719H2Zm3.011,0H6.517v1.719H5.011ZM2,20.188H3.506v1.719H2Zm3.011,0H6.517v1.719H5.011Zm6.023-6.875H12.54v1.719H11.034Zm3.011,0h1.506v1.719H14.046ZM11.034,16.75H12.54v1.719H11.034Zm3.011,0h1.506v1.719H14.046Zm3.011-3.438h1.506v1.719H17.057Zm0,3.438h1.506v1.719H17.057ZM11.034,9.875H12.54v1.719H11.034Zm3.011,0h1.506v1.719H14.046Zm3.011,0h1.506v1.719H17.057ZM11.034,6.438H12.54V8.156H11.034Zm3.011,0h1.506V8.156H14.046Zm3.011,0h1.506V8.156H17.057Zm0-3.438h1.506V4.719H17.057Z" transform="translate(1.438 -0.344)" fill="#204b7d" />
+          </g>
+        </svg>
+        <span class="org-name">{{ fields.title.handler.original_value }}</span>
+      </li>
+      {% if fields.field_spoken_language.handler.original_value != "" %}
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="23.895" viewBox="0 0 25 23.895">
+          <path id="chat-left" d="M21.875,1.562a1.562,1.562,0,0,1,1.563,1.562v12.5a1.562,1.562,0,0,1-1.563,1.562H6.9a3.125,3.125,0,0,0-2.209.915L1.563,21.228V3.125A1.562,1.562,0,0,1,3.125,1.562ZM3.125,0A3.125,3.125,0,0,0,0,3.125V23.114a.781.781,0,0,0,1.334.552l4.458-4.458a1.562,1.562,0,0,1,1.1-.458H21.875A3.125,3.125,0,0,0,25,15.625V3.125A3.125,3.125,0,0,0,21.875,0Z" fill="#204b7d" />
+        </svg>
+        <span>
+          {{ fields.field_spoken_language.content }}
+        </span>
+      </li>
+      {% endif %}
+      <li>
+        <div class="email-profile highlight-a">
+          {% if fields.ownProfile %}
+            <span class="icon email-icon"><i class="bi bi-envelope"></i></span>{{ fields.mail.content }}
+          {% elseif fields.showContact %}
+            <span class="icon email-icon"><i class="bi bi-envelope"></i></span> <a href="{{ fields.contactFormUrl }}">Contact Me</a>
+          {% else %}
+            <span class="icon email-icon"><i class="bi bi-envelope"></i></span>{{ fields.mail.content }}
+          {% endif %}
+        </div>
+        <div class="email-update">{{ fields.nothing.content }}</div>
+      </li>
+    </ul>
+    {% if fields.uid.content|striptags|trim == user.id %}
+    <div class="manage-email">
+      <a href="{{ app.request.basePath }}/form/email-settings">
+        {{ "Manage Email Preferences"|t }}
+      </a>
+    </div>
+    {% endif %}
+    {{ drupal_block('views_block:user_profile-user_social_links') }}
+  </div>
+  {% if fields.uid.content|striptags|trim == user.id %}
+    <div class="col-md-3">
+      <div class="d-flex justify-content-end">
+        <a href="/form/user-profile" class="edit-button mt-0">
+          <svg id="pencil-square" xmlns="http://www.w3.org/2000/svg" width="20" height="19.799" viewBox="0 0 20 19.799">
+            <path id="Path_321" data-name="Path 321" d="M22.411,2.805a.8.8,0,0,1,0,1.13l-1.67,1.671-3.2-3.2L19.21.734a.8.8,0,0,1,1.132,0l2.07,2.07Zm-2.8,3.931-3.2-3.2L5.5,14.442a.8.8,0,0,0-.194.314L4.021,18.62a.4.4,0,0,0,.506.506l3.864-1.289a.8.8,0,0,0,.314-.192L19.61,6.738Z" transform="translate(-2.644 -0.5)" fill="#fff" />
+            <path id="Path_322" data-name="Path 322" d="M1,17.962A2.034,2.034,0,0,0,3.032,20h14.9a2.034,2.034,0,0,0,2.032-2.035V9.82a.677.677,0,1,0-1.354,0v8.142a.678.678,0,0,1-.677.678H3.032a.678.678,0,0,1-.677-.678V3.035a.678.678,0,0,1,.677-.678h8.8a.678.678,0,0,0,0-1.357h-8.8A2.034,2.034,0,0,0,1,3.035Z" transform="translate(-1 -0.199)" fill="#fff" fill-rule="evenodd" />
+          </svg>Edit Profile
+        </a>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% if fields.field_professional_summary.handler.original_value != "" %}
+<div class="row p-4 mb-4">
+  <div class="col-12">
+    <div class="section-header">
+      {{ "Professional Summary"|t }}
+    </div>
+      {{ fields.field_professional_summary.content }}
+  </div>
+</div>
+{% endif %}

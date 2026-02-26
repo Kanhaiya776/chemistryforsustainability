@@ -1,0 +1,85 @@
+{% set checkIfEducation = fields.field_academic_institution.handler.original_value != "" or  fields.field_degree.handler.original_value != "" or fields.field_academic_field_of_study.handler.original_value != "" %}
+{% set mentorTopicsField    =  fields.field_identify_topics_in_which_y.handler.original_value|render %}
+{% set willingToMentorField =  fields.field_are_you_interested_in_ment.handler.original_value|render %}
+<!-- Affiliation -->
+<div class="row p-4 mb-4">
+  <div class="col-12">
+    <div class="section-title">
+      {{ "Affiliation"|t }}
+    </div>
+    <div class="section-header pt-4">
+      {{ "Organization Name"|t }}
+    </div>
+    <p>
+      {{ fields.title.content }}
+    </p>
+    {% if fields.field_job_title.handler.original_value != "" %}
+      <div class="section-header pt-4">
+        {{ "Job Title"|t }}
+      </div>
+      <p>
+        {{ fields.field_job_title.content }}
+      </p>
+    {% endif %}
+    {% if fields.field_roles.handler.original_value != "" %}
+      <div class="section-header pt-4">
+        {{ "Role"|t }}
+      </div>
+      <p>
+        {% apply spaceless %}
+        {{ fields.field_roles.content }}
+        {% endapply %}
+      </p>
+    {% endif %}
+    </div>
+</div>
+<!-- Education -->
+{% if checkIfEducation %}
+<div class="row bg-lightblue p-4 mb-4">
+  <div class="col-12">
+    <div class="section-title">
+      {{ "Education"|t }}
+    </div>
+    {% if fields.field_academic_institution.handler.original_value != "" %}
+      <div class="section-header pt-4">
+        {{ "Academic Institution"|t }}
+      </div>
+      <p>
+        {{ fields.field_academic_institution.content }}
+      </p>
+    {% endif %}
+    {% if fields.field_degree.handler.original_value != "" %}
+      <div class="section-header pt-4">
+        {{ "Degree(s)"|t }}
+      </div>
+      <p>
+        {{ fields.field_degree.content }}
+      </p>
+    {% endif %}
+    {% if fields.field_academic_field_of_study.handler.original_value != "" %}
+      <div class="section-header pt-4">
+        {{ "Academic Field(s) of Study"|t }}
+      </div>
+      <p>
+        {{ fields.field_academic_field_of_study.content }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+<!-- Mentor -->
+{% if mentorTopicsField and willingToMentorField == 'Yes' %}
+  <div class="row p-4 mb-4">
+    <div class="col-12">
+      <div class="section-title">
+        {{ "Mentor"|t }}
+      </div>
+      <div class="section-header pt-4">
+        {{ "I'm willing mentor on the following"|t }}:
+      </div>
+      <p>
+        {{ fields.field_identify_topics_in_which_y.content }}
+      </p>
+    </div>
+  </div>
+{% endif %}

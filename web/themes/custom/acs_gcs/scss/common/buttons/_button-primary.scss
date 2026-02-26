@@ -1,0 +1,35 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.btn-primary {
+  background-color: $gcs-blue-rgb;
+  color: $white-rgb;
+  &:active,
+  &:hover {
+    background-color: $dark-blue-rgb !important;
+    color: $white-rgb !important;
+  }
+
+  &.btn-tonal-primary,
+  &.btn-primary-tonal {
+    background-color: $light-blue-rgb;
+    color: $dark-blue-rgb;
+    &:active,
+    &:hover {
+      background-color: $gcs-blue-rgb !important;
+      color: $white-rgb !important;
+    }
+  }
+
+  &.btn-outline-primary,
+  &.btn-primary-outlined {
+    background-color: $white-rgb;
+    color: $gcs-blue-rgb;
+    border: 1px solid $gcs-blue-rgb;
+    &:active,
+    &:hover {
+      background-color: $light-blue-rgb !important;
+      color: $dark-blue-rgb !important;
+    }
+  }
+}

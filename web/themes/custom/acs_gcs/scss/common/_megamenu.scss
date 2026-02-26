@@ -1,0 +1,50 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.tbm {
+
+  .tb-col-a {
+    padding: 20px;
+
+    &.tb-col-l {
+      padding-right: 30px;
+    }
+
+    &.tb-col-r {
+      padding-left: 30px;
+    }
+  }
+
+  .tbm-column {
+    .tbm-item {
+      font-size: $font-size-header !important;
+      line-height: $line-height-base !important;
+      a {
+        font-size: $font-size-header !important;
+        line-height: $line-height-base !important;
+      }
+
+      &.header-parent {
+        .tbm-group-title {
+          font-size: $font-size-lg-mediumlarge !important;
+          line-height: $line-height-sm-extralarge !important;
+          font-weight: $font-weight-extrabold !important;
+        }
+      }
+    }
+
+    &.t-col-sub {
+      .tbm-item {
+        font-size: $font-size-sm-extralarge !important;
+        line-height: $line-height-base !important;
+        font-weight: $font-weight-normal !important;
+
+        a {
+          font-size: $font-size-sm-extralarge !important;
+          font-weight: $font-weight-normal !important;
+          line-height: $line-height-base !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+@import "scss/variables/breakpoints";
+@import "scss/variables/variables";
+
+$font-path: 'fonts/';
+
+@mixin chevron-icon($icon-path) {
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: $icon-path;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    transform: translate(10px, 4px);
+  }
+}
+
+
+@mixin set-transparency($color, $alpha) {
+  background-color: rgba($color, $alpha);
+}
+
+@mixin font-face($font-family, $font-weight, $font-style, $font-file, $format) {
+  @font-face {
+    font-family: #{$font-family};
+    src: url('#{$font-path}#{$font-file}') format('#{$format}');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+  $min:  breakpoint-min($name, $breakpoints);
+  $next: breakpoint-next($name, $breakpoints);
+  $max:  breakpoint-max($next, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($next, $breakpoints) {
+      @content;
+    }
+  }
+}
+@mixin promote-block($position) {
+  .view-content {
+    display: grid;
+    grid-gap: 10px; // Adjust the gap between elements as needed
+
+    @if $position == "right" {
+      grid-template-columns: 2fr 3fr; // Split into 75% and 25%
+
+      .views-row {
+        &:first-child {
+          grid-column: span 1; // Takes 75% width
+          grid-row: 1 / 3; // Takes two rows in height
+          grid-column-start: 2; // Start from the second column (right)
+        }
+
+        &:nth-last-child(-n + 2) {
+          grid-column: span 1; // Takes 25% width
+        }
+      }
+    } @else if $position == "left" {
+      grid-template-columns: 3fr 2fr; // Split into 75% and 25%
+
+      .views-row {
+        &:first-child {
+          grid-column: span 1; // Takes 75% width
+          grid-row: span 2; // Takes two rows in height
+        }
+
+        &:nth-last-child(-n + 2) {
+          grid-column: span 1; // Takes 25% width
+        }
+      }
+    } @else {
+      // Handle default case or invalid input
+      @warn "Invalid position. Please specify 'left' or 'right'.";
+    }
+
+    // Media query for mobile devices
+    @include media-breakpoint-down($desktop-breakpoint) {
+      // Reset the grid to a single column for mobile
+      grid-template-columns: 1fr;
+      .views-row {
+        margin-left: 0 !important;
+        margin-bottom: 20px;
+        &:first-child {
+          grid-column: span 1; // Takes full width in mobile view
+          grid-row: span 1; // Takes one row in height in mobile view
+          grid-column-start: 1; // Start from the first column in mobile view
+        }
+        &:nth-last-child(-n + 2) {
+          grid-column: span 1; // Takes full width in mobile view
+        }
+      }
+    }
+  }
+}
+
+

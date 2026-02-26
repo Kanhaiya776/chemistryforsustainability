@@ -1,0 +1,46 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+
+.explore-more-networks-block {
+  background: $gcs-orange-rgb;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $white-rgb;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+
+    .text-wrapper {
+      padding-bottom: 20px;
+      z-index: 2
+    }
+
+    .button-wrapper {
+      z-index: 2;
+    }
+
+    .background-image-container {
+      width: 100%;
+      z-index: 1;
+      height: 305px;
+      top: 0;
+      position: absolute;
+
+      .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 238px;
+        height: 378px;
+        transform: translateY(-100px);
+        background-size: auto 378px !important;
+        background: url('images/background/user_profile.webp') no-repeat 100%;
+      }
+    }
+  }
+
+}

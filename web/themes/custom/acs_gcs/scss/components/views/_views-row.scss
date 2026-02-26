@@ -1,0 +1,9 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+.views-row {
+  .field-content {
+    font-size: $font-size-lg-mediumlarge;
+    line-height: $line-height-lg-mediumlarge;
+  }
+}

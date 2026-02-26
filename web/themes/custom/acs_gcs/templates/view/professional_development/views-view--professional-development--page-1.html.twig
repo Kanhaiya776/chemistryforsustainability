@@ -1,0 +1,87 @@
+{{ attach_library('acs_gcs/pf_submit_sort') }}
+<!-- Header Section -->
+<div class="header-section">
+	<div class="container">
+    	<div class="row">
+			<div class="col-md-12">
+				<h1 class="header-title">Professional Development</h1>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="filter-section-bg">
+    <div class="container">
+        <div class="filter-section">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <p class="custom-text mb-0"><strong>Quick search:</strong> Use the bar below to filter—searches match full words, not fragments.</p>
+                </div>
+            </div>
+            <form{{ attributes }}>
+                <div class="row filter-row search-inputs">
+                    <div class="col-md-6">
+                        {{ exposed.search_api_fulltext }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ exposed.field_level_of_training }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ exposed.field_training_format }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ exposed.field_target_audience }}
+                    </div>
+                    <div class="form-actions">
+                        {{ exposed.actions.submit }}
+                        {{ exposed.actions.reset }}
+                    </div>
+                    {{ exposed.form_build_id }}
+                    {{ exposed.form_id }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <!-- Sort Section -->
+    <form{{ attributes }}>
+    <div class="sort-section">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="38" viewBox="0 0 26.997 23.624">
+        <defs>
+        <clipPath id="clip-path">
+        <rect id="Rectangle_1224" data-name="Rectangle 1224" width="26.997" height="23.624" transform="translate(0 0)" fill="none" />
+        </clipPath>
+        </defs>
+        <g id="Group_374" data-name="Group 374" transform="translate(0 0)">
+        <g id="Group_373" data-name="Group 373" clip-path="url(#clip-path)">
+        <path id="Path_713" data-name="Path 713" d="M.2,1.208A2.1,2.1,0,0,1,2.109,0H24.891a2.111,2.111,0,0,1,1.628,3.449L16.874,15.235v6.7a1.689,1.689,0,0,1-2.7,1.35L10.8,20.756a1.678,1.678,0,0,1-.675-1.35V15.235L.474,3.443A2.1,2.1,0,0,1,.2,1.208" fill="#033c6b" />
+        </g>
+        </g>
+        </svg>
+        {{ exposed.sort_by }}
+        {{ exposed.form_build_id }}
+        {{ exposed.form_id }}
+    </div>
+    </form>
+
+    {% if rows %}
+        <div class="row"> {{ rows }}</div>
+    {% elseif empty %}
+        {{ empty }}
+    {% endif %}
+    {% if pager %}
+        {{ pager }}
+    {% endif %}
+
+    {% if attachment_after %}
+        <div class="pd-attachment-after">
+            {{ attachment_after }}
+        </div>
+    {% endif %}
+
+</div>
+{% if footer %}
+    <div class="pd-footer">
+        {{ footer }}
+    </div>
+{% endif %}

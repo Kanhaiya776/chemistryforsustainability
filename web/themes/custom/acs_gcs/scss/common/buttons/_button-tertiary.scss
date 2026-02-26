@@ -1,0 +1,40 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+$tonal-background-color: #86D5A3;
+$tonal-text-color: #102D1B;
+$outline-color: #318C52;
+$hover-color: #102D1B;
+
+.btn-tertiary {
+  background-color: $gcs-green-rgb;
+  color: $white-rgb;
+
+  &:hover {
+    background-color: $hover-color;
+    color: $white-rgb;
+  }
+
+  &.btn-tonal-tertiary,
+  &.btn-tertiary-tonal {
+    background-color: $tonal-background-color;
+    color: $tonal-text-color;
+
+    &:hover {
+      background-color: $outline-color;
+      color: $white-rgb;
+    }
+  }
+
+  &.btn-outline-tertiary,
+  &.btn-tertiary-outlined {
+    background-color: $white-rgb;
+    color: $outline-color;
+    border: 1px solid $gcs-blue-rgb;
+
+    &:hover {
+      background-color: $tonal-background-color;
+      color: $hover-color;
+    }
+  }
+}

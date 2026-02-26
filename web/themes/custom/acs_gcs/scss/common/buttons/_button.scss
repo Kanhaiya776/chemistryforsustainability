@@ -1,0 +1,15 @@
+@import "scss/variables/mixins";
+@import "scss/variables/variables";
+
+a.btn,
+button.btn {
+  font-family: $font-family, sans-serif;
+  font-size: $font-size-lg-mediumlarge;
+  font-weight: $font-weight-bold;
+}
+
+.btn {
+  color: $white-rgb;
+  padding: 10px 20px;
+  border-radius: 10vmin;;
+}
