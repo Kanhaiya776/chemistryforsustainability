@@ -1,0 +1,16 @@
+Sep 12 11:08:15  [info] Running task: Cleanup old files
+
+Sep 12 11:08:20  [info] Running task: Cleanup old upgrade snapshots
+
+Sep 12 11:08:21  [info] Running task: Checking extensions
+
+Sep 12 11:08:21  [info] Running task: Finish Upgrade DB to 5.63.4
+
+Sep 12 11:08:30  [info] Running task: Update all reserved message templates
+
+Sep 12 11:08:34  [info] Running task: Finish core DB updates 5.63.4
+
+Sep 12 11:08:51  [info] Running task: Assess extension upgrades
+
+Sep 12 11:08:54  [info] Running task: Generate final messages
+

@@ -1,0 +1,1422 @@
+2025-08-01 14:30:07-0500  [info] Sending Scheduled Reminder 1 to 2 recipients
+
+2025-08-01 14:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-01 14:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-01 14:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-01 14:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-02 15:00:09-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-02 15:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-02 15:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [info] Sending Scheduled Reminder 1 to 7 recipients
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-03 15:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-04 15:30:06-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-08-04 15:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-04 15:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-04 15:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-04 15:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-04 15:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-04 15:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-06 16:00:07-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-06 16:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-06 16:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:05-0500  [info] Sending Scheduled Reminder 1 to 4 recipients
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-07 16:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 15:48:35-0500  [info] Parse error in extension org.wikimedia.relationshipblock: Failed to parse info XML: File /var/www/web/chemistryforsustainability.org/web/sites/default/civicrm/extensions/contrib/org.wikimedia.relationshipblock/info.xml does not exist.
+
+2025-08-08 17:00:07-0500  [info] Sending Scheduled Reminder 1 to 2 recipients
+
+2025-08-08 17:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-08 17:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-08 17:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-08 17:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-09 17:30:05-0500  [info] Sending Scheduled Reminder 1 to 2 recipients
+
+2025-08-09 17:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-09 17:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-09 17:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-09 17:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [info] Sending Scheduled Reminder 1 to 4 recipients
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-10 18:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-11 18:30:04-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-08-11 18:30:04-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-11 18:30:04-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-11 18:30:04-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-11 18:30:04-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-11 18:30:04-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-11 18:30:04-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-12 18:30:05-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-08-12 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-12 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-12 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-12 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-12 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-12 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-13 18:30:05-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-08-13 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-13 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-13 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-13 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-13 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-13 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-14 18:30:05-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-14 18:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-14 18:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-16 19:00:07-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-16 19:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-16 19:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-17 19:00:08-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-17 19:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-17 19:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-18 19:30:05-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-08-18 19:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-18 19:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-18 19:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-18 19:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-18 19:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-18 19:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-20 19:30:05-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-08-20 19:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-20 19:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-20 19:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-20 19:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-20 19:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-20 19:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [info] Sending Scheduled Reminder 1 to 5 recipients
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-22 19:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-24 20:00:07-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-24 20:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-24 20:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-27 20:30:05-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-27 20:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-27 20:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-28 20:30:05-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-28 20:30:05-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-28 20:30:05-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [info] Sending Scheduled Reminder 1 to 4 recipients
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-29 20:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-30 21:00:06-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-08-30 21:00:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-08-30 21:00:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+

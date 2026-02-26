@@ -1,0 +1,22 @@
+Oct 11 17:01:25  [warning] Deprecated function CRM_Contact_BAO_ContactType::retrieve, use API.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Contact_BAO_ContactType::retrieve
+CRM_Admin_Form::preProcess
+CRM_Core_Form::buildForm
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+Oct 11 17:01:27  [warning] Deprecated function CRM_Contact_BAO_ContactType::retrieve, use API.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Contact_BAO_ContactType::retrieve
+CRM_Admin_Form::preProcess
+CRM_Core_Form::buildForm
+Array
+(
+    [civi.tag] => deprecated
+)
+
+

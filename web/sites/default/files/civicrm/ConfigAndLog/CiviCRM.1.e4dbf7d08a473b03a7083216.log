@@ -1,0 +1,11 @@
+Sep 05 16:51:15  [warning] Deprecated function CRM_Core_BAO_UFField::retrieve, use API.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Core_BAO_UFField::retrieve
+CRM_UF_Form_Field::buildQuickForm
+CRM_Core_Form::buildForm
+Array
+(
+    [civi.tag] => deprecated
+)
+
+

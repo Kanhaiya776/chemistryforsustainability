@@ -1,0 +1,180 @@
+2024-03-07 12:52:13-0600  [warning] Deprecated function CRM_Core_BAO_Job::retrieve, use API.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Core_BAO_Job::retrieve
+CRM_Admin_Form::preProcess
+CRM_Admin_Form_Job::preProcess
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2024-03-07 12:52:15-0600  [warning] Deprecated function CRM_Core_BAO_Job::retrieve, use API.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Core_BAO_Job::retrieve
+CRM_Admin_Form::preProcess
+CRM_Admin_Form_Job::preProcess
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2024-03-08 10:26:43-0600  [debug] $API Request Authorization failed = #0 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(153): CRM_Core_Error::backtrace("API Request Authorization failed", TRUE)
+#1 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Generic\DAOGetAction))
+#2 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Generic\AbstractAction->execute()
+#3 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/Run.php(107): civicrm_api4("Grant", "get", (Array:11), NULL)
+#4 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(107): Civi\Api4\Action\SearchDisplay\Run->processResult(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#5 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Provider/ActionObjectProvider.php(72): Civi\Api4\Action\SearchDisplay\AbstractRunAction->_run(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#6 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(158): Civi\Api4\Provider\ActionObjectProvider->invoke(Object(Civi\Api4\Action\SearchDisplay\Run))
+#7 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Action\SearchDisplay\Run))
+#8 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(83): Civi\Api4\Generic\AbstractAction->execute()
+#9 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Action\SearchDisplay\AbstractRunAction->execute()
+#10 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(138): civicrm_api4("SearchDisplay", "run", (Array:9), NULL)
+#11 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(69): CRM_Api4_Page_AJAX->execute("SearchDisplay", "run", (Array:9))
+#12 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(319): CRM_Api4_Page_AJAX->run((Array:3), NULL)
+#13 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(69): CRM_Core_Invoke::runItem((Array:16))
+#14 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(36): CRM_Core_Invoke::_invoke((Array:3))
+#15 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Civicrm.php(88): CRM_Core_Invoke::invoke((Array:3))
+#16 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Controller/CivicrmController.php(83): Drupal\civicrm\Civicrm->invoke((Array:3))
+#17 [internal function](): Drupal\civicrm\Controller\CivicrmController->main((Array:3), "")
+#18 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(123): call_user_func_array((Array:2), (Array:2))
+#19 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/Render/Renderer.php(592): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#20 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(124): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#21 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(97): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext((Array:2), (Array:2))
+#22 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(181): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#23 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#24 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#25 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#26 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#27 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#28 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#29 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#30 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#31 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#32 /var/www/web/chemistryforsustainability.org/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#33 {main}
+
+
+2024-03-08 10:26:43-0600  [debug] AJAX Error ({error_id}): failed with exception
+Array
+(
+    [error_id] => GpsM-Bjls-lZcp
+    [exception] => Civi\API\Exception\UnauthorizedException: "Authorization failed"
+#0 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(149): Civi\API\Kernel->authorize(Object(Civi\Api4\Provider\ActionObjectProvider), Object(Civi\Api4\Generic\DAOGetAction))
+#1 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Generic\DAOGetAction))
+#2 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Generic\AbstractAction->execute()
+#3 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/Run.php(107): civicrm_api4("Grant", "get", (Array:11), NULL)
+#4 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(107): Civi\Api4\Action\SearchDisplay\Run->processResult(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#5 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Provider/ActionObjectProvider.php(72): Civi\Api4\Action\SearchDisplay\AbstractRunAction->_run(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#6 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(158): Civi\Api4\Provider\ActionObjectProvider->invoke(Object(Civi\Api4\Action\SearchDisplay\Run))
+#7 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Action\SearchDisplay\Run))
+#8 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(83): Civi\Api4\Generic\AbstractAction->execute()
+#9 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Action\SearchDisplay\AbstractRunAction->execute()
+#10 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(138): civicrm_api4("SearchDisplay", "run", (Array:9), NULL)
+#11 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(69): CRM_Api4_Page_AJAX->execute("SearchDisplay", "run", (Array:9))
+#12 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(319): CRM_Api4_Page_AJAX->run((Array:3), NULL)
+#13 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(69): CRM_Core_Invoke::runItem((Array:16))
+#14 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(36): CRM_Core_Invoke::_invoke((Array:3))
+#15 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Civicrm.php(88): CRM_Core_Invoke::invoke((Array:3))
+#16 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Controller/CivicrmController.php(83): Drupal\civicrm\Civicrm->invoke((Array:3))
+#17 [internal function](): Drupal\civicrm\Controller\CivicrmController->main((Array:3), "")
+#18 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(123): call_user_func_array((Array:2), (Array:2))
+#19 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/Render/Renderer.php(592): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#20 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(124): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#21 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(97): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext((Array:2), (Array:2))
+#22 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(181): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#23 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#24 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#25 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#26 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#27 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#28 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#29 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#30 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#31 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#32 /var/www/web/chemistryforsustainability.org/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#33 {main}
+
+)
+
+
+2024-03-08 10:28:27-0600  [debug] $API Request Authorization failed = #0 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(153): CRM_Core_Error::backtrace("API Request Authorization failed", TRUE)
+#1 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Generic\DAOGetAction))
+#2 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Generic\AbstractAction->execute()
+#3 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/Run.php(107): civicrm_api4("Grant", "get", (Array:11), NULL)
+#4 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(107): Civi\Api4\Action\SearchDisplay\Run->processResult(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#5 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Provider/ActionObjectProvider.php(72): Civi\Api4\Action\SearchDisplay\AbstractRunAction->_run(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#6 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(158): Civi\Api4\Provider\ActionObjectProvider->invoke(Object(Civi\Api4\Action\SearchDisplay\Run))
+#7 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Action\SearchDisplay\Run))
+#8 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(83): Civi\Api4\Generic\AbstractAction->execute()
+#9 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Action\SearchDisplay\AbstractRunAction->execute()
+#10 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(138): civicrm_api4("SearchDisplay", "run", (Array:9), NULL)
+#11 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(69): CRM_Api4_Page_AJAX->execute("SearchDisplay", "run", (Array:9))
+#12 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(319): CRM_Api4_Page_AJAX->run((Array:3), NULL)
+#13 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(69): CRM_Core_Invoke::runItem((Array:16))
+#14 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(36): CRM_Core_Invoke::_invoke((Array:3))
+#15 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Civicrm.php(88): CRM_Core_Invoke::invoke((Array:3))
+#16 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Controller/CivicrmController.php(83): Drupal\civicrm\Civicrm->invoke((Array:3))
+#17 [internal function](): Drupal\civicrm\Controller\CivicrmController->main((Array:3), "")
+#18 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(123): call_user_func_array((Array:2), (Array:2))
+#19 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/Render/Renderer.php(592): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#20 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(124): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#21 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(97): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext((Array:2), (Array:2))
+#22 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(181): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#23 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#24 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#25 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#26 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#27 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#28 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#29 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#30 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#31 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#32 /var/www/web/chemistryforsustainability.org/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#33 {main}
+
+
+2024-03-08 10:28:27-0600  [debug] AJAX Error ({error_id}): failed with exception
+Array
+(
+    [error_id] => tGYV-12xA-eHfV
+    [exception] => Civi\API\Exception\UnauthorizedException: "Authorization failed"
+#0 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(149): Civi\API\Kernel->authorize(Object(Civi\Api4\Provider\ActionObjectProvider), Object(Civi\Api4\Generic\DAOGetAction))
+#1 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Generic\DAOGetAction))
+#2 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Generic\AbstractAction->execute()
+#3 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/Run.php(107): civicrm_api4("Grant", "get", (Array:11), NULL)
+#4 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(107): Civi\Api4\Action\SearchDisplay\Run->processResult(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#5 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Provider/ActionObjectProvider.php(72): Civi\Api4\Action\SearchDisplay\AbstractRunAction->_run(Object(Civi\Api4\Result\SearchDisplayRunResult))
+#6 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/API/Kernel.php(158): Civi\Api4\Provider\ActionObjectProvider->invoke(Object(Civi\Api4\Action\SearchDisplay\Run))
+#7 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/Civi/Api4/Generic/AbstractAction.php(249): Civi\API\Kernel->runRequest(Object(Civi\Api4\Action\SearchDisplay\Run))
+#8 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/ext/search_kit/Civi/Api4/Action/SearchDisplay/AbstractRunAction.php(83): Civi\Api4\Generic\AbstractAction->execute()
+#9 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/api/api.php(85): Civi\Api4\Action\SearchDisplay\AbstractRunAction->execute()
+#10 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(138): civicrm_api4("SearchDisplay", "run", (Array:9), NULL)
+#11 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Api4/Page/AJAX.php(69): CRM_Api4_Page_AJAX->execute("SearchDisplay", "run", (Array:9))
+#12 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(319): CRM_Api4_Page_AJAX->run((Array:3), NULL)
+#13 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(69): CRM_Core_Invoke::runItem((Array:16))
+#14 /var/www/web/chemistryforsustainability.org/vendor/civicrm/civicrm-core/CRM/Core/Invoke.php(36): CRM_Core_Invoke::_invoke((Array:3))
+#15 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Civicrm.php(88): CRM_Core_Invoke::invoke((Array:3))
+#16 /var/www/web/chemistryforsustainability.org/web/modules/contrib/civicrm/src/Controller/CivicrmController.php(83): Drupal\civicrm\Civicrm->invoke((Array:3))
+#17 [internal function](): Drupal\civicrm\Controller\CivicrmController->main((Array:3), "")
+#18 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(123): call_user_func_array((Array:2), (Array:2))
+#19 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/Render/Renderer.php(592): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#20 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(124): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#21 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(97): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext((Array:2), (Array:2))
+#22 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(181): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#23 /var/www/web/chemistryforsustainability.org/vendor/symfony/http-kernel/HttpKernel.php(76): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#24 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#25 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#26 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#27 /var/www/web/chemistryforsustainability.org/web/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#28 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#29 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#30 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/StackMiddleware/StackedHttpKernel.php(51): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#31 /var/www/web/chemistryforsustainability.org/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, TRUE)
+#32 /var/www/web/chemistryforsustainability.org/web/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#33 {main}
+
+)
+
+

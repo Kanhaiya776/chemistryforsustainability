@@ -1,0 +1,2658 @@
+2025-06-01 02:00:38-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-06-01 02:00:38-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-01 02:00:38-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-01 02:00:38-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-01 02:00:39-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-01 02:00:39-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-01 02:00:39-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-02 02:30:06-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-06-02 02:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-02 02:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-03 02:30:06-0500  [info] Sending Scheduled Reminder 1 to 2 recipients
+
+2025-06-03 02:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-03 02:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-03 02:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-03 02:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-05 02:30:08-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-06-05 02:30:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-05 02:30:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [info] Sending Scheduled Reminder 1 to 6 recipients
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-12 05:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [info] Sending Scheduled Reminder 1 to 5 recipients
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-14 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [info] Sending Scheduled Reminder 1 to 6 recipients
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-15 05:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-16 05:30:09-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-06-16 05:30:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-16 05:30:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-16 05:30:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-16 05:30:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-16 05:30:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-16 05:30:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-17 06:00:08-0500  [info] Sending Scheduled Reminder 1 to 2 recipients
+
+2025-06-17 06:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-17 06:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-17 06:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-17 06:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-18 06:00:08-0500  [info] Sending Scheduled Reminder 1 to 1 recipients
+
+2025-06-18 06:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-18 06:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:05-0500  [info] Sending Scheduled Reminder 1 to 11 recipients
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-19 06:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:07-0500  [info] Sending Scheduled Reminder 1 to 4 recipients
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-20 06:30:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [info] Sending Scheduled Reminder 1 to 11 recipients
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-21 07:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-22 07:30:07-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-06-22 07:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-22 07:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-22 07:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-22 07:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-22 07:30:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-22 07:30:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-23 08:00:08-0500  [info] Sending Scheduled Reminder 1 to 2 recipients
+
+2025-06-23 08:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-23 08:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-23 08:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-23 08:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-25 08:00:08-0500  [info] Sending Scheduled Reminder 1 to 3 recipients
+
+2025-06-25 08:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-25 08:00:08-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-25 08:00:08-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-25 08:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-25 08:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-25 08:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:08-0500  [info] Sending Scheduled Reminder 1 to 4 recipients
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-26 08:00:09-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [info] Sending Scheduled Reminder 1 to 28 recipients
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:10-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-27 08:00:11-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [info] Sending Scheduled Reminder 1 to 11 recipients
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-28 08:30:06-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [info] Sending Scheduled Reminder 1 to 12 recipients
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Token::getTokenDetails, use If you hit this in mailing code you should use flexmailer - otherwise use the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+CRM_Utils_Hook::runHooks
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
+2025-06-29 09:00:07-0500  [warning] Deprecated function CRM_Utils_Hook::tokenValues, use call the token processor.
+CRM_Core_Error::deprecatedFunctionWarning
+CRM_Utils_Hook::tokenValues
+CRM_Utils_Token::getTokenDetails
+::gdpr_civicrm_tokenValues
+Array
+(
+    [civi.tag] => deprecated
+)
+
+
