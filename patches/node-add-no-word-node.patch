@@ -1,0 +1,16 @@
+diff --git a/src/Plugin/Group/RelationHandlerDefault/UiTextProvider.php b/src/Plugin/Group/RelationHandlerDefault/UiTextProvider.php
+index ad2e9a8..57a06cb 100644
+--- a/src/Plugin/Group/RelationHandlerDefault/UiTextProvider.php
++++ b/src/Plugin/Group/RelationHandlerDefault/UiTextProvider.php
+@@ -65,7 +65,10 @@ class UiTextProvider implements UiTextProviderInterface {
+    * {@inheritdoc}
+    */
+   public function getAddFormTitle($create_mode) {
+-    return $this->t('Add @name', ['@name' => $this->groupRelationType->getLabel()]);
++    $form_title = $this->groupRelationType->getLabel();
++    $form_title = str_replace('Group node (', '', $form_title);
++    $form_title = str_replace(')', '', $form_title);
++    return $this->t('Add @name', ['@name' => $form_title]);
+   }
+ 
+ }

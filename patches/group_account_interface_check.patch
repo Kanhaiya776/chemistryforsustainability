@@ -1,0 +1,15 @@
+diff --git a/src/Entity/GroupMembershipTrait.php b/src/Entity/GroupMembershipTrait.php
+index 18229dd..5ec01ef 100644
+--- a/src/Entity/GroupMembershipTrait.php
++++ b/src/Entity/GroupMembershipTrait.php
+@@ -16,6 +16,10 @@ trait GroupMembershipTrait {
+   public function getRoles($include_synchronized = TRUE) {
+     $group_role_storage = $this->entityTypeManager()->getStorage('group_role');
+     assert($group_role_storage instanceof GroupRoleStorageInterface);
++    $entity = $this->getEntity();
++    if (!$entity instanceof AccountInterface) {
++      return [];
++    }
+     return $group_role_storage->loadByUserAndGroup($this->getEntity(), $this->getGroup(), $include_synchronized);
+   }
+ 

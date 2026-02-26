@@ -1,0 +1,49 @@
+diff --git a/core/modules/forum/forum.install b/core/modules/forum/forum.install
+index 66836d0e..7f241b58 100644
+--- a/core/modules/forum/forum.install
++++ b/core/modules/forum/forum.install
+@@ -207,10 +207,24 @@ function forum_update_10100(&$sandbox = NULL) {
+   }
+ }
+
++
++/**
++ * Add a primary key to forum_index.
++ */
++function forum_update_10101(&$sandbox = NULL) {
++    $connection = \Drupal::database();
++    if ($connection->schema()->tableExists('forum_index')) {
++        $connection->schema()->addPrimaryKey('forum_index', ['nid', 'tid']);
++        return \t('Added primary key to the forum_index table.');
++  }
++  return \t('The forum_index table does not exist, the update was skipped.');
++}
++
++
+ /**
+  * Repopulate the forum index table.
+  */
+-function forum_update_10101(&$sandbox = NULL): PluralTranslatableMarkup {
++function forum_update_10102(&$sandbox = NULL): PluralTranslatableMarkup {
+   $query = \Drupal::database()->select('forum_index', 'fi')
+     ->fields('fi', ['nid', 'tid'])
+     ->groupBy('nid')
+@@ -227,18 +241,3 @@ function forum_update_10101(&$sandbox = NULL): PluralTranslatableMarkup {
+   return new PluralTranslatableMarkup(count($nids_to_rebuild), 'Removed 1 duplicate entry from forum_index', 'Removed @count duplicate entries from forum_index');
+ }
+
+-/**
+- * Add a primary key to forum_index.
+- */
+-function forum_update_10102(&$sandbox = NULL) {
+-  $connection = \Drupal::database();
+-  if ($connection->schema()->tableExists('forum_index')) {
+-    // Data in this table could have duplicates. The data can be re-constructed
+-    // from other data in the site. To avoid duplicate key errors we delete any
+-    // rows that are duplicates and then recreate them in a post-update hook.
+-    // @see \forum_post_update_recreate_forum_index_rows().
+-    $connection->schema()->addPrimaryKey('forum_index', ['nid', 'tid']);
+-    return \t('Added primary key to the forum_index table.');
+-  }
+-  return \t('Index already exists');
+-}

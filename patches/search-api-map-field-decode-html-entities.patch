@@ -1,0 +1,18 @@
+--- src/Plugin/search_api/processor/MappedFields.php	2026-01-16 12:20:20.609544328 +0530
++++ "src/Plugin/search_api/processor/MappedFields copy.php"	2026-01-16 12:20:07.459544649 +0530
+@@ -71,10 +71,14 @@
+       $configuration = $mapped_field->getConfiguration();
+ 
+       // If there's a config item for the entity and bundle type we're in, set the value for the field.
+-      if(!empty($configuration['field_data'][$entity_type][$bundle_type])) {
++      if (!empty($configuration['field_data'][$entity_type][$bundle_type])) {
+         $token = \Drupal::token();
+         // If the token replacement produces a value, add to this item.
+         if ($value = $token->replace($configuration['field_data'][$entity_type][$bundle_type], [$entity_type => $entity], ['clear' => true])) {
++          $value = html_entity_decode($value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
++          $value = strip_tags($value);
++          $value = preg_replace('/\x{00A0}/u', ' ', $value);
++          $value = preg_replace('/\s+/u', ' ', trim($value));
+           // Do not use setValues(), since that doesn't preprocess the values according to their data type.
+           $mapped_field->addValue($value);
+         }

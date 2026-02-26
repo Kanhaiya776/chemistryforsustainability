@@ -1,0 +1,20 @@
+diff --git a/vefl.module b/vefl.module
+index ee94166..8009920 100644
+--- a/vefl.module
++++ b/vefl.module
+@@ -44,6 +44,15 @@ function template_preprocess_vefl_views_exposed_form(&$variables) {
+       if (!empty($form['actions'][$field_name])) {
+         $regions[$region_name][$field_name] = $form['actions'][$field_name];
+         $regions[$region_name][$field_name]['#weight'] = $form['actions']['#weight'];
++      }
++            // Check and see if the field name exists within a wrapper
++            // See: https://www.drupal.org/project/vefl/issues/3188893
++            // See: https://www.drupal.org/node/2984152
++      elseif (!empty($form[$field_name . '_wrapper'][$field_name])) {
++        $regions[$region_name][$field_name . '_wrapper'] = $form[$field_name . '_wrapper'];
++      }
++      elseif (!empty($form[$field_name . '_wrapper'])) {
++              $regions[$region_name][$field_name . '_wrapper'] = $form[$field_name . '_wrapper'];
+       }
+       elseif (!empty($form[$field_name])) {
+         $form[$field_name]['#title'] = NULL;

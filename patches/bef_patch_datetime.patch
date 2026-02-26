@@ -1,0 +1,346 @@
+diff --git a/config/schema/better_exposed_filters.filter.schema.yml b/config/schema/better_exposed_filters.filter.schema.yml
+index c621c02..d04db78 100644
+--- a/config/schema/better_exposed_filters.filter.schema.yml
++++ b/config/schema/better_exposed_filters.filter.schema.yml
+@@ -69,6 +69,9 @@ better_exposed_filters.filter.bef_sliders:
+   label: 'jQuery UI Slider'
+   type: better_exposed_filters_filter_widget
+   mapping:
++    date_format:
++      type: string
++      label: 'Date format'
+     min:
+       type: string
+       label: 'Range minimum'
+diff --git a/js/bef_datepickers.js b/js/bef_datepickers.js
+index 658d2ca..fa03da5 100644
+--- a/js/bef_datepickers.js
++++ b/js/bef_datepickers.js
+@@ -19,7 +19,11 @@
+         var opt = [];
+         $.each(befSettings.datepicker_options, function (key, val) {
+           if (key && val) {
+-            opt[key] = JSON.parse(val);
++            try {
++              opt[key] = JSON.parse(val);
++            } catch (e) {
++              opt[key] = val;
++            }
+           }
+         });
+         $('.bef-datepicker').datepicker(opt);
+diff --git a/src/Plugin/better_exposed_filters/filter/DatePickers.php b/src/Plugin/better_exposed_filters/filter/DatePickers.php
+index 7a62edb..ac78719 100644
+--- a/src/Plugin/better_exposed_filters/filter/DatePickers.php
++++ b/src/Plugin/better_exposed_filters/filter/DatePickers.php
+@@ -2,7 +2,12 @@
+
+ namespace Drupal\better_exposed_filters\Plugin\better_exposed_filters\filter;
+
++use Drupal\Core\Datetime\DateFormatInterface;
++use Drupal\Core\DependencyInjection\DependencySerializationTrait;
+ use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
++use Symfony\Component\DependencyInjection\ContainerInterface;
+
+ /**
+  * JQuery UI date picker widget implementation.
+@@ -12,7 +17,59 @@ use Drupal\Core\Form\FormStateInterface;
+  *   label = @Translation("jQuery UI Date Picker"),
+  * )
+  */
+-class DatePickers extends FilterWidgetBase {
++class DatePickers extends FilterWidgetBase implements ContainerFactoryPluginInterface {
++  use DependencySerializationTrait;
++
++  /**
++   * The entity type manager.
++   */
++  protected EntityTypeManagerInterface $entityTypeManager;
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
++      $instance = new static($configuration, $plugin_id, $plugin_definition);
++      $instance->entityTypeManager = $container->get('entity_type.manager');
++
++      return $instance;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function defaultConfiguration() {
++      return parent::defaultConfiguration() + [
++            'date_format' => NULL,
++          ];
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
++      $form = parent::buildConfigurationForm($form, $form_state);
++
++    $dateFormats = $this->entityTypeManager
++        ->getStorage('date_format')
++      ->loadMultiple();
++    $options = array_map(
++        function (DateFormatInterface $dateFormat) {
++              return $dateFormat->label();
++      },
++      $dateFormats,
++    );
++
++      $form['date_format'] = [
++          '#type' => 'select',
++          '#options' => $options,
++          '#title' => $this->t('Date format'),
++          '#default_value' => $this->configuration['date_format'],
++         '#description' => $this->t('The date format to use for the date picker. Only formats without time characters are supported.'),
++        ];
++
++      return $form;
++  }
+
+   /**
+    * {@inheritdoc}
+@@ -32,17 +89,7 @@ class DatePickers extends FilterWidgetBase {
+    * {@inheritdoc}
+    */
+   public function exposedFormAlter(array &$form, FormStateInterface $form_state) {
+-    $field_id = $this->getExposedFilterFieldId();
+-
+-    // Handle wrapper element added to exposed filters
+-    // in https://www.drupal.org/project/drupal/issues/2625136.
+-    $wrapper_id = $field_id . '_wrapper';
+-    if (!isset($form[$field_id]) && isset($form[$wrapper_id])) {
+-      $element = &$form[$wrapper_id][$field_id];
+-    }
+-    else {
+-      $element = &$form[$field_id];
+-    }
++    $element = &$this->getElement($form);
+
+     parent::exposedFormAlter($form, $form_state);
+
+@@ -76,10 +123,6 @@ class DatePickers extends FilterWidgetBase {
+         $element['min']['#attributes']['autocomplete'] = 'off';
+         $element['max']['#attributes']['autocomplete'] = 'off';
+       }
+-
+-      // Convert Date API format to jQuery UI date format.
+-      $mapping = $this->getjQueryUiDateFormatting();
+-      $drupal_settings['dateformat'] = str_replace(array_keys($mapping), array_values($mapping), $format);
+     }
+     else {
+       /*
+@@ -88,6 +131,7 @@ class DatePickers extends FilterWidgetBase {
+        * $element[subfield] for two-value date fields or filters
+        * with exposed operators.
+        */
++      $format = 'Y-m-d';
+       $fields = ['min', 'max', 'value'];
+       if (count(array_intersect($fields, array_keys($element)))) {
+         foreach ($fields as $field) {
+@@ -102,8 +146,112 @@ class DatePickers extends FilterWidgetBase {
+         $element['#attributes']['autocomplete'] = 'off';
+       }
+     }
++
++
++    // Use the configured date format if available.
++    if ($this->configuration['date_format']) {
++        $formatEntity = $this->entityTypeManager
++            ->getStorage('date_format')
++          ->load($this->configuration['date_format']);
++
++      if ($formatEntity instanceof DateFormatInterface) {
++                $format = $formatEntity->getPattern();
++              }
++      }
++
++    $form['#submit'][] = [$this, 'exposedFormSubmit'];
++
++    // Convert Date API format to jQuery UI date format.
++    $mapping = $this->getjQueryUiDateFormatting();
++    $drupal_settings['dateFormat'] = str_replace(array_keys($mapping), array_values($mapping), $format);
++  }
++
++  /**
++   * Reformats the date value to the Date API format.
++   *
++   * @param array $form
++   *   The complete form.
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The form state.
++   */
++  public function exposedFormSubmit(array &$form, FormStateInterface $form_state) {
++      $element = &$this->getElement($form);
++      $fieldId = $this->getExposedFilterFieldId();
++      $fieldValue = $form_state->getValue($fieldId);
++
++        // For single values.
++    if (!is_array($fieldValue)) {
++            if ($fieldValue === '') {
++                return;
++      }
++          // For double date values (like in-between filters).
++          else {
++              $min = $fieldValue['min'];
++              $max = $fieldValue['max'];
++              if (empty($min) || empty($max)) {
++                  return;
++      }
++
++      // Convert jQuery UI format to Date API date format.
++      $mapping = $this->getjQueryUiDateFormatting();
++      $drupalSettings = $element['#attached']['drupalSettings']['better_exposed_filters']['datepicker_options'];
++      $fromFormat = str_replace(array_values($mapping), array_keys($mapping), $drupalSettings['dateFormat']);
++      $toFormat = 'Y-m-d';
++
++      // Use a strtotime() parseable format behind the scenes.
++      $dateTimeMin = \DateTime::createFromFormat($fromFormat, $min);
++      $dateTimeMax = \DateTime::createFromFormat($fromFormat, $max);
++      if ($dateTimeMin instanceof \DateTimeInterface && $dateTimeMax instanceof \DateTimeInterface) {
++                  $form_state->setValue($fieldId, [
++                      'min' => $dateTimeMin->format($toFormat),
++                      'max' => $dateTimeMax->format($toFormat),
++                    ]);
++                }
++
++     }
++
++              }
++
++    // Convert jQuery UI format to Date API date format.
++    $mapping = $this->getjQueryUiDateFormatting();
++    $drupalSettings = $element['#attached']['drupalSettings']['better_exposed_filters']['datepicker_options'];
++    $fromFormat = str_replace(array_values($mapping), array_keys($mapping), $drupalSettings['dateFormat']);
++    $toFormat = 'Y-m-d';
++
++    // Use a strtotime() parseable format behind the scenes.
++    $dateTime = \DateTime::createFromFormat($fromFormat, $fieldValue);
++    $form_state->setValue($fieldId, $dateTime->format($toFormat));
+   }
+
++  /**
++   * Get the element array for the exposed filter.
++   *
++   * @param array $form
++   *   The complete form.
++   *
++   * @return array
++   *   The element.
++   */
++  protected function &getElement(array &$form): array {
++      $field_id = $this->getExposedFilterFieldId();
++
++      // Handle wrapper element added to exposed filters
++      // in https://www.drupal.org/project/drupal/issues/2625136.
++      $wrapper_id = $field_id . '_wrapper';
++      if (!isset($form[$field_id]) && isset($form[$wrapper_id])) {
++              // For multi-value date fields, the second field will be inside a second
++              // wrapper.
++              if (isset($form[$wrapper_id][$wrapper_id])) {
++                  return $form[$wrapper_id][$wrapper_id][$field_id];
++      }
++
++          return $form[$wrapper_id][$field_id];
++    }
++
++    return $form[$field_id];
++   }
++
++
+   /**
+    * Convert Date API formatting to jQuery formatDate formatting.
+    *
+
+diff --git a/src/Plugin/better_exposed_filters/filter/DatePickers.php b/src/Plugin/better_exposed_filters/filter/DatePickers.php
+index ac78719..9bc60b1 100644
+--- a/src/Plugin/better_exposed_filters/filter/DatePickers.php
++++ b/src/Plugin/better_exposed_filters/filter/DatePickers.php
+@@ -174,22 +174,35 @@ class DatePickers extends FilterWidgetBase implements ContainerFactoryPluginInte
+    * @param \Drupal\Core\Form\FormStateInterface $form_state
+    *   The form state.
+    */
+-  public function exposedFormSubmit(array &$form, FormStateInterface $form_state) {
+-      $element = &$this->getElement($form);
+-      $fieldId = $this->getExposedFilterFieldId();
+-      $fieldValue = $form_state->getValue($fieldId);
++  public function exposedFormSubmit(array &$form, FormStateInterface $form_state)
++  {
++    $element = &$this->getElement($form);
++    $fieldId = $this->getExposedFilterFieldId();
++    $fieldValue = $form_state->getValue($fieldId);
+
+-        // For single values.
++    // For single values.
++    // For single values.
+     if (!is_array($fieldValue)) {
+-            if ($fieldValue === '') {
+-                return;
++      if ($fieldValue === '') {
++        return;
+       }
+-          // For double date values (like in-between filters).
+-          else {
+-              $min = $fieldValue['min'];
+-              $max = $fieldValue['max'];
+-              if (empty($min) || empty($max)) {
+-                  return;
++
++      // Convert jQuery UI format to Date API date format.
++      $mapping = $this->getjQueryUiDateFormatting();
++      $drupalSettings = $element['#attached']['drupalSettings']['better_exposed_filters']['datepicker_options'];
++      $fromFormat = str_replace(array_values($mapping), array_keys($mapping), $drupalSettings['dateFormat']);
++      $toFormat = 'Y-m-d';
++
++      // Use a strtotime() parseable format behind the scenes.
++      $dateTime = \DateTime::createFromFormat($fromFormat, $fieldValue);
++      if ($dateTime instanceof \DateTimeInterface) {
++        $form_state->setValue($fieldId, $dateTime->format($toFormat));
++      }
++    } else {
++      $min = $fieldValue['min'];
++      $max = $fieldValue['max'];
++      if (empty($min) || empty($max)) {
++        return;
+       }
+
+       // Convert jQuery UI format to Date API date format.
+@@ -202,25 +215,13 @@ class DatePickers extends FilterWidgetBase implements ContainerFactoryPluginInte
+       $dateTimeMin = \DateTime::createFromFormat($fromFormat, $min);
+       $dateTimeMax = \DateTime::createFromFormat($fromFormat, $max);
+       if ($dateTimeMin instanceof \DateTimeInterface && $dateTimeMax instanceof \DateTimeInterface) {
+-                  $form_state->setValue($fieldId, [
+-                      'min' => $dateTimeMin->format($toFormat),
+-                      'max' => $dateTimeMax->format($toFormat),
+-                    ]);
+-                }
+-
+-     }
+-
+-              }
+-
+-    // Convert jQuery UI format to Date API date format.
+-    $mapping = $this->getjQueryUiDateFormatting();
+-    $drupalSettings = $element['#attached']['drupalSettings']['better_exposed_filters']['datepicker_options'];
+-    $fromFormat = str_replace(array_values($mapping), array_keys($mapping), $drupalSettings['dateFormat']);
+-    $toFormat = 'Y-m-d';
++        $form_state->setValue($fieldId, [
++          'min' => $dateTimeMin->format($toFormat),
++          'max' => $dateTimeMax->format($toFormat),
++        ]);
++      }
+
+-    // Use a strtotime() parseable format behind the scenes.
+-    $dateTime = \DateTime::createFromFormat($fromFormat, $fieldValue);
+-    $form_state->setValue($fieldId, $dateTime->format($toFormat));
++    }
+   }
+
+   /**

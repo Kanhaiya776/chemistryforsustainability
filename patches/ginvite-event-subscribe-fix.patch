@@ -1,0 +1,13 @@
+diff --git a/src/EventSubscriber/GinviteSubscriber.php b/src/EventSubscriber/GinviteSubscriber.php
+index 82c44d0..9203989 100644
+--- a/src/EventSubscriber/GinviteSubscriber.php
++++ b/src/EventSubscriber/GinviteSubscriber.php
+@@ -123,7 +123,7 @@ class GinviteSubscriber implements EventSubscriberInterface {
+     // misleading extra message on the next request.
+     $route = $event->getRequest()->get('_route');
+     if (!empty($route) && !in_array($route, $config->get('excluded_routes') ?? [], TRUE) && !empty($config->get('warning_message'))) {
+-      $destination = Url::fromRoute('view.my_invitations.page_1')->toString();
++      $destination = Url::fromRoute('view.my_invitations.page_1', ['user' => \Drupal::currentUser()->id()])->toString();
+       $this->messenger->addMessage(new FormattableMarkup($config->get('warning_message'), ['@my_invitations_url' => $destination]), 'warning', FALSE);
+     }
+   }

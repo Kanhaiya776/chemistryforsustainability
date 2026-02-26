@@ -1,0 +1,21 @@
+diff --git a/src/Plugin/better_exposed_filters/filter/Single.php b/src/Plugin/better_exposed_filters/filter/Single.php
+index 209b480..e6f05e7 100644
+--- a/src/Plugin/better_exposed_filters/filter/Single.php
++++ b/src/Plugin/better_exposed_filters/filter/Single.php
+@@ -58,6 +58,7 @@ class Single extends FilterWidgetBase {
+       // Prioritize the field ID, but default to exposed ID.
+       // @todo Remove $exposed_id once
+       //   https://www.drupal.org/project/drupal/issues/288429 is fixed.
++      $value = \Drupal::request()->query->get($field_id);
+       $input_value = $input[$field_id] ?? ($input[$exposed_id] ?? NULL);
+       $checked = FALSE;
+       // We need to be super careful when working with raw input values. Let's
+@@ -68,7 +69,7 @@ class Single extends FilterWidgetBase {
+       $form[$field_id]['#type'] = 'checkbox';
+       $form[$field_id]['#default_value'] = 0;
+       $form[$field_id]['#return_value'] = 1;
+-      $form[$field_id]['#value'] = $checked ? 1 : 0;
++      $form[$field_id]['#value'] = $checked ? $value : 0;
+     }
+   }
+ 

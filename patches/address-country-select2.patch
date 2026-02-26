@@ -1,0 +1,13 @@
+diff --git a/src/Element/Country.php b/src/Element/Country.php
+index 145f46f68..68f2cc640 100644
+--- a/src/Element/Country.php
++++ b/src/Element/Country.php
+@@ -90,7 +90,7 @@ public static function processCountry(array &$element, FormStateInterface $form_
+     }
+     else {
+       $element['country_code'] = [
+-        '#type' => 'select',
++        '#type' => 'select2',
+         '#title' => $element['#title'],
+         '#title_display' => $element['#title_display'],
+         '#description_display' => $element['#description_display'],
