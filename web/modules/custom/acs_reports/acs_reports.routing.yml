@@ -1,0 +1,7 @@
+acs_reports.download_users_csv:
+  path: '/admin/people/export-users-org-csv'
+  defaults:
+    _controller: '\Drupal\acs_reports\Controller\OrganizationReportController::downloadUsersCsv'
+    _title: 'Export Users by Organization (CSV)'
+  requirements:
+    _permission: 'administer users'

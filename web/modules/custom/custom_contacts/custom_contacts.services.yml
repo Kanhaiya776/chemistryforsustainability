@@ -1,0 +1,6 @@
+services:
+  custom_contacts.webform_user_prefill:
+    class: Drupal\custom_contacts\Service\WebformUserPrefill
+    arguments:
+      - '@entity_type.manager'
+      - '@current_user'

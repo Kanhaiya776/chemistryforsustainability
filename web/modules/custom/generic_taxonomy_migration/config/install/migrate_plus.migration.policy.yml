@@ -1,0 +1,56 @@
+id: policy
+label: Chemical Policy Migration
+
+source:
+  plugin: policy_sql
+  key: cherity
+
+destination:
+  plugin: entity:node
+  default_bundle: policy
+
+process:
+
+  type:
+    plugin: default_value
+    default_value: policy
+
+  title: title
+
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_policy_number: policy_number
+  field_international: international
+  field_other_please_specify: other_specify
+  field_authoritative_body: responsible_entity
+
+  field_effective_date: effective_date
+  field_approved_date2: approved_date
+
+  field_full_text_of_the_policy2/uri: english_link
+  field_full_text_of_the_policy3/uri: original_link
+
+  # JSON country field
+  field_country:
+    plugin: country_multi_process
+    source: countries
+
+  # JSON state field
+  field_states:
+    plugin: state_multi_process
+    source: states
+
+  field_full_text_of_the_policy_in:
+    plugin: migration_lookup
+    migration: file_attachment
+    source: file_fids
+
+  moderation_state: moderation_state

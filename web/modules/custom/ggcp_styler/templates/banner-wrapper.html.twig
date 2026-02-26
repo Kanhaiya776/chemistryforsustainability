@@ -1,0 +1,11 @@
+{% set parent_class = 'banner-wrapper-block' %}
+
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-banner-wrapper-block', parent_class, 'g-0']
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  <div {{ bem('container', '', parent_class) }}>
+    {{ cards_block }}
+  </div>
+</div>

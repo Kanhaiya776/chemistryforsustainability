@@ -1,0 +1,22 @@
+id: field_of_interest
+label: 'Taxonomy: Field of Interest'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: field_of_interest
+
+process:
+  vid:
+    plugin: default_value
+    default_value: field_of_interest
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

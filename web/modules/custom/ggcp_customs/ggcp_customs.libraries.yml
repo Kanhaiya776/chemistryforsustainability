@@ -1,0 +1,71 @@
+states:
+  js:
+    js/ggcp_customs.states.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+ggcp_customs.conditional_fields_fix:
+  version: 1.x
+  js:
+    js/conditional_fields_fix.js: {}
+  dependencies:
+    - core/jquery
+ggcp_customs.profile_conditional_fields_logic:
+  version: 1.x
+  js:
+    js/profile_conditional_fields_logic.js: {}
+  dependencies:
+    - core/jquery
+ggcp_customs.registration_field_validation:
+  version: 1.x
+  js:
+    js/registration_field_validation.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+ggcp_customs.new_organization_form_validation:
+  version: 1.x
+  js:
+    js/new_organization_form_validation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+ggcp_customs.organization_filter:
+  version: 1.x
+  js:
+    js/organization_filter.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+ggcp_customs.update_organization_form_validation:
+  version: 1.x
+  js:
+    js/update_organization_form_validation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+ggcp_customs.pf_js:
+  version: 1.x
+  js:
+    js/date_time_format.js: {}
+    js/attachment_operations.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.dialog
+    - core/drupal.dialog.ajax
+ggcp_customs.pf_submit_sort:
+  version: 1.x
+  js:
+    js/pf_submit_sort.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+ajax_error_scroll:
+  js:
+    js/ajax-error-scroll.js: {}
+  dependencies:
+    - core/jquery
+

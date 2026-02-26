@@ -1,0 +1,27 @@
+{% set parent_class = 'block-search-bar' %}
+{% set extra_main_class = extra_class|default('') %}
+{% set background_image = display_background_image|default(false) %}
+
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-search-bar-block', parent_class, 'g-0', extra_main_class]
+} %}
+{#
+<div {{ add_attributes(additional_attributes) }}>
+  {% if background_image %}
+    <div class="background-image-search-wrapper">
+    </div>
+  {% endif %}
+  <div class="container">
+    <span class="display-medium">{{ "What Are You Looking For?"|t }}</span>
+    <div {{ bem('container', '', parent_class) }}>
+      <form action="/search" method="get">
+      <div class="input-group rounded">
+        <input type="search" class="form-control" name="fullSearch" placeholder="Search for it here." aria-label="Search"
+               aria-describedby="search-addon"/>
+        <button type="submit" class="icon-search" aria-label="Submit"></button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+#}

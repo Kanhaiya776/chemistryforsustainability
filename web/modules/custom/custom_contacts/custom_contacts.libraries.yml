@@ -1,0 +1,7 @@
+custom_contacts.registration_validation:
+  version: 1.x
+  js:
+    js/registration_validation.js: {}
+  dependencies:
+    - core/jquery
+    - core/once

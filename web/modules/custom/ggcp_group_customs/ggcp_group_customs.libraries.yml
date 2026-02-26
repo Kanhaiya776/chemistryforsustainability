@@ -1,0 +1,5 @@
+forum_topic_add:
+  version: VERSION
+  css:
+    theme:
+      css/forum-add-button.css: {}

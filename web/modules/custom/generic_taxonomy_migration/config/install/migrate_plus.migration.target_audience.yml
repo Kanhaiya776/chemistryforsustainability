@@ -1,0 +1,31 @@
+id: target_audience
+label: 'Taxonomy: Target Audience'
+migration_group: generic_taxonomies
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: target_audience
+
+process:
+  tid: tid
+
+  vid:
+    plugin: default_value
+    default_value: target_audience
+
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+
+  weight: weight
+
+  parent:
+    plugin: migration_lookup
+    migration: target_audience
+    source: parent
+
+destination:
+  plugin: entity:taxonomy_term

@@ -1,0 +1,3 @@
+acs_search_react.bundle:
+  js:
+    js/dist/bundle.js: {preprocess: false}

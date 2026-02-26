@@ -1,0 +1,31 @@
+id: level_of_training
+label: 'Taxonomy: Level of Training'
+migration_group: generic_taxonomies
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: level_of_training
+
+process:
+  tid: tid
+
+  vid:
+    plugin: default_value
+    default_value: level_of_training
+
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+
+  weight: weight
+
+  parent:
+    plugin: migration_lookup
+    migration: level_of_training
+    source: parent
+
+destination:
+  plugin: entity:taxonomy_term

@@ -1,0 +1,91 @@
+id: case_study
+label: Case Study
+
+source:
+  plugin: case_study_sql
+  key: cherity
+
+destination:
+  plugin: entity:node
+  default_bundle: case_study
+
+process:
+  type:
+    plugin: default_value
+    default_value: case_study
+
+  title: title
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+    no_stub: true
+  body/value: body
+  body/format: body_format
+
+  field_attachments:
+    - plugin: skip_on_empty
+      method: process
+      source: attachment_fids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: file_attachment
+
+  field_category:
+    - plugin: skip_on_empty
+      method: process
+      source: category_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: category
+
+  field_country_s_where_implemente:
+    - plugin: skip_on_empty
+      method: process
+      source: countries
+    - plugin: explode
+      delimiter: ','
+
+  field_human_health_and_environme/value: human_health
+
+  field_images:
+    - plugin: skip_on_empty
+      method: process
+      source: image_fids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: featured_images
+      no_stub: true
+
+  field_organization:
+    plugin: migration_lookup
+    migration: civicrm_organization
+    source: organization_nid
+
+  field_inventor_owner_manufacture/value: other_org
+
+  field_keywords:
+    - plugin: skip_on_empty
+      method: process
+      source: keyword_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: keywords
+
+  field_link/uri: link
+  field_references/value: references
+
+  field_stage_of_development:
+    - plugin: skip_on_empty
+      method: process
+      source: stage_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: stage_of_development
+    
+  moderation_state: moderation_state

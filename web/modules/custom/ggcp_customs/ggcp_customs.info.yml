@@ -1,0 +1,9 @@
+name: 'GGCP Customs'
+type: module
+description: 'GGCP custom module to put form alter codes and other hooks'
+core_version_requirement: '^8 || ^9 || ^10'
+dependencies:
+  - drupal:node
+  - drupal:ginvite
+  - drupal:group
+  - drupal:content_moderation 

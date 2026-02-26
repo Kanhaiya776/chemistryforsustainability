@@ -1,0 +1,213 @@
+<?php
+
+/**
+ * @file
+ * dynamic_user_profile_editor.module
+ */
+
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\dynamic_user_profile_editor\Enum\ViewConstants;
+use Drupal\dynamic_user_profile_editor\Plugin\views\display_extender\WebformPopupExtender;
+use Drupal\user\Entity\User;
+use Drupal\views\ViewExecutable;
+use Drupal\webform\Ajax\WebformCloseDialogCommand;
+
+/**
+ * Implements hook_theme().
+ */
+function dynamic_user_profile_editor_theme() {
+  return [
+    'edit_icon' => [
+      'variables' => [
+        'url' => NULL,
+        'display_id' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_FORM_ID_form_alter().
+ */
+function dynamic_user_profile_editor_form_alter(array &$form, FormStateInterface $form_state) {
+  if ($form['#form_id'] === 'user_form' && \Drupal::request()->query->get('pass-reset-token') !== NULL) {
+    $form['actions']['submit']['#submit'][] = 'dynamic_user_profile_editor_form_user_form_submit';
+  }
+}
+
+/**
+ * Submit handler for user form.
+ *
+ * @param array $form
+ *   The form array.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ */
+function dynamic_user_profile_editor_form_user_form_submit(array &$form, FormStateInterface $form_state) {
+  $form_state->setRedirect('user.page');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dynamic_user_profile_editor_preprocess_block(&$variables) {
+  dynamic_user_profile_editor_attach_edit_icon($variables);
+
+  if ($variables['elements']['#base_plugin_id'] !== 'views_block') {
+    return;
+  }
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['elements']['content']['#view'] ?? NULL;
+
+  if (!$view instanceof ViewExecutable) {
+    return;
+  }
+}
+
+/**
+ * Implements hook_FORM_ID_form_alter().
+ */
+function dynamic_user_profile_editor_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id !== "webform_submission_user_profile_add_form") {
+    $wrapper_format = \Drupal::request()->get(MainContentViewSubscriber::WRAPPER_FORMAT);
+    $is_modal = in_array($wrapper_format, ['drupal_ajax', 'drupal_modal', 'drupal_dialog', 'drupal_dialog.off_canvas']);
+    if ($is_modal) {
+      $form['actions']['submit']['#submit'][] = 'dynamic_user_profile_editor_webform_submission_form_submit';
+    }
+  }
+}
+
+/**
+ * Submit handler for webform.
+ *
+ * @param array $form
+ *   The form array.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ */
+function dynamic_user_profile_editor_webform_submission_form_submit(array &$form, FormStateInterface $form_state) {
+  $response = new AjaxResponse();
+  $response->addCommand(new WebformCloseDialogCommand());
+  $form_state->setResponse($response);
+}
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function dynamic_user_profile_editor_views_post_execute(ViewExecutable $view) {
+  if ($view->id() == ViewConstants::VIEW_ID) {
+    $route = \Drupal::routeMatch();
+    $ownerUser = $route->getParameter('user');
+    if (!($ownerUser instanceof User)) {
+      return;
+    }
+    $currentUser = \Drupal::currentUser();
+    $isOwner = $ownerUser->id() === $currentUser->id();
+    if ($isOwner) {
+      return;
+    }
+    if ($currentUser->isAnonymous()) {
+      $view->build_info['fail'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dynamic_user_profile_editor_preprocess_views_view(&$variables) {
+
+  $currentUser = \Drupal::currentUser();
+  $uid = $currentUser->id();
+  if (isset($uid)) {
+    $variables['#attached']['drupalSettings']['currentUserId'] = $uid;
+  }
+  $route_uid = \Drupal::routeMatch()->getRawParameter('user');
+  if (isset($route_uid)) {
+    $variables['#attached']['drupalSettings']['routeUserId'] = $route_uid;
+  }
+
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if ($view->id() === ViewConstants::VIEW_ID && $view->current_display === ViewConstants::MENTOR_PROFILE_DISPLAY) {
+    $willingToBeMentor = $view->field['willing_to_be_a_mentor__90'];
+    $resultRow = $variables['rows'][0]['#rows'][0]['#row'];
+    $willingToBeMentorValue = $willingToBeMentor->getValue($resultRow);
+
+    $extenders = $view->getDisplay()->getExtenders();
+    if ($extenders['webform_popup_extender']->options['enable_edit_button'] === TRUE) {
+      $variables['#attached']['library'][] = 'dynamic_user_profile_editor/refresh_view';
+    }
+    if (isset($willingToBeMentorValue)) {
+      $variables['#attached']['drupalSettings']['willingToBeMentorValue'] = $willingToBeMentorValue;
+    }
+
+    if (filter_var($willingToBeMentorValue, FILTER_VALIDATE_BOOLEAN)) {
+      $variables['custom_title'] = 'Open to mentoring';
+    }
+    else {
+      $variables['custom_title'] = 'Willing to be a mentor?';
+    }
+  }
+}
+
+/**
+ * Utility function to attache edit icon.
+ */
+function dynamic_user_profile_editor_attach_edit_icon(&$variables) {
+  $route = \Drupal::routeMatch();
+  $ownerUser = $route->getParameter('user');
+  if (!($ownerUser instanceof User)) {
+    return;
+  }
+  $currentUser = \Drupal::currentUser();
+  $isOwner = $ownerUser->id() === $currentUser->id();
+  if (!$isOwner) {
+    return;
+  }
+  if ($variables['elements']['#base_plugin_id'] !== 'views_block') {
+    return;
+  }
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['elements']['content']['#view'] ?? NULL;
+
+  if (!$view instanceof ViewExecutable) {
+    return;
+  }
+
+  $display = $view->getDisplay();
+  $extenders = $display->getExtenders();
+
+  if (!isset($extenders['webform_popup_extender']) || !($extenders['webform_popup_extender'] instanceof WebformPopupExtender)) {
+    return;
+  }
+
+  /** @var \Drupal\dynamic_user_profile_editor\Plugin\views\display_extender\WebformPopupExtender $webformExtender */
+  $webformExtender = $extenders['webform_popup_extender'];
+
+  if ($webformExtender->options['enable_edit_button'] === TRUE) {
+    $variables['content']['#markup'] .= dynamic_user_profile_editor_get_edit_icon_html($webformExtender->options['modal_trigger_url'] ?? '', $display->display['id'] ?? '');
+    $variables['#attached']['library'][] = 'dynamic_user_profile_editor/edit_icon';
+  }
+}
+
+/**
+ * Utility function for edit link button.
+ *
+ * @param string $url
+ *   The url.
+ */
+function dynamic_user_profile_editor_get_edit_icon_html(string $url, string $displayId = ''): string {
+  if (empty($url)) {
+    return '';
+  }
+  $renderer = \Drupal::service('renderer');
+  $template = [
+    '#theme' => 'edit_icon',
+    '#url' => $url,
+    '#display_id' => $displayId,
+  ];
+  return $renderer->render($template);
+}

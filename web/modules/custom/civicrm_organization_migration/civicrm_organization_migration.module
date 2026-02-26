@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Ensures URLs are valid for link fields.
+ */
+function civicrm_organization_migration_ensure_uri($uri) {
+  if (!$uri) {
+    return NULL;
+  }
+
+  $uri = trim((string) $uri);
+  if ($uri === '' || strtolower($uri) === 'null') {
+    return NULL;
+  }
+
+  return preg_match('#^https?://#', $uri) ? $uri : "https://{$uri}";
+}
+
+/**
+ * Normalize CiviCRM multi-value sector field.
+ */
+function civicrm_organization_migration_normalize_sector($value) {
+  if ($value === NULL || trim((string) $value) === '') {
+    return NULL;
+  }
+
+  // Split on ASCII 1 and remove empties.
+  $parts = array_filter(explode("\x01", (string) $value));
+
+  if (empty($parts)) {
+    return NULL;
+  }
+
+  return (string) reset($parts);
+}

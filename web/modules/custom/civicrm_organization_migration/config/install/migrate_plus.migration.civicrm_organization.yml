@@ -1,0 +1,199 @@
+id: civicrm_organization
+label: CiviCRM Organizations
+migration_group: civicrmUser
+
+source:
+  plugin: civicrm_organization
+  key: civicrm
+
+destination:
+  plugin: entity:node
+  default_bundle: organization
+  overwrite_properties:
+    - field_add_update_org_logo
+
+process:
+  # ---------------- Core ----------------
+  # Drupal author = creator
+  uid:
+    - plugin: migration_lookup
+      migration: civicrm_user_migration
+      source: creator_uid
+      no_stub: true
+    - plugin: default_value
+      default_value: 1
+
+  # Affiliates (multi-value)
+  # field_affiliated_user:
+  #   - plugin: explode
+  #     delimiter: ','
+  #     source: affiliate_contact_ids
+  #   - plugin: migration_lookup
+  #     migration: civicrm_users
+  #     no_stub: true
+  # field_affiliated_user:
+  #   - plugin: skip_on_empty
+  #     method: process
+  #     source: affiliate_uids
+
+  #   - plugin: explode
+  #     delimiter: ','
+
+  #   - plugin: migration_lookup
+  #     migration: civicrm_user_migration
+  #     no_stub: false
+
+  field_affiliated_user:
+    - plugin: skip_on_empty
+      method: process
+      source: affiliate_uids
+
+    - plugin: explode
+      delimiter: ','
+
+    - plugin: callback
+      callable: intval
+
+  # Optional: keep CRM creator as metadata
+  field_creator_user:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: creator_uid
+    no_stub: true
+  
+  title: display_name
+
+  field_add_update_org_logo/target_id:
+    plugin: migration_lookup
+    migration: civicrm_files
+    source: id
+    no_stub: true
+  
+  status:
+    plugin: default_value
+    default_value: 1
+
+  field_civicrm_id: id
+  field_organization_acronym: acronym
+
+  field_organization_description/value: description
+  field_organization_description/format:
+    plugin: default_value
+    default_value: basic_html
+  
+# ---------------- Website & Social ----------------
+  field_organization_website/uri: website
+  field_organization_website/title:
+    plugin: default_value
+    default_value: Website
+
+  field_facebook_profile/uri: facebook
+  field_facebook_profile/title:
+    plugin: default_value
+    default_value: Facebook
+
+  field_instagram_profile/uri: instagram
+  field_instagram_profile/title:
+    plugin: default_value
+    default_value: Instagram
+
+  field_linkedin_profile/uri: linkedin
+  field_linkedin_profile/title:
+    plugin: default_value
+    default_value: LinkedIn
+
+  field_wechat_profile/uri: wechat
+  field_wechat_profile/title:
+    plugin: default_value
+    default_value: WeChat 
+
+# ---------------- Field of interest ----------------
+  field_of_interest:
+    plugin: civi_multi_field_of_interest
+
+    sources:
+      - field_of_research
+      - other_field_of_research
+      - agricultural_and_food_sciences
+      - biological_sciences
+      - chemical_sciences
+      - earth_sciences
+      - economics
+      - engineering
+      - environmental_sciences
+      - health_sciences
+      - information_and_computing_sciences
+      - mathematical_sciences
+      - physical_sciences
+      - social_sciences
+
+    custom_field_map:
+      field_of_research: 72
+      other_field_of_research: 73
+      agricultural_and_food_sciences: 74
+      biological_sciences: 75
+      chemical_sciences: 76
+      earth_sciences: 77
+      economics: 78
+      engineering: 79
+      environmental_sciences: 80
+      health_sciences: 81
+      information_and_computing_sciences: 82
+      mathematical_sciences: 83
+      physical_sciences: 84
+      social_sciences: 85
+
+
+# ---------------- Address ----------------
+  field_state/country_code:
+    plugin: callback
+    source: country_code
+    callable: strtoupper
+
+  field_state/administrative_area: state
+  field_state/locality: city
+  field_state/postal_code: postal_code
+  field_state/address_line1: street_address
+  field_state/address_line2: street_address_2
+
+  field_city: city
+  field_postal_code: postal_code
+  field_street_address: street_address
+  field_street_address_line_2: street_address_2
+
+# ---------------- Sector ----------------
+  field_sector_custom_select:
+    plugin: static_map
+    source: sector
+    map:
+      1: academia
+      2: government_sector
+      3: industry
+      4: non_governmental_organization
+      5: other
+
+  field_startup_company:
+    plugin: callback
+    source: is_startup
+    callable: intval
+
+# ---------------- Sub-sectors ----------------
+  field_industry_sub_sector:
+    plugin: civi_option_to_term
+    source: industry_sub_sector
+    custom_field_id: 106
+    vocabulary: industry_sub_sector
+
+  field_government_sub_sector:
+    plugin: civi_option_to_term
+    source: government_sub_sector
+    custom_field_id: 107
+    vocabulary: government_sub_sector
+
+  field_academia_sub_sector:
+    plugin: civi_option_to_term
+    source: academia_sub_sector
+    custom_field_id: 108
+    vocabulary: academia_sub_sector
+
+

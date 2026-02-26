@@ -1,0 +1,9 @@
+name: 'ACS Custom Country'
+type: module
+description: 'Multi country field storing values as JSON array.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:address
+  - drupal:field
+  - drupal:views

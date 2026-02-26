@@ -1,0 +1,193 @@
+<?php
+
+/**
+ * @file
+ * Custom customs mOrganization odule.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\WebformSubmissionInterface;
+use Drupal\file\Entity\File;
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Recursively sets a default value on a webform element.
+ */
+function custom_organization_set_default_recursive(array &$elements, string $target_key, $value) {
+  foreach ($elements as $key => &$element) {
+    if ($key === $target_key && is_array($element)) {
+      $element['#default_value'] = $value;
+      return TRUE;
+    }
+    if (is_array($element)) {
+      if (custom_organization_set_default_recursive($element, $target_key, $value)) {
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Recursively sets #access on a webform element.
+ */
+function custom_organization_set_access_recursive(array &$elements, string $target_key, bool $access) {
+  foreach ($elements as $key => &$element) {
+    if ($key === $target_key && is_array($element)) {
+      $element['#access'] = $access;
+      return TRUE;
+    }
+    if (is_array($element)) {
+      if (custom_organization_set_access_recursive($element, $target_key, $access)) {
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_webform_submission_form_alter().
+ */
+function custom_organization_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form['#webform_id'] !== 'new_organization') {
+    return;
+  }
+  $nid = \Drupal::request()->query->get('source_entity_id');
+
+  // Load node.
+  $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+  if (!$node || $node->bundle() !== 'organization') {
+    return;
+  }
+
+  // Only edit mode (create mode = no source entity)
+  if (!$nid) {
+    // Hide organization image field in create mode.
+    custom_organization_set_access_recursive($form['elements'], 'add_update_organization_logo', FALSE);
+    return;
+  }
+
+  $form['#title'] = t('Update Organization Form');
+
+  // Show image field in edit mode.
+  custom_organization_set_access_recursive($form['elements'], 'add_update_organization_logo', TRUE);
+
+  // Pre-fill image if exists.
+  if ($node->get('field_add_update_org_logo')->entity) {
+    $file = $node->get('field_add_update_org_logo')->entity;
+    custom_organization_set_default_recursive(
+      $form['elements'],
+      'add_update_organization_logo',
+      [$file->id()]
+    );
+  }
+  custom_organization_set_default_recursive($form['elements'], 'organization_name', $node->label());
+  custom_organization_set_default_recursive($form['elements'], 'organization_acronym', $node->get('field_organization_acronym')->value);
+  custom_organization_set_default_recursive($form['elements'], 'organization_description', $node->get('field_organization_description')->value);
+
+  custom_organization_set_default_recursive($form['elements'], 'city', $node->get('field_city')->value);
+  custom_organization_set_default_recursive($form['elements'], 'street_address', $node->get('field_street_address')->value);
+  custom_organization_set_default_recursive($form['elements'], 'street_address_line_2', $node->get('field_street_address_line_2')->value);
+  custom_organization_set_default_recursive($form['elements'], 'custom_postal_code', $node->get('field_postal_code')->value);
+
+  custom_organization_set_default_recursive($form['elements'], 'sector', $node->get('field_sector_custom_select')->value);
+  $state_item = $node->get('field_state')->first();
+
+  $country = $state_item ? $state_item->country_code : '';
+  $administrative_area = $state_item ? $state_item->administrative_area : '';
+
+  // Build full structure REQUIRED by advanced_address widget.
+  $address_defaults = [
+    'country_code' => $country,
+    'administrative_area' => $administrative_area,
+    'locality' => $node->get('field_city')->value,
+    'postal_code' => $node->get('field_postal_code')->value,
+    'address_line1' => $node->get('field_street_address')->value,
+    'address_line2' => $node->get('field_street_address_line_2')->value,
+  ];
+
+  // Apply using recursive setter:
+  custom_organization_set_default_recursive(
+    $form['elements'],
+    'country_admin',
+    $address_defaults
+  );
+
+  custom_organization_set_default_recursive($form['elements'], 'field_academia_sub_sector', (int) $node->get('field_academia_sub_sector')->target_id);
+  custom_organization_set_default_recursive($form['elements'], 'field_government_sub_sector', (int) $node->get('field_government_sub_sector')->target_id);
+  custom_organization_set_default_recursive($form['elements'], 'field_industry_sub_sector', (int) $node->get('field_industry_sub_sector')->target_id);
+
+  // Startup (boolean)
+  $startup = $node->get('field_startup_company')->value ? 1 : 0;
+  custom_organization_set_default_recursive($form['elements'], 'if_industry_is_the_company_a_startup', $startup);
+  custom_organization_set_default_recursive($form['elements'], 'organization_website', $node->get('field_organization_website')->uri);
+
+  $has_social_links =
+    !empty($node->get('field_linkedin_profile')->uri) ||
+    !empty($node->get('field_facebook_profile')->uri) ||
+    !empty($node->get('field_instagram_profile')->uri) ||
+    !empty($node->get('field_wechat_profile')->uri);
+
+  // Auto-check the checkbox if social links exist.
+  custom_organization_set_default_recursive(
+    $form['elements'],
+    'add_social_media_links_for_your_organization',
+    $has_social_links ? 1 : 0
+  );
+
+  // Prepopulate only when links exist.
+  if ($has_social_links) {
+    custom_organization_set_default_recursive($form['elements'], 'linkedin_profile', $node->get('field_linkedin_profile')->uri);
+    custom_organization_set_default_recursive($form['elements'], 'facebook_profile', $node->get('field_facebook_profile')->uri);
+    custom_organization_set_default_recursive($form['elements'], 'instagram_profile', $node->get('field_instagram_profile')->uri);
+    custom_organization_set_default_recursive($form['elements'], 'wechat_profile', $node->get('field_wechat_profile')->uri);
+  }
+}
+
+/**
+ * Move organization logo to public directory.
+ */
+function custom_organization_webform_submission_insert(WebformSubmissionInterface $submission) {
+  if ($submission->getWebform()->id() !== 'new_organization') {
+    return;
+  }
+
+  $data = $submission->getData();
+  if (empty($data['add_update_organization_logo'])) {
+    return;
+  }
+
+  $fs = \Drupal::service('file_system');
+
+  foreach ((array) $data['add_update_organization_logo'] as $fid) {
+    $file = File::load($fid);
+    if (!$file) {
+      continue;
+    }
+
+    if (str_starts_with($file->getFileUri(), 'public://')) {
+      continue;
+    }
+
+    $destination = 'public://webform/organization/';
+
+    $fs->prepareDirectory(
+      $destination,
+      FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS
+    );
+
+    $new_uri = $fs->move(
+      $file->getFileUri(),
+      $destination . '/' . $file->getFilename(),
+      FileSystemInterface::EXISTS_RENAME
+    );
+
+    if ($new_uri) {
+      $file->setFileUri($new_uri);
+      $file->setPermanent();
+      $file->save();
+    }
+  }
+}

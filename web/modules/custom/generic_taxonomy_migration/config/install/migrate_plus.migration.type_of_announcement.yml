@@ -1,0 +1,22 @@
+id: type_of_announcement
+label: 'Taxonomy: Type of Announcement'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: type_of_announcement
+
+process:
+  vid:
+    plugin: default_value
+    default_value: type_of_announcement
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

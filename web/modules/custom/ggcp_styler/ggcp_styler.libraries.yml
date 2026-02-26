@@ -1,0 +1,8 @@
+resources_banner:
+  version: 2.x
+  js:
+    js/resources_banner.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

@@ -1,0 +1,22 @@
+id: estimated_capacity
+label: 'Taxonomy: Estimated Capacity'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: estimated_capacity
+
+process:
+  vid:
+    plugin: default_value
+    default_value: estimated_capacity
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

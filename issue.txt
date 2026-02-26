@@ -1,0 +1,14 @@
+checking commit issue
+added lne to check pantheon solr version update and push isue for branch
+
+
+MIGRATION SCRIPT FOR USER
+
+
+./vendor/bin/drush config:delete migrate_plus.migration.civicrm_files -y &&  ./vendor/bin/drush config:delete migrate_plus.migration.civicrm_user_migration -y && ./vendor/bin/drush pm:uninstall civicrm_user_migration
+
+./vendor/bin/drush cr && ./vendor/bin/drush pm:install civicrm_user_migration && ./vendor/bin/drush migrate:import civicrm_files && ./vendor/bin/drush migrate:import civicrm_user_migration
+
+./vendor/bin/drush migrate:import civicrm_user_migration &&   ./vendor/bin/drush migrate:import civicrm_files
+
+./vendor/bin/drush migrate:rollback civicrm_files  && ./vendor/bin/drush migrate:rollback civicrm_user_migration 

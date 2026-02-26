@@ -1,0 +1,17 @@
+refresh_view:
+  version: 3.1
+  js:
+    js/refresh_view.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+edit_icon:
+  version: 2.1
+  js:
+    js/edit_icon.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

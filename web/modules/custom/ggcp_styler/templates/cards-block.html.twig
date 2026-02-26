@@ -1,0 +1,65 @@
+{% set parent_class = 'cards-block' %}
+
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-cards-block', parent_class, 'g-0']
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  <div {{ bem('container', '', parent_class) }}>
+    <div class="cards-block-row">
+      <div class="single-card connect">
+        <a class="card-link" href="/network"></a>
+        <div class="row">
+          <div class="col-sm-2">
+            <img src="./themes/custom/acs_gcs/images/icons/community-icon.png" alt="community icon"
+                 class="front-blocks-icons"/>
+          </div>
+          <div class="col-sm-10">
+          <span class="card-header-text">
+            {{ "Build Your Community"|t }}
+          </span>
+            <span class="card-body-text">
+            {{ "Find people by interest or location, contribute sustainability solutions, and collaborate across disciplines."|t }}
+          </span>
+          </div>
+
+        </div>
+      </div>
+      <div class="single-card innovate">
+        <a class="card-link" href="/toolkit"></a>
+
+        <div class="row">
+          <div class="col-sm-2">
+            <img src="./themes/custom/acs_gcs/images/icons/resources-icon.png" alt="resources icon"
+                 class="front-blocks-icons"/>
+          </div>
+          <div class="col-sm-10">
+          <span class="card-header-text">
+            {{ "Find Resources"|t }}
+          </span>
+            <span class="card-body-text">
+            {{ "Explore green chemistry resources such as tools, funding opportunities, and greener technologies. "|t }}
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="single-card learn">
+        <a class="card-link" href="/learn/green-chemistry-and-green-engineering"></a>
+        <div class="row">
+          <div class="col-sm-2">
+            <img src="./themes/custom/acs_gcs/images/icons/learn-icon.png" alt="learn icon"
+                 class="front-blocks-icons"/>
+          </div>
+          <div class="col-sm-10">
+          <span class="card-header-text">
+            {{ "Learn about Green Chemistry"|t }}
+          </span>
+            <span class="card-body-text">
+            {{ "Learn about green chemistry and engineering and why they are essential to the health and prosperity of all people and the planet."|t }}
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+name: Node operations
+type: module
+description: 'Node operations.'
+core_version_requirement: ^10 || ^11

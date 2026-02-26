@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "acs_search_react/*": ["js/acs_search_react/*"]
+    }
+  },
+  "include": [
+    "./js/acs_search_react/**/*.ts",
+    "./js/acs_search_react/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

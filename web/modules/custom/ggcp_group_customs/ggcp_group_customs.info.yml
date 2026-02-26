@@ -1,0 +1,8 @@
+name: 'GGCP Group Customs'
+type: module
+description: 'GGCP custom module for Groups and Forums'
+core_version_requirement: '^10'
+dependencies:
+  - group
+  - forum
+  - group_term

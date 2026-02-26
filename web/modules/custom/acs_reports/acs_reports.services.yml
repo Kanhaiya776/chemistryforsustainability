@@ -1,0 +1,4 @@
+services:
+  acs_reports.counter:
+    class: Drupal\acs_reports\AcsReportsCounter
+    arguments: ['@database', '@entity_type.manager']

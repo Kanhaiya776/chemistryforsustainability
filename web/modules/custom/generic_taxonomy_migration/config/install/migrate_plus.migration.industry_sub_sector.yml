@@ -1,0 +1,22 @@
+id: industry_sub_sector
+label: 'Taxonomy: Industry Sub-sector'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: industry_sub_sector
+
+process:
+  vid:
+    plugin: default_value
+    default_value: industry_sub_sector
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

@@ -1,0 +1,7 @@
+services:
+  ggcp_message_customs.content_moderation_helper:
+    class: Drupal\ggcp_message_customs\MessageContentModerationHelper
+    arguments: ['@entity_type.manager', '@content_moderation.moderation_information']
+  ggcp_message_customs.message_helper:
+    class: Drupal\ggcp_message_customs\MessageHelper
+    arguments: ['@current_user', '@entity_type.manager', '@ggcp_message_customs.content_moderation_helper', '@message_notify.sender']

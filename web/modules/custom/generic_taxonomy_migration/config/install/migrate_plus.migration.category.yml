@@ -1,0 +1,27 @@
+id: category
+label: 'Taxonomy: Category'
+migration_group: generic_taxonomies
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: category
+
+process:
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: category
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent:
+    plugin: migration_lookup
+    migration: category
+    source: parent
+
+destination:
+  plugin: entity:taxonomy_term

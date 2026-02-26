@@ -1,0 +1,6 @@
+custom_contacts.states:
+  path: '/custom/country-states/{country}'
+  defaults:
+    _controller: '\Drupal\custom_contacts\Controller\StateController::getStates'
+  requirements:
+    _permission: 'access content'

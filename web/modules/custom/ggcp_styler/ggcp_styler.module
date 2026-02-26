@@ -1,0 +1,475 @@
+<?php
+
+/**
+ * @file
+ * GGCP styler module.
+ */
+
+use Drupal\aggregator\Entity\Item;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Url;
+use Drupal\message\Entity\Message;
+use Drupal\node\NodeInterface;
+use Drupal\views\Views;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function ggcp_styler_theme() {
+  return [
+    'powered_by_block' => [
+      'variables' => [
+        'theme_path' => NULL,
+        'acs_address' => NULL,
+        'beyongbenign_address' => NULL,
+        'ggcp_address' => NULL,
+      ],
+    ],
+    'search_bar_block' => [
+      'variables' => [
+        'extra_class' => NULL,
+        'display_background_image' => NULL,
+      ],
+    ],
+    'header_user_block' => [
+      'variables' => [
+        'redirectUrl' => NULL,
+      ],
+    ],
+    'access_denied' => [
+      'variables' => [
+        'destination' => NULL,
+        'redirectPath' => NULL,
+      ],
+    ],
+    'cards_block' => [
+      'variables' => [],
+    ],
+    'banner_wrapper' => [
+      'variables' => [
+        'powered_by_block' => NULL,
+        'search_block' => NULL,
+        'cards_block' => NULL,
+      ],
+    ],
+    'visit_our_sister_sites_block' => [
+      'variables' => [],
+    ],
+    'explore_more_networks' => [
+      'variables' => [],
+    ],
+    'contact_message_theme' => [
+      'variables' => [
+        'recipient_name' => NULL,
+        'sender_name' => NULL,
+        'purpose' => NULL,
+        'message' => NULL,
+        'preferences_link' => NULL,
+        'site_url' => NULL,
+        'profile_url' => NULL,
+      ],
+    ],
+    'global_search_menu' => [
+      'render element' => 'form',
+      'template' => 'global-search-menu',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_views_view_fields().
+ */
+function ggcp_styler_preprocess_views_view_fields(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if (($view->id() === 'recently_added_frontpage' && ($view->current_display === 'frontpage_news' || $view->current_display === 'frontpage_announcements')) ||
+  $view->id() === 'new_resources' && ($view->current_display === 'new_resources')) {
+    $rowIndex = $variables['row']->index;
+    if ($rowIndex !== 0) {
+      if (isset($variables['fields']['field_image'])) {
+        unset($variables['fields']['field_image']);
+      }
+    }
+  }
+
+  if ($view->id() === 'featured_content' && $view->current_display === 'featured_content_block_resources') {
+    $node = $variables['row']->_entity;
+
+    if ($node instanceof NodeInterface) {
+      $contentType = $node->bundle();
+
+      if ($contentType === 'publication') {
+        unset($variables['fields']['field_image']);
+      }
+      else {
+        unset($variables['fields']['field_featured_image_pub']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ */
+function ggcp_styler_preprocess_views_view_unformatted(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if (($view->id() === 'recently_added_frontpage' && ($view->current_display === 'frontpage_announcements' || $view->current_display === 'frontpage_publications'))
+  || (($view->id() === 'featured_content') && ($view->current_display === 'featured_content_block' || $view->current_display === 'upcoming_events' || $view->current_display === 'featured_content_block_resources'))
+  || ($view->id() === 'new_resources' && $view->current_display === 'new_resources')) {
+    $rows = $variables['rows'];
+
+    if ($view->id() === 'new_resources' && $view->current_display === 'new_resources') {
+      // Merging result form duplicate_of_new_resources & new_resources views.
+      $combined_rows = ggcp_styler_announcements_combined_view("new_resources", "duplicate_of_new_resources", "new_resources", "featured_image_new_resources");
+
+      // Assign the combined rows back to the variables.
+      $variables['rows'] = $combined_rows;
+      unset($combined_rows);
+    }
+    elseif ($view->id() === "recently_added_frontpage" && $view->current_display === "frontpage_announcements") {
+      $combined_rows = ggcp_styler_announcements_combined_view("recently_added_frontpage", "duplicate_of_new_resources", "frontpage_announcements", "featured_image_new_resources");
+
+      // Assign the combined rows back to the variables.
+      $variables['rows'] = $combined_rows;
+      unset($combined_rows);
+    }
+    else {
+      foreach ($rows as $id => $row) {
+        /** @var \Drupal\views\ResultRow $resultRow */
+        $resultRow = $row['content']['#row'];
+        $node = $resultRow->_entity;
+
+        if ($node instanceof NodeInterface) {
+          $variables['rows'][$id]['url'] = $node->toUrl()->toString();
+        }
+      }
+    }
+  }
+
+  if ($view->id() === 'recently_added_news' && ($view->current_display === 'block_1')) {
+    $rows = $variables['rows'];
+
+    foreach ($rows as $id => $row) {
+      /** @var \Drupal\views\ResultRow $resultRow */
+      $resultRow = $row['content']['#row'];
+
+      /** @var \Drupal\aggregator\Entity\Item $node */
+      $node = $resultRow->_entity;
+
+      if ($node instanceof Item) {
+        if ($node->hasField('link')) {
+          $urls = $node->get('link')->getValue();
+          $url = reset($urls);
+          $variables['rows'][$id]['url'] = isset($url['value']) && !empty($url['value']) ? $url['value'] : '';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ggcp_styler_entity_type_alter(array &$entity_types) {
+  $entity_types['contact_message']->setViewBuilderClass('Drupal\ggcp_styler\ContactMessageViewBuilder');
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+function ggcp_styler_mail_alter(&$message) {
+  if ($message['id'] === 'contact_user_mail' || $message['id'] === 'contact_user_copy') {
+    $messageEntity = $message['params']['contact_message'];
+    $recipient = $messageEntity->get('recipient')->referencedEntities()[0];
+    $sender = $message['params']['sender'];
+
+    $recipient_name = _user_profile__get_first_last_names($recipient);
+    $sender_name = _user_profile__get_first_last_names($sender);
+    $messageText = $messageEntity->get('message')->getString();
+    $purposeOfMessageKey = $messageEntity->get('field_purpose_of_message')->getString();
+    $purposeOfMessageLabels = $messageEntity->get('field_purpose_of_message')->getSetting('allowed_values');
+    $webformUrl = Url::fromUri('internal:/form/email-settings')->toString();
+    $siteUrl = \Drupal::request()->getSchemeAndHttpHost();
+    $profileUrl = Url::fromRoute('entity.user.canonical', ['user' => $sender->id()]);
+
+    if ($purposeOfMessageKey === 'other') {
+      $purposeOfMessageText = $messageEntity->get('field_other')->getString();
+    }
+    else {
+      $purposeOfMessageText = $purposeOfMessageLabels[$purposeOfMessageKey];
+    }
+
+    $subjectLine = $messageEntity->getSubject();
+    $subjectMessage = "New Message from $sender_name - Chemistry for Sustainability";
+    $renderer = \Drupal::service('renderer');
+
+    $template = [
+      '#theme' => 'contact_message_theme',
+      '#recipient_name' => $recipient_name,
+      '#sender_name' => $sender_name,
+      '#purpose' => $purposeOfMessageText,
+      '#message' => $messageText,
+      '#preferences_link' => $webformUrl,
+      '#site_url' => $siteUrl,
+      '#profile_url' => $profileUrl->toString(),
+    ];
+
+    $renderedTemplate = $renderer->renderInIsolation($template);
+    $message['body'] = [];
+    $message['body'][] = Markup::create($renderedTemplate);
+    $message['subject'] = $subjectMessage;
+
+    if ($message['id'] === 'contact_user_copy') {
+      $copySubjectMessage = 'Copy of your Direct Message: ' . $subjectMessage;
+      $message['subject'] = $copySubjectMessage;
+    }
+
+    $message['headers']['Content-Type'] = 'text/html';
+
+    if ($message['id'] === 'contact_user_mail') {
+      // To display all direct messages in message templates page.
+      $msg = Message::create([
+        'template' => 'direct_messages',
+        'uid' => $sender->id(),
+      ]);
+
+      $message_body = "Recipient Name: $recipient_name </br>";
+      $message_body .= "$subjectMessage</br>";
+      $message_body .= $renderedTemplate;
+
+      $msg->set('field_direct_message_body', [
+        'value' => $message_body,
+        'format' => 'basic_html',
+      ]);
+
+      $msg->save();
+    }
+
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ggcp_styler_form_contact_message_personal_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['mail'])) {
+    $mailTitle = $form['mail']['#title'] ?? NULL;
+
+    if ($mailTitle instanceof TranslatableMarkup) {
+      $form['mail']['#title'] = new TranslatableMarkup('Your email address:');
+    }
+  }
+
+  if (isset($form['name'])) {
+    $nameTitle = $form['name']['#title'] ?? NULL;
+
+    if ($nameTitle instanceof TranslatableMarkup) {
+      $form['name']['#title'] = new TranslatableMarkup('Your name:');
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ggcp_styler_preprocess_webform_confirmation(&$variables) {
+  $request = \Drupal::request();
+  $redirectPath = $request->query->get('redirectPath');
+
+  if ($redirectPath) {
+    $variables['back_url'] = $request->getSchemeAndHttpHost() . $redirectPath;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ggcp_styler_preprocess_tb_megamenu(&$variables) {
+  $variables['#cache']['max-age'] = 0;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ggcp_styler_preprocess_tb_megamenu_item(&$variables) {
+  if ($variables['menu_name'] === 'custom-user-account-menu' && $variables['link']['url'] === '/user/logout') {
+    $currentPath = Url::fromRoute('<current>')->toString();
+
+    $separator = strpos($variables['link']['url'], '?') !== FALSE ? '&' : '?';
+    $variables['#cache']['max-age'] = 0;
+
+    if (!empty($currentPath) && $currentPath !== '/' && strlen($currentPath) > 1) {
+      $variables['link']['url'] .= $separator . 'redirectPath=' . $currentPath;
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function ggcp_styler_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] === 'system_breadcrumb_block') {
+    $variables['#cache']['max-age'] = 0;
+  }
+}
+
+/**
+ * Implements hook_ajax_render_alter().
+ */
+function ggcp_styler_ajax_render_alter(array &$data) {
+  foreach ($data as $key => $value) {
+    if ($value['command'] === 'viewsScrollTop') {
+      unset($data[$key]);
+      break;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function ggcp_styler_preprocess_menu_local_task(&$variables) {
+  // Get the route name from the route match object.
+  $route_match = \Drupal::routeMatch();
+  $route_name = $route_match->getRouteName();
+
+  // Check if the route name matches the routes.
+  if ($route_name === 'entity.user.canonical' || $route_name === 'entity.user.edit_form') {
+    // Modify the "View" tab to "Profile".
+    if ($variables['element']['#link']['title'] == 'View') {
+      $variables['element']['#link']['title'] = 'Profile';
+    }
+    // Modify the "Edit" tab to "Change Password".
+    if ($variables['element']['#link']['title'] == 'Edit') {
+      $variables['element']['#link']['title'] = 'Change Password';
+    }
+  }
+}
+
+/**
+ * Merged 2 views for community news, toolkit & recently added front page.
+ */
+function ggcp_styler_announcements_combined_view($view, $view2, $machine_name, $machine_name2) {
+  // Merging result form multiple views.
+  $combined_rows = [];
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $featured_image_view = Views::getView($view2);
+  if ($featured_image_view) {
+    $featured_image_view->setDisplay($machine_name2);
+    $featured_image_view->execute();
+
+    foreach ($featured_image_view->result as $resultRow) {
+      $node = $resultRow->_entity;
+      if ($node instanceof NodeInterface) {
+        $view_builder = $entityTypeManager->getViewBuilder('node');
+        $content = $view_builder->view($node, 'teaser');
+        $image = $node->get('field_image')->view('promoted_blo');
+        $image_markup = \Drupal::service('renderer')->render($image);
+        $title = $node->getTitle();
+        $url = $node->toUrl()->toString();
+        $description = $node->get('field_description')->value;
+        $description = strip_tags(html_entity_decode($description));
+        $description = mb_substr($description, 0, 125) . (mb_strlen($description) > 125 ? '...' : '');
+        $typeOfAnnoucement = "";
+          if (!$node->get('field_type_of_announcement')->isEmpty()) {
+          $terms = $node->get('field_type_of_announcement')->referencedEntities();
+
+          if (!empty($terms) && $terms[0] instanceof \Drupal\taxonomy\TermInterface) {
+            $typeOfAnnoucement = $terms[0]->getName();
+          }
+        }
+
+        $combined_rows[] = [
+          'image' => $image_markup,
+          'title' => $title,
+          'url' => $url,
+          'description' => $description,
+          'type_of_announcement' => $typeOfAnnoucement,
+          'has_image' => !empty($image),
+        ];
+      }
+      unset($node, $content);
+    }
+    unset($featured_image_view);
+  }
+
+  $new_resources_view = Views::getView($view);
+  if ($new_resources_view) {
+    $new_resources_view->setDisplay($machine_name);
+    $new_resources_view->execute();
+    $i = 1;
+    foreach ($new_resources_view->result as $resultRow) {
+      if ($i > 2) {
+        break;
+      }
+      $node = $resultRow->_entity;
+      if ($node instanceof NodeInterface) {
+        $view_builder = $entityTypeManager->getViewBuilder('node');
+        $content = $view_builder->view($node, 'teaser');
+        $title = $node->getTitle();
+        $url = $node->toUrl()->toString();
+        $description = $node->get('field_description')->value;
+        $description = strip_tags(html_entity_decode($description));
+        $description = mb_substr($description, 0, 125) . (mb_strlen($description) > 125 ? '...' : '');
+        $typeOfAnnoucement = "";
+        if (!$node->get('field_type_of_announcement')->isEmpty()) {
+          $terms = $node->get('field_type_of_announcement')->referencedEntities();
+
+          if (!empty($terms) && $terms[0] instanceof \Drupal\taxonomy\TermInterface) {
+            $typeOfAnnoucement = $terms[0]->getName();
+          }
+        }
+        $combined_rows[] = [
+          'title' => $title,
+          'url' => $url,
+          'description' => $description,
+          'type_of_announcement' => $typeOfAnnoucement,
+        ];
+      }
+      unset($node, $content);
+      $i++;
+    }
+    unset($new_resources_view);
+  }
+  // Assign the combined rows back to the variables.
+  return $combined_rows;
+
+}
+
+
+/**
+ * Implements hook_entity_presave().
+ */
+function ggcp_styler_entity_presave(EntityInterface $entity) {
+  //  Only act on content entities (nodes, terms, etc).
+  if (!$entity instanceof ContentEntityInterface) {
+    return;
+  }
+
+  // Ensure fields exist on this entity type.
+  if (
+    !$entity->hasField('field_location_country') ||
+    !$entity->hasField('field_country_name')
+  ) {
+    return;
+  }
+
+  $country_item = $entity->get('field_location_country')->first();
+
+  if ($country_item && !$country_item->isEmpty()) {
+    $code = $country_item->value;
+
+    if ($code) {
+      $country = \Drupal::service('address.country_repository')->get($code);
+      if ($country) {
+        $entity->set('field_country_name', $country->getName());
+      }
+    }
+  }
+}

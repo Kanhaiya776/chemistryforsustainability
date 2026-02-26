@@ -1,0 +1,27 @@
+id: stage_of_development
+label: 'Taxonomy: Stage of Development'
+migration_group: generic_taxonomies
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: stage_of_development
+
+process:
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: stage_of_development
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent:
+    plugin: migration_lookup
+    migration: stage_of_development
+    source: parent
+
+destination:
+  plugin: entity:taxonomy_term

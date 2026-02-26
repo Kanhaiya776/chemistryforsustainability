@@ -1,0 +1,16 @@
+{% set parent_class = 'header-user--block' %}
+
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-header-user-block', parent_class, 'g-0']
+} %}
+<div {{ add_attributes(additional_attributes) }}>
+  <div {{ bem('container', '', parent_class) }}>
+    <div class="user-profile-header">
+      {# <div class="user-profile-header-search">
+        <a href="/search"><i class="bi bi-search"></i>SEARCH</a>
+      </div> #}
+      <a class="btn btn-primary btn-outline-primary" href="/user/login?destination={{ redirectUrl }}">LOGIN</a>
+      <a class="btn btn-primary" style="text-wrap-mode: nowrap;" href="/form/user-registration?redirectPath={{ redirectUrl }}">SIGN UP</a>
+    </div>
+  </div>
+</div>

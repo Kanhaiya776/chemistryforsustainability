@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * GGCP Group customs module.
+ */
+
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ggcp_group_customs_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (strpos($form_id, 'group_membership_group-join_form') !== FALSE) {
+    $form['actions']['submit']['#value'] = t('Confirm');
+    $form['actions']['submit']['#submit'][] = 'ggcp_group_customs_join_form_submit_handler';
+  }
+  if (strpos($form_id, 'group_invitation_add_form') !== FALSE) {
+    $form['actions']['submit']['#submit'][] = 'ggcp_group_customs_join_form_submit_handler';
+  }
+}
+
+/**
+ * Submit handler for group membership join form.
+ *
+ * @param array $form
+ *   The form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ */
+function ggcp_group_customs_join_form_submit_handler(&$form, FormStateInterface $form_state) {
+  $group_relationship = $form_state->getFormObject()->getEntity();
+  $group = $group_relationship->getGroup();
+
+  // Now redirect to the url of the group.
+  $route_params = ['group' => $group->id()];
+  $form_state->setRedirect('entity.group.canonical', $route_params);
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function ggcp_group_customs_menu_local_tasks_alter(&$data, $route_name, RefinableCacheableDependencyInterface &$cacheability) {
+  if (!empty($data['tabs'][0])) {
+    $disable_menu_routes = [
+      'entity.version_history:group.version_history',
+      'group.version_history',
+      'layout_builder_ui:layout_builder.overrides.group.view',
+      'devel.entities:group.devel_tab',
+      'group.delete_form',
+      'content_moderation.workflows:group.latest_version_tab',
+      'group.content',
+    ];
+    foreach ($data['tabs'][0] as $route => $tab) {
+      if (in_array($route, $disable_menu_routes)) {
+        unset($data['tabs'][0][$route]);
+      }
+    }
+  }
+}

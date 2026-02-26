@@ -1,0 +1,10 @@
+services:
+  ggcp_group_customs.term_access_checker:
+    class: Drupal\ggcp_group_customs\Access\TermAccessCheck
+    arguments: ['@entity_type.manager', '@current_route_match']
+    tags:
+      - { name: access_check, applies_to: _term_access_check }
+  ggcp_group_customs.route_subscriber:
+    class: Drupal\ggcp_group_customs\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,13 @@
+services:
+  custom_organization.organization_creator:
+    class: Drupal\custom_organization\Service\OrganizationCreatorService
+    arguments:
+      - '@entity_type.manager'
+      - '@file_url_generator'
+      - '@country_manager'
+  
+  custom_organization.organization_people:
+    class: Drupal\custom_organization\Service\OrganizationPeopleService
+    arguments:
+      - '@entity_type.manager'
+      - '@custom_organization.organization_creator'

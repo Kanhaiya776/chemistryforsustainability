@@ -1,0 +1,6 @@
+name: 'Dynamic User Profile Editor'
+type: module
+description: 'Allows users to edit their profiles dynamically without page refresh.'
+core_version_requirement: ^10
+package: Custom
+

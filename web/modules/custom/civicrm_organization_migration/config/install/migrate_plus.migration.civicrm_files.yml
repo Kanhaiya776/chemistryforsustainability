@@ -1,0 +1,25 @@
+id: civicrm_files
+label: 'CiviCRM organization logos'
+migration_group: civicrm
+
+source:
+  plugin: civicrm_organization
+  ids:
+    image_url:
+      type: string
+
+process:
+  uri:
+    - plugin: skip_on_empty
+      source: image_url
+      method: row
+    - plugin: image_filename
+      source: image_url
+    
+
+  status:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: entity:file

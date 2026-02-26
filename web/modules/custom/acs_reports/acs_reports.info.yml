@@ -1,0 +1,8 @@
+name: 'ACS Reports'
+type: module
+description: 'Provides reports including organization-wise active user counts.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user
+  - drupal:node

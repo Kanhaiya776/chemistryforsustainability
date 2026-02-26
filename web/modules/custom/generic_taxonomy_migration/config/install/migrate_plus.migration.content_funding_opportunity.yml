@@ -1,0 +1,90 @@
+id: content_funding_opportunity
+label: Content Funding Opportunity
+
+source:
+  plugin: funding_opportunity_sql
+  key: cherity
+
+destination:
+  plugin: entity:node
+  default_bundle: funding_opportunity
+
+process:
+  type:
+    plugin: default_value
+    default_value: funding_opportunity
+
+  title: title
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+    no_stub: true
+
+  body/value: body
+  body_format/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_proposal_deadline: deadline
+
+  field_link/uri: link
+
+  field_field_of_interest:
+    - plugin: skip_on_empty
+      method: process
+      source: interest_tids
+
+    - plugin: explode
+      delimiter: ','
+
+    - plugin: migration_lookup
+      migration: field_of_interest
+      no_stub: true
+
+
+  # Then wrap each tid in sub_process and run migration_lookup
+  field_keywords:
+    plugin: keywords_lookup
+    migration: keywords   # must match the migration ID that created the taxonomy terms
+    source: keyword_tids
+    no_stub: true
+
+  field_application_deadline2: application_deadline_type
+
+  field_tests:
+    - plugin: skip_on_empty
+      method: process
+      source: eligible_recipients
+    - plugin: explode
+      delimiter: ','
+
+  field_testa:
+    plugin: country_multi_process
+    source: countries
+  
+  # Organization reference
+  field_organization: 
+    plugin: migration_lookup
+    migration: civicrm_organization
+    source: organization_nid
+
+  
+  field_attachment:
+    plugin: migration_lookup
+    migration: featured_images
+    source: attachment_fids
+    no_stub: true
+  
+  field_featured_image/target_id:
+    plugin: migration_lookup
+    migration: file_attachment
+    source: image_fid
+
+  field_featured_image/alt: image_alt
+
+  field_specify_other_interest2: other_interest
+
+  moderation_state: moderation_state
+
+

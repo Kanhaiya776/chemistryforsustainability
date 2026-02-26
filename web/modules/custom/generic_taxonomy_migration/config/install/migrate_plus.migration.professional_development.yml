@@ -1,0 +1,123 @@
+id: professional_development
+label: 'Professional Development'
+migration_group: content
+
+source:
+  plugin: professional_development_sql
+  key: cherity
+
+destination:
+  plugin: entity:node
+  default_bundle: professional_development
+
+process:
+  type:
+    plugin: default_value
+    default_value: professional_development
+
+  title: title
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+    no_stub: true
+
+  body/value: body
+  body/format: body_format
+
+  field_attachments:
+    - plugin: skip_on_empty
+      method: process
+      source: attachment_fids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: featured_images
+      no_stub: true
+
+  field_attachment_name: attachment_name
+  field_length_time_of_training: length_time
+  field_location_address: location_address
+  field_location_country: location_country
+  field_location_name: location_name
+
+  field_organization:
+    plugin: migration_lookup
+    migration: civicrm_organization
+    source: organization_nid
+
+  field_image/target_id:
+    plugin: migration_lookup
+    migration: featured_images
+    source: image_fid
+    no_stub: true
+  field_image/alt: image_alt
+
+  field_keywords:
+    - plugin: skip_on_empty
+      method: process
+      source: keyword_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: keywords
+
+  field_level_of_training:
+    - plugin: skip_on_empty
+      method: process
+      source: level_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: level_of_training
+
+  field_training_format:
+    - plugin: skip_on_empty
+      method: process
+      source: format_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: training_format
+
+  field_target_audience:
+    - plugin: skip_on_empty
+      method: process
+      source: audience_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: target_audience
+
+  field_field_of_interest:
+    - plugin: skip_on_empty
+      method: process
+      source: interest_tids
+    - plugin: explode
+      delimiter: ','
+    - plugin: migration_lookup
+      migration: field_of_interest
+
+  field_specify_other_interest4: other_interest
+
+  field_training_registration_link/uri: registration_link
+  field_link/uri: website_link
+  field_related_technology_compend/target_id:
+    plugin: migration_lookup
+    migration: case_study
+    source: related_node
+    no_stub: true
+
+  field_registrations_date_time/value: reg_start
+  field_registrations_date_time/end_value: reg_end
+
+  field_time_of_training/value: train_start
+  field_time_of_training/end_value: train_end
+
+  field_professional_dev_timezone/value: prof_timezone
+  field_registrations_time_zone/value: reg_timezone
+
+  field_prerequisites/value: prerequisites
+  field_pf_accept_terms: accept_terms
+  
+  moderation_state: moderation_state

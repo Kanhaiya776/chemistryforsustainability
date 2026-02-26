@@ -1,0 +1,5 @@
+name: 'Acs Search React'
+type: module
+description: 'Integrates a React app into Drupal.'
+package: Custom
+core_version_requirement: ^9 || ^10

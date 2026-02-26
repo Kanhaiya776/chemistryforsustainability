@@ -1,0 +1,22 @@
+id: event_type
+label: 'Taxonomy: Event Type'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: event_type
+
+process:
+  vid:
+    plugin: default_value
+    default_value: event_type
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

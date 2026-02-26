@@ -1,0 +1,11 @@
+name: 'Custom Contacts'
+type: module  
+description: 'User registration & User Profile Prefill update for webform'
+core_version_requirement: ^10
+package: 'Custom'
+dependencies:
+  - drupal:user
+  - drupal:node
+  - drupal:webform
+  - webform:webform
+  - address:address

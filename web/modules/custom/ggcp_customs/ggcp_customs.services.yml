@@ -1,0 +1,8 @@
+services:
+  ggcp_customs.export_controller:
+    class: Drupal\ggcp_customs\Controller\ContentExportController
+    arguments: ['@entity_type.manager']
+  ggcp_customs.event_subscriber:
+    class: Drupal\ggcp_customs\EventSubscriber\ForumRedirectSubscriber
+    tags:
+      - { name: event_subscriber }

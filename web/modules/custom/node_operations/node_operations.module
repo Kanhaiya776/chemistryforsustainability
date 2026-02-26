@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ * node_operations.module
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entiy_insert().
+ */
+function node_operations_entity_insert(EntityInterface $entity) {
+  if (!$entity instanceof NodeInterface) {
+    return;
+  }
+  if ($entity->bundle() === 'organization') {
+    return;
+  }
+  $nodeStatus = $entity->get('moderation_state')->getString();
+
+  $account = \Drupal::currentUser();
+  $profileUrl = Url::fromRoute('entity.user.canonical', ['user' => $account->id()]);
+  if ($nodeStatus === 'under_review') {
+    \Drupal::messenger()->addStatus(t('Your content has been submitted for moderator approval. At any time, you may go to your <a href=":profile">My Submissions dashboard</a> to review the status of all content you have submitted.', [
+      ':profile' => '/my-submissions',
+    ]), TRUE);
+  }
+  elseif ($nodeStatus === 'draft') {
+    \Drupal::messenger()->addStatus(t('Your content has been submitted as draft only. At any time, you may go to your <a href=":profile">My Submissions dashboard</a> to review the status of all content you have submitted.', [
+      ':profile' => '/my-submissions',
+    ]), TRUE);
+  }
+  else {
+    \Drupal::messenger()->addStatus(t('Your content has been submitted for moderator approval. At any time, you may go to your <a href=":profile">My Submissions dashboard</a> to review the status of all content you have submitted.', [
+      ':profile' => '/my-submissions',
+    ]), TRUE);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function node_operations_form_alter(&$form, &$form_state, $form_id) {
+  $nodeEditFormIds = ['node_announcements_form', 'node_collaboration_opportunity_form',
+    'node_funding_opportunity_form', 'node_event_form',
+    'node_policy_form', 'node_professional_development_form', 'node_publication_form', 'node_case_study_form',
+    'node_tools_metrics_form',
+  ];
+
+  if (in_array($form_id, $nodeEditFormIds)) {
+    $referer = \Drupal::request()->headers->get('referer');
+    // if (!str_contains($referer, '/node/add')) {
+    //   $form['actions']['submit']['#submit'][] = '_node_operations_custom_form_redirect';
+    // }
+  }
+  if ($form_id === 'contact_message_personal_form' && isset($form['field_other'])) {
+    $form['field_other']['#states'] = [
+      'visible' => [
+        ':input[name^="field_purpose_of_message"]' => ['value' => 'other'],
+      ],
+    ];
+
+    $form['field_other']['widget']['0']['value']['#states'] = [
+      'required' => [
+        ':input[name^="field_purpose_of_message"]' => ['value' => 'other'],
+      ],
+    ];
+  }
+}
+
+/**
+ * A helper function.
+ *
+ * @param mixed $form
+ *   Form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form state.
+ *
+ * @return void
+ *   Return.
+ */
+// function _node_operations_custom_form_redirect($form, FormStateInterface &$form_state) {
+//   $formId = $form['#id'];
+//   $redirects = [
+//     'node-announcements-form' => 'internal:/search/announcements',
+//     'node-collaboration-opportunity-form' => 'internal:/search/collaboration-opportunities',
+//     'node-funding-opportunity-form' => 'internal:/search/funding-and-innovation',
+//     'node-event-form' => 'internal:/search/events',
+//     // 'webform-submission-new-organization-add-form' => 'internal:/search/organizations',
+//     'node-policy-form' => 'internal:/search/policies',
+//     'node-professional-development-form' => 'internal:/professional-development',
+//     'node-publication-form' => 'internal:/search/publications',
+//     'node-case-study-form' => 'internal:/search/technology-compendium',
+//     'node-tool-form' => 'internal:/search/tools',
+//   ];
+//   $redirectUri = $redirects[$formId];
+
+//   if (!empty($redirectUri)) {
+//     $form_state->setRedirectUrl(Url::fromUri($redirectUri));
+//   }
+// }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function node_operations_preprocess_menu_local_task(&$variables) {
+  $element = $variables['element'];
+
+  if ($element && $element['#link'] && $element['#link']['title'] && $element['#link']['title'] === 'Delete') {
+    $link = $variables['link'];
+
+    if ($linkObject = $link['#url']) {
+      $request = \Drupal::request();
+      $destination = $request->get('redirectPath');
+      if ($linkObject instanceof Url && $destination) {
+        $linkObject->setOption('query', ['destination' => $destination]);
+      }
+    }
+  }
+}

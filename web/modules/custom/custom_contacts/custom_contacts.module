@@ -1,0 +1,401 @@
+<?php
+
+/**
+ * @file
+ * Custom Contacts customs module.
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Session\UserSession;
+use Drupal\file\Entity\File;
+use Drupal\user\Entity\User;
+use Drupal\user\UserInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * List all the webform & user field key mapping.
+ */
+function custom_contacts_get_profile_mapping() {
+  $mapping = [
+    // PERSONAL INFORMATION.
+    'container.contact_1_fieldset_fieldset.first_last.first_name' => 'field_first_name',
+    'container.contact_1_fieldset_fieldset.first_last.last_name' => 'field_last_name',
+    'container.email_and_pronouns.email_address' => 'mail',
+    'container.email_and_pronouns.preferred_pronouns' => 'field_pronouns',
+    'container.spoken_languages' => 'field_spoken_language',
+    'container.professional_summary' => 'field_professional_summary',
+    'container.country' => 'field_country',
+
+    // INTERESTS.
+    'container.fiel_of_interest_fieldset.field_of_interest' => 'field_field_of_interest',
+    'container.fiel_of_interest_fieldset.specify_other_fields_of_interest' => 'field_specify_other_interest',
+    'container.fiel_of_interest_fieldset.fields_of_expertise' => 'field_field_of_expertise',
+    'container.fiel_of_interest_fieldset.other_fields_of_expertise' => 'field_other_fields_of_expertise',
+
+    // ORGANIZATION.
+    'organization_fieldset_fieldset.container_02.organization_job_title.organization_name' => 'field_organization',
+    'organization_fieldset_fieldset.container_02.organization_job_title.job_title' => 'field_job_title',
+    'organization_fieldset_fieldset.container_02.roles' => 'field_roles',
+
+    // EDUCATION.
+    'container_01.education_fieldset.academic_defree.academic_institution_s' => 'field_academic_institution',
+    'container_01.education_fieldset.academic_defree.degree_s' => 'field_degree',
+    'container_01.education_fieldset.academic_field_s_of_study' => 'field_academic_field_of_study',
+
+    // Mentor.
+    'mentor_fieldset.container_04.are_you_willing_to_be_a_mentor' => 'field_are_you_interested_in_ment',
+    'mentor_fieldset.container_04.identify_topics_in_which_you_wish_to_mentor' => 'field_identify_topics_in_which_y',
+
+    // SOCIAL LINKS.
+    'container_03.social_1.linkedin_profile_url' => 'field_linkedin_profile_url',
+    'container_03.social_1.website' => 'field_website_url',
+    'container_03.social_2.orcid_id_link' => 'field_orcid_id_link',
+    'container_03.social_2.google_scholar_link' => 'field_google_scholar_link',
+    'container_03.social_3.wechat_link' => 'field_wechat_link',
+    'container_03.social_3.instagram_profile' => 'field_instagram_profile',
+  ];
+
+  return $mapping;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_contacts_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == "webform_submission_user_registration_add_form") {
+    $form['#attached']['library'][] = 'custom_contacts/custom_contacts.registration_validation';
+  }
+
+  if ($form_id == "webform_submission_user_profile_add_form") {
+    $current_user = \Drupal::currentUser();
+    if ($current_user->isAnonymous()) {
+      return;
+    }
+
+    $user = User::load($current_user->id());
+    if (!$user) {
+      return;
+    }
+
+    /** @var \Drupal\custom_contacts\Service\WebformUserPrefill $prefill */
+    $prefill = \Drupal::service('custom_contacts.webform_user_prefill');
+    $prefill->prefillForm($form['elements'], $user, custom_contacts_get_profile_mapping());
+  }
+
+  if ($form_id == 'node_funding_opportunity_form') {
+
+    if (isset($form['field_testa']['widget'])) {
+      foreach ($form['field_testa']['widget'] as $delta => &$item) {
+        if (is_numeric($delta) && isset($item['value'])) {
+          $item['value']['#required'] = FALSE;
+          $item['value']['#empty_option'] = '- None -';
+          $item['value']['#default_value'] = '';
+        }
+      }
+      $form['#validate'][] = 'custom_contacts_country_validate';
+      $form['#after_build'][] = 'custom_contacts_country_focus_after_build';
+    }
+  }
+}
+
+/**
+ * Custom_contacts_country_validate.
+ */
+function custom_contacts_country_validate($form, FormStateInterface $form_state) {
+  $values = $form_state->getValue(['field_testa']);
+  if (empty($values) || !is_array($values)) {
+    $form_state->setErrorByName('field_testa][0][value]', 'Please select at least one country.');
+    return;
+  }
+
+  $has_country = FALSE;
+
+  foreach ($values as $delta => $item) {
+
+    if (!is_numeric($delta)) {
+      continue;
+    }
+
+    if (isset($item['value']) && $item['value'] !== '') {
+      $has_country = TRUE;
+      break;
+    }
+  }
+
+  if (!$has_country) {
+    $form_state->setErrorByName('field_testa][0][value', 'Please select at least one country.');
+  }
+}
+
+/**
+ * Custom_contacts_country_focus_after_build.
+ */
+function custom_contacts_country_focus_after_build($form, FormStateInterface $form_state) {
+  if ($form_state->getErrors()) {
+
+    if (isset($form['field_testa']['widget'][0]['value'])) {
+      $form['field_testa']['widget'][0]['value']['#attributes']['autofocus'] = 'autofocus';
+    }
+
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_webform_submission_insert().
+ */
+function custom_contacts_webform_submission_insert(WebformSubmissionInterface $webform_submission) {
+  if ($webform_submission->getWebform()->id() !== 'user_profile') {
+    return;
+  }
+
+  $current_user = \Drupal::currentUser();
+  $user = User::load($current_user->id());
+
+  if (!$user) {
+    return;
+  }
+
+  $data = $webform_submission->getData();
+  // PERSONAL INFO.
+  $user->set('field_first_name', $data['first_name'] ?? '');
+  $user->set('field_last_name', $data['last_name'] ?? '');
+  $user->set('field_pronouns', $data['preferred_pronouns'] ?? '');
+
+  // Image upload and move to civicrm folder.
+  if (!empty($data['upload_profile_image'])) {
+    $fid = $data['upload_profile_image'];
+    $file = File::load($fid);
+    if (!$file) {
+      return;
+    }
+
+    // Ensure file is permanent.
+    $file->setPermanent();
+    $file->save();
+
+    $original_uri = $file->getFileUri();
+    $filename = basename($original_uri);
+    $directory = 'public://webform/images/';
+    $new_uri = 'public://webform/images/' . $filename;
+
+    $file_system = \Drupal::service('file_system');
+
+    // The CREATE_DIRECTORY flag ensures it is created if missing.
+    $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY);
+    // Move the file.
+    if ($file_system->move($original_uri, $new_uri)) {
+      // Update file entity with new URI.
+      $file->setFileUri($new_uri);
+      $file->save();
+    }
+    else {
+      \Drupal::logger('custom_contacts')->error('Failed to move file @uri to @new_uri', [
+        '@uri' => $original_uri,
+        '@new_uri' => $new_uri,
+      ]);
+      return;
+    }
+
+    // Update file usage.
+    \Drupal::service('file.usage')->add(
+      $file,
+      'custom_contacts',
+      'user',
+      $user->id()
+    );
+
+    // Delete old profile image if exists.
+    if (!$user->get('user_picture')->isEmpty()) {
+      $old_fid = $user->get('user_picture')->target_id;
+      if ($old_file = File::load($old_fid)) {
+        \Drupal::service('file.usage')->delete($old_file, 'custom_contacts', 'user', $user->id());
+        $old_file->delete();
+      }
+    }
+
+    // Assign new file to user picture.
+    $user->set('user_picture', ['target_id' => $file->id()]);
+  }
+  // COUNTRY.
+  // TODO: Convert to advanced address.
+  if (!empty($data['country']['country_code'])) {
+    $user->set('field_country', $data['country']['country_code']);
+
+    if (!empty($data['country']['administrative_area'])) {
+      $user->set('field_state_province', $data['country']['administrative_area'] ?? '');
+    }
+  }
+
+  $user->set('field_spoken_language', $data['spoken_languages'] ?? []);
+  $user->set('field_field_of_interest', $data['field_of_interest'] ?? []);
+  $user->set('field_field_of_expertise', $data['fields_of_expertise'] ?? []);
+  $user->set('field_roles', $data['roles'] ?? []);
+
+  $user->set('field_professional_summary', $data['professional_summary'] ?? '');
+  $user->set('field_specify_other_interest', $data['specify_other_fields_of_interest'] ?? '');
+  $user->set('field_other_fields_of_expertise', $data['other_fields_of_expertise'] ?? '');
+
+  // ORGANIZATION (entity reference ID)
+  if (!empty($data['organization_name'])) {
+    $user->set('field_organization', $data['organization_name']);
+  }
+
+  $user->set('field_job_title', $data['job_title'] ?? '');
+
+  // EDUCATION.
+  $user->set('field_academic_institution', $data['academic_institution_s'] ?? '');
+  $user->set('field_degree', $data['degree_s'] ?? '');
+  $user->set('field_academic_field_of_study', $data['academic_field_s_of_study'] ?? '');
+
+  // MENTOR.
+  $user->set('field_are_you_interested_in_ment', $data['are_you_willing_to_be_a_mentor'] ?? 0);
+  $user->set('field_identify_topics_in_which_y', $data['identify_topics_in_which_you_wish_to_mentor'] ?? '');
+
+  // SOCIAL LINKS.
+  $user->set('field_linkedin_profile_url', $data['linkedin_profile_url'] ?? '');
+  $user->set('field_website_url', $data['website'] ?? '');
+  $user->set('field_orcid_id_link', $data['orcid_id_link'] ?? '');
+  $user->set('field_google_scholar_link', $data['google_scholar_link'] ?? '');
+  $user->set('field_instagram_profile', $data['instagram_profile'] ?? '');
+  $user->set('field_wechat_link', $data['wechat_link'] ?? '');
+  $user->set('field_profile_updated', date("Y-m-d"));
+  $user->save();
+
+  \Drupal::messenger()->addStatus('Your profile has been updated');
+  \Drupal::logger('custom_contacts')->info('User @uid has updated there profile via webform', ['@uid' => $user->id()]);
+}
+
+/**
+ * Get first and last names.
+ *
+ * @param mixed $account
+ *   Account.
+ *
+ * @return string|null
+ *   First last names.
+ */
+function _custom_contacts__get_first_last_names(AccountInterface $account): ?string {
+  if ($account->isAnonymous()) {
+    return t('Guest');
+  }
+
+  if ($account instanceof UserInterface && !$account instanceof UserSession) {
+    // Prefer first/last name fields.
+    $first = $account->get('field_first_name')->value ?? '';
+    $last = $account->get('field_last_name')->value ?? '';
+
+    $displayName = trim("$first $last");
+    return $displayName ?: $account->getAccountName();
+  }
+
+  try {
+    /** @var \Drupal\user\UserInterface $loaded_user */
+    $loaded_user = User::load($account->id());
+    if ($loaded_user) {
+      $first = trim((string) $loaded_user->get('field_first_name')->value ?? '');
+      $last = trim((string) $loaded_user->get('field_last_name')->value ?? '');
+      $displayName = trim("$first $last");
+      return $displayName ?: $loaded_user->getAccountName();
+    }
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('custom_contacts')->error('Failed to load user @uid: @msg', [
+      '@uid' => $account->id(),
+      '@msg' => $e->getMessage(),
+    ]);
+  }
+
+  // fallback: username (or email if username is empty)
+  return $account->getAccountName() ?: $account->getEmail();
+}
+
+/**
+ * Implements hook_preprocess_username().
+ */
+function custom_contacts_preprocess_username(&$variables) {
+  $routeName = \Drupal::routeMatch()->getRouteName();
+
+  if ($routeName !== "entity.user.contact_form") {
+    return;
+  }
+
+  $account = $variables['account'];
+  $names = _custom_contacts__get_first_last_names($account);
+
+  if (!empty($names)) {
+    $variables['name'] = $names;
+  }
+}
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function custom_contacts_user_format_name_alter(&$name, AccountInterface $account) {
+  $names = _custom_contacts__get_first_last_names($account);
+
+  if (!empty($names)) {
+    $name = $names;
+  }
+}
+
+/**
+ * Implements hook_user_format_name().
+ */
+function custom_contacts_user_format_name(&$name, AccountInterface $account) {
+  $names = _custom_contacts__get_first_last_names($account);
+
+  if (!empty($names)) {
+    $name = $names;
+  }
+}
+
+/**
+ * Implements hook_webform_submission_form_alter().
+ */
+function custom_contacts_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'webform_submission_user_registration_add_form') {
+    // Override the submit button with custom AJAX callback.
+    $form['#prefix'] = '<div id="user-registration-wrapper">';
+    $form['#suffix'] = '</div>';
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '\Drupal\custom_contacts\AjaxHandler::ajaxRedirectCallback',
+      'event' => 'click',
+      'progress' => [
+        'type' => 'throbber',
+        'message' => t('Submitting...'),
+      ],
+    ];
+  }
+}
+
+
+/**
+ * Fix fullname search for users lists.
+ *
+ * Implements hook_views_query_alter().
+ */
+function custom_contacts_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() === 'people_search' && $view->current_display === 'page_1') {
+
+    $input = \Drupal::request()->query->get('combine');
+
+    if (!empty($input)) {
+
+      $words = preg_split('/\s+/', trim($input));
+
+      foreach ($words as $word) {
+        $group = $query->setWhereGroup('OR');
+
+        $query->addWhere($group, 'field_first_name_value', $word, '=');
+        $query->addWhere($group, 'field_last_name_value', $word, '=');
+      }
+
+    }
+  }
+}

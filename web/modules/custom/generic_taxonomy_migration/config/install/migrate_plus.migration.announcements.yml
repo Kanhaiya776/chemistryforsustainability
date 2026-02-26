@@ -1,0 +1,81 @@
+id: announcements
+label: 'Content: Announcements'
+
+source:
+  plugin: announcements_sql
+  key: cherity
+
+process:
+  type:
+    plugin: default_value
+    default_value: announcements
+
+  title: title
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+    no_stub: true
+
+
+  field_description/value: description
+  field_description/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_specify_other_interest3: other_interest
+
+  field_link/uri: link
+
+  created: created
+  changed: changed
+
+  # Featured image (assumes files already migrated)
+  field_image/target_id:
+    plugin: migration_lookup
+    migration: featured_images
+    source: image_fid
+
+  # Organization reference
+  field_organization:
+    plugin: migration_lookup
+    migration: civicrm_organization
+    source: organization_nid
+    no_stub: true
+
+  # Taxonomies
+  field_type_of_announcement:
+    plugin: migration_lookup
+    migration: type_of_announcement
+    source: type_of_announcement
+
+  field_keywords:
+    plugin: keywords_lookup
+    migration: keywords   # must match the migration ID that created the taxonomy terms
+    source: keywords
+    no_stub: true
+
+  field_field_of_interest:
+    - plugin: skip_on_empty
+      method: process
+      source: field_of_interest
+
+    - plugin: explode
+      delimiter: ','
+
+    - plugin: migration_lookup
+      migration: field_of_interest
+      no_stub: true
+  
+  moderation_state: moderation_state
+
+destination:
+  plugin: entity:node
+  default_bundle: announcements
+
+migration_dependencies:
+  required:
+    - civicrm_organization
+    - type_of_announcement
+    - keywords
+    - field_of_interest

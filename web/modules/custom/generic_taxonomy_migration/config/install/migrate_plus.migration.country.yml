@@ -1,0 +1,24 @@
+id: country
+label: 'Taxonomy: Country (from CiviCRM)'
+migration_group: generic_taxonomies
+
+source:
+  plugin: civicrm_country_sql
+  key: civicrm
+
+process:
+  vid:
+    plugin: default_value
+    default_value: country
+
+  name: name
+
+  field_country_code:
+    plugin: callback
+    source: iso_code
+    callable: strtoupper
+
+  field_civicrm_country_id: id   # IMPORTANT: store original id
+
+destination:
+  plugin: entity:taxonomy_term

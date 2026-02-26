@@ -1,0 +1,18 @@
+id: publication_authors
+label: Publication Authors Paragraphs
+
+source:
+  plugin: publication_authors_sql
+  key: cherity
+
+process:
+
+  id: id
+  revision_id: revision_id
+
+  field_author_name: author_name
+  field_author_organization: author_org
+
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: author

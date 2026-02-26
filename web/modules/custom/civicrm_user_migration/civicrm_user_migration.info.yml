@@ -1,0 +1,10 @@
+name: CiviCRM User Migration
+type: module
+description: Migrate CiviCRM Individual contacts to Drupal users
+core_version_requirement: ^10
+package: Migration
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:migrate_tools
+  - drupal:user

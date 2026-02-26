@@ -1,0 +1,79 @@
+id: publication
+label: 'Content: publication'
+
+source:
+  plugin: publication_sql
+  key: cherity
+
+destination:
+  plugin: entity:node
+  default_bundle: publication
+
+process:
+  type:
+    plugin: default_value
+    default_value: publication
+
+  title: title
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+    no_stub: true
+
+
+  body/value: body
+  body/format: body_format
+
+  field_source: source
+
+  field_doi/uri: link
+
+  created: created
+  changed: changed
+
+  # attachment
+  field_attachment2/target_id:
+    plugin: migration_lookup
+    migration: featured_images
+    source: attachment_fid
+
+  # Featured image (assumes files already migrated)
+  field_featured_image_pub/target_id:
+    plugin: migration_lookup
+    migration: featured_images
+    source: image_fid
+
+  field_keywords:
+    plugin: keywords_lookup
+    migration: keywords   # must match the migration ID that created the taxonomy terms
+    source: keywords
+    no_stub: true
+
+  field_field_of_interest:
+    - plugin: skip_on_empty
+      method: process
+      source: field_of_interest
+
+    - plugin: explode
+      delimiter: ','
+
+    - plugin: migration_lookup
+      migration: field_of_interest
+      no_stub: true
+  
+
+  field_specify_other_interest: other_interest
+
+  moderation_state: moderation_state
+
+  field_publication_authors:
+    plugin: paragraph_reference_normalize
+    source: author_paragraph_ids
+        
+  field_pu: publication_date
+  
+migration_dependencies:
+  required:
+    - keywords
+    - field_of_interest

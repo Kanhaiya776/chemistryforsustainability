@@ -1,0 +1,25 @@
+{% set parent_class = 'explore-more-networks-block' %}
+
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-explore-more-networks-block', parent_class, 'g-0']
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  <div {{ bem('container', '', parent_class) }}>
+    <div class="background-image-container">
+      <div class="background-image">
+      </div>
+    </div>
+    <div class="text-wrapper">
+    <span class="display-medium">
+      Explore More Networks
+    </span>
+    </div>
+    <div class="button-wrapper">
+      {% include '@acs_gcs/includes/common/buttons/primary-button-outlined.twig' with {
+        label: 'Search the GCTLC for green chemistry educators',
+        link: 'https://gctlc.org/community-members/'
+      } %}
+    </div>
+  </div>
+</div>

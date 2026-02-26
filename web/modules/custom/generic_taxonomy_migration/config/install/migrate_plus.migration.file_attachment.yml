@@ -1,0 +1,20 @@
+id: file_attachment
+label: 'File Attachment'
+source:
+  plugin: files_sql
+  key: cherity
+
+process:
+  fid: fid
+  filename: filename
+  uri: uri
+  filemime: filemime
+  filesize: filesize
+  created: created
+  changed: changed
+  status:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: entity:file

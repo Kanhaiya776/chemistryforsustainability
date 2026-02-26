@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * ggcp_customs.install
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_update_N().
+ */
+function ggcp_customs_update_8001() {
+  $query = \Drupal::entityQuery('user');
+  $uids = $query->accessCheck(FALSE)->execute();
+
+  foreach ($uids as $uid) {
+    $account = User::load($uid);
+    \Drupal::service('user.data')->set('contact', $account->id(), 'enabled', 1);
+  }
+}

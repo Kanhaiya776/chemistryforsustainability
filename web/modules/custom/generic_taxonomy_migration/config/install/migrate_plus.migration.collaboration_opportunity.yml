@@ -1,0 +1,83 @@
+id: collaboration_opportunity
+label: 'Content: Collaboration Opportunity'
+
+source:
+  plugin: collaboration_opportunity_sql
+  key: cherity
+
+process:
+  type:
+    plugin: default_value
+    default_value: collaboration_opportunity
+
+  title: title
+
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_deadline_collab: deadline
+  field_start_date: start_date
+  field_end_date: end_date
+
+  field_reference_for_relevant_pub/value: reference_pub
+  field_reference_for_relevant_pub/format:
+    plugin: default_value
+    default_value: basic_html
+
+  field_link/uri: link
+
+  created: created
+  changed: changed
+
+  # Supporting document
+  field_supporting_document/target_id:
+    plugin: migration_lookup
+    migration: files
+    source: doc_fid
+
+ # Organization reference
+  field_organization:
+    plugin: migration_lookup
+    migration: civicrm_organization
+    source: organization_nid
+
+  # Taxonomies
+  field_academia_sub_sector:
+    plugin: migration_lookup
+    migration: academia_sub_sector
+    source: academia_sub_sector
+
+  field_government_sub_sector:
+    plugin: migration_lookup
+    migration: government_sub_sector
+    source: government_sub_sector
+
+  field_industry_sub_sector:
+    plugin: migration_lookup
+    migration: industry_sub_sector
+    source: industry_sub_sector
+
+  field_organizational_sector:
+    plugin: migration_lookup
+    migration: organizational_sector
+    source: organizational_sector
+
+  field_keywords:
+    plugin: migration_lookup
+    migration: keywords
+    source: keywords
+
+destination:
+  plugin: entity:node
+  default_bundle: collaboration_opportunity
+
+migration_dependencies:
+  required:
+    - civicrm_organization
+    - academia_sub_sector
+    - government_sub_sector
+    - industry_sub_sector
+    - organizational_sector
+    - keywords

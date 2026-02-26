@@ -1,0 +1,9 @@
+name: 'GGCP Message Customs'
+type: module
+description: 'GGCP custom module form messanging'
+core_version_requirement: '^10'
+dependencies:
+  - message
+  - message_notify
+  - content_moderation
+  - message_digest

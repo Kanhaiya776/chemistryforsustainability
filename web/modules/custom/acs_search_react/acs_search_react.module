@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * acs_search_react.module
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function acs_search_react_theme($existing, $type, $theme, $path) {
+  return [
+    'acs_search_react_block' => [],
+  ];
+}

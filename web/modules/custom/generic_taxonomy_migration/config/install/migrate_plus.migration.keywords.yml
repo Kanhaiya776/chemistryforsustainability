@@ -1,0 +1,22 @@
+id: keywords
+label: 'Taxonomy: Keywords'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: keywords
+
+process:
+  vid:
+    plugin: default_value
+    default_value: keywords
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

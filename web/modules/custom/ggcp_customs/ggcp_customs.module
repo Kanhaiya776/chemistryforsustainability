@@ -1,0 +1,977 @@
+<?php
+
+/**
+ * @file
+ * GGCP customs module.
+ */
+
+use Drupal\ginvite\Plugin\Group\Relation\GroupInvitation;
+use Drupal\Component\Utility\Html;
+use Drupal\conditional_fields\DependencyHelper;
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\ggcp_customs\Plugin\Field\FieldType\CustomTimeRangeType;
+use Drupal\group\Entity\GroupRelationshipInterface;
+
+/**
+ * Implements hook_FORMID_form_alter().
+ */
+function ggcp_customs_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-funding-opportunities-and-innovation-challenges-page-1') {
+    $form['type_1']['#options'] = [
+      'All' => '- Any -',
+      'funding_opportunity' => 'Funding Opportunity',
+      'innovation_challenge' => 'Innovation Challenge',
+    ];
+  }
+  elseif ($form['#id'] == 'views-exposed-form-policies-page-1') {
+    $form['field_country']['#type'] = 'select';
+    unset($form['field_country']['#size']);
+    $form['field_country']['#multiple'] = FALSE;
+    // $form['field_country']['#options'] = _ggcp_customs_fetch_countries_for_select_list();
+  }
+  elseif ($form['#id'] == 'views-exposed-form-technology-compendium-page-1') {
+    $form['field_country_where_implemented']['#type'] = 'select';
+    unset($form['field_country_where_implemented']['#size']);
+    $form['field_country_where_implemented']['#multiple'] = FALSE;
+    // $form['field_country_where_implemented']['#options'] = _ggcp_customs_fetch_countries_for_select_list();
+    $sectors = [
+      '' => '- Any -',
+      'Academia' => 'Academia',
+      'Industry' => 'Industry',
+      'Government Sector' => 'Government Sector',
+      'Non-Government Organization' => 'Non-Government Organization',
+      'Other' => 'Other',
+    ];
+    $form['referenced_organization_sectors']['#type'] = 'select';
+    unset($form['referenced_organization_sectors']['#size']);
+    $form['referenced_organization_sectors']['#multiple'] = FALSE;
+    $form['referenced_organization_sectors']['#options'] = $sectors;
+  }
+  elseif ($form['#id'] == 'views-exposed-form-ggcp-only-events-page-2') {
+    $form['field_event_date_wrapper']['field_event_date_wrapper']['field_event_date']['min']['#title'] = 'Begin Range';
+    $form['field_event_date_wrapper']['field_event_date_wrapper']['field_event_date']['max']['#title'] = 'End Range';
+  }
+  elseif ($form['#id'] == 'views-exposed-form-collaboration-opportunities-page-1') {
+    $form['field_start_date_1_wrapper']['field_start_date_1_wrapper']['field_start_date_1']['min']['#title'] = 'Earliest starting date';
+    $form['field_start_date_1_wrapper']['field_start_date_1_wrapper']['field_start_date_1']['max']['#title'] = 'Latest starting date';
+  }
+}
+
+/**
+ * Fetch CiviCRM Countries.
+ *
+ * @return array
+ *   The array of countries.
+ */
+// function _ggcp_customs_fetch_countries_for_select_list() {
+//   $api = \Drupal::service('civicrm_entity.api');
+//   $countries = $api->get('Country', [
+//     'sequential' => TRUE,
+//     'options' => ['limit' => 0],
+//   ]);
+//   $country_options = [
+//     '' => '- Any -',
+//     'United States' => 'United States',
+//   ];
+//   if (!empty($countries)) {
+//     foreach ($countries as $country) {
+//       $country_options[$country['name']] = $country['name'];
+//     }
+//   }
+//   return $country_options;
+// }
+
+/**
+ * Implements hook_form_alter().
+ */
+function ggcp_customs_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'contact_message_personal_form') {
+    if (isset($form['copy'])) {
+      $form['copy']['#value'] = TRUE;
+      $form['copy']['#disabled'] = TRUE;
+    }
+  }
+  $user = \Drupal::currentUser();
+  $roles = $user->getRoles();
+  $fieldsToModify = [
+    'body',
+    'field_prerequisites',
+    'field_reference_for_relevant_pub',
+    'field_human_health_and_environme',
+    'field_inventor_owner_manufacture',
+    'field_references',
+    'field_abstract',
+    'field_description',
+  ];
+
+  if (!in_array('administrator', $roles)) {
+    foreach ($fieldsToModify as $fieldName) {
+      if (isset($form[$fieldName]['widget'])) {
+        $form[$fieldName]['widget']['#after_build'][] = 'ggcp_customs_remove_about_text_format';
+      }
+    }
+  }
+
+  // On Edit node, make sure Dependency get triggered.
+  if ($form_state->getFormObject() instanceof EntityFormInterface) {
+    $entity = $form_state->getFormObject()->getEntity();
+    if ($entity instanceof Node) {
+      if (!$entity->isNew() && class_exists('\Drupal\conditional_fields\DependencyHelper')) {
+        $bundle = $entity->bundle();
+        $entity_type = $entity->getEntityTypeId();
+        $module_handler = \Drupal::service('module_handler');
+        $entity_type_manager = \Drupal::service('entity_type.manager');
+        $dependency_helper = new DependencyHelper($entity_type, $bundle, $module_handler, $entity_type_manager);
+        $dependencies = $dependency_helper->getBundleDependencies();
+        if (!empty($dependencies) && !empty($dependencies['dependees'])) {
+          foreach (array_keys($dependencies['dependees']) as $dependee) {
+            // Add custom class to dependee field to call change event in js.
+            $form[$dependee]['#attributes']['class'][] = 'conditional_field_custom_event';
+            // Attached library is not already attached.
+            if (empty($form['#attached']['library']) || !in_array('ggcp_customs/ggcp_customs.conditional_fields_fix', $form['#attached']['library'])) {
+              $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.conditional_fields_fix';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Alter the user login form.
+  if ($form_id == 'user_login_form') {
+    $form['forgot_password'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'a',
+      '#attributes' => [
+        'href' => Url::fromRoute('user.pass')->toString(),
+        'id' => 'forgot-password-link',
+      ],
+      '#value' => t('Reset your password'),
+      '#weight' => 9999,
+    ];
+  }
+
+  // Alter the username label.
+  if ($form_id == 'user_login_form' || $form_id == 'user_pass') {
+    $form['name']['#title'] = t('Email address');
+    $form['name']['#description'] = t('Enter your Email address.');
+  }
+
+  // Validate for all forms for title.
+  $allowedValidation = ["node_announcements_form", "node_announcements_edit_form", "node_publication_form", "node_publication_edit_form", "node_event_form", "node_event_edit_form", "node_professional_development_form", "node_professional_development_edit_form", "node_funding_opportunity_form", "node_funding_opportunity_edit_form", "node_policy_form", "node_policy_edit_form", "node_case_study_form", "node_case_study_edit_form", "node_tools_metrics_form", "node_tools_metrics_edit_form",
+  ];
+
+  if (in_array($form_id, $allowedValidation)) {
+    if ($form_state->getFormObject() instanceof EntityFormInterface) {
+      $entity = $form_state->getFormObject()->getEntity();
+      if ($entity instanceof Node) {
+        if ($entity->bundle()) {
+          $form['#validate'][] = "ggcp_customs_common_node_validatator";
+        }
+      }
+    }
+  }
+
+  // Disclamier text.
+  if ($form_id == "node_announcements_form" || $form_id == "node_publication_form") {
+    $host = \Drupal::request()->getSchemeAndHttpHost();
+
+    $terms = "<a href='$host/terms-use' target='_blank'>Terms of Use</a>";
+    $privacy_policy = "<a href='$host/privacy-policy' target='_blank'>Privacy Policy</a>";
+
+    $form['disclaimer'] = [
+      '#markup' => '<div class="disclaimer mb-4">By submitting this content, I warrant and represent that I own the copyright with respect to the content or have received permission from the copyright holder in accordance with the ' . $terms . ' and ' . $privacy_policy . '.</div>',
+      '#weight' => 100,
+    ];
+  }
+
+  if ($form_id == "node_professional_development_form" || $form_id == "node_professional_development_edit_form") {
+    $form['#title'] = 'Submit A Professional Development Opportunity';
+
+    $host = \Drupal::request()->getSchemeAndHttpHost();
+
+    $terms = "<a class='add-org-link' href='$host/terms-use' target='_blank'>terms of Use</a>";
+    $privacy_policy = "<a class='add-org-link' href='$host/privacy-policy' target='_blank'>privacy policy</a>";
+
+    $form['field_pf_accept_terms']['#prefix'] = '<p class="custom-text">Have you read and accepted the website  ' . $privacy_policy . ' and ' . $terms . '?<span class="add-org-link">*</span></p>';
+    $form['field_specify_other_interest4']['#suffix'] = '<p class="mt-4 mb-4 custom-text small"><em><span class="text-danger">*</span> Indicates a required Field.</em></p>';
+
+    $form['field_attachments']['#suffix'] = '<div class="form-text custom-text mt--12 mb-2">Limited to one file only. 5 MB File Limit. Allowed file types: pdf, ppt, docx, doc, xlsx.</div>';
+
+    $form['field_image']['#suffix'] = '<div class="form-text custom-text mt--12 mb-2">Limited to one file only. 5 MB File Limit. Image should be 1920px X 1280px. Allowed file types: jpg, jpeg, png, webp.</div>';
+
+    $form['field_organization']['#suffix'] = '<div class="custom-text mt-1">Search for your organization. Organizations default to the parent hierarchy of all organizations. For example, Yale University will be listed rather than its departments.</div><div class="custom-text mt-2 mb-3"><strong>If the organization isn\'t in the search box above, <a  class="add-org-link" href="/form/new-organization" target="_blank">add a new organization.</a></strong></div>';
+    $form['field_training_format']['widget']["#options"]["_none"] = "Select one";
+    $form['field_related_technology_compend']['widget']["#options"]["_none"] = "Select one";
+    $form['field_attachment_name']['#suffix'] = '<div class="form-text custom-text mt--12 mb-2 field-attachment-name-text">Name will be visible to users, not the filename.</div>';
+    $form['#attributes']['novalidate'] = 'novalidate';
+    $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.pf_js';
+    $form['#validate'][] = "ggcp_customs_training_datetime_validate";
+    $form['moderation_state']['#access'] = FALSE;
+
+    // Remove existing validation.
+    $fields = ['field_training_registration_link', 'field_link'];
+    foreach ($fields as $field_name) {
+      if (isset($form[$field_name]['widget'][0]['uri'])) {
+        // Remove default validation.
+        $form[$field_name]['widget'][0]['uri']['#element_validate'] = [
+          'ggcp_customs_pf_link_validate',
+        ];
+      }
+    }
+    $form['user_actions_wrapper'] = [
+      '#type' => 'container',
+      '#weight' => 99,
+      '#attributes' => [
+        'class' => ['user-actions-wrapper', 'mt-4'],
+      ],
+    ];
+
+    if (!isset($form['actions']['preview'])) {
+      return;
+    }
+
+    $form['actions']['preview']['#attributes']['class'] = [
+      'btn',
+      'btn-theme-primary',
+      'mb-2',
+    ];
+    $form['actions']['preview']['#weight'] = 0;
+
+    // Save the preview button.
+    $preview_button = $form['actions']['preview'];
+
+    // Remove it from the default actions container.
+    unset($form['actions']['preview']);
+    $form['user_actions_wrapper']['actions']['preview'] = $preview_button;
+
+    $form['user_actions_wrapper']['actions']['save_as_draft'] = [
+      '#type' => 'submit',
+      '#value' => t('Save as Draft'),
+      '#weight' => 1,
+      '#submit' => ['::submitForm', 'ggcp_customs_moderation_buttons'],
+      '#attributes' => ['class' => ['btn', 'btn-theme-dark-primary', 'mb-2']],
+    ];
+
+    $form['user_actions_wrapper']['actions']['submit_for_review'] = [
+      '#type' => 'submit',
+      '#value' => t('Submit'),
+      '#weight' => 2,
+      '#submit' => ['::submitForm', 'ggcp_customs_moderation_buttons'],
+      '#attributes' => ['class' => ['btn', 'btn-theme-orange', 'mb-2']],
+    ];
+
+    $node = $form_state->getFormObject()->getEntity();
+    if (!\Drupal::currentUser()->hasRole('administrator')) {
+      // Add delete button for existing nodes only.
+      if (!$node->isNew()) {
+        $form['user_actions_wrapper']['actions']['delete'] = [
+          '#type' => 'submit',
+          '#value' => t('Delete'),
+          '#weight' => 3,
+          '#attributes' => [
+            'class' => ['btn', 'btn-theme-primary', 'mb-2'],
+            'onclick' => 'window.location.href="' . $node->toUrl('delete-form')->toString() . '"; return false;',
+          ],
+          '#access' => $node->access('delete'),
+        ];
+      }
+    }
+
+    $form['admin_actions_wrapper'] = [
+      '#type' => 'container',
+      '#weight' => 101,
+      '#attributes' => [
+        'class' => ['admin-actions-wrapper', 'col-md-12', 'mt-4'],
+      ],
+      '#access' => \Drupal::currentUser()->hasRole('administrator'),
+    ];
+
+    $form['admin_actions_wrapper']['title'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'label',
+      '#value' => t('Administrator only'),
+      '#attributes' => ['class' => ['mb-3', 'admin-title']],
+    ];
+
+    $form['admin_actions_wrapper']['actions'] = [
+      '#type' => 'container',
+      '#attributes' => ['class' => ['d-flex', 'gap-3']],
+    ];
+
+    // Add delete button for existing nodes only.
+    if (!$node->isNew()) {
+      $form['admin_actions_wrapper']['actions']['delete'] = [
+        '#type' => 'submit',
+        '#value' => t('Delete'),
+        '#submit' => ['ggcp_customs_delete_node'],
+        '#attributes' => [
+          'class' => ['btn', 'btn-theme-primary'],
+          'onclick' => 'window.location.href="' . $node->toUrl('delete-form')->toString() . '"; return false;',
+        ],
+        '#access' => $node->access('delete'),
+      ];
+    }
+
+    $form['admin_actions_wrapper']['actions']['reject'] = [
+      '#type' => 'submit',
+      '#value' => t('Reject'),
+      '#submit' => ['::submitForm', 'ggcp_customs_moderation_buttons'],
+      '#attributes' => ['class' => ['btn', 'btn-theme-dark-primary']],
+      '#access' => \Drupal::currentUser()->hasRole('administrator'),
+    ];
+
+    $form['admin_actions_wrapper']['actions']['publish'] = [
+      '#type' => 'submit',
+      '#value' => t('Publish'),
+      '#submit' => ['::submitForm', 'ggcp_customs_moderation_buttons'],
+      '#attributes' => ['class' => ['btn', 'btn-theme-orange']],
+      '#access' => \Drupal::currentUser()->hasRole('administrator'),
+    ];
+
+    unset($form['actions']['submit'], $form['actions']['delete']);
+  }
+
+  if ($form_id == "webform_submission_user_profile_add_form") {
+    $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.profile_conditional_fields_logic';
+    $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.organization_filter';
+  }
+
+  if ($form_id === "node_event_form" || $form_id === "node_event_edit_form") {
+    $form['#validate'][] = "ggcp_customs_event_date_time_form_validation";
+  }
+
+  if ($form_id == "webform_submission_user_registration_add_form") {
+    $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.organization_filter';
+  }
+
+  if ($form_id == "webform_submission_new_organization_add_form" || strpos($form_id, 'webform_submission_new_organization_node_') === 0) {
+    $form['#attributes']['class'][] = "container";
+    $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.new_organization_form_validation';
+  }
+
+  if ($form_id == 'views_form_content_page_1') {
+    if (isset($form['header']['node_bulk_form']['action']['#options'])) {
+      $form['header']['node_bulk_form']['action']['#options']['export_selected'] = 'Export to Excel';
+    }
+
+    // Add custom submit handler with higher weight to run first.
+    $form['#submit'] = array_merge(['ggcp_customs_bulk_form_submit'], $form['#submit']);
+  }
+
+  if ($form_id == 'webform_submission_update_organization_form_add_form') {
+    $form['#attributes']['class'][] = "container mt-4";
+    $form['#attached']['library'][] = 'ggcp_customs/ggcp_customs.update_organization_form_validation';
+  }
+
+}
+
+/**
+ * Utility function to remove text format.
+ *
+ * @param array $form_element
+ *   The element array.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ */
+function ggcp_customs_remove_about_text_format($form_element, FormStateInterface $form_state) {
+
+  if (isset($form_element[0]['format'])) {
+    unset($form_element[0]['format']['guidelines']);
+    unset($form_element[0]['format']['help']);
+    unset($form_element[0]['format']['#type']);
+    unset($form_element[0]['format']['#theme_wrappers']);
+    $form_element[0]['format']['format']['#access'] = FALSE;
+  }
+
+  return $form_element;
+}
+
+/**
+ * Implements hook_field_widget_complete_form_alter().
+ */
+function ggcp_customs_field_widget_complete_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  $state_country_fields = [
+    'field_eligibility_state_province' => 'field_eligibility_country',
+    'field_state' => 'field_country',
+  ];
+
+  if (in_array($context['items']->getName(), array_keys($state_country_fields))) {
+    $state_field = $context['items']->getName();
+    $country_field = $state_country_fields[$context['items']->getName()];
+
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $context['items']->getEntity();
+
+    if (($node instanceof NodeInterface) && $node->hasField($country_field)) {
+      \Drupal::service('civicrm')->initialize();
+      $selected = [];
+      foreach ($node->get($state_field)->referencedEntities() as $entity) {
+        $selected[] = $entity->id();
+      }
+
+      // @todo Just get all available countries from CiviCRM for now. Better to get the
+      // "allowed options" for select field although not sure how to do that.
+      $countries = array_keys(\CRM_Core_PseudoConstant::country());
+      $country_states = ggcp_customs_get_states($countries);
+
+      // Convert to HTML options.
+      $js_country_states = [];
+      foreach ($country_states as $country_id => $states) {
+        if (empty($js_country_states[$country_id])) {
+          $js_country_states[$country_id] = '';
+        }
+
+        foreach ($states as $k => $v) {
+          $js_country_states[$country_id] .= '<option value="' . $k . '"' . (in_array($k, $selected) ? 'selected="selected"' : '') . '>' . $v . '</option>';
+        }
+      }
+
+      $field_widget_complete_form['#attached']['drupalSettings']['ggcp_customs']['country_field'] = Html::cleanCssIdentifier($country_field);
+      $field_widget_complete_form['#attached']['drupalSettings']['ggcp_customs']['state_field'] = Html::cleanCssIdentifier($state_field);
+      $field_widget_complete_form['#attached']['drupalSettings']['ggcp_customs']['states'] = $js_country_states;
+      $field_widget_complete_form['#attached']['library'][] = 'ggcp_customs/states';
+    }
+  }
+}
+
+/**
+ * Gets all available states depending on countries.
+ *
+ * @param array $countries
+ *   The list of countries.
+ *
+ * @return array
+ *   The corresponding states.
+ *
+ *   @todo Get the states and provinces from "allowed options".
+ */
+function ggcp_customs_get_states(array $countries): array {
+  \Drupal::service('civicrm')->initialize();
+
+  $states = [];
+
+  $countries = implode(', ', $countries);
+  $query = "SELECT id, name, country_id FROM civicrm_state_province WHERE country_id IN ($countries) ORDER BY name ASC";
+  $result = \CRM_Core_DAO::executeQuery($query);
+
+  while ($result->fetch()) {
+    $states[$result->country_id][$result->id] = $result->name;
+  }
+
+  return $states;
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function ggcp_customs_menu_local_tasks_alter(&$data, $route_name) {
+  $skipped_tabs = ["user.register", "user.pass", "user.login"];
+
+  if (in_array($route_name, $skipped_tabs)  && isset($data['tabs'][0])) {
+    // Remove all tabs from user login form.
+    foreach ($data['tabs'][0] as $key => $tab) {
+      $data['tabs'][0][$key]['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function ggcp_customs_module_implements_alter(&$implementations, $hook) {
+  // We used this hook because 'hook_form_FORM_ID_alter' -'login_emailusername'.
+  // Module had higher preference than.
+  // Than 'hook_form_FORM_ID_alter' from this module. Setting up.
+  // The 'Weight' property was not worked.
+  if ($hook == 'form_alter') {
+    $group = $implementations['ggcp_customs'];
+    unset($implementations['ggcp_customs']);
+    $implementations['ggcp_customs'] = $group;
+  }
+
+  if ($hook === 'group_relationship_presave') {
+    if (isset($implementations['ggcp_customs'])) {
+      $custom_impl = $implementations['ggcp_customs'];
+      unset($implementations['ggcp_customs']);
+      $implementations = ['ggcp_customs' => $custom_impl] + $implementations;
+    }
+  }
+}
+
+/**
+ * Get timezone options.
+ */
+function ggcp_customs_event_timezone_get_timezone_options() {
+  $timezones = \DateTimeZone::listIdentifiers();
+  $now = new \DateTime();
+  $options = [];
+  foreach ($timezones as $timezone) {
+    try {
+      $tz = new \DateTimeZone($timezone);
+      $offset = $now->setTimezone($tz)->format('P');
+      $display_name = str_replace(['_', '/'], [' ', ' / '], $timezone);
+
+      [$continent] = explode('/', $timezone, 2);
+      if (!isset($options[$continent])) {
+        $options[$continent] = [];
+      }
+
+      $options[$continent][$timezone] = t('@name (GMT@offset)', [
+        '@name' => $display_name,
+        '@offset' => $offset,
+      ]);
+    }
+    catch (\Exception $e) {
+      continue;
+    }
+  }
+
+  // Sort continents and timezones.
+  ksort($options);
+  foreach ($options as &$continent) {
+    asort($continent);
+  }
+
+  return $options;
+}
+
+/**
+ * Validating fields for announcements content types.
+ */
+function ggcp_customs_event_date_time_form_validation($form, FormStateInterface $form_state) {
+  $date_range = $form_state->getValue('field_event_date_s_2')[0] ?? [];
+  $time_range = $form_state->getValue('field_event_time')[0] ?? [];
+  $start_date_obj = $date_range['value'] ?? NULL;
+  $end_date_obj = $date_range['end_value'] ?? NULL;
+  $start_time = trim($time_range['from'] ?? '');
+  $end_time = trim($time_range['to'] ?? '');
+  if ($start_time === '' || $end_time === '') {
+    $form_state->setValue('field_event_time', []);
+  }
+
+  try {
+    $start_date = date("Y-m-d", strtotime($start_date_obj));
+    $end_date = date("Y-m-d", strtotime($end_date_obj));
+
+    if (!empty($start_time) && !empty($end_time)) {
+      $start_date = date("Y-m-d H:i:s", strtotime("$start_date $start_time"));
+      $end_date = date("Y-m-d H:i:s", strtotime("$end_date $end_time"));
+
+      if ($start_date >= $end_date) {
+        $form_state->setErrorByName('field_event_time', t('The end date & time cannot be earlier or equal to the start date & time.'));
+      }
+    }
+
+    if ($start_date > $end_date) {
+      return;
+    }
+  }
+  catch (\Exception $e) {
+    $form_state->setErrorByName('field_event_time', t('There was a problem validating the date and time.'));
+  }
+}
+
+/**
+ * Implements hook_webform_submission_form_alter().
+ */
+function ggcp_customs_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'webform_submission_new_organization_add_form') {
+    $form['#prefix'] = '<div id="add-new-organization-wrapper">';
+    $form['#suffix'] = '</div>';
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '\Drupal\ggcp_customs\NewOrganizationAjaxHandler::ajaxCallback',
+      'event' => 'click',
+      'progress' => [
+        'type' => 'throbber',
+        'message' => t('Submitting...'),
+      ],
+    ];
+  }
+
+  if (strpos($form_id, 'webform_submission_new_organization_node_') === 0) {
+    $form['#prefix'] = '<div id="add-new-organization-wrapper">';
+    $form['#suffix'] = '</div>';
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '\Drupal\ggcp_customs\NewOrganizationAjaxHandler::ajaxCallback',
+      'event' => 'click',
+      'progress' => [
+        'type' => 'throbber',
+        'message' => t('Submitting...'),
+      ],
+    ];
+  }
+
+  if ($form_id === 'webform_submission_update_organization_form_add_form') {
+    $form['#prefix'] = '<div id="update-organization-wrapper">';
+    $form['#suffix'] = '</div>';
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '\Drupal\ggcp_customs\NewOrganizationAjaxHandler::ajaxOrganizationUpdateCallback',
+      'event' => 'click',
+      'progress' => [
+        'type' => 'throbber',
+        'message' => t('Submitting...'),
+      ],
+    ];
+  }
+}
+
+/**
+ * Custom bulk form submission handler.
+ */
+function ggcp_customs_bulk_form_submit(&$form, FormStateInterface $form_state) {
+  $action = $form_state->getValue('action');
+
+  // Only handle our export action.
+  if ($action !== 'export_selected') {
+    return;
+  }
+
+  $selected = array_filter($form_state->getValue('node_bulk_form', []));
+
+  if (empty($selected)) {
+    \Drupal::messenger()->addError('No items selected. Please select items to export.');
+    return;
+  }
+
+  $response = \Drupal::service('ggcp_customs.export_controller')->exportContent(implode(',', $selected));
+
+  $response->send();
+  exit;
+}
+
+/**
+ * Implements hook_field_info_alter().
+ */
+function ggcp_customs_field_info_alter(array &$info) {
+  if (isset($info['time_range'])) {
+    $info['time_range']['class'] = CustomTimeRangeType::class;
+  }
+}
+
+/**
+ * Common title validator for all content types.
+ */
+function ggcp_customs_common_node_validatator($form, $form_state) {
+  $title = $form_state->getValue('title')[0]['value'];
+  if (!preg_match('/^[A-Za-z0-9\s.,?!:;"\'()&®—-]+$/u', $title)) {
+    $form_state->setErrorByName('title', "Please use only letters, numbers, and the following characters in title field: - . , ? ! : ; \" ' & ® — ()");
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for comment_comment_forum_form.
+ */
+function ggcp_customs_form_comment_comment_forum_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Remove the subject field.
+  if (isset($form['subject'])) {
+    $form['subject']['#access'] = FALSE;
+  }
+
+  // Optional: Also hide the form element from rendering (extra safety)
+  $form['subject']['#attributes']['class'][] = 'js-hide';
+}
+
+/**
+ * Implements hook_group_relationship_presave().
+ *
+ * Overrides ginvite's presave to ALWAYS send invite emails.
+ */
+function ggcp_customs_group_relationship_presave(GroupRelationshipInterface $group_relationship) {
+  // Set flag to prevent original hook from acting.
+  $group_relationship->_ginvite_override_handled = TRUE;
+
+  // Only act on group_invitation plugin and new relationships.
+  if ($group_relationship->getPluginId() !== 'group_invitation' || !$group_relationship->isNew()) {
+    return;
+  }
+
+  $group_relationship->set('invitation_status', GroupInvitation::INVITATION_PENDING);
+  $mail = $group_relationship->invitee_mail->value;
+
+  \Drupal::logger('ginvite_override')->notice("Processing invitation for: @mail", ['@mail' => $mail]);
+
+  if (empty($mail)) {
+    $invitee = $group_relationship->get('entity_id')->entity;
+    if (!empty($invitee)) {
+      $mail = $invitee->getEmail();
+      $group_relationship->set('invitee_mail', $mail);
+      _ggcp_customs_sendmail($group_relationship, $mail, TRUE);
+    }
+  }
+  else {
+    $invitee = user_load_by_mail($mail);
+    if ($invitee) {
+      $group_relationship->set('entity_id', $invitee);
+      _ggcp_customs_sendmail($group_relationship, $mail, TRUE);
+    }
+    else {
+      _ggcp_customs_sendmail($group_relationship, $mail);
+    }
+  }
+}
+
+/**
+ * Custom sendmail function — ALWAYS sends email, ignores config.
+ */
+function _ggcp_customs_sendmail(GroupRelationshipInterface $group_relationship, string $mail, bool $existing_user = FALSE) {
+  $messenger = \Drupal::messenger();
+  $group_invite_config = $group_relationship->getPlugin()->getConfiguration();
+  $send_email_existing_users = $existing_user && $group_invite_config['send_email_existing_users'];
+  $send_email_not_existing_users = !$existing_user && $group_invite_config['send_email_not_existing_users'];
+
+  $group = $group_relationship->getGroup();
+  $from = $group_relationship->getEntity();
+  $langcode = $from->getPreferredLangcode();
+
+  $params = [
+    'user' => $from,
+    'group' => $group,
+    'group_relationship' => $group_relationship,
+    'existing_user' => $existing_user,
+  ];
+
+  // ALWAYS SEND EMAIL.
+  \Drupal::service('plugin.manager.mail')->mail('ginvite', 'invite', $mail, $langcode, $params, NULL, TRUE);
+
+  if (!$send_email_existing_users && !$send_email_not_existing_users) {
+    $messenger->addMessage(t('Invitation has been created.'));
+  }
+  else {
+    $messenger->addMessage(t('Invite sent to %mail', ['%mail' => $mail]));
+  }
+}
+
+/**
+ * Validate datetime range field.
+ */
+function ggcp_customs_training_datetime_validate($form, FormStateInterface $form_state) {
+  $description = 'body';
+  $prerequiste = 'field_prerequisites';
+  $country_value = $form_state->getValue(['field_location_country', 0, 'value']);
+  $training_format = $form_state->getValue('field_training_format');
+  $attachment_name = $form_state->getValue('field_attachment_name');
+  if (!empty($description)) {
+    _ggcp_customs_check_character_limit($description, 2500, $form_state);
+  }
+
+  if (!empty($prerequiste)) {
+    _ggcp_customs_check_character_limit($prerequiste, 2500, $form_state);
+  }
+
+  $attachment_values = $form_state->getValue('field_attachments');
+  if (!empty($attachment_values) && !empty($attachment_values[0]['fids'])) {
+
+    if (empty($attachment_name[0]['value'])) {
+      $form_state->setErrorByName('field_attachment_name', 'Attachment name is required.');
+    }
+
+    if (empty($attachment_values[0]['description'])) {
+      $form_state->setErrorByName('field_attachments[0][description]', 'Attachment description is required.');
+    }
+  }
+
+  if (!empty($training_format) && in_array($training_format[0]['target_id'], [1950, 1951])) {
+    if (empty($country_value)) {
+      $errors = $form_state->getErrors();
+      $form_state->clearErrors();
+      foreach ($errors as $name => $error) {
+        if (strpos($name, 'field_location_country') === FALSE) {
+          $form_state->setErrorByName($name, $error);
+        }
+      }
+
+      $form_state->setErrorByName(
+        'field_location_country', t('Please select a country for the selected training format.')
+      );
+    }
+  }
+  else {
+    $errors = $form_state->getErrors();
+    $form_state->clearErrors();
+    foreach ($errors as $name => $error) {
+      if (strpos($name, 'field_location_country') === FALSE) {
+        $form_state->setErrorByName($name, $error);
+      }
+    }
+  }
+}
+
+/**
+ * Override default validation message with below message.
+ */
+function ggcp_customs_pf_link_validate(array &$element, FormStateInterface $form_state, array &$complete_form) {
+  $value = $element['#value'];
+  if (!empty($value) && !preg_match('#^https?://[a-z0-9.-]+\.[a-z]{2,}#i', $value)) {
+    $label = $element['#title'];
+    $form_state->setError(
+      $element,
+      "Please enter a valid URL for $label starting with http:// or https://."
+    );
+  }
+}
+
+/**
+ * Validates character limit for a field.
+ */
+function _ggcp_customs_check_character_limit($field_name, $limit, FormStateInterface $form_state) {
+  if ($limit <= 0) {
+    return;
+  }
+
+  $field_value = $form_state->getValue($field_name);
+  $text = '';
+
+  // Extract text content based on field type.
+  if (is_array($field_value)) {
+    if (isset($field_value['value'])) {
+      $text = (string) $field_value['value'];
+    }
+    elseif (!empty($field_value)) {
+      // Multiple value field - check all items.
+      foreach ($field_value as $item) {
+        if (is_array($item) && isset($item['value'])) {
+          $text .= (string) $item['value'] . ' ';
+        }
+      }
+      $text = rtrim($text);
+    }
+  }
+  else {
+    $text = (string) $field_value;
+  }
+
+  $plain_text = strip_tags($text);
+  $current_length = strlen($plain_text);
+
+  if ($current_length > $limit) {
+    $field_label = _ggcp_customs_get_field_label($field_name, $form_state);
+
+    $form_state->setErrorByName($field_name, t(
+      'The %field cannot exceed @limit characters. You have entered @current characters.',
+      [
+        '%field' => $field_label,
+        '@limit' => $limit,
+        '@current' => $current_length,
+      ]
+    ));
+  }
+}
+
+/**
+ * Helper function to get field label from form state.
+ *
+ * @param string $field_name
+ *   The machine name of the field.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ *
+ * @return string
+ *   The field label or field name if label not found.
+ */
+function _ggcp_customs_get_field_label($field_name, FormStateInterface $form_state) {
+  // Get the complete form array.
+  $complete_form = $form_state->getCompleteForm();
+
+  // Try to get the field label from the form structure.
+  if (isset($complete_form[$field_name]['#title'])) {
+    return (string) $complete_form[$field_name]['#title'];
+  }
+
+  // Fallback: return field name with spaces instead of underscores.
+  return ucwords(str_replace('_', ' ', $field_name));
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function ggcp_customs_element_info_alter(array &$types) {
+  if (isset($types['datetime'])) {
+    $types['datetime']['#element_validate'] = [
+      ['\Drupal\ggcp_customs\CustomDatetimeValidator', 'validateDatetime'],
+    ];
+
+    $types['datetime']['#process'][] = 'ggcp_customs_datetime_set_format';
+    $types['datetimerange']['#process'][] = 'ggcp_customs_datetimerange_set_format';
+  }
+}
+
+/**
+ * Element process callback for datetime fields.
+ */
+function ggcp_customs_datetime_set_format(array &$element, FormStateInterface $form_state, array &$complete_form) {
+  // Remove seconds in browsers that support HTML5 type=time.
+  if (isset($element['time'])) {
+    $element['time']['#attributes']['step'] = 60;
+  }
+  return $element;
+}
+
+/**
+ * Element process callback for datetimerange fields.
+ */
+function ggcp_customs_datetimerange_set_format(array &$element, FormStateInterface $form_state, array &$complete_form) {
+  // Apply step=60 to both 'start' and 'end' datetime widgets.
+  foreach (['start', 'end'] as $key) {
+    if (isset($element[$key]['time'])) {
+      $element[$key]['time']['#attributes']['step'] = 60;
+    }
+  }
+  return $element;
+}
+
+/**
+ * Custom submit handler for Save as Draft button.
+ */
+function ggcp_customs_moderation_buttons(array &$form, FormStateInterface $form_state) {
+  $triggering_element = $form_state->getTriggeringElement();
+  $node = $form_state->getFormObject()->getEntity();
+
+  if ($node instanceof NodeInterface) {
+    $button_id = $triggering_element['#id'] ?? '';
+    $title = $node->label();
+    $is_new = $node->isNew(); 
+    if ($node->isNew()) {
+      $message = t("Your content @title has been created.", [
+        '@title' => $title,
+      ]);
+    }
+    else {
+      $message = t("Your content @title has been updated.", [
+        '@title' => $title,
+      ]);
+    }
+    // Set moderation state.
+    if ($button_id == "edit-submit-for-review") {
+      $node->set('moderation_state', 'under_review');
+      \Drupal::messenger()->addMessage(Markup::create($message));
+    }
+    elseif ($button_id == "edit-reject") {
+      $node->set('moderation_state', 'rejected');
+      \Drupal::messenger()->addMessage(Markup::create($message));
+    }
+    elseif ($button_id == "edit-publish") {
+      $node->set('moderation_state', 'published');
+      \Drupal::messenger()->addMessage(Markup::create($message));
+    }
+    else {
+      $node->set('moderation_state', 'draft');
+      \Drupal::messenger()->addMessage(Markup::create($message));
+    }
+
+    // Save the node.
+    $node->save();
+
+    // Redirect to node view or edit page.
+    if ($is_new) {
+      $form_state->setRedirect('entity.node.canonical', ['node' => $node->id()]);
+    } else {
+      $form_state->setRedirect('entity.node.edit_form', ['node' => $node->id()]);
+    }
+  }
+}

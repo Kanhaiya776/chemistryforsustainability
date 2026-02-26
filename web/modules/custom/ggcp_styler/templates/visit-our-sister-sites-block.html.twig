@@ -1,0 +1,34 @@
+
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-search-bar-block', parent_class, 'g-0']
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  <div {{ bem('container', '', parent_class) }}>
+    <div class="tiles-box">
+      <div class="display-medium-container">
+      <span class="display-medium">Our Partner Sites</span>
+      </div>
+      <div class="tiles-box-row">
+        <div class="logo">
+          <a href="https://gctlc.org/" target="_blank">
+          <img src="{{ base_path ~ directory }}/images/blocks/visit_our_sister_sites/GCTLC-small.png"
+               alt="Green Chemistry Teaching And Learning Community logo">
+          </a>
+        </div>
+        <div class="logo">
+          <a href="https://www.globalgreenchem.com" target="_blank">
+          <img src="{{ base_path ~ directory }}/images/blocks/visit_our_sister_sites/global.jpeg"
+               alt="Global GreenChem Innovation and Network Program logo">
+          </a>
+        </div>
+        <div class="logo">
+          <a href="https://www.acs.org/greenchemistry.html/" target="_blank">
+          <img src="{{ base_path ~ directory }}/images/blocks/visit_our_sister_sites/ACS-full-logo.png"
+               alt="ACS Green Chemistry Institute logo">
+          </a>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,195 @@
+<?php
+
+/**
+ * @file
+ * GGCP Message customs module.
+ */
+
+use Drupal\comment\Entity\Comment;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\message_notify\Plugin\Notifier\MessageNotifierInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function ggcp_message_customs_entity_presave(EntityInterface $entity) {
+  // Attach the last revision of the entity.
+  // It's important to attach the revision in hook_entity_presave() as the same
+  // action in hook_entity_update() will result a different revision being
+  // in transaction.
+  _ggcp_message_customs_ensure_revision($entity);
+}
+
+/**
+ * Attach the last untouched revision to the entity.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   The entity object.
+ */
+function _ggcp_message_customs_ensure_revision(EntityInterface $entity) {
+  try {
+    $content_moderation_helper = \Drupal::service('ggcp_message_customs.content_moderation_helper');
+    if ($content_moderation_helper->isModeratedEntity($entity) && !isset($entity->last_revision)) {
+      $entity->last_revision = $content_moderation_helper->getLatestRevision($entity->getEntityTypeId(), $entity->id());
+    }
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('ggcp_message_customs')->error($e->getMessage());
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function ggcp_message_customs_entity_update(EntityInterface $entity) {
+  try {
+    \Drupal::service('ggcp_message_customs.message_helper')->processEntityForModeration($entity);
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('ggcp_message_customs')->error($e->getMessage());
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function ggcp_message_customs_entity_insert(EntityInterface $entity) {
+  // Process content moderation notifications.
+  try {
+    \Drupal::service('ggcp_message_customs.message_helper')->processEntityForModeration($entity, TRUE);
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('ggcp_message_customs')->error($e->getMessage());
+  }
+  try {
+    // Process new group content notifications.
+    $entity_type = $entity->getEntityType();
+    if ($entity_type->id() == 'group_relationship') {
+      \Drupal::service('ggcp_message_customs.message_helper')->processGroupContent($entity);
+    }
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('ggcp_message_customs')->error($e->getMessage());
+  }
+}
+
+/**
+ * Implements hook_comment_insert().
+ */
+function ggcp_message_customs_comment_insert(Comment $comment) {
+  try {
+    \Drupal::service('ggcp_message_customs.message_helper')->createMessagesForNewComment($comment);
+  }
+  catch (\Exception $e) {
+    \Drupal::logger('ggcp_message_customs')->error($e->getMessage());
+  }
+}
+
+/**
+ * Implements hook_message_digest_view_mode_alter().
+ */
+function ggcp_message_customs_message_digest_view_mode_alter(array &$context, MessageNotifierInterface $notifier, UserInterface $account) {
+  // Remove the email subject view mode.
+  unset($context['view_modes']);
+  $context['view_modes'] = [
+    'digest' => 'digest',
+  ];
+
+  // If the account is blocked, do not deliver.
+  if ($account->isBlocked()) {
+    $context['deliver'] = FALSE;
+  }
+
+  // Set active theme to enabled theme to use custom template.
+  $theme_manager = \Drupal::service('theme.manager');
+  $theme_initialization = \Drupal::service('theme.initialization');
+  $theme_config = \Drupal::config('system.theme');
+  if ($theme_manager->getActiveTheme()->getName() == $theme_config->get('admin')) {
+    // The admin theme is being used, change that to the default frontend theme.
+    $default_theme = $theme_initialization->getActiveThemeByName($theme_config->get('default'));
+    $theme_manager->setActiveTheme($default_theme);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for message_digest.
+ */
+function ggcp_message_customs_preprocess_message_digest(&$variables) {
+  // Message Digest theme preprocess.
+  // Build custom Email Settings link and,
+  // Add to digest.
+  if (!empty($variables['messages'][0]['#message']) && is_object($variables['messages'][0]['#message'])) {
+    $message_owner = $variables['messages'][0]['#message']->getOwner();
+    if (!empty($message_owner->id())) {
+      $contact_id = $message_owner->id();
+      if (!empty($contact_id)) {
+        $host = \Drupal::request()->getSchemeAndHttpHost();
+        $token = md5($contact_id . \Drupal::config('system.site')->get('hash_salt') . date('Y-m-d'));
+        $variables['email_settings'] = [
+          '#type' => 'markup',
+          '#markup' => '<a href="' . $host . '/form/email-settings?cid1=' . $contact_id . '&cs=' . $token . '">Email Settings</a>',
+        ];
+      }
+    }
+  }
+  // Order messages and add titles.
+  // @todo .
+  // Do here because need section titles too.
+  if (!empty($variables['messages'])) {
+    $message_types = [
+      'comment_posted_to_node' => 'Comments posted to your content',
+      'comment_reply_to_comment' => 'Replies to your comments',
+      'forum_comment_reply' => 'Replies to your forum replies',
+      'forum_post_replied_to' => 'Replies to your forum post',
+      'forum_topic_created' => 'Forum topics created',
+      'group_content_created' => 'Group content notifications',
+      'moderator_new_node_submitted' => 'Moderators - new content submitted',
+      'moderation_state_change' => 'Moderators - Content moderation state change',
+      'submitted_node_state_change' => 'Your content state changes',
+    ];
+    foreach ($variables['messages'] as $index => $message_array) {
+      if (!empty($message_array['#message']) && is_object($message_array['#message'])) {
+        $message = $message_array['#message'];
+        $message_type = $message->bundle();
+        if (empty($variables['formatted_messages'][$message_type])) {
+          if (!empty($message_types[$message_type])) {
+            $variables['formatted_messages'][$message_type][0] = [
+              '#type' => '#markup',
+              '#markup' => '<h3>' . $message_types[$message_type] . '</h3>',
+            ];
+          }
+          else {
+            $variables['formatted_messages'][$message_type][0] = [
+              '#type' => '#markup',
+              '#markup' => '<h3>' . uc_words(str_replace('_', ' ', $message_type)) . '</h3>',
+            ];
+          }
+        }
+        $variables['formatted_messages'][$message_type][] = $message_array;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for message emails.
+ */
+function ggcp_message_customs_preprocess_message(&$variables) {
+  // Message entity, Notify Mail Body view mode.
+  // Add Email settings link.
+  if ($variables['view_mode'] == 'mail_body') {
+    if (!empty($variables['message']) && is_object($variables['message'])) {
+      $account = $variables['message']->getOwner();
+      $contact_id = $account->id();
+      if (!empty($contact_id)) {
+        $host = \Drupal::request()->getSchemeAndHttpHost();
+        $token = md5($contact_id . \Drupal::config('system.site')->get('hash_salt') . date('Y-m-d'));
+        $variables['email_settings'] = [
+          '#type' => 'markup',
+          '#markup' => '<a href="' . $host . '/form/email-settings?cid1=' . $contact_id . '&cs=' . $token . '">Email Settings</a>',
+        ];
+      }
+    }
+  }
+}

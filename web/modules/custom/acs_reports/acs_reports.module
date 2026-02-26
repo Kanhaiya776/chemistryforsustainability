@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Custom ACS Reports module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_form_alter().
+ */
+function acs_reports_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'views_form_user_admin_people_page_1') {
+    // Check permission before showing button.
+    if (!\Drupal::currentUser()->hasPermission('administer users')) {
+      return;
+    }
+
+    $form['acs_export_csv_wrapper'] = [
+      '#type' => 'container',
+      '#weight' => -100,
+      '#attributes' => [
+        'style' => 'margin-bottom: 15px;',
+      ],
+      'export_csv' => [
+        '#type' => 'link',
+        '#title' => t('Export Users Organizations'),
+        '#url' => Url::fromRoute('acs_reports.download_users_csv'),
+        '#attributes' => [
+          'class' => ['button', 'button--primary'],
+          'style' => 'margin: 10px 0; display: inline-block;',
+        ],
+      ],
+    ];
+  }
+}

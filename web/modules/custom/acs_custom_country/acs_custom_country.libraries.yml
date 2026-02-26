@@ -1,0 +1,8 @@
+state_dynamic:
+  js:
+    js/acs_state_dynamic.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+    - core/drupalSettings

@@ -1,0 +1,37 @@
+{% set parent_class = 'block-powered-by' %}
+{% set additional_attributes = {
+  "class": ['block', 'block-acs-gcs-powered-by-block', parent_class, 'g-0']
+} %}
+
+<div {{ add_attributes(additional_attributes) }}>
+  <div {{ bem('container', '', parent_class) }}>
+    <div {{ bem('container', 'title', parent_class) }}>
+      <span {{ bem('container--title', 'text', parent_class) }}>
+        {{ "Powered by"|t }}
+      </span>
+    </div>
+    <div {{ bem('container', 'icons', parent_class) }}>
+      <div class="logo-item">
+        <a href="https://greenchemistry.yale.edu/" target="_blank">
+        <img src="/{{ base_path ~ directory }}/images/logo/front/green_chemistry_yale.png"
+             alt="Center for Green Chemistry & Green Engineering at Yale logo">
+        </a>
+        <div class="address-text ggcp address-box">{{ ggcp_address }}</div>
+      </div>
+      <div class="logo-item acs">
+        <a href="https://www.acs.org/" target="_blank">
+        <img src="/{{ base_path ~ directory }}/images/logo/front/acs.png"
+             alt="ACS Chemistry for Life - American Chemical Society logo">
+        </a>
+        <div class="address-text acs address-box">{{ acs_address }}</div>
+      </div>
+      <div class="logo-item">
+        <a href="https://www.beyondbenign.org/" target="_blank">
+        <img src="/{{ base_path ~ directory }}/images/logo/front/beyond_benign_white.png"
+             alt="Beyond Benign - Green chemistry education logo">
+        </a>
+        <div class="address-text gctlc address-box">{{ beyongbenign_address }}</div>
+      </div>
+    </div>
+  </div>
+</div>

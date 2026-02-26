@@ -1,0 +1,9 @@
+name: 'Custom Organization'
+type: module  
+description: 'Organization form halndler'
+core_version_requirement: ^10
+package: 'Custom'
+dependencies:
+  - drupal:user
+  - drupal:node
+  - drupal:webform

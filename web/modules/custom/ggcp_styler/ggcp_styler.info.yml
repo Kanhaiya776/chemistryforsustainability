@@ -1,0 +1,6 @@
+name: Custom Styler
+type: module
+description: 'Provides custom templates and blocks for theme styling.'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:block

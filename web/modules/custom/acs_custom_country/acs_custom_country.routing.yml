@@ -1,0 +1,7 @@
+acs_custom_country.states:
+  path: '/acs-custom-country/states'
+  defaults:
+    _controller: '\Drupal\acs_custom_country\Controller\StateAjaxController::getStates'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]

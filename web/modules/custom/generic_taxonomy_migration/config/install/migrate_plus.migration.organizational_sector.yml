@@ -1,0 +1,22 @@
+id: organizational_sector
+label: 'Taxonomy: Organizational Sector'
+
+source:
+  plugin: taxonomy_sql
+  key: cherity
+  vocabulary: organizational_sector
+
+process:
+  vid:
+    plugin: default_value
+    default_value: organizational_sector
+  name: name
+  description/value: description__value
+  description/format:
+    plugin: default_value
+    default_value: basic_html
+  weight: weight
+  parent: parent
+
+destination:
+  plugin: entity:taxonomy_term

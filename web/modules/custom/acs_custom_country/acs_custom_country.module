@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function acs_custom_country_views_data_alter(array &$data) {
+  if (isset($data['node__field_country']['field_country_value'])) {
+    // Override the default filter with our custom plugin
+    $data['node__field_country']['field_country_value']['filter'] = [
+      'id' => 'multi_country_json_filter',
+      'title' => t('Multi-country (JSON)'),
+      'help' => t('Filter by country code stored in JSON format.'),
+      // Ensure the handler class is recognized (usually automatic via Annotation, 
+      // but explicit definition helps debugging)
+      'handler' => 'Drupal\acs_custom_country\Plugin\views\filter\MultiCountryFilter',
+    ];
+  }
+}

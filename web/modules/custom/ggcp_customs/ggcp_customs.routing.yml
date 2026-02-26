@@ -1,0 +1,8 @@
+ggcp_customs.check_org:
+  path: '/check-org'
+  defaults:
+    _controller: '\Drupal\ggcp_customs\Controller\OrgCheckController::check'
+    _format: json
+  requirements:
+    _permission: 'access content'
+    method: POST

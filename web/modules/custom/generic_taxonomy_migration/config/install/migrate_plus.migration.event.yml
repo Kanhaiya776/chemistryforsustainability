@@ -1,0 +1,93 @@
+id: event
+label: 'Content: Event'
+
+source:
+  plugin: event_sql
+  key: cherity
+
+process:
+  type:
+    plugin: default_value
+    default_value: event
+
+  title: title
+  uid:
+    plugin: migration_lookup
+    migration: civicrm_user_migration
+    source: uid
+    no_stub: true
+
+
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+
+  # Date range
+  field_event_date_s_2/value: event_start_date
+  field_event_date_s_2/end_value: event_end_date
+
+  # Time range
+  field_event_time/from: event_start_time
+  field_event_time/to: event_end_time
+
+  # Timezone
+  field_timezone: timezone
+
+  # Address
+  field_location/country_code: country
+  field_location/administrative_area: state
+  field_location/locality: city
+  field_location/postal_code: postal_code
+  field_location/address_line1: address_line1
+  field_location/address_line2: address_line2
+  field_location/organization: venue
+
+
+  field_link/uri: link
+
+  created: created
+  changed: changed
+
+  # Image
+  field_image/target_id:
+    plugin: migration_lookup
+    migration: files
+    source: image_fid
+
+  # Organization reference
+  field_organization:
+    plugin: migration_lookup
+    migration: civicrm_organization
+    source: organization_nid
+
+  # Taxonomies
+  field_estimated_capacity:
+    plugin: migration_lookup
+    migration: estimated_capacity
+    source: estimated_capacity
+
+  field_event_format:
+    plugin: migration_lookup
+    migration: event_format
+    source: event_format
+
+  field_event_type:
+    plugin: migration_lookup
+    migration: event_type
+    source: event_type
+
+  field_keywords:
+    plugin: keywords_lookup
+    migration: keywords
+    source: keywords
+    no_stub: true
+
+  moderation_state: moderation_state
+
+
+destination:
+  plugin: entity:node
+  default_bundle: event
+
+

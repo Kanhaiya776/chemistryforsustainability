@@ -1,0 +1,18 @@
+id: country_iso
+label: 'CiviCRM Country → ISO'
+migration_group: generic_taxonomies
+
+source:
+  plugin: civicrm_country_sql
+  key: civicrm
+
+process:
+  source_id: id
+  iso: iso_code
+
+destination:
+  plugin: table
+  table_name: migrate_civicrm_country_iso
+  id_fields:
+    iso:
+      type: string
