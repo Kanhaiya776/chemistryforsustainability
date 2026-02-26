@@ -1,0 +1,61 @@
+uuid: f8441953-ea4f-4bb0-809d-a3fc87c2094f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_grid
+    - field.field.node.group_files.body
+    - field.field.node.group_files.field_attachment
+    - field.field.node.group_files.field_link
+    - node.type.group_files
+  module:
+    - file
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.group_files.teaser_grid
+targetEntityType: node
+bundle: group_files
+mode: teaser_grid
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

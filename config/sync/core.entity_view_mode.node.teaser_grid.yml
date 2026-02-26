@@ -1,0 +1,11 @@
+uuid: f9180563-aaca-40b5-bde2-53c68b3e74cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_grid
+label: 'Teaser Grid'
+description: ''
+targetEntityType: node
+cache: true

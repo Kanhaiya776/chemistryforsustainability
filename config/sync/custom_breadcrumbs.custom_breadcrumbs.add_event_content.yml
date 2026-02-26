@@ -1,0 +1,15 @@
+uuid: 61a85c1a-bfab-40fb-99b2-7475322d6136
+langcode: en
+status: true
+dependencies: {  }
+id: add_event_content
+label: 'Add Event Content'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/events"
+breadcrumbTitles: "Home\r\nNetwork\r\nEvents"
+type: '2'
+pathPattern: /node/add/event
+extraCacheContexts: ''

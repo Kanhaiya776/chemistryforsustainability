@@ -1,0 +1,53 @@
+uuid: e8840c2b-32e8-4b98-aa9d-522fcfa8968e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_of_interest
+    - node.type.organization
+    - taxonomy.vocabulary.agricultural_and_food_sciences_s
+    - taxonomy.vocabulary.biological_sciences_specific_fie
+    - taxonomy.vocabulary.chemical_sciences_specific_field
+    - taxonomy.vocabulary.earth_sciences_specific_field_of
+    - taxonomy.vocabulary.economics_specific_field_of_inte
+    - taxonomy.vocabulary.engineering_specific_field_of_in
+    - taxonomy.vocabulary.environmental_sciences_specific_
+    - taxonomy.vocabulary.fields_of_research
+    - taxonomy.vocabulary.health_sciences_specific_field_o
+    - taxonomy.vocabulary.information_and_computing_scienc
+    - taxonomy.vocabulary.mathematical_sciences_specific_f
+    - taxonomy.vocabulary.physical_sciences_specific_field
+    - taxonomy.vocabulary.social_sciences_specific_field_o
+id: node.organization.field_of_interest
+field_name: field_of_interest
+entity_type: node
+bundle: organization
+label: 'Field of Interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      agricultural_and_food_sciences_s: agricultural_and_food_sciences_s
+      biological_sciences_specific_fie: biological_sciences_specific_fie
+      chemical_sciences_specific_field: chemical_sciences_specific_field
+      earth_sciences_specific_field_of: earth_sciences_specific_field_of
+      economics_specific_field_of_inte: economics_specific_field_of_inte
+      engineering_specific_field_of_in: engineering_specific_field_of_in
+      environmental_sciences_specific_: environmental_sciences_specific_
+      fields_of_research: fields_of_research
+      health_sciences_specific_field_o: health_sciences_specific_field_o
+      information_and_computing_scienc: information_and_computing_scienc
+      mathematical_sciences_specific_f: mathematical_sciences_specific_f
+      physical_sciences_specific_field: physical_sciences_specific_field
+      social_sciences_specific_field_o: social_sciences_specific_field_o
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: agricultural_and_food_sciences_s
+field_type: entity_reference

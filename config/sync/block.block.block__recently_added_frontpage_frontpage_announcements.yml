@@ -1,0 +1,32 @@
+uuid: 5fed5150-ec4d-424e-8bed-0ba1fcb47dd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recently_added_frontpage
+  module:
+    - node
+    - views
+  theme:
+    - acs_gcs
+id: block__recently_added_frontpage_frontpage_announcements
+theme: acs_gcs
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:recently_added_frontpage-frontpage_announcements'
+settings:
+  id: 'views_block:recently_added_frontpage-frontpage_announcements'
+  label: 'Community News'
+  label_display: visible
+  provider: views
+  views_label: 'Community News'
+  items_per_page: '3'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page

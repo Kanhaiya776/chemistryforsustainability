@@ -1,0 +1,17 @@
+uuid: c7904ea4-2d9d-4d9b-a7cf-0efb33cac248
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+  module:
+    - grequest
+    - user
+id: accelerator-996ae0cbc1a35b89222a
+group_type: accelerator
+content_plugin: group_membership_request
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false
+  remove_group_membership_request: false

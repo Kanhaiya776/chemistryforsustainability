@@ -1,0 +1,19 @@
+uuid: 3ac1be89-a980-4772-b404-c6201a79c8d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_contact_person
+    - group.type.accelerator
+id: group.accelerator.field_contact_person
+field_name: field_contact_person
+entity_type: group
+bundle: accelerator
+label: 'Contact Person'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,15 @@
+uuid: f8393bf1-123b-4526-8ad2-8acd83a10e74
+langcode: en
+status: true
+dependencies: {  }
+id: add_publication
+label: 'Add Publication'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/toolkit\r\n/publications"
+breadcrumbTitles: "Toolkit\r\nPublications"
+type: '2'
+pathPattern: /node/add/publication
+extraCacheContexts: ''

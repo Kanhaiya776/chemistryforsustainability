@@ -1,0 +1,67 @@
+uuid: f7161a43-839b-49b4-b882-d40cd8336a66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.search_landing_page.body
+    - node.type.search_landing_page
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e58973ed-7766-4a55-9bf1-2c1475a8db8e:
+            uuid: e58973ed-7766-4a55-9bf1-2c1475a8db8e
+            region: content
+            configuration:
+              id: 'extra_field_block:node:search_landing_page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          2c64e968-b25d-4659-8339-3bb3ca423141:
+            uuid: 2c64e968-b25d-4659-8339-3bb3ca423141
+            region: content
+            configuration:
+              id: 'field_block:node:search_landing_page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.search_landing_page.default
+targetEntityType: node
+bundle: search_landing_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  layout_builder__layout: true

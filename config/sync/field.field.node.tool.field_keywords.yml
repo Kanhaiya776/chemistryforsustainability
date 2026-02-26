@@ -1,0 +1,29 @@
+uuid: fc572a1d-b5ae-43d3-ab9f-e0f8e364d0ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords
+    - node.type.tool
+    - taxonomy.vocabulary.keywords
+id: node.tool.field_keywords
+field_name: field_keywords
+entity_type: node
+bundle: tool
+label: Keywords
+description: 'Help people find your posting by adding keywords here. Suggested keywords will be displayed for you to select from as you type. Click a suggested keyword to add it to this submission, or enter your own keyword to add it to the system. Enter multiple keywords by separating them with commas.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      keywords: keywords
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

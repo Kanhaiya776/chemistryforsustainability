@@ -1,0 +1,19 @@
+uuid: 38300e08-53ad-4331-b65f-46d85588d276
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: forum_topic_created
+label: 'Forum topic created'
+description: 'Send email(s) when forum topic created'
+text:
+  -
+    value: '<p>[message:field_node_reference:entity:author] created new forum topic in <a href="[message:field_group_reference:entity:url]">[message:field_group_reference:entity:title]</a>:</p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

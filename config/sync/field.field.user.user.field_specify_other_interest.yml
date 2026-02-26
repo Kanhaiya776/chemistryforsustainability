@@ -1,0 +1,20 @@
+uuid: ba3fb100-b866-4bb2-a32c-cf4b71e1df5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_specify_other_interest
+  module:
+    - user
+id: user.user.field_specify_other_interest
+field_name: field_specify_other_interest
+entity_type: user
+bundle: user
+label: 'Specify "Other" Interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

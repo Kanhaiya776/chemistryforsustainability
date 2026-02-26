@@ -1,0 +1,22 @@
+uuid: f44b7a63-28e7-4069-9b1e-b8e88acb7415
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: u8yENzvcg31IO4ZoupT13QZi1VffWjKyVX8912gCMUs
+id: acs_gcs_messages
+theme: acs_gcs
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,15 @@
+uuid: dbb96fef-3681-4140-b723-7a02f273e6bd
+langcode: en
+status: true
+dependencies: {  }
+id: events_calendar_search_page
+label: 'Events Calendar Search Page'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network"
+breadcrumbTitles: "Home\r\nNetwork"
+type: '2'
+pathPattern: /events
+extraCacheContexts: ''

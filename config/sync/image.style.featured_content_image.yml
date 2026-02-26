@@ -1,0 +1,21 @@
+uuid: 57472ce9-5588-48f9-b541-8db51213179c
+langcode: en
+status: true
+dependencies: {  }
+name: featured_content_image
+label: featured-content-image
+effects:
+  464b4e85-a069-4737-945b-ac8d3e3b316a:
+    uuid: 464b4e85-a069-4737-945b-ac8d3e3b316a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 522
+      height: 245
+      anchor: center-center
+  be8d1c6c-2cbb-4a39-acfb-8a8524b15b4d:
+    uuid: be8d1c6c-2cbb-4a39-acfb-8a8524b15b4d
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -1,0 +1,7 @@
+uuid: 6d04ef25-a242-462b-9173-32b5fd8f60c2
+langcode: en
+status: false
+dependencies: {  }
+formId: node_group_files_form
+captchaType: default
+label: node_group_files_form

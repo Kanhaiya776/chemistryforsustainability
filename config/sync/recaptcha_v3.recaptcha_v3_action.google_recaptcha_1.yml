@@ -1,0 +1,8 @@
+uuid: ef335576-bba2-466f-bd0c-c3076bc29601
+langcode: en
+status: true
+dependencies: {  }
+id: google_recaptcha_1
+label: 'Google Recaptcha 1'
+threshold: 0.5
+challenge: default

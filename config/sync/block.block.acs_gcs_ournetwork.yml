@@ -1,0 +1,33 @@
+uuid: 22ecb0da-2a17-43aa-bf6c-10b82fa0ae08
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:07ed4324-0bfa-4e20-8352-7a53db8dfe23'
+  module:
+    - block_content
+    - node
+  theme:
+    - acs_gcs
+id: acs_gcs_ournetwork
+theme: acs_gcs
+region: featured_bottom_first
+weight: 0
+provider: null
+plugin: 'block_content:07ed4324-0bfa-4e20-8352-7a53db8dfe23'
+settings:
+  id: 'block_content:07ed4324-0bfa-4e20-8352-7a53db8dfe23'
+  label: 'Our Network'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page

@@ -1,0 +1,15 @@
+uuid: de42a7c3-3ea7-459a-8ca9-fe48feae6473
+langcode: en
+status: true
+dependencies: {  }
+id: network
+label: 'Network sub-menu'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network"
+breadcrumbTitles: "Home\r\nNetwork"
+type: '2'
+pathPattern: "/network/mentorship\r\n/network/centers-innovation\r\n/network/groups"
+extraCacheContexts: ''

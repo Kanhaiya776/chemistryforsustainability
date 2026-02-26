@@ -1,0 +1,19 @@
+uuid: 40dde226-dc75-4f37-b7ea-ff0659feac64
+langcode: en
+status: true
+dependencies:
+  module:
+    - message
+    - text
+id: message.field_direct_message_body
+field_name: field_direct_message_body
+entity_type: message
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

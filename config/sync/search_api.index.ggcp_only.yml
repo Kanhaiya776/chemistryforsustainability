@@ -1,0 +1,744 @@
+uuid: 622af65b-e29b-4aa4-ae13-5991a3ac6fd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.comment.comment_body
+    - field.storage.group.field_description
+    - field.storage.node.body
+    - field.storage.node.field_academia_sub_sector
+    - field.storage.node.field_authoritative_body
+    - field.storage.node.field_award_type
+    - field.storage.node.field_category
+    - field.storage.node.field_challenge_applicability
+    - field.storage.node.field_challenge_category
+    - field.storage.node.field_country_of_challenge
+    - field.storage.node.field_country_of_solution
+    - field.storage.node.field_description
+    - field.storage.node.field_end_date
+    - field.storage.node.field_event_date_s_2
+    - field.storage.node.field_event_format
+    - field.storage.node.field_event_type
+    - field.storage.node.field_field_of_interest
+    - field.storage.node.field_government_sub_sector
+    - field.storage.node.field_image
+    - field.storage.node.field_industry
+    - field.storage.node.field_industry_sub_sector
+    - field.storage.node.field_keywords
+    - field.storage.node.field_level_of_training
+    - field.storage.node.field_location
+    - field.storage.node.field_organization
+    - field.storage.node.field_organizational_sector
+    - field.storage.node.field_prerequisites
+    - field.storage.node.field_proposal_deadline
+    - field.storage.node.field_pu
+    - field.storage.node.field_publication_authors
+    - field.storage.node.field_reference_for_relevant_pub
+    - field.storage.node.field_registrations_date_time
+    - field.storage.node.field_sector_custom_select
+    - field.storage.node.field_stage_of_development
+    - field.storage.node.field_start_date
+    - field.storage.node.field_state
+    - field.storage.node.field_target_audience
+    - field.storage.node.field_tests
+    - field.storage.node.field_training_format
+    - field.storage.node.field_type_of_announcement
+    - field.storage.paragraph.field_author_name
+    - field.storage.paragraph.field_author_organization
+    - search_api.server.apache_solr
+  module:
+    - comment
+    - group
+    - node
+    - paragraphs
+    - search_api_field_map
+    - search_api_solr
+    - taxonomy
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+      fuzzy_analyzer: true
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      use_language_undefined_as_fallback_language: false
+      specific_languages:
+        en: '0'
+      use_universal_collation: false
+id: ggcp_only
+name: 'GGCP Only'
+description: ''
+read_only: false
+field_settings:
+  address_line1:
+    label: 'Event Location » The first line of the address block'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:address_line1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_location
+  administrative_area:
+    label: 'Event Location » The top-level administrative subdivision of the country'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:administrative_area'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_location
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  comment_body:
+    label: Comment
+    datasource_id: 'entity:comment'
+    property_path: comment_body
+    type: text
+    dependencies:
+      config:
+        - field.storage.comment.comment_body
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_academia_sub_sector:
+    label: 'Academia Sub sector'
+    datasource_id: 'entity:node'
+    property_path: field_academia_sub_sector
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_academia_sub_sector
+  field_academia_sub_sector_name:
+    label: 'Academia Sub sector » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_academia_sub_sector:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_academia_sub_sector
+      module:
+        - taxonomy
+  field_author_name:
+    label: 'Author(s) » Paragraph » Author Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_publication_authors:entity:field_author_name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_publication_authors
+        - field.storage.paragraph.field_author_name
+      module:
+        - paragraphs
+  field_author_organization:
+    label: 'Author(s) » Paragraph » Author Organization'
+    datasource_id: 'entity:node'
+    property_path: 'field_publication_authors:entity:field_author_organization'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_publication_authors
+        - field.storage.paragraph.field_author_organization
+      module:
+        - paragraphs
+  field_authoritative_body:
+    label: 'Responsible Entity'
+    datasource_id: 'entity:node'
+    property_path: field_authoritative_body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_authoritative_body
+  field_award_type:
+    label: 'Award Type'
+    datasource_id: 'entity:node'
+    property_path: field_award_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_award_type
+  field_award_type_name:
+    label: 'Award Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_award_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_award_type
+      module:
+        - taxonomy
+  field_category:
+    label: Category
+    datasource_id: 'entity:node'
+    property_path: field_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_category
+  field_challenge_applicability:
+    label: 'Challenge Applicability'
+    datasource_id: 'entity:node'
+    property_path: field_challenge_applicability
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_challenge_applicability
+  field_challenge_applicability_name:
+    label: 'Challenge Applicability » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_challenge_applicability:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_challenge_applicability
+      module:
+        - taxonomy
+  field_challenge_category:
+    label: 'Challenge Category'
+    datasource_id: 'entity:node'
+    property_path: field_challenge_category
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_challenge_category
+  field_challenge_category_name:
+    label: 'Challenge Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_challenge_category:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_challenge_category
+      module:
+        - taxonomy
+  field_country_of_challenge:
+    label: 'Country of challenge'
+    datasource_id: 'entity:node'
+    property_path: field_country_of_challenge
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_country_of_challenge
+  field_country_of_solution:
+    label: 'Country of solution'
+    datasource_id: 'entity:node'
+    property_path: field_country_of_solution
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_country_of_solution
+  field_description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description
+  field_description_1:
+    label: Description
+    datasource_id: 'entity:group'
+    property_path: field_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.group.field_description
+  field_end_date:
+    label: 'End Date'
+    datasource_id: 'entity:node'
+    property_path: field_end_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_end_date
+  field_event_date_s_2:
+    label: 'Event Date(s)'
+    datasource_id: 'entity:node'
+    property_path: field_event_date_s_2
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_event_date_s_2
+  field_event_end_date_s_2:
+    label: 'Event Date(s) » End date value'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_date_s_2:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_event_date_s_2
+  field_event_format:
+    label: 'Event Format'
+    datasource_id: 'entity:node'
+    property_path: field_event_format
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_event_format
+  field_event_format_name:
+    label: 'Event Format » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_format:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_event_format
+      module:
+        - taxonomy
+  field_event_type:
+    label: 'Event Type'
+    datasource_id: 'entity:node'
+    property_path: field_event_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
+  field_event_type_name:
+    label: 'Event Type (select all that apply) » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_type:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
+      module:
+        - taxonomy
+  field_field_of_interest:
+    label: 'Field of Interest'
+    datasource_id: 'entity:node'
+    property_path: field_field_of_interest
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_field_of_interest
+  field_government_sub_sector:
+    label: 'Government Sub-Sector'
+    datasource_id: 'entity:node'
+    property_path: field_government_sub_sector
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_government_sub_sector
+  field_government_sub_sector_name:
+    label: 'Government Sub-Sector » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_government_sub_sector:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_government_sub_sector
+      module:
+        - taxonomy
+  field_image:
+    label: 'Featured Image'
+    datasource_id: 'entity:node'
+    property_path: field_image
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_image
+  field_industry:
+    label: Industry
+    datasource_id: 'entity:node'
+    property_path: field_industry
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_industry
+  field_industry_name:
+    label: 'Industry » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_industry:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_industry
+      module:
+        - taxonomy
+  field_industry_sub_sector:
+    label: 'Industry Sub-sector'
+    datasource_id: 'entity:node'
+    property_path: field_industry_sub_sector
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_industry_sub_sector
+  field_industry_sub_sector_name:
+    label: 'Industry Sub-sector » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_industry_sub_sector:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_industry_sub_sector
+      module:
+        - taxonomy
+  field_keywords:
+    label: Keywords
+    datasource_id: 'entity:node'
+    property_path: field_keywords
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_keywords
+  field_level_of_training:
+    label: 'Level of Training'
+    datasource_id: 'entity:node'
+    property_path: field_level_of_training
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_level_of_training
+  field_level_of_training_name:
+    label: 'Level of Training » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_level_of_training:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_level_of_training
+      module:
+        - taxonomy
+  field_organization:
+    label: 'Submitting Organization'
+    datasource_id: 'entity:node'
+    property_path: field_organization
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_organization
+  field_organizational_sector:
+    label: 'Organizational Sector'
+    datasource_id: 'entity:node'
+    property_path: field_organizational_sector
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_organizational_sector
+  field_organizational_sector_name:
+    label: 'Organizational Sector » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_organizational_sector:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_organizational_sector
+      module:
+        - taxonomy
+  field_prerequisites:
+    label: Prerequisites
+    datasource_id: 'entity:node'
+    property_path: field_prerequisites
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_prerequisites
+  field_proposal_deadline:
+    label: 'Application Deadline'
+    datasource_id: 'entity:node'
+    property_path: field_proposal_deadline
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_proposal_deadline
+  field_pu:
+    label: 'Publication Date'
+    datasource_id: 'entity:node'
+    property_path: field_pu
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_pu
+  field_reference_for_relevant_pub:
+    label: 'Reference for Relevant Publication'
+    datasource_id: 'entity:node'
+    property_path: field_reference_for_relevant_pub
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_for_relevant_pub
+  field_registrations_date_time:
+    label: 'Registrations Date Time'
+    datasource_id: 'entity:node'
+    property_path: field_registrations_date_time
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_registrations_date_time
+  field_sector_custom_select:
+    label: Sector
+    datasource_id: 'entity:node'
+    property_path: field_sector_custom_select
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_sector_custom_select
+  field_sector_custom_select_1:
+    label: 'Organization Sector Full Search'
+    datasource_id: 'entity:node'
+    property_path: 'field_organization:entity:field_sector_custom_select'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_organization
+        - field.storage.node.field_sector_custom_select
+      module:
+        - node
+  field_stage_of_development:
+    label: 'Stage of Development'
+    datasource_id: 'entity:node'
+    property_path: field_stage_of_development
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_stage_of_development
+  field_start_date:
+    label: 'Start Date'
+    datasource_id: 'entity:node'
+    property_path: field_start_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_start_date
+  field_state:
+    label: State
+    datasource_id: 'entity:node'
+    property_path: field_state
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_state
+  field_target_audience:
+    label: 'Who is this Training For?'
+    datasource_id: 'entity:node'
+    property_path: field_target_audience
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_target_audience
+  field_tests:
+    label: 'Eligible Recipient(s)'
+    datasource_id: 'entity:node'
+    property_path: field_tests
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tests
+  field_training_format:
+    label: 'Training Format'
+    datasource_id: 'entity:node'
+    property_path: field_training_format
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_training_format
+  field_training_format_name:
+    label: 'Training Format » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_training_format:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_training_format
+      module:
+        - taxonomy
+  field_type_of_announcement:
+    label: 'Type of Announcement'
+    datasource_id: 'entity:node'
+    property_path: field_type_of_announcement
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type_of_announcement
+  field_type_of_announcement_name:
+    label: 'Type of Announcement » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type_of_announcement:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_type_of_announcement
+      module:
+        - taxonomy
+  keywords_term_names:
+    label: 'Keywords » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_keywords:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_keywords
+      module:
+        - taxonomy
+  label:
+    label: Title
+    datasource_id: 'entity:group'
+    property_path: label
+    type: string
+    dependencies:
+      module:
+        - group
+  langcode:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: text
+    dependencies:
+      module:
+        - node
+  locality:
+    label: 'Event Location » The locality (i.e. city)'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:locality'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_location
+  organization:
+    label: 'Event Location » The organization'
+    datasource_id: 'entity:node'
+    property_path: 'field_location:organization'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_location
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  title_1:
+    label: 'Organization Name Full Search'
+    datasource_id: 'entity:node'
+    property_path: 'field_organization:entity:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_organization
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:comment':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:group':
+    bundles:
+      default: true
+      selected:
+        - private_group
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - search_landing_page
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  custom_value: {  }
+  entity_status: {  }
+  entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields: {  }
+    highlight: always
+    highlight_partial: false
+  language_with_fallback: {  }
+  mapped_field: {  }
+  mapped_terms: {  }
+  rendered_item: {  }
+  search_api_canonical_url: {  }
+  search_api_urls: {  }
+  site_name: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: apache_solr

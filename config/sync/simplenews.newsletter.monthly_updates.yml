@@ -1,0 +1,21 @@
+uuid: 6a0a9e8c-c9c9-4838-8f65-510d428ace5e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Monthly Updates'
+id: monthly_updates
+description: ''
+format: html
+priority: 0
+receipt: false
+from_name: 'Green Chemistry for sustainability'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: s_bhakre@acs.org
+hyperlinks: true
+allowed_handlers:
+  0: '0'
+  simplenews_all: '0'
+new_account: none
+access: default
+reason: ''
+weight: 0

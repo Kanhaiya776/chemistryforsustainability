@@ -1,0 +1,22 @@
+uuid: 13fe4f4c-21b2-4cf6-b4ad-bc59b5f9a5a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.group_roles
+    - group.relationship_type.interest_areas-group_invitation
+id: group_relationship.interest_areas-group_invitation.group_roles
+field_name: group_roles
+entity_type: group_relationship
+bundle: interest_areas-group_invitation
+label: Roles
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'group_type:group_role'
+  handler_settings:
+    group_type_id: interest_areas
+field_type: entity_reference

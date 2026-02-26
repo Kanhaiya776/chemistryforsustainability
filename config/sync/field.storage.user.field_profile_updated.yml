@@ -1,0 +1,20 @@
+uuid: 7a1e9adb-1afe-4975-90de-478858693032
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - user
+id: user.field_profile_updated
+field_name: field_profile_updated
+entity_type: user
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

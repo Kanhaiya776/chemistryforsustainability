@@ -1,0 +1,15 @@
+uuid: f3555f21-5dfd-4a10-857e-6bab6246efc0
+langcode: en
+status: true
+dependencies: {  }
+id: add_professional_development
+label: 'Add Professional development'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/learn\r\n/professional_development"
+breadcrumbTitles: "Home\r\nLearn\r\nProfessional Development"
+type: '2'
+pathPattern: /node/add/professional_development
+extraCacheContexts: ''

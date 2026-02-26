@@ -1,0 +1,19 @@
+uuid: 458a8871-15e9-4378-9a41-aca9a33deba0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment_name
+    - node.type.professional_development
+id: node.professional_development.field_attachment_name
+field_name: field_attachment_name
+entity_type: node
+bundle: professional_development
+label: 'Attachment Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

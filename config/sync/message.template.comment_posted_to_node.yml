@@ -1,0 +1,19 @@
+uuid: cec0a038-a973-4272-9417-24d4051d71e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: comment_posted_to_node
+label: 'Comment Posted to Node'
+description: 'Create a message to a user when a comment is posted to a node they created'
+text:
+  -
+    value: '<p>[message:field_comment_reference:entity:author] has commented on your [message:field_comment_reference:entity:entity:content-type], <a href="[message:field_comment_reference:entity:entity:url]">[message:field_comment_reference:entity:entity:title]</a></p><p><strong>Comment: </strong><em><strong>[message:field_comment_reference:entity:title]</strong></em><strong>&nbsp;</strong><br><a href="[message:field_comment_reference:entity:url]"><strong>Read more and reply</strong></a></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

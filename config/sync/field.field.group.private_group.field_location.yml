@@ -1,0 +1,21 @@
+uuid: e6e1f5b1-079f-4d49-aeaa-1571f60515b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_location
+    - group.type.private_group
+  module:
+    - options
+id: group.private_group.field_location
+field_name: field_location
+entity_type: group
+bundle: private_group
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: dd9849c9-eef6-401c-b106-035f6dde3039
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: comment_reply_to_comment
+label: 'Comment Reply to Comment'
+description: 'Email sent to person who created a comment that was replied to.'
+text:
+  -
+    value: '<p>[message:field_comment_reference:entity:author] has commented on your [message:field_comment_reference:entity:entity:content-type], <a href="[message:field_comment_reference:entity:entity:url]">[message:field_comment_reference:entity:entity:title]</a></p><p><strong>Comment: </strong><em><strong>[message:field_comment_reference:entity:title]</strong></em><strong>&nbsp;</strong><br><a href="[message:field_comment_reference:entity:url]"><strong>Read more and reply</strong></a></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

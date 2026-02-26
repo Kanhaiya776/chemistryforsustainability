@@ -1,0 +1,15 @@
+uuid: f8b1014a-ec75-4531-be43-d9a661833475
+langcode: en
+status: true
+dependencies: {  }
+id: organizations
+label: Organizations
+description: ''
+entityType: node
+entityBundle: organization
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/organizations"
+breadcrumbTitles: "Home\r\nNetwork\r\nOrganizations"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

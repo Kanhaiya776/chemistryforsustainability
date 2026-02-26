@@ -1,0 +1,686 @@
+uuid: 0e0ea4c3-037a-4524-b2c5-9c460fc3febc
+langcode: en
+status: open
+dependencies:
+  module:
+    - antibot
+    - custom_contacts
+    - webform_user_registration
+third_party_settings:
+  antibot:
+    antibot: true
+weight: 0
+open: null
+close: null
+uid: 3
+template: false
+archive: false
+id: user_registration
+title: 'Join the Network'
+description: ''
+categories: {  }
+elements: |-
+  container_002:
+    '#type': container
+    '#attributes':
+      class:
+        - container
+        - mt-4
+    flexbox_name:
+      '#type': webform_flexbox
+      first_name:
+        '#type': textfield
+        '#title': 'First Name'
+        '#required': true
+        '#required_error': 'First name is required'
+        '#pattern': '^[a-zA-Z\s'' -]*$'
+        '#pattern_error': 'Enter valid first name'
+        '#counter_type': character
+        '#counter_maximum': 64
+        '#counter_maximum_message': ' '
+      last_name:
+        '#type': textfield
+        '#title': 'Last Name'
+        '#required': true
+        '#required_error': 'Last name is required'
+        '#pattern': '^[a-zA-Z\s'' -]*$'
+        '#pattern_error': 'Enter valid last name'
+        '#counter_type': character
+        '#counter_maximum': 64
+        '#counter_maximum_message': ' '
+    flexbox_name2:
+      '#type': webform_flexbox
+      email:
+        '#type': email
+        '#title': Email
+        '#description': 'Your email address is not made public. It will only be used if you need to be contacted about your account or for opted-in notifications.'
+        '#required': true
+        '#required_error': 'Email is required'
+      country:
+        '#type': select
+        '#title': Country
+        '#options': country_codes
+        '#empty_option': '- Select -'
+        '#sort_options': true
+        '#required': true
+        '#default_value': '1228'
+    spoken_language_s_select_all_that_apply:
+      '#type': select
+      '#title': 'Spoken Language(s) (Select all that apply)'
+      '#multiple': 20
+      '#options': languages
+      '#sort_options': true
+      '#select2': true
+      '#required': true
+    flexbox_name3:
+      '#type': webform_flexbox
+      field_of_interest:
+        '#type': webform_entity_select
+        '#title': 'Field of Interest'
+        '#description': 'Select up to 5 expertise. If not listed, select "Other."'
+        '#select2': true
+        '#multiple': 5
+        '#target_type': taxonomy_term
+        '#selection_handler': 'default:taxonomy_term'
+        '#selection_settings':
+          target_bundles:
+            field_of_interest: field_of_interest
+          sort:
+            field: name
+            direction: asc
+        '#required': true
+      other_interest:
+        '#type': textfield
+        '#title': 'Specify Other Interest'
+        '#description': '<p>Use a comma to separate more than one interest.</p>'
+        '#pattern': '^[a-zA-Z0-9, &-]*$'
+        '#pattern_error': 'Interest field should only contains special characters &, -'
+    flexbox_name4:
+      '#type': webform_flexbox
+      fields_of_expertise:
+        '#type': webform_entity_select
+        '#title': 'Fields of Expertise'
+        '#description': 'Select up to 5 expertise. If not listed, select "Other."'
+        '#select2': true
+        '#multiple': 5
+        '#target_type': taxonomy_term
+        '#selection_handler': 'default:taxonomy_term'
+        '#selection_settings':
+          target_bundles:
+            field_of_interest: field_of_interest
+          sort:
+            field: name
+            direction: asc
+        '#required': true
+      other_expertise:
+        '#type': textfield
+        '#title': 'Other Fields of Expertise'
+        '#description': '<p>Use a comma to separate more than one expertise.</p>'
+        '#pattern': '^[a-zA-Z0-9, &-]*$'
+        '#pattern_error': 'Expertise field should only contains special characters &, -'
+    container_001:
+      '#type': container
+      '#attributes':
+        class:
+          - bg-lightblue
+          - p-4
+          - ''
+      mentor_section:
+        '#type': fieldset
+        '#title': Mentor
+        '#attributes':
+          class:
+            - bg-lightblue
+            - p-4
+        interested_in_mentoring:
+          '#type': radios
+          '#title': 'Are you interested in mentoring others?'
+          '#description': 'You may edit this response on your profile in the future.'
+          '#required': true
+          '#options':
+            1: 'Yes'
+            0: 'No'
+        mentor_topics:
+          '#type': textarea
+          '#title': 'Identify topics in which you wish to mentor'
+          '#maxlength': 250
+          '#pattern': '^[a-zA-Z0-9 .),\r\n]{0,2000}$'
+          '#pattern_error': 'Mentor topics: Only 2000 characters allowed, special characters containing ".  , )" are allowed'
+          '#counter_type': character
+          '#counter_maximum': 2000
+          '#states':
+            visible:
+              ':input[name="interested_in_mentoring"]':
+                value: '1'
+    no_organization:
+      '#type': checkbox
+      '#title': "I don't have an organization."
+    organization_fieldset_fieldset:
+      '#type': fieldset
+      '#title': Organization
+      '#required': true
+      '#states':
+        invisible:
+          ':input[name="no_organization"]':
+            checked: true
+      existing_organization:
+        '#type': webform_entity_select
+        '#title': 'Search for Organization'
+        '#description': '<p>Search results default to the parent hierarchy of all organizations. For example, Yale University will be listed rather than its departments. If you wish to specify further, please do so on your profile after completing this form.</p>'
+        '#select2': true
+        '#states':
+          required:
+            ':input[name="no_organization"]':
+              unchecked: true
+            ':input[name="create_new_org_checkbox"]':
+              unchecked: true
+        '#format': value
+        '#target_type': node
+        '#selection_handler': 'default:node'
+        '#selection_settings':
+          target_bundles:
+            organization: organization
+      create_new_org_checkbox:
+        '#type': checkbox
+        '#title': '+ Click to add new organization'
+        '#states':
+          invisible:
+            ':input[name="no_organization"]':
+              checked: true
+          optional:
+            - ':input[name="existing_organization"]':
+                filled: true
+            - or
+            - ':input[name="no_organization"]':
+                checked: true
+    new_org_section:
+      '#type': webform_section
+      '#title': 'New Org Section'
+      '#title_display': invisible
+      '#states':
+        visible:
+          ':input[name="create_new_org_checkbox"]':
+            checked: true
+      new_organization_section:
+        '#type': fieldset
+        '#title': 'Create New Organization'
+        '#states':
+          visible:
+            ':input[name="create_new_org_checkbox"]':
+              checked: true
+        flexbox_name5:
+          '#type': webform_flexbox
+          organization_name:
+            '#type': textfield
+            '#title': 'Organization Name'
+            '#required_error': 'Organization name is required'
+            '#unique_entity': node
+            '#unique_error': 'Organization name already exists'
+            '#states':
+              required:
+                ':input[name="create_new_org_checkbox"]':
+                  checked: true
+          organization_acronym:
+            '#type': textfield
+            '#title': 'Organization Acronym'
+        organization_country:
+          '#type': address
+          '#title': Country
+          '#wrapper_attributes':
+            class:
+              - row
+              - g-3
+              - address-bootstrap-row
+          '#required': true
+          '#field_overrides':
+            givenName: hidden
+            additionalName: hidden
+            familyName: hidden
+            organization: hidden
+            addressLine1: hidden
+            addressLine2: hidden
+            addressLine3: hidden
+            postalCode: hidden
+            sortingCode: hidden
+            dependentLocality: hidden
+            locality: hidden
+            administrativeArea: optional
+        sector_fieldset:
+          '#type': fieldset
+          '#title': Sector
+          '#title_display': invisible
+          '#required': true
+          '#form_key': sector_fieldset
+          flexbox_03:
+            '#type': webform_flexbox
+            sector:
+              '#type': select
+              '#title': Sector
+              '#options':
+                academia: Academia
+                'government Sector': 'Government Sector'
+                industry: Industry
+                non_governmental_organization: 'Non-Governmental Organization'
+                other: Other
+              '#required_error': 'Sector is required'
+              '#states':
+                required:
+                  ':input[name="create_new_org_checkbox"]':
+                    checked: true
+            container:
+              '#type': container
+              academia_sub_sector:
+                '#type': webform_entity_select
+                '#title': 'Academia Sub-Sector'
+                '#states':
+                  visible:
+                    ':input[name="sector"]':
+                      value: academia
+                '#target_type': taxonomy_term
+                '#selection_handler': 'default:taxonomy_term'
+                '#selection_settings':
+                  target_bundles:
+                    academia_sub_sector: academia_sub_sector
+                  sort:
+                    field: name
+                    direction: asc
+              government_sub_sector:
+                '#type': webform_entity_select
+                '#title': 'Government Sub-Sector'
+                '#states':
+                  visible:
+                    ':input[name="sector"]':
+                      value: 'government Sector'
+                '#target_type': taxonomy_term
+                '#selection_handler': 'default:taxonomy_term'
+                '#selection_settings':
+                  target_bundles:
+                    government_sub_sector: government_sub_sector
+                  sort:
+                    field: name
+                    direction: asc
+              industry_sub_sector:
+                '#type': webform_entity_select
+                '#title': 'Industry Sub-sector'
+                '#states':
+                  visible:
+                    ':input[name="sector"]':
+                      value: industry
+                '#target_type': taxonomy_term
+                '#selection_handler': 'default:taxonomy_term'
+                '#selection_settings':
+                  target_bundles:
+                    industry_sub_sector: industry_sub_sector
+                  sort:
+                    field: name
+                    direction: asc
+              isindustry_sub_sector:
+                '#type': radios
+                '#title': 'If Industry, is the company a startup?'
+                '#options':
+                  1: 'Yes'
+                  0: 'No'
+                '#states':
+                  visible:
+                    ':input[name="sector"]':
+                      value: industry
+                '#data_type': Boolean
+        check_to_add_your_organization_s_address:
+          '#type': checkbox
+          '#title': "Add organization's address."
+        flexbox_02:
+          '#type': webform_flexbox
+          '#states':
+            visible:
+              ':input[name="check_to_add_your_organization_s_address"]':
+                checked: true
+          street_address:
+            '#type': textfield
+            '#title': 'Street Address'
+          street_address_line_2:
+            '#type': textfield
+            '#title': 'Street Address Line 2'
+        flexbox_07:
+          '#type': webform_flexbox
+          '#states':
+            visible:
+              ':input[name="check_to_add_your_organization_s_address"]':
+                checked: true
+          city:
+            '#type': textfield
+            '#title': City
+          postal_code:
+            '#type': textfield
+            '#title': 'Postal Code'
+        check_to_add_your_organization_s_description:
+          '#type': checkbox
+          '#title': "Add your organization's description."
+        organization_description:
+          '#type': textarea
+          '#title': 'Organization Description'
+          '#description': '<p>Please enter a description (max 2000 characters) using only letters, numbers, and these symbols: A-Z, a-z, 0-9, - . , ? ! : ; " '' &amp; ® —</p>'
+          '#autocomplete': ''
+          '#counter_type': character
+          '#counter_maximum': 2000
+          '#states':
+            visible:
+              ':input[name="check_to_add_your_organization_s_description"]':
+                checked: true
+        check_to_add_social_media_links_for_your_organization:
+          '#type': checkbox
+          '#title': 'Add websites and social media links for your organization.'
+        websites_social_media:
+          '#type': fieldset
+          '#title': 'Websites/Social Media'
+          '#states':
+            visible:
+              ':input[name="check_to_add_social_media_links_for_your_organization"]':
+                checked: true
+          flexbox_09:
+            '#type': webform_flexbox
+            '#states':
+              visible:
+                ':input[name="check_to_add_social_media_links_for_your_organization"]':
+                  checked: true
+            organization_website:
+              '#type': url
+              '#title': 'Organization Website'
+              '#autocomplete': 'off'
+              '#required': true
+            linkedin_profile:
+              '#type': url
+              '#title': 'LinkedIn Profile'
+              '#autocomplete': ''
+          flexbox_13:
+            '#type': webform_flexbox
+            '#states':
+              visible:
+                ':input[name="check_to_add_social_media_links_for_your_organization"]':
+                  checked: true
+            facebook_profile:
+              '#type': url
+              '#title': 'facebook Profile'
+              '#autocomplete': ''
+            instagram_profile:
+              '#type': url
+              '#title': 'Instagram Profile'
+              '#autocomplete': ''
+            wechat_profile:
+              '#type': url
+              '#title': 'Wechat Profile'
+    flexbox_12:
+      '#type': container
+      '#attributes':
+        class:
+          - bg-lightblue
+          - p-4
+      direct_messaging:
+        '#type': checkbox
+        '#title': 'Allow Direct Messaging'
+        '#description': '<p style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(61, 69, 76);font-family:&quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:14px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">Your privacy is important to us. Your email will not be visible in the user directory at any time.</p><p style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(61, 69, 76);font-family:&quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:14px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">To facilitate communication, the site has enabled Direct Messaging to provide a secure and private mechanism for other registered users to contact you <em>without</em> sharing your email address. Direct Messaging is intended for specific purposes such as research, collaboration, speaking engagements, mentoring, etc. but is not intended to be used for marketing or promotional purposes. You may opt-out of this feature now or at any time by adjusting settings in your profile.</p><p style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(61, 69, 76);font-family:&quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:14px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">If you wish to <span style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(61, 69, 76);display:inline !important;float:none;font-family:&quot;helvetica neue&quot;, helvetica, arial, sans-serif;font-size:14px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">unsubscribe from Direct Messaging, uncheck this box. By unchecking the box, you understand that other registered users will not be able to contact you.</span></p>'
+      gender:
+        '#type': select
+        '#title': Gender
+        '#description': "Answers to this question will only be used in aggregate form to meet funder reporting requirements related to diversity, equity, and inclusion. Your answer will only be visible to the site's administrators and will NOT appear in your user profile."
+        '#required': true
+        '#options':
+          1: Female
+          2: Male
+          3: Other
+          4: 'Prefer not to disclose'
+          5: Transgender
+          6: 'Genderqueer or Genderfluid'
+          7: Non-binary
+          8: Agender
+          9: 'Not Sure'
+    processed_text:
+      '#type': processed_text
+      '#text': '<p class="custom-text form-required">Have you read and accepted the website <a href="/privacy-policy" target="_blank">privacy policy</a> and <a href="/terms-use" target="_blank">terms of use</a>?</p>'
+      '#format': full_html
+    terms_acceptance:
+      '#type': checkbox
+      '#title': 'Yes, I have read and accept the website terms of use.'
+      '#required': true
+      '#required_error': 'Website privacy policy and terms of use is required'
+      '#attributes':
+        class:
+          - custom-text
+      '#label_attributes':
+        style: 'font-weight: unset !important;'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - container
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: true
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: true
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url_message
+  confirmation_url: /
+  confirmation_title: ''
+  confirmation_message: '<p>We''ve sent an email to you at the following email address: [webform_submission:values:email] Please follow the instructions included in the email to complete your registration. If you do not receive a verification email within 10 minutes, please try again. Contact us at <a class="email" href="mailto:admin@chemistryforsustainability.org">admin@chemistryforsustainability.org</a> for assistance.</p>'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  user_registration:
+    id: user_registration
+    handler_id: user_registration
+    label: 'User Registration'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings:
+      create_user:
+        enabled: true
+        roles:
+          authenticated: authenticated
+          content_editor: '0'
+          administrator: '0'
+          moderator: '0'
+        admin_approval: false
+        admin_approval_message: ''
+        email_verification: true
+        email_verification_message: ''
+        success_message: ''
+      update_user:
+        enabled: false
+      user_field_mapping:
+        first_name: field_first_name
+        last_name: field_last_name
+        email: mail
+        country: field_country
+        spoken_language_s_select_all_that_apply: field_spoken_language
+        field_of_interest: field_field_of_interest
+        other_interest: field_specify_other_interest
+        fields_of_expertise: field_field_of_expertise
+        other_expertise: field_other_fields_of_expertise
+        interested_in_mentoring: field_are_you_interested_in_ment
+        mentor_topics: field_identify_topics_in_which_y
+        direct_messaging: field_allow_direct_messaging
+        gender: field_gender
+  custom_registration_handler:
+    id: custom_registration_handler
+    handler_id: custom_registration_handler
+    label: 'Custom Registration Handler'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -49
+    settings: {  }
+variants: {  }

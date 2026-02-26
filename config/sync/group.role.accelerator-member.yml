@@ -1,0 +1,32 @@
+uuid: d41abe3e-b53d-4e10-ab29-19a9b9837884
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+    - user.role.authenticated
+id: accelerator-member
+label: Member
+weight: 16
+admin: false
+scope: insider
+global_role: authenticated
+group_type: accelerator
+permissions:
+  - 'access group_node overview'
+  - 'create group_node:group_files relationship'
+  - 'delete own group_node:forum entity'
+  - 'delete own group_node:group_files entity'
+  - 'leave group'
+  - 'update own group_membership relationship'
+  - 'update own group_node:group_files entity'
+  - 'view group'
+  - 'view group invitations'
+  - 'view group_membership relationship'
+  - 'view group_node:forum entity'
+  - 'view group_node:forum relationship'
+  - 'view group_node:group_files entity'
+  - 'view group_term:forums entity'
+  - 'view group_term:forums relationship'
+  - 'view own unpublished group_node:forum entity'
+  - 'view own unpublished group_node:group_files entity'

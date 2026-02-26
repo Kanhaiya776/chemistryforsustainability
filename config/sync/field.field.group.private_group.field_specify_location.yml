@@ -1,0 +1,19 @@
+uuid: d42df41c-a5fe-4e35-a0e9-0b782470a07a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_specify_location
+    - group.type.private_group
+id: group.private_group.field_specify_location
+field_name: field_specify_location
+entity_type: group
+bundle: private_group
+label: 'Specify Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

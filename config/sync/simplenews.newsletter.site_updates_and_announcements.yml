@@ -1,0 +1,21 @@
+uuid: 4220cfcc-b7ba-4750-819c-edcd46584926
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site Updates and Announcements'
+id: site_updates_and_announcements
+description: ''
+format: html
+priority: 0
+receipt: false
+from_name: 'Green Chemistry for sustainability'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: s_bhakre@acs.org
+hyperlinks: true
+allowed_handlers:
+  0: '0'
+  simplenews_all: '0'
+new_account: none
+access: default
+reason: ''
+weight: 0

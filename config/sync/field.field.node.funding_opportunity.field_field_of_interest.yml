@@ -1,0 +1,29 @@
+uuid: 818efeff-f34a-4e6e-9c83-7f2f128e6e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_of_interest
+    - node.type.funding_opportunity
+    - taxonomy.vocabulary.field_of_interest
+id: node.funding_opportunity.field_field_of_interest
+field_name: field_field_of_interest
+entity_type: node
+bundle: funding_opportunity
+label: 'Field of Interest'
+description: "Select up to 5 interests. If not listed, select \"Other.\"\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      field_of_interest: field_of_interest
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

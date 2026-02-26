@@ -1,0 +1,27 @@
+uuid: af3ac3f0-198a-4a17-9875-42e6cbd1b501
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.innovation_challenge
+  module:
+    - file
+id: node.innovation_challenge.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: innovation_challenge
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: txt
+  max_filesize: '20 MB'
+  description_field: false
+field_type: file

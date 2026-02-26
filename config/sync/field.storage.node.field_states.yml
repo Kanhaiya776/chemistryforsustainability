@@ -1,0 +1,19 @@
+uuid: e5348829-a2f8-4802-813d-963b0a600b66
+langcode: en
+status: true
+dependencies:
+  module:
+    - acs_custom_country
+    - node
+id: node.field_states
+field_name: field_states
+entity_type: node
+type: state_multi
+settings: {  }
+module: acs_custom_country
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

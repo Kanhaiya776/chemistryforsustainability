@@ -1,0 +1,28 @@
+uuid: defe705b-5e37-4cf7-9be8-10f94d8fb0c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.moderator_new_node_submitted.field_node_reference
+    - message.template.moderator_new_node_submitted
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.moderator_new_node_submitted.digest
+targetEntityType: message
+bundle: moderator_new_node_submitted
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_node_reference: true
+  search_api_excerpt: true

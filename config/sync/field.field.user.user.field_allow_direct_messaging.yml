@@ -1,0 +1,22 @@
+uuid: b8d86c1b-e95b-41ad-891e-c794f4c556f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_allow_direct_messaging
+  module:
+    - user
+id: user.user.field_allow_direct_messaging
+field_name: field_allow_direct_messaging
+entity_type: user
+bundle: user
+label: 'Allow Direct Messaging'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

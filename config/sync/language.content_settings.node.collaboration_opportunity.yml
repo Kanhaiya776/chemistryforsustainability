@@ -1,0 +1,11 @@
+uuid: 2980b459-ad21-46f3-85d4-3109ff5808e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.collaboration_opportunity
+id: node.collaboration_opportunity
+target_entity_type_id: node
+target_bundle: collaboration_opportunity
+default_langcode: site_default
+language_alterable: false

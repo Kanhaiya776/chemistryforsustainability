@@ -1,0 +1,29 @@
+uuid: 1cf6df72-e826-4157-981d-b2592a5b895d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_creator_user
+    - node.type.organization
+id: node.organization.field_creator_user
+field_name: field_creator_user
+entity_type: node
+bundle: organization
+label: 'Creator User'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference

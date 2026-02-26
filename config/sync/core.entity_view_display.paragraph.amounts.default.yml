@@ -1,0 +1,33 @@
+uuid: f9276b32-1621-424f-9f1f-27f7b1cf61fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.amounts.field_amount
+    - field.field.paragraph.amounts.field_currency
+    - paragraphs.paragraphs_type.amounts
+id: paragraph.amounts.default
+targetEntityType: paragraph
+bundle: amounts
+mode: default
+content:
+  field_amount:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_currency:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

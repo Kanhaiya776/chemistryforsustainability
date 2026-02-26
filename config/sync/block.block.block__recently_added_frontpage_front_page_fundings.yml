@@ -1,0 +1,32 @@
+uuid: cf102669-3b5b-4f2b-9e00-c0d0deb796ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recently_added_frontpage
+  module:
+    - node
+    - views
+  theme:
+    - acs_gcs
+id: block__recently_added_frontpage_front_page_fundings
+theme: acs_gcs
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:recently_added_frontpage-front_page_fundings'
+settings:
+  id: 'views_block:recently_added_frontpage-front_page_fundings'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page

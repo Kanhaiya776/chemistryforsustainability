@@ -1,0 +1,11 @@
+uuid: 70ccba1d-252c-4c7a-b571-499814cbcf10
+langcode: en
+status: true
+dependencies: {  }
+id: private_group
+label: 'Private Group'
+description: ''
+new_revision: true
+creator_membership: false
+creator_wizard: true
+creator_roles: {  }

@@ -1,0 +1,25 @@
+uuid: f9c292a4-41e6-4297-8bac-7d1131f64065
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: lGAn1y8ed2uhu_M7nvZ6jiAHWE-HiYUM400gTAFnKeI
+id: acs_gcs_site_branding
+theme: acs_gcs
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

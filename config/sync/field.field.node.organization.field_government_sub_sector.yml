@@ -1,0 +1,29 @@
+uuid: b45ccc0e-be52-48b2-bf40-9c4242a1e0c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_government_sub_sector
+    - node.type.organization
+    - taxonomy.vocabulary.government_sub_sector
+id: node.organization.field_government_sub_sector
+field_name: field_government_sub_sector
+entity_type: node
+bundle: organization
+label: 'Government Sub-Sector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      government_sub_sector: government_sub_sector
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

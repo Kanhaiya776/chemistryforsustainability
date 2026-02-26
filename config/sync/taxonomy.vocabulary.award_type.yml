@@ -1,0 +1,9 @@
+uuid: dfb40873-b190-4eca-95b0-7740552201e4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Award Type'
+vid: award_type
+description: 'List of values for Award Type field'
+weight: -2
+new_revision: false

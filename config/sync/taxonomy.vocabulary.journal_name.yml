@@ -1,0 +1,9 @@
+uuid: e458d205-0c63-42df-87ee-150cd8156e8c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Journal Name'
+vid: journal_name
+description: null
+weight: 6
+new_revision: false

@@ -1,0 +1,78 @@
+uuid: 3d315f87-441f-4aeb-9252-55f5fb20b96f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_presiding_intergovernmenta
+field_name: field_presiding_intergovernmenta
+entity_type: node
+type: list_float
+settings:
+  allowed_values:
+    -
+      value: 0.0
+      label: 'African Union (AU)'
+    -
+      value: 1.0
+      label: 'African, Caribbean, and Pacific Group of States (ACP Group)'
+    -
+      value: 2.0
+      label: 'Arctic Council'
+    -
+      value: 3.0
+      label: 'Asia-Pacific Economic Cooperation (APEC)'
+    -
+      value: 4.0
+      label: 'Association of Caribbean States (ACS)'
+    -
+      value: 5.0
+      label: 'Association of Southeast Asian Nations (ASEAN)'
+    -
+      value: 6.0
+      label: 'Caribbean Community (CARICOM)'
+    -
+      value: 7.0
+      label: 'Central American Integration System (SICA)'
+    -
+      value: 8.0
+      label: 'European Union (EU)'
+    -
+      value: 9.0
+      label: 'Forum for East Asia and Latin American Cooperation (FEALAC)'
+    -
+      value: 10.0
+      label: 'North Atlantic Treaty Organization (NATO)'
+    -
+      value: 11.0
+      label: 'Organization for Economic Cooperation and Development (OECD)'
+    -
+      value: 12.0
+      label: 'Organization of Petroleum Exporting Countries (OPEC)'
+    -
+      value: 13.0
+      label: 'Small Island Developing States'
+    -
+      value: 14.0
+      label: 'The Organization of American States (OAS)'
+    -
+      value: 15.0
+      label: 'United Nations (UN)'
+    -
+      value: 16.0
+      label: 'World Health Organization (WHO)'
+    -
+      value: 17.0
+      label: 'World Trade Organization (WTO)'
+    -
+      value: 18.0
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

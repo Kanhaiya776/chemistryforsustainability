@@ -1,0 +1,23 @@
+uuid: 46f41df0-23a5-4a33-98f9-a933c289bf52
+langcode: en
+status: true
+dependencies:
+  module:
+    - ggcp_styler
+  theme:
+    - acs_gcs
+id: acs_gcs_poweredby
+theme: acs_gcs
+region: footer_fifth
+weight: -7
+provider: null
+plugin: powered_by_block
+settings:
+  id: powered_by_block
+  label: 'Powered by'
+  label_display: '0'
+  provider: ggcp_styler
+  acs_address: 'American Chemical Society,</br> 1155 Sixteenth Street, NW, Washington, DC</br> 20036 USA'
+  beyongbenign_address: 'Beyond Benign,</br> 18 Church Street, P.O. Box 1016,</br> Wilmington, MA 01887 USA'
+  ggcp_address: 'Center for Green Chemistry & Green Engineering at Yale,</br> 370 Prospect Street,</br> New Haven, CT 06511 USA'
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 4f4aac11-90b2-4882-b13b-6844e06a7b1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: direct_messages
+label: 'Direct Messages'
+description: 'Track direct message between user profiles'
+text:
+  -
+    value: '<p>[message:field_direct_message_body]</p>'
+    format: basic_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

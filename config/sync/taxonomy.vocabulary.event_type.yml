@@ -1,0 +1,9 @@
+uuid: ae29d317-334a-448b-b089-a702510129a9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Type'
+vid: event_type
+description: 'List of values for Event Type field'
+weight: 4
+new_revision: false

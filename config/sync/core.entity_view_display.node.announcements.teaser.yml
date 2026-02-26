@@ -1,0 +1,44 @@
+uuid: 9bd5e156-d98b-4379-a146-bc3d1f7c8926
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.announcements.field_description
+    - field.field.node.announcements.field_field_of_interest
+    - field.field.node.announcements.field_image
+    - field.field.node.announcements.field_keywords
+    - field.field.node.announcements.field_link
+    - field.field.node.announcements.field_organization
+    - field.field.node.announcements.field_specify_other_interest3
+    - field.field.node.announcements.field_type_of_announcement
+    - node.type.announcements
+  module:
+    - user
+id: node.announcements.teaser
+targetEntityType: node
+bundle: announcements
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_description: true
+  field_field_of_interest: true
+  field_image: true
+  field_keywords: true
+  field_link: true
+  field_organization: true
+  field_specify_other_interest3: true
+  field_type_of_announcement: true
+  langcode: true
+  search_api_excerpt: true

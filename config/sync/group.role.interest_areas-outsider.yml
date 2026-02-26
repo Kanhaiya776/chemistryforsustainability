@@ -1,0 +1,19 @@
+uuid: ebd0a018-f9c4-49a1-9832-c9c18c9c4eb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+    - user.role.authenticated
+id: interest_areas-outsider
+label: Outsider
+weight: 2
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: interest_areas
+permissions:
+  - 'access group_node overview'
+  - 'join group'
+  - 'view group invitations'
+  - 'view latest group version'

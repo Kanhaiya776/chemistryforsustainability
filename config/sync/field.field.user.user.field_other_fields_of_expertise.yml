@@ -1,0 +1,20 @@
+uuid: 5a46e33c-0882-4cc4-9e4a-a5c52fcf1ff1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_other_fields_of_expertise
+  module:
+    - user
+id: user.user.field_other_fields_of_expertise
+field_name: field_other_fields_of_expertise
+entity_type: user
+bundle: user
+label: 'Other Fields of Expertise'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

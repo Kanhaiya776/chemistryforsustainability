@@ -1,0 +1,28 @@
+uuid: 17a96b98-d278-41bf-abfe-84d0160eb5cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.submitted_node_state_change.field_node_reference
+    - message.template.submitted_node_state_change
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.submitted_node_state_change.digest
+targetEntityType: message
+bundle: submitted_node_state_change
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_node_reference: true
+  search_api_excerpt: true

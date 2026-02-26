@@ -1,0 +1,18 @@
+uuid: 2cc73de4-81e1-4bbd-b2c2-fee73a13c14d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Group Files'
+type: group_files
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

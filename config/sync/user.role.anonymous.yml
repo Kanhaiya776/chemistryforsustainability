@@ -1,0 +1,59 @@
+uuid: 62bb6080-e43d-48fe-bed9-0f594e6f13f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - filter.format.user_text_format
+    - taxonomy.vocabulary.organization
+    - taxonomy.vocabulary.organizational_sector
+  module:
+    - aggregator
+    - comment
+    - contact
+    - eu_cookie_compliance
+    - filter
+    - media
+    - node
+    - node_view_permissions
+    - search
+    - system
+    - taxonomy
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access news feeds'
+  - 'access site-wide contact form'
+  - 'display eu cookie compliance popup'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'use text format user_text_format'
+  - 'view any announcements content'
+  - 'view any case_study content'
+  - 'view any collaboration_opportunity content'
+  - 'view any documentation_article content'
+  - 'view any event content'
+  - 'view any front_page content'
+  - 'view any funding_opportunity content'
+  - 'view any organization content'
+  - 'view any page content'
+  - 'view any policy content'
+  - 'view any professional_development content'
+  - 'view any publication content'
+  - 'view any resources_page content'
+  - 'view any search_landing_page content'
+  - 'view any tool content'
+  - 'view media'
+  - 'view own announcements content'
+  - 'view own page content'
+  - 'view own resources_page content'
+  - 'view own search_landing_page content'
+  - 'view term revisions in organization'
+  - 'view term revisions in organizational_sector'

@@ -1,0 +1,9 @@
+uuid: d7d35b62-e82f-45c0-b322-85f8178dac91
+langcode: en
+status: true
+dependencies: {  }
+name: 'Fields of Research'
+vid: fields_of_research
+description: null
+weight: -15
+new_revision: false

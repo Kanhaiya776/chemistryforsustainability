@@ -1,0 +1,30 @@
+uuid: 2a62a7a6-1fa3-405d-b852-387307b15915
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.organization_update_notification.field_body
+    - message.template.organization_update_notification
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.organization_update_notification.default
+targetEntityType: message
+bundle: organization_update_notification
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

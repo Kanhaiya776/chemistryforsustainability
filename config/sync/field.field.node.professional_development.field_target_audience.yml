@@ -1,0 +1,29 @@
+uuid: 353dccf0-e817-4cd2-9b2e-26ec2d72cb99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target_audience
+    - node.type.professional_development
+    - taxonomy.vocabulary.target_audience
+id: node.professional_development.field_target_audience
+field_name: field_target_audience
+entity_type: node
+bundle: professional_development
+label: 'Who is this Training For?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      target_audience: target_audience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

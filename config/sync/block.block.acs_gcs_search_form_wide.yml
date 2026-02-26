@@ -1,0 +1,23 @@
+uuid: cdcf0c34-2661-4770-80ef-83ba345c61e7
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: Z9Q8IF7xhQ9RJ-mnHc863vEdCcrQuXXUq48Nv6zBcX0
+id: acs_gcs_search_form_wide
+theme: acs_gcs
+region: top_header_form
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

@@ -1,0 +1,9 @@
+uuid: 9f98a822-f409-4d09-9a31-328427744bb7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Challenge Applicability'
+vid: challenge_applicability
+description: 'List of values for Challenge Applicability field'
+weight: 0
+new_revision: false

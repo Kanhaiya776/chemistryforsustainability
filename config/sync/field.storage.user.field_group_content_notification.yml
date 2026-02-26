@@ -1,0 +1,18 @@
+uuid: b72c26ba-93c6-4696-a791-4d279ea52bf8
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_group_content_notification
+field_name: field_group_content_notification
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

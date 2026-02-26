@@ -1,0 +1,19 @@
+uuid: 293bffb2-3b57-4cf2-95ae-06ebc169bd16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.publication
+id: node.publication.field_source
+field_name: field_source
+entity_type: node
+bundle: publication
+label: Source
+description: 'Journal name or other publishing entity such an an organization.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

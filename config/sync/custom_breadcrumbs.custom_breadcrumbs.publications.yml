@@ -1,0 +1,15 @@
+uuid: ea0daede-a283-4f42-b08a-ad9f11f2a360
+langcode: en
+status: true
+dependencies: {  }
+id: publications
+label: 'Publications Individual Content'
+description: ''
+entityType: node
+entityBundle: publication
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/publications"
+breadcrumbTitles: "Home\r\nToolkit\r\nCommunity Publications & Reports"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

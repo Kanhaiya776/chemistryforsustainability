@@ -1,0 +1,15 @@
+uuid: 165a04a2-e7d1-4f17-b7c0-12d2eb427abb
+langcode: en
+status: true
+dependencies: {  }
+id: professional_development_detailed_page
+label: 'Professional development detailed page'
+description: ''
+entityType: node
+entityBundle: professional_development
+language: und
+breadcrumbPaths: "/\r\n/learn\r\n/professional-development"
+breadcrumbTitles: "Home\r\nLearn\r\nProfessional Development"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

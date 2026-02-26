@@ -1,0 +1,23 @@
+uuid: 2b8a7628-bdb1-4767-987a-42ed8df5ddb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.grequest_status
+    - group.relationship_type.accelerator-996ae0cbc1a35b89222a
+  module:
+    - state_machine
+id: group_relationship.accelerator-996ae0cbc1a35b89222a.grequest_status
+field_name: grequest_status
+entity_type: group_relationship
+bundle: accelerator-996ae0cbc1a35b89222a
+label: 'Request status'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  workflow: request
+  workflow_callback: ''
+field_type: state

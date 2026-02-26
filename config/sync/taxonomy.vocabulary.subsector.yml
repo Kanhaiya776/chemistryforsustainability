@@ -1,0 +1,9 @@
+uuid: fbba02ed-08c6-4443-a558-13c11bebcd8a
+langcode: en
+status: true
+dependencies: {  }
+name: Subsector
+vid: subsector
+description: null
+weight: 11
+new_revision: false

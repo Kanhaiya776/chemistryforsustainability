@@ -1,0 +1,42 @@
+uuid: db3cbccb-419a-4154-b8f3-e3872d4ec6df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.group_content_created.field_group_reference
+    - field.field.message.group_content_created.field_node_reference
+    - message.template.group_content_created
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.group_content_created.default
+targetEntityType: message
+bundle: group_content_created
+mode: default
+content:
+  field_group_reference:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

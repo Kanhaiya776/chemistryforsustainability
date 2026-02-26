@@ -1,0 +1,26 @@
+uuid: fbed1f19-6862-4326-8843-680cb93e10a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prerequisites
+    - filter.format.full_html
+    - filter.format.user_text_format
+    - node.type.professional_development
+  module:
+    - text
+id: node.professional_development.field_prerequisites
+field_name: field_prerequisites
+entity_type: node
+bundle: professional_development
+label: Prerequisites
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - user_text_format
+    - full_html
+field_type: text_long

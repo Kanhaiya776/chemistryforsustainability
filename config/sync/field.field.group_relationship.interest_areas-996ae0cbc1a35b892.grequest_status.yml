@@ -1,0 +1,23 @@
+uuid: f6058d41-cd09-40c1-9852-aafa7d4e356c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.grequest_status
+    - group.relationship_type.interest_areas-996ae0cbc1a35b892
+  module:
+    - state_machine
+id: group_relationship.interest_areas-996ae0cbc1a35b892.grequest_status
+field_name: grequest_status
+entity_type: group_relationship
+bundle: interest_areas-996ae0cbc1a35b892
+label: 'Request status'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  workflow: request
+  workflow_callback: ''
+field_type: state

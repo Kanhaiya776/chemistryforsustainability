@@ -1,0 +1,9 @@
+uuid: 63ddaca2-ef57-424e-99c8-3b6a03f82a66
+langcode: en
+status: true
+dependencies: {  }
+name: 'Economics - Specific field of interest'
+vid: economics_specific_field_of_inte
+description: null
+weight: -10
+new_revision: false

@@ -1,0 +1,27 @@
+uuid: 828a0d75-472b-438c-9022-25e3e1df7c77
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.organization_update_notification.field_body
+    - message.template.organization_update_notification
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.organization_update_notification.mail_subject
+targetEntityType: message
+bundle: organization_update_notification
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_body: true
+  partial_1: true
+  search_api_excerpt: true

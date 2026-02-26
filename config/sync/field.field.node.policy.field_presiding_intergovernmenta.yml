@@ -1,0 +1,21 @@
+uuid: 4721f19f-7cd6-4729-beee-e331453007e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_presiding_intergovernmenta
+    - node.type.policy
+  module:
+    - options
+id: node.policy.field_presiding_intergovernmenta
+field_name: field_presiding_intergovernmenta
+entity_type: node
+bundle: policy
+label: 'Presiding Intergovernmental Organization (If Applicable)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float

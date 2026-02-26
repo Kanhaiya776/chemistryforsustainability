@@ -1,0 +1,25 @@
+uuid: 16045b01-e692-477b-951d-5fd673f847e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - ggcp_styler
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_visitoursistersitesblock
+theme: acs_gcs
+region: featured_bottom_first
+weight: 0
+provider: null
+plugin: visit_our_sister_sites_block
+settings:
+  id: visit_our_sister_sites_block
+  label: 'Visit Our Sister Sites Block'
+  label_display: '0'
+  provider: ggcp_styler
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

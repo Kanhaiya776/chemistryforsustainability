@@ -1,0 +1,19 @@
+uuid: cd020fca-49be-46db-b532-7cda822a1a09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specify_other_interest
+    - node.type.publication
+id: node.publication.field_specify_other_interest
+field_name: field_specify_other_interest
+entity_type: node
+bundle: publication
+label: 'Specify "Other" Interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

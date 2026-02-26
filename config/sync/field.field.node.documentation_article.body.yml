@@ -1,0 +1,26 @@
+uuid: f887eb53-1dc7-413f-b329-78b7777eb8d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.full_html
+    - node.type.documentation_article
+  module:
+    - text
+id: node.documentation_article.body
+field_name: body
+entity_type: node
+bundle: documentation_article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

@@ -1,0 +1,57 @@
+uuid: 20aface2-2d7a-479f-a76d-54e1cbed921f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.user_text_format
+  module:
+    - ckeditor5
+format: user_text_format
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - subscript
+      - superscript
+      - link
+      - bulletedList
+      - numberedList
+      - alignment
+      - indent
+      - blockQuote
+      - drupalInsertImage
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading1
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: '5 MB'
+  max_dimensions:
+    width: null
+    height: null

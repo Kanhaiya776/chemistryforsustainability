@@ -1,0 +1,29 @@
+uuid: 4fbc2782-0932-4509-bae3-b2b7578e9270
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_announcement
+    - node.type.announcements
+    - taxonomy.vocabulary.type_of_announcement
+id: node.announcements.field_type_of_announcement
+field_name: field_type_of_announcement
+entity_type: node
+bundle: announcements
+label: 'Type of Announcement'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_of_announcement: type_of_announcement
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

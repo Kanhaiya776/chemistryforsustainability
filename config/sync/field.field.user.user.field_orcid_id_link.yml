@@ -1,0 +1,20 @@
+uuid: 93a0c2e5-f0c9-4f6f-bc64-f1fd338b9119
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_orcid_id_link
+  module:
+    - user
+id: user.user.field_orcid_id_link
+field_name: field_orcid_id_link
+entity_type: user
+bundle: user
+label: 'ORCID ID Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

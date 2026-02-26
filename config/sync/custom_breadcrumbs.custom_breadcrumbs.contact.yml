@@ -1,0 +1,15 @@
+uuid: 2d6cc6a8-07de-4f25-a3fb-b5bbfd4b56dc
+langcode: en
+status: true
+dependencies: {  }
+id: contact
+label: contact
+description: ''
+entityType: _none
+entityBundle: _none
+language: en
+breadcrumbPaths: /
+breadcrumbTitles: Home
+type: '2'
+pathPattern: "/contact\r\n/accessibility\r\n/privacy-policy\r\n/terms-use"
+extraCacheContexts: ''

@@ -1,0 +1,280 @@
+uuid: 600069ba-1ee0-4217-8ec2-be9cc504502c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - block_content.type.resources_banner
+    - core.entity_view_display.node.page.default
+    - filter.format.basic_html
+    - filter.format.full_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.announcements
+    - node.type.article
+    - node.type.case_study
+    - node.type.collaboration_opportunity
+    - node.type.documentation_article
+    - node.type.event
+    - node.type.forum
+    - node.type.funding_opportunity
+    - node.type.innovation_challenge
+    - node.type.organization
+    - node.type.page
+    - node.type.policy
+    - node.type.professional_development
+    - node.type.publication
+    - node.type.tool
+    - node.type.webform
+    - taxonomy.vocabulary.keywords
+    - taxonomy.vocabulary.tags
+    - workflows.workflow.editorial
+  module:
+    - admin_toolbar_search
+    - aggregator
+    - block_content
+    - comment
+    - content_moderation
+    - contextual
+    - custom_breadcrumbs
+    - eu_cookie_compliance
+    - field_ui
+    - file
+    - filter
+    - forum
+    - group
+    - help
+    - layout_builder
+    - media
+    - node
+    - node_view_permissions
+    - paragraphs
+    - path
+    - redirect
+    - simplenews_scheduler
+    - system
+    - taxonomy
+    - toolbar
+    - webform
+_core:
+  default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
+id: content_editor
+label: 'Limited Administrator'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access any webform configuration'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access group overview'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access news feeds'
+  - 'access own webform configuration'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer block content'
+  - 'administer comment display'
+  - 'administer comments'
+  - 'administer custom_breadcrumbs'
+  - 'administer forums'
+  - 'administer group'
+  - 'administer group display'
+  - 'administer group fields'
+  - 'administer group form display'
+  - 'administer group_relationship fields'
+  - 'administer group_relationship form display'
+  - 'administer media form display'
+  - 'administer menu'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer paragraph display'
+  - 'administer paragraph fields'
+  - 'administer paragraph form display'
+  - 'administer redirects'
+  - 'administer site configuration'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer webform element access'
+  - 'administer webform submission'
+  - 'configure any layout'
+  - 'configure editable page node layout overrides'
+  - 'create accelerator group'
+  - 'create and edit custom blocks'
+  - 'create announcements content'
+  - 'create audio media'
+  - 'create basic block content'
+  - 'create document media'
+  - 'create image media'
+  - 'create interest_areas group'
+  - 'create media'
+  - 'create page content'
+  - 'create private_group group'
+  - 'create remote_video media'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'create video media'
+  - 'create webform'
+  - 'create webform content'
+  - 'delete announcements revisions'
+  - 'delete any announcements content'
+  - 'delete any audio media'
+  - 'delete any case_study content'
+  - 'delete any collaboration_opportunity content'
+  - 'delete any document media'
+  - 'delete any event content'
+  - 'delete any forum content'
+  - 'delete any funding_opportunity content'
+  - 'delete any image media'
+  - 'delete any innovation_challenge content'
+  - 'delete any media'
+  - 'delete any page content'
+  - 'delete any policy content'
+  - 'delete any professional_development content'
+  - 'delete any publication content'
+  - 'delete any remote_video media'
+  - 'delete any tool content'
+  - 'delete any video media'
+  - 'delete case_study revisions'
+  - 'delete collaboration_opportunity revisions'
+  - 'delete event revisions'
+  - 'delete forum revisions'
+  - 'delete funding_opportunity revisions'
+  - 'delete innovation_challenge revisions'
+  - 'delete media'
+  - 'delete own announcements content'
+  - 'delete own article content'
+  - 'delete own audio media'
+  - 'delete own case_study content'
+  - 'delete own collaboration_opportunity content'
+  - 'delete own document media'
+  - 'delete own documentation_article content'
+  - 'delete own event content'
+  - 'delete own files'
+  - 'delete own forum content'
+  - 'delete own funding_opportunity content'
+  - 'delete own image media'
+  - 'delete own innovation_challenge content'
+  - 'delete own organization content'
+  - 'delete own page content'
+  - 'delete own policy content'
+  - 'delete own professional_development content'
+  - 'delete own publication content'
+  - 'delete own remote_video media'
+  - 'delete own tool content'
+  - 'delete own video media'
+  - 'delete own webform'
+  - 'delete own webform content'
+  - 'delete own webform submission'
+  - 'delete page revisions'
+  - 'delete policy revisions'
+  - 'delete professional_development revisions'
+  - 'delete publication revisions'
+  - 'delete terms in keywords'
+  - 'delete tool revisions'
+  - 'display eu cookie compliance popup'
+  - 'edit any announcements content'
+  - 'edit any audio media'
+  - 'edit any basic block content'
+  - 'edit any case_study content'
+  - 'edit any collaboration_opportunity content'
+  - 'edit any document media'
+  - 'edit any documentation_article content'
+  - 'edit any event content'
+  - 'edit any forum content'
+  - 'edit any funding_opportunity content'
+  - 'edit any image media'
+  - 'edit any innovation_challenge content'
+  - 'edit any page content'
+  - 'edit any policy content'
+  - 'edit any professional_development content'
+  - 'edit any publication content'
+  - 'edit any remote_video media'
+  - 'edit any resources_banner block content'
+  - 'edit any tool content'
+  - 'edit any video media'
+  - 'edit any webform'
+  - 'edit any webform content'
+  - 'edit any webform submission'
+  - 'edit own article content'
+  - 'edit own audio media'
+  - 'edit own comments'
+  - 'edit own document media'
+  - 'edit own documentation_article content'
+  - 'edit own image media'
+  - 'edit own page content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'edit own webform'
+  - 'edit own webform content'
+  - 'edit own webform submission'
+  - 'edit terms in keywords'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'revert announcements revisions'
+  - 'revert any basic block content revisions'
+  - 'revert any resources_banner block content revisions'
+  - 'revert case_study revisions'
+  - 'revert collaboration_opportunity revisions'
+  - 'revert documentation_article revisions'
+  - 'revert event revisions'
+  - 'revert forum revisions'
+  - 'revert funding_opportunity revisions'
+  - 'revert innovation_challenge revisions'
+  - 'revert page revisions'
+  - 'revert policy revisions'
+  - 'revert professional_development revisions'
+  - 'revert publication revisions'
+  - 'revert tool revisions'
+  - 'select account cancellation method'
+  - 'send scheduled newsletters'
+  - 'skip comment approval'
+  - 'update any media'
+  - 'update media'
+  - 'use admin toolbar search'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition moderation_rejected'
+  - 'use editorial transition moderation_submit_for_review'
+  - 'use editorial transition moderation_under_review'
+  - 'use editorial transition publish'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view announcements revisions'
+  - 'view any basic block content history'
+  - 'view any documentation_article content'
+  - 'view any resources_banner block content history'
+  - 'view any unpublished content'
+  - 'view any webform submission'
+  - 'view article revisions'
+  - 'view case_study revisions'
+  - 'view collaboration_opportunity revisions'
+  - 'view documentation_article revisions'
+  - 'view event revisions'
+  - 'view forum revisions'
+  - 'view funding_opportunity revisions'
+  - 'view innovation_challenge revisions'
+  - 'view own documentation_article content'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view own webform submission'
+  - 'view page revisions'
+  - 'view policy revisions'
+  - 'view professional_development revisions'
+  - 'view publication revisions'
+  - 'view the administration theme'
+  - 'view tool revisions'
+  - 'view user email addresses'
+  - 'view webform revisions'

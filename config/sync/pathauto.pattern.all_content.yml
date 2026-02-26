@@ -1,0 +1,31 @@
+uuid: 3e974f4e-832a-4431-b9f2-0fb761aed259
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: all_content
+label: 'All Content'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria:
+  a02eef80-a76c-4402-9d97-7a79a1176780:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a02eef80-a76c-4402-9d97-7a79a1176780
+    context_mapping:
+      node: node
+    bundles:
+      announcements: announcements
+      article: article
+      case_study: case_study
+      event: event
+      funding_opportunity: funding_opportunity
+      policy: policy
+      professional_development: professional_development
+      publication: publication
+      simplenews_issue: simplenews_issue
+      tool: tool
+selection_logic: and
+weight: -5
+relationships: {  }

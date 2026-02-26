@@ -1,0 +1,19 @@
+uuid: 794aeb8f-c31f-418a-901f-eb6b820d8bef
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: group_content_created
+label: 'Group Content created'
+description: 'Send email to members of a group when new group content is created'
+text:
+  -
+    value: '<p><strong>New group content:</strong> [message:field_node_reference:entity:author] has posted <a href="[message:field_node_reference:entity:url]">[message:field_node_reference:entity:title]</a> ([message:field_node_reference:entity:content-type]) to the group <a href="[message:field_group_reference:entity:url]">[message:field_group_reference:entity:title]</a></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

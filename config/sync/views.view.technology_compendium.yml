@@ -1,0 +1,516 @@
+uuid: 32781505-3069-4c0a-8937-a055a52515f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.ggcp_only
+    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.stage_of_development
+  module:
+    - search_api
+    - vefl_bef
+id: technology_compendium
+label: 'Technology Compendium'
+module: views
+description: ''
+tag: ''
+base_table: search_api_index_ggcp_only
+base_field: search_api_id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Safer Alternatives'
+      fields:
+        address_line1:
+          id: address_line1
+          table: search_api_index_ggcp_only
+          field: address_line1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 9
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: vefl_bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+              field_stage_of_development:
+                plugin_id: bef_select2
+                advanced:
+                  sort_options: 0
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+                  placeholder_text: '- Any -'
+              field_category:
+                plugin_id: bef_select2
+                advanced:
+                  sort_options: 0
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+                  placeholder_text: '- Any -'
+          layout:
+            layout_id: layout_twocol_bricks
+            regions: {  }
+            widget_region:
+              search_api_fulltext: top
+              field_stage_of_development: first_above
+              field_category: second_above
+              sort_by: bottom
+              sort_order: bottom
+              items_per_page: bottom
+              offset: bottom
+              submit: bottom
+              reset: bottom
+              secondary: top
+              sort_bef_combine: top
+            change: Change
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: search_api_none
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<br />0 results. Please revise search criteria.'
+            format: basic_html
+          tokenize: false
+      sorts:
+        title:
+          id: title
+          table: search_api_index_ggcp_only
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      arguments: {  }
+      filters:
+        type:
+          id: type
+          table: search_api_index_ggcp_only
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value:
+            case_study: case_study
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_ggcp_only
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            expose_fields: false
+            placeholder: 'Search all text'
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
+        field_stage_of_development:
+          id: field_stage_of_development
+          table: search_api_index_ggcp_only
+          field: field_stage_of_development
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_stage_of_development_op
+            label: 'Stage of Development'
+            description: ''
+            use_operator: false
+            operator: field_stage_of_development_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_stage_of_development
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: stage_of_development
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_category:
+          id: field_category
+          table: search_api_index_ggcp_only
+          field: field_category
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_category_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: field_category_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_category
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: category
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: grid_responsive
+        options:
+          uses_fields: false
+          columns: 3
+          cell_min_width: 300
+          grid_gutter: 10
+          alignment: horizontal
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:comment':
+              ':default': default
+              comment: default
+              comment_forum: default
+            'entity:group':
+              ':default': default
+              accelerator: default
+              interest_areas: default
+            'entity:node':
+              ':default': default
+              announcements: default
+              article: default
+              case_study: teaser_grid
+              collaboration_opportunity: default
+              documentation_article: ':default'
+              event: default
+              forum: default
+              front_page: ':default'
+              funding_opportunity: default
+              group_files: ':default'
+              innovation_challenge: default
+              organization: ':default'
+              page: default
+              policy: default
+              professional_development: default
+              publication: default
+              resources_page: ':default'
+              restricted_page: ':default'
+              tools_metrics: ':default'
+              webform: default
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+          query_tags: {  }
+      relationships: {  }
+      css_class: cards-responsive-grid
+      header:
+        area_1:
+          id: area_1
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: 'Textarea intro text'
+          plugin_id: text
+          empty: true
+          content:
+            value: "<p>This is a directory of green chemistry and engineering technologies from around the world, developed by the Yale-UNIDO Global Green Chemistry Initiative. It provides a worldwide snapshot of technologies that are currently commercially available or are in the process of becoming commercially available. The selected technologies are applicable across a broad range of sectors and industries.</p>\r\n<p>Results are displayed alphabetically by title. Use the search bar to refine results. Text searches are full text, not partial word searches. You can also <a href=\"/node/add/case_study?destination=/safer-alternatives&redirect=/node/add/case_study\">submit new technologies</a> to share with the green chemistry community. If you are not logged in, you will be redirected to login first. All new content undergoes review by website administration before publication.</p>"
+            format: full_html
+          tokenize: false
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p><a href="/node/add/case_study?destination=/safer-alternatives&redirect=/node/add/case_study"><button class="btn btn-secondary btn-secondary-outlined">Submit a Safer Alternative</button></a></p>'
+            format: full_html
+          tokenize: false
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.ggcp_only'
+        - 'search_api_list:ggcp_only'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      exposed_block: false
+      display_extenders:
+        jsonapi_views:
+          enabled: true
+        searchtracker_enable_extender:
+          defaults:
+            searchtracker_enable_extender: true
+          searchtracker_enable_extender: false
+        webform_popup_extender:
+          enable_edit_button: false
+        simple_sitemap_display_extender: {  }
+      path: safer-alternatives
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.ggcp_only'
+        - 'search_api_list:ggcp_only'

@@ -1,0 +1,15 @@
+uuid: e82d00a2-3553-4438-8a95-55c5efcdb18e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+    - user.role.anonymous
+id: interest_areas-anonymous
+label: Anonymous
+weight: 1
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: interest_areas
+permissions: {  }

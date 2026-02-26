@@ -1,0 +1,28 @@
+uuid: 26612f96-d7e6-4ebd-88a4-8528be591943
+langcode: en
+status: true
+dependencies:
+  module:
+    - ggcp_styler
+    - node
+  theme:
+    - acs_gcs
+id: acs_gcs_bannerwrapper
+theme: acs_gcs
+region: featured_top
+weight: -12
+provider: null
+plugin: banner_wrapper
+settings:
+  id: banner_wrapper
+  label: 'Banner Wrapper'
+  label_display: '0'
+  provider: ggcp_styler
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page

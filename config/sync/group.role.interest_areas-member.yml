@@ -1,0 +1,33 @@
+uuid: f85536f4-c5b9-4942-a7f5-5af984f8bfdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+    - user.role.authenticated
+id: interest_areas-member
+label: Member
+weight: 3
+admin: false
+scope: insider
+global_role: authenticated
+group_type: interest_areas
+permissions:
+  - 'access group_node overview'
+  - 'bulk invite users to group'
+  - 'create group_term:forums relationship'
+  - 'delete own group_term:forums relationship'
+  - 'leave group'
+  - 'update own group_membership relationship'
+  - 'update own group_node:forum entity'
+  - 'update own group_node:group_files entity'
+  - 'update own group_term:forums relationship'
+  - 'view group'
+  - 'view group invitations'
+  - 'view group_membership relationship'
+  - 'view group_node:forum entity'
+  - 'view group_node:forum relationship'
+  - 'view group_node:group_files entity'
+  - 'view group_node:group_files relationship'
+  - 'view group_term:forums entity'
+  - 'view group_term:forums relationship'

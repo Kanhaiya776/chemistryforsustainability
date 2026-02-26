@@ -1,0 +1,419 @@
+uuid: e7c78bc8-7363-4145-bc65-2ba2742efebc
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: update_organization_form
+title: 'Update Organization Form'
+description: '<p>Update existing organization details</p>'
+categories: {  }
+elements: |-
+  individual:
+    '#type': fieldset
+    '#title': Individual
+    '#title_display': invisible
+    ids:
+      '#type': textarea
+      '#title': ids
+      '#default_value': '[webform_submission:source-entity:id]'
+  organization_extras:
+    '#type': fieldset
+    '#title': 'Organization Extras'
+    '#title_display': invisible
+    existing_contact:
+      '#type': webform_contact
+      '#title': 'Existing Contact'
+      '#company__access': false
+      '#email__access': false
+      '#phone__access': false
+      '#address__access': false
+      '#address_2__access': false
+      '#city__access': false
+      '#state_province__access': false
+      '#postal_code__access': false
+      '#country__access': false
+    add_update_organization_logo:
+      '#type': managed_file
+      '#title': 'Add/Update Organization Logo'
+      '#file_extensions': 'jpg, jpeg, png, heif'
+      '#file_name': org
+      '#sanitize': true
+    flexbox:
+      '#type': webform_flexbox
+      organization_name:
+        '#type': textfield
+        '#title': 'Organization Name'
+        '#required': true
+        '#flex': 2
+        '#default_value': '[current-page:title]'
+      organization_acronym:
+        '#type': textfield
+        '#title': 'Organization Acronym'
+        '#counter_type': character
+        '#counter_maximum': 255
+  contact_2:
+    '#type': fieldset
+    '#title': 'Contact 2'
+    flexbox_01:
+      '#type': webform_flexbox
+      country:
+        '#type': address
+        '#title': Country
+        '#title_display': ''
+        '#field_overrides':
+          givenName: hidden
+          additionalName: hidden
+          familyName: hidden
+          organization: hidden
+          addressLine1: hidden
+          addressLine2: hidden
+          addressLine3: hidden
+          postalCode: hidden
+          sortingCode: hidden
+          dependentLocality: hidden
+          locality: hidden
+      city:
+        '#type': textfield
+        '#title': City
+    street_address:
+      '#type': textfield
+      '#title': ' Street Address'
+    flexbox_02:
+      '#type': webform_flexbox
+      street_address_line_2:
+        '#type': textfield
+        '#title': ' Street Address Line 2'
+      postal_code:
+        '#type': textfield
+        '#title': ' Postal Code'
+    sector:
+      '#type': fieldset
+      '#title': Sector
+      '#title_display': invisible
+      flexbox_05:
+        '#type': webform_flexbox
+        sectoredit:
+          '#type': select
+          '#title': Sector
+          '#options':
+            academia: Academia
+            'government Sector': 'Government Sector'
+            industry: Industry
+            non_governmental_organization: 'Non-Governmental Organization'
+            other: Other
+        container:
+          '#type': container
+          academia_sub_sector:
+            '#type': webform_term_select
+            '#title': 'Academia Sub-Sector'
+            '#states':
+              visible:
+                ':input[name="sectoredit"]':
+                  value: academia
+            '#vocabulary': academia_sub_sector
+          government_sub_sector:
+            '#type': webform_term_select
+            '#title': 'Government Sub-Sector'
+            '#states':
+              visible:
+                ':input[name="sectoredit"]':
+                  value: 'government Sector'
+            '#vocabulary': government_sub_sector
+          industry_sub_sector:
+            '#type': webform_term_select
+            '#title': 'Industry Sub-sector'
+            '#states':
+              visible:
+                ':input[name="sectoredit"]':
+                  value: industry
+            '#vocabulary': industry_sub_sector
+          if_industry_is_the_company_a_startup:
+            '#type': radios
+            '#title': 'If Industry, is the company a startup?'
+            '#options':
+              1: 'Yes'
+              2: 'No'
+            '#states':
+              visible:
+                ':input[name="sectoredit"]':
+                  value: industry
+    website:
+      '#type': textfield
+      '#title': Website
+      '#required': true
+      '#required_error': 'Organization website is required'
+      '#pattern': '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$'
+      '#pattern_error': 'Please enter a valid website URL & must start with http:// or https://.'
+      '#counter_type': character
+      '#counter_maximum': 255
+    organization_description:
+      '#type': textarea
+      '#title': ' Organization Description'
+      '#description': '<p>Description should be under <strong>2000 characters</strong> and contain only valid characters: A-Z, a-z, 0-9, - . , ? ! : ; " '' &amp; ® —</p>'
+      '#pattern': '^[A-Za-z0-9 .,?!:;\"''&®—-]{1,2000}$'
+      '#pattern_error': 'Please enter a description (max 2000 characters) using only letters, numbers, and these symbols: - . , ? ! : ; " '' & ® —'
+    flexbox_03:
+      '#type': webform_flexbox
+      linkedin_profile:
+        '#type': textfield
+        '#title': 'LinkedIn Profile'
+        '#placeholder': 'https://www.linkedin.com/in/your-profile-name'
+        '#pattern': '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$'
+        '#pattern_error': 'Please enter a valid linkedin URL & must start with http:// or https://.'
+        '#counter_type': character
+        '#counter_maximum': 255
+      facebook_profile:
+        '#type': textfield
+        '#title': 'Facebook Profile'
+        '#placeholder': 'Facebookhttps://www.facebook.com/your.profile.name Profile'
+        '#pattern': '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$'
+        '#pattern_error': 'Please enter a valid facebook URL & must start with http:// or https://.'
+        '#counter_type': character
+        '#counter_maximum': 255
+    flexbox_04:
+      '#type': webform_flexbox
+      instagram_profile:
+        '#type': textfield
+        '#title': 'Instagram Profile'
+        '#placeholder': 'https://www.instagram.com/yourusername'
+        '#pattern': '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$'
+        '#pattern_error': 'Please enter a valid instagram URL & must start with http:// or https://.'
+      wechat_profile:
+        '#type': textfield
+        '#title': 'Wechat Profile'
+        '#placeholder': 'https://www.wechat.com/your-id'
+        '#pattern': '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$'
+        '#pattern_error': 'Please enter a valid wechat URL & must start with http:// or https://.'
+        '#counter_type': character
+        '#counter_maximum': 255
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: true
+  form_prepopulate_source_entity: true
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: node
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns:
+    - serial
+    - created
+    - remote_addr
+    - label
+    - completed
+    - changed
+    - element__ids
+    - element__existing_contact
+    - element__existing_contact__name
+    - element__add_update_organization_logo
+    - element__organization_name
+    - element__organization_acronym
+    - element__country
+    - element__country__given_name
+    - element__country__family_name
+    - element__country__additional_name
+    - element__country__organization
+    - element__country__address_line1
+    - element__country__address_line2
+    - element__country__postal_code
+    - element__country__locality
+    - element__country__dependent_locality
+    - element__country__administrative_area
+    - element__country__country_code
+    - element__country__langcode
+    - element__country__sorting_code
+    - element__city
+    - element__street_address
+    - element__street_address_line_2
+    - element__postal_code
+    - element__sectoredit
+    - element__academia_sub_sector
+    - element__government_sub_sector
+    - element__industry_sub_sector
+    - element__if_industry_is_the_company_a_startup
+    - element__website
+    - element__organization_description
+    - element__linkedin_profile
+    - element__facebook_profile
+    - element__instagram_profile
+    - element__wechat_profile
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

@@ -1,0 +1,9 @@
+uuid: ea0e1e62-136f-40ae-af35-50602e3a650c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Mathematical Sciences - Specific field of interest'
+vid: mathematical_sciences_specific_f
+description: null
+weight: -5
+new_revision: false

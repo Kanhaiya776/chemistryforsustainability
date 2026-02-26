@@ -1,0 +1,19 @@
+uuid: 20194960-e27c-44f8-8d80-f58973be4dd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specify_other_interest3
+    - node.type.announcements
+id: node.announcements.field_specify_other_interest3
+field_name: field_specify_other_interest3
+entity_type: node
+bundle: announcements
+label: 'Specify "Other" Interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

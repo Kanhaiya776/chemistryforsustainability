@@ -1,0 +1,19 @@
+uuid: 6e40c6b3-0e53-4a71-aa2d-82bc2c4ef9ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_policy_number
+    - node.type.policy
+id: node.policy.field_policy_number
+field_name: field_policy_number
+entity_type: node
+bundle: policy
+label: 'Policy Number'
+description: 'Example: Regulation (EC) No 396/2005.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

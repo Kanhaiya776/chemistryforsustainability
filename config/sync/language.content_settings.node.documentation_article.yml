@@ -1,0 +1,11 @@
+uuid: 213044a5-6e12-49a0-a99a-bf3cf2807eed
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.documentation_article
+id: node.documentation_article
+target_entity_type_id: node
+target_bundle: documentation_article
+default_langcode: site_default
+language_alterable: false

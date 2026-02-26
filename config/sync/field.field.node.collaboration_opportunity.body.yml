@@ -1,0 +1,26 @@
+uuid: b97c8fd6-1e75-4c66-af7c-e79c09c2950b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.full_html
+    - node.type.collaboration_opportunity
+  module:
+    - text
+id: node.collaboration_opportunity.body
+field_name: body
+entity_type: node
+bundle: collaboration_opportunity
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

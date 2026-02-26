@@ -1,0 +1,15 @@
+uuid: e99a0fdb-91f9-4d76-bb74-3385209e2be7
+langcode: en
+status: true
+dependencies: {  }
+id: event
+label: 'Event calendar detailed page'
+description: ''
+entityType: node
+entityBundle: event
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/events"
+breadcrumbTitles: "Home\r\nNetwork\r\nEvents"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

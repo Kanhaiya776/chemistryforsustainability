@@ -1,0 +1,20 @@
+uuid: 5800692a-ab28-4f48-8f8d-f7b8f9162823
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: KNjZY05Nw_7NKz2DYnu0xhEPc3Gv76V_OX870sOQQCw
+id: acs_gcs_primary_admin_actions
+theme: acs_gcs
+region: content
+weight: -9
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

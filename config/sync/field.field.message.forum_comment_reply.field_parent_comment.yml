@@ -1,0 +1,31 @@
+uuid: 5dbd9495-9044-4bf7-b8ef-fa01a53d24d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - comment.type.comment_forum
+    - field.storage.message.field_parent_comment
+    - message.template.forum_comment_reply
+id: message.forum_comment_reply.field_parent_comment
+field_name: field_parent_comment
+entity_type: message
+bundle: forum_comment_reply
+label: 'Parent Comment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:comment'
+  handler_settings:
+    target_bundles:
+      comment_forum: comment_forum
+      comment: comment
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: comment_forum
+field_type: entity_reference

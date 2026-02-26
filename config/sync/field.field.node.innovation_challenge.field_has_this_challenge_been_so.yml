@@ -1,0 +1,21 @@
+uuid: c6c3d329-5de1-49f5-a683-8d9657f01bf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_this_challenge_been_so
+    - node.type.innovation_challenge
+id: node.innovation_challenge.field_has_this_challenge_been_so
+field_name: field_has_this_challenge_been_so
+entity_type: node
+bundle: innovation_challenge
+label: "Has this challenge been solved?\t"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

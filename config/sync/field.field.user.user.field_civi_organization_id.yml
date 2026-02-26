@@ -1,0 +1,20 @@
+uuid: f17d1761-66d8-4753-8b11-d13ad7907a65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_civi_organization_id
+  module:
+    - user
+id: user.user.field_civi_organization_id
+field_name: field_civi_organization_id
+entity_type: user
+bundle: user
+label: 'civi organization id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

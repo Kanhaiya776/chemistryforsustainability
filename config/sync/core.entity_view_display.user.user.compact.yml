@@ -1,0 +1,124 @@
+uuid: 429ecff2-8619-4588-86f7-b0091ff297c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_academic_field_of_study
+    - field.field.user.user.field_academic_institution
+    - field.field.user.user.field_allow_direct_messaging
+    - field.field.user.user.field_are_you_interested_in_ment
+    - field.field.user.user.field_civi_organization_id
+    - field.field.user.user.field_civicrm_contact_id
+    - field.field.user.user.field_comment_notifications
+    - field.field.user.user.field_content_moderation_notifi
+    - field.field.user.user.field_country
+    - field.field.user.user.field_degree
+    - field.field.user.user.field_do_not_email
+    - field.field.user.user.field_email_digest
+    - field.field.user.user.field_field_of_expertise
+    - field.field.user.user.field_field_of_interest
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_forum_notifications
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_google_scholar_link
+    - field.field.user.user.field_group_content_notification
+    - field.field.user.user.field_identify_topics_in_which_y
+    - field.field.user.user.field_instagram_profile
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_linkedin_profile_url
+    - field.field.user.user.field_no_marketing_emails
+    - field.field.user.user.field_orcid_id_link
+    - field.field.user.user.field_organization
+    - field.field.user.user.field_other_fields_of_expertise
+    - field.field.user.user.field_professional_summary
+    - field.field.user.user.field_profile_updated
+    - field.field.user.user.field_pronouns
+    - field.field.user.user.field_roles
+    - field.field.user.user.field_specify_other_interest
+    - field.field.user.user.field_spoken_language
+    - field.field.user.user.field_state_province
+    - field.field.user.user.field_website_url
+    - field.field.user.user.field_wechat_link
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  flag_email_user:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  flag_subscribe_user:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  masquerade:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 50
+    region: content
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_academic_field_of_study: true
+  field_academic_institution: true
+  field_allow_direct_messaging: true
+  field_are_you_interested_in_ment: true
+  field_civi_organization_id: true
+  field_civicrm_contact_id: true
+  field_comment_notifications: true
+  field_content_moderation_notifi: true
+  field_country: true
+  field_degree: true
+  field_do_not_email: true
+  field_email_digest: true
+  field_field_of_expertise: true
+  field_field_of_interest: true
+  field_first_name: true
+  field_forum_notifications: true
+  field_gender: true
+  field_google_scholar_link: true
+  field_group_content_notification: true
+  field_identify_topics_in_which_y: true
+  field_instagram_profile: true
+  field_job_title: true
+  field_last_name: true
+  field_linkedin_profile_url: true
+  field_no_marketing_emails: true
+  field_orcid_id_link: true
+  field_organization: true
+  field_other_fields_of_expertise: true
+  field_professional_summary: true
+  field_profile_updated: true
+  field_pronouns: true
+  field_roles: true
+  field_specify_other_interest: true
+  field_spoken_language: true
+  field_state_province: true
+  field_website_url: true
+  field_wechat_link: true
+  langcode: true
+  member_for: true
+  search_api_excerpt: true
+  simplenews: true

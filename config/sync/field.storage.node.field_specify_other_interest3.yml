@@ -1,0 +1,21 @@
+uuid: 31791b52-0ed0-487c-88f8-b68c5d9fb782
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_specify_other_interest3
+field_name: field_specify_other_interest3
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,59 @@
+uuid: 2886870e-20fd-4fa4-8d7b-3a102486d3e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.tool.body
+    - field.field.node.tool.field_image
+    - field.field.node.tool.field_keywords
+    - field.field.node.tool.field_link
+    - field.field.node.tool.field_organization
+    - field.field.node.tool.field_supporting_documents2
+    - image.style.medium
+    - node.type.tool
+  module:
+    - image
+    - text
+    - user
+id: node.tool.teaser
+targetEntityType: node
+bundle: tool
+mode: teaser
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  content_moderation_control: true
+  field_keywords: true
+  field_link: true
+  field_supporting_documents2: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

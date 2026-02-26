@@ -1,0 +1,20 @@
+uuid: 9245e2db-2b51-4f02-9328-f320fb7595d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - tb_megamenu
+  theme:
+    - acs_gcs
+id: acs_gcs_mainnavigation
+theme: acs_gcs
+region: primary_menu
+weight: -9
+provider: null
+plugin: 'tb_megamenu_menu_block:main'
+settings:
+  id: 'tb_megamenu_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: tb_megamenu
+visibility: {  }

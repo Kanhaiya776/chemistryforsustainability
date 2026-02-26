@@ -1,0 +1,24 @@
+uuid: 447326c2-afca-441a-a702-cb6fc4179c34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_for_relevant_pub
+    - filter.format.full_html
+    - node.type.collaboration_opportunity
+  module:
+    - text
+id: node.collaboration_opportunity.field_reference_for_relevant_pub
+field_name: field_reference_for_relevant_pub
+entity_type: node
+bundle: collaboration_opportunity
+label: 'Reference for Relevant Publication'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

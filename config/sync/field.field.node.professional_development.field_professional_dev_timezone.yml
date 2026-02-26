@@ -1,0 +1,19 @@
+uuid: 18ce1a96-e46f-4a30-b621-0d8f15a30219
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_professional_dev_timezone
+    - node.type.professional_development
+id: node.professional_development.field_professional_dev_timezone
+field_name: field_professional_dev_timezone
+entity_type: node
+bundle: professional_development
+label: 'Time zone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

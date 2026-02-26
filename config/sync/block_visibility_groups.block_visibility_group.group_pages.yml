@@ -1,0 +1,21 @@
+uuid: 00e3a9ca-cf39-4c96-acda-0453186f2871
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group_pages
+label: 'All Group Pages'
+logic: and
+conditions:
+  4ef19dfb-6371-4db5-81b8-2e98bd5453f5:
+    id: group_type
+    group_types:
+      accelerator: accelerator
+      interest_areas: interest_areas
+      private_group: private_group
+    negate: 0
+    context_mapping:
+      group: '@group.group_route_context:group'
+    uuid: 4ef19dfb-6371-4db5-81b8-2e98bd5453f5
+allow_other_conditions: true

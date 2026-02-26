@@ -1,0 +1,29 @@
+uuid: 288c75e6-0459-4d47-a5d6-ae5231d088a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.group_pages
+  module:
+    - block_visibility_groups
+    - ggcp_group_customs
+  theme:
+    - acs_gcs
+id: acs_gcs_groupdualoperations
+theme: acs_gcs
+region: sidebar_second
+weight: -22
+provider: null
+plugin: group_dual_operations
+settings:
+  id: group_dual_operations
+  label: 'Group Dual operations'
+  label_display: '0'
+  provider: ggcp_group_customs
+  context_mapping:
+    group: '@group.group_route_context:group'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: group_pages

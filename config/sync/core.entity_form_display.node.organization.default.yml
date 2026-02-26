@@ -1,0 +1,286 @@
+uuid: 30e7df5a-09d2-491e-933b-9d9d34fc441e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.organization.field_academia_sub_sector
+    - field.field.node.organization.field_add_update_org_logo
+    - field.field.node.organization.field_affiliated_user
+    - field.field.node.organization.field_city
+    - field.field.node.organization.field_civicrm_id
+    - field.field.node.organization.field_creator_user
+    - field.field.node.organization.field_facebook_profile
+    - field.field.node.organization.field_government_sub_sector
+    - field.field.node.organization.field_industry_sub_sector
+    - field.field.node.organization.field_instagram_profile
+    - field.field.node.organization.field_linkedin_profile
+    - field.field.node.organization.field_of_interest
+    - field.field.node.organization.field_organization_acronym
+    - field.field.node.organization.field_organization_description
+    - field.field.node.organization.field_organization_website
+    - field.field.node.organization.field_postal_code
+    - field.field.node.organization.field_sector_custom_select
+    - field.field.node.organization.field_startup_company
+    - field.field.node.organization.field_state
+    - field.field.node.organization.field_street_address
+    - field.field.node.organization.field_street_address_line_2
+    - field.field.node.organization.field_sub_sector
+    - field.field.node.organization.field_webform_sync
+    - field.field.node.organization.field_wechat_profile
+    - node.type.organization
+  module:
+    - address
+    - content_moderation
+    - field_layout
+    - file
+    - layout_discovery
+    - link
+    - path
+    - select2
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.organization.default
+targetEntityType: node
+bundle: organization
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_academia_sub_sector:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_add_update_org_logo:
+    type: file_generic
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_city:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_civicrm_id:
+    type: number
+    weight: 30
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_facebook_profile:
+    type: link_default
+    weight: 15
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_government_sub_sector:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_industry_sub_sector:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_instagram_profile:
+    type: link_default
+    weight: 16
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_linkedin_profile:
+    type: link_default
+    weight: 17
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_of_interest:
+    type: select2_entity_reference
+    weight: 31
+    region: content
+    settings:
+      width: 100%
+      autocomplete: false
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
+  field_organization_acronym:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_organization_description:
+    type: string_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_organization_website:
+    type: link_default
+    weight: 13
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_postal_code:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sector_custom_select:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_startup_company:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_state:
+    type: address_default
+    weight: 3
+    region: content
+    settings:
+      wrapper_type: fieldset
+    third_party_settings: {  }
+  field_street_address:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_street_address_line_2:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sub_sector:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_webform_sync:
+    type: number
+    weight: 18
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_wechat_profile:
+    type: link_default
+    weight: 20
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 22
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 25
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_affiliated_user: true
+  field_creator_user: true

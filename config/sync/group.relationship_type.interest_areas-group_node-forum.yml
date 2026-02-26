@@ -1,0 +1,17 @@
+uuid: bb322855-c271-4eda-9335-3051970c0837
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+    - node.type.forum
+  module:
+    - gnode
+    - node
+id: interest_areas-group_node-forum
+group_type: interest_areas
+content_plugin: 'group_node:forum'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

@@ -1,0 +1,19 @@
+uuid: 7d9c2a24-97c7-4f9a-944e-5e17422505a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - message
+    - text
+id: message.field_body
+field_name: field_body
+entity_type: message
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

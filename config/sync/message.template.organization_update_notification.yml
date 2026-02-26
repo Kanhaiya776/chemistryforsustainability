@@ -1,0 +1,22 @@
+uuid: e3cfa8d5-a491-4acb-b214-7dbda4ad68c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: organization_update_notification
+label: 'Organization Update Notification'
+description: 'Send message to site admin once organization page is edited'
+text:
+  -
+    value: '<p>Organization Profile Updated – Review Required</p>'
+    format: basic_html
+  -
+    value: '<p>[message:field_body]</p>'
+    format: basic_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

@@ -1,0 +1,21 @@
+uuid: eaa65b0d-386b-48a1-8f5c-cd53431d3509
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_spoken_language
+  module:
+    - options
+    - user
+id: user.user.field_spoken_language
+field_name: field_spoken_language
+entity_type: user
+bundle: user
+label: 'Spoken Language(s) (Select all that apply)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

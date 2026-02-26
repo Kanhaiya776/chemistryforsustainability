@@ -1,0 +1,19 @@
+uuid: e960a154-c86d-4e2a-b535-3c10b392ac27
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - node
+id: node.field_country_of_challenge
+field_name: field_country_of_challenge
+entity_type: node
+type: address_country
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

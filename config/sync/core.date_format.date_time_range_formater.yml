@@ -1,0 +1,8 @@
+uuid: d0af4055-70a4-425b-8bd1-c2875a8ce0ec
+langcode: en
+status: true
+dependencies: {  }
+id: date_time_range_formater
+label: 'date time range formater'
+locked: false
+pattern: 'F j, Y - g:i A'

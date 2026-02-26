@@ -1,0 +1,9 @@
+uuid: ec3275af-8a8a-4aae-baa2-2424538d9c47
+langcode: en
+status: true
+dependencies: {  }
+name: 'Industry Sub-sector'
+vid: industry_sub_sector
+description: null
+weight: 0
+new_revision: false

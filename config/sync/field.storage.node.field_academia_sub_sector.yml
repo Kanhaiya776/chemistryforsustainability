@@ -1,0 +1,20 @@
+uuid: fccdfd5a-3cc1-4a97-8bb4-8f0502b11e0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_academia_sub_sector
+field_name: field_academia_sub_sector
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

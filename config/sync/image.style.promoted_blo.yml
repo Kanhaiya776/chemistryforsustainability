@@ -1,0 +1,21 @@
+uuid: daedc05b-744d-45d4-8205-1a71a319747a
+langcode: en
+status: true
+dependencies: {  }
+name: promoted_blo
+label: promoted-blocks
+effects:
+  f7c0bb79-931f-4542-b6aa-5b9dda52531a:
+    uuid: f7c0bb79-931f-4542-b6aa-5b9dda52531a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 760
+      height: 250
+      anchor: center-center
+  5b8c86e3-0346-4adc-bbbd-c1263450e8f5:
+    uuid: 5b8c86e3-0346-4adc-bbbd-c1263450e8f5
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

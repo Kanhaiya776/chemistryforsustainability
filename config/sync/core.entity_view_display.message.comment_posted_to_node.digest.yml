@@ -1,0 +1,30 @@
+uuid: 8d3b6364-e7c5-494f-80d7-5e8b70bc6ba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.comment_posted_to_node.field_comment_reference
+    - field.field.message.comment_posted_to_node.field_node_reference
+    - message.template.comment_posted_to_node
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.comment_posted_to_node.digest
+targetEntityType: message
+bundle: comment_posted_to_node
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_comment_reference: true
+  field_node_reference: true
+  search_api_excerpt: true

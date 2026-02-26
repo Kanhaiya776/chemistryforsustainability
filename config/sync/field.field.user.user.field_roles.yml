@@ -1,0 +1,20 @@
+uuid: aa0ec443-a21e-4d2f-807e-443cdd3b1717
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_roles
+  module:
+    - user
+id: user.user.field_roles
+field_name: field_roles
+entity_type: user
+bundle: user
+label: Roles
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

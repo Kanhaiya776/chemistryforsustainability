@@ -1,0 +1,84 @@
+uuid: b89d1a71-3d37-49e8-a5b6-c0560f12ef3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.professional_development.body
+    - field.field.node.professional_development.field_attachment_name
+    - field.field.node.professional_development.field_attachments
+    - field.field.node.professional_development.field_field_of_interest
+    - field.field.node.professional_development.field_image
+    - field.field.node.professional_development.field_keywords
+    - field.field.node.professional_development.field_length_time_of_training
+    - field.field.node.professional_development.field_level_of_training
+    - field.field.node.professional_development.field_link
+    - field.field.node.professional_development.field_location_address
+    - field.field.node.professional_development.field_location_country
+    - field.field.node.professional_development.field_location_name
+    - field.field.node.professional_development.field_organization
+    - field.field.node.professional_development.field_pf_accept_terms
+    - field.field.node.professional_development.field_prerequisites
+    - field.field.node.professional_development.field_professional_dev_timezone
+    - field.field.node.professional_development.field_registrations_date_time
+    - field.field.node.professional_development.field_registrations_time_zone
+    - field.field.node.professional_development.field_related_technology_compend
+    - field.field.node.professional_development.field_specify_other_interest4
+    - field.field.node.professional_development.field_target_audience
+    - field.field.node.professional_development.field_time_of_training
+    - field.field.node.professional_development.field_training_format
+    - field.field.node.professional_development.field_training_registration_link
+    - node.type.professional_development
+  module:
+    - text
+    - user
+id: node.professional_development.teaser
+targetEntityType: node
+bundle: professional_development
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_attachment_name: true
+  field_attachments: true
+  field_field_of_interest: true
+  field_image: true
+  field_keywords: true
+  field_length_time_of_training: true
+  field_level_of_training: true
+  field_link: true
+  field_location_address: true
+  field_location_country: true
+  field_location_name: true
+  field_organization: true
+  field_pf_accept_terms: true
+  field_prerequisites: true
+  field_professional_dev_timezone: true
+  field_registrations_date_time: true
+  field_registrations_time_zone: true
+  field_related_technology_compend: true
+  field_specify_other_interest4: true
+  field_target_audience: true
+  field_time_of_training: true
+  field_training_format: true
+  field_training_registration_link: true
+  langcode: true
+  search_api_excerpt: true

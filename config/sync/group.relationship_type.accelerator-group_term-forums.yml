@@ -1,0 +1,17 @@
+uuid: 7f16f4b1-d97a-437b-8a45-71aeedfff2ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+    - taxonomy.vocabulary.forums
+  module:
+    - group_term
+    - taxonomy
+id: accelerator-group_term-forums
+group_type: accelerator
+content_plugin: 'group_term:forums'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

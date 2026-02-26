@@ -1,0 +1,19 @@
+uuid: 086ffb2c-7e62-43f0-a873-24cfd72c4f37
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: moderator_new_node_submitted
+label: 'Moderator new node submitted'
+description: 'Message to moderators when content is created with moderation state submitted'
+text:
+  -
+    value: '<p>[message:field_node_reference:entity:author] has submitted a new [message:field_node_reference:entity:content-type]: <a href="[message:field_node_reference:entity:url]">[message:field_node_reference:entity:title]</a></p><p><a href="[site:base-url]/admin/content/moderated"><strong>Go to Content Moderation</strong></a></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

@@ -1,0 +1,15 @@
+uuid: 6081c121-d330-42d5-9488-0d6be8f39de1
+langcode: en
+status: true
+dependencies: {  }
+id: add_safer_alternatives
+label: 'Add Safer Alternatives'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/safer-alternatives"
+breadcrumbTitles: "Home\r\nToolkit\r\nSafer Alternatives"
+type: '2'
+pathPattern: /node/add/case_study
+extraCacheContexts: ''

@@ -1,0 +1,30 @@
+uuid: 975881c8-c859-4de3-8128-ce07d53960e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.direct_messages.field_direct_message_body
+    - message.template.direct_messages
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.direct_messages.default
+targetEntityType: message
+bundle: direct_messages
+mode: default
+content:
+  field_direct_message_body:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

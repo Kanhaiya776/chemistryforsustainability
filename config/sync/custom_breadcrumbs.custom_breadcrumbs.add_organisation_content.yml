@@ -1,0 +1,15 @@
+uuid: ed065ca6-59a4-4f30-b125-128f8a86d9d4
+langcode: en
+status: true
+dependencies: {  }
+id: add_organisation_content
+label: 'Add organisation content'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/organizations"
+breadcrumbTitles: "Home\r\nNetwork\r\nOrganizations\r\n"
+type: '2'
+pathPattern: /node/add/organization
+extraCacheContexts: ''

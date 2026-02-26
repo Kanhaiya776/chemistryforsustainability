@@ -1,0 +1,18 @@
+uuid: 1416ea9b-5b65-425e-ab9e-ae9addf8991d
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+id: group.interest_areas.label
+field_name: label
+entity_type: group
+bundle: interest_areas
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

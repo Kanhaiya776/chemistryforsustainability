@@ -1,0 +1,30 @@
+uuid: 3970211a-3167-4443-9d5d-5808d14eb3c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.group_content_created.field_group_reference
+    - field.field.message.group_content_created.field_node_reference
+    - message.template.group_content_created
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.group_content_created.digest
+targetEntityType: message
+bundle: group_content_created
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_group_reference: true
+  field_node_reference: true
+  search_api_excerpt: true

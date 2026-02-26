@@ -1,0 +1,19 @@
+uuid: e54f495a-c213-4d5e-b3f4-9d0967a42bbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.invitee_mail
+    - group.relationship_type.interest_areas-group_invitation
+id: group_relationship.interest_areas-group_invitation.invitee_mail
+field_name: invitee_mail
+entity_type: group_relationship
+bundle: interest_areas-group_invitation
+label: 'Invitee mail'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,22 @@
+uuid: cf6e6c77-365b-4a25-bff6-2ba3acd202a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.professional_development
+id: node.professional_development.sticky
+field_name: sticky
+entity_type: node
+bundle: professional_development
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

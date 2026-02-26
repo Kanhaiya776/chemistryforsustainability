@@ -1,0 +1,930 @@
+uuid: 169260e9-4cc3-4c74-becd-b3f2ebd0031b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_organization
+    - field.storage.node.field_sector_custom_select
+    - search_api.index.ggcp_only
+  module:
+    - node
+    - options
+    - search_api
+    - text
+    - vefl_bef
+id: funding_opportunities_and_innovation_challenges
+label: 'Funding Opportunities and Innovation Challenges'
+module: views
+description: ''
+tag: ''
+base_table: search_api_index_ggcp_only
+base_field: search_api_id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Funding Opportunities'
+      fields:
+        title:
+          id: title
+          table: search_api_datasource_ggcp_only_entity_node
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h2
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+        field_organization:
+          id: field_organization
+          table: search_api_datasource_ggcp_only_entity_node
+          field: field_organization
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
+          label: Organization
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_entity
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            display_methods:
+              announcements:
+                display_method: label
+                view_mode: default
+              article:
+                display_method: label
+                view_mode: default
+              collaboration_opportunity:
+                display_method: label
+                view_mode: default
+              documentation_article:
+                display_method: label
+                view_mode: default
+              event:
+                display_method: label
+                view_mode: default
+              forum:
+                display_method: label
+                view_mode: default
+              front_page:
+                display_method: label
+                view_mode: default
+              funding_opportunity:
+                display_method: label
+                view_mode: default
+              group_files:
+                display_method: label
+                view_mode: default
+              innovation_challenge:
+                display_method: label
+                view_mode: default
+              organization:
+                display_method: label
+                view_mode: default
+              page:
+                display_method: label
+                view_mode: default
+              policy:
+                display_method: label
+                view_mode: default
+              professional_development:
+                display_method: label
+                view_mode: default
+              publication:
+                display_method: label
+                view_mode: default
+              resources_page:
+                display_method: label
+                view_mode: default
+              restricted_page:
+                display_method: label
+                view_mode: default
+              safer_alternatives:
+                display_method: label
+                view_mode: default
+              search_landing_page:
+                display_method: label
+                view_mode: default
+              tools_metrics:
+                display_method: label
+                view_mode: default
+              webform:
+                display_method: label
+                view_mode: default
+        field_sector_custom_select_1:
+          id: field_sector_custom_select_1
+          table: search_api_index_ggcp_only
+          field: field_sector_custom_select_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: Sectors
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+        body:
+          id: body
+          table: search_api_index_ggcp_only
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 300
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: true
+            preserve_tags: ''
+            html: true
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            filter_type: xss
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: vefl_bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: aggregator_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: true
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+              field_tests:
+                plugin_id: bef_select2
+                advanced:
+                  sort_options: 0
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+                  placeholder_text: '- None -'
+              title_1:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: 0
+                  is_secondary: 0
+          layout:
+            layout_id: barrio_col3-equal
+            regions: {  }
+            widget_region:
+              field_field_of_research_collab: first_above
+              search_api_fulltext: top
+              facet_iV4oNTXK: second
+              type_1: first_above
+              sort_by: bottom
+              sort_order: bottom
+              items_per_page: bottom
+              offset: bottom
+              submit: bottom
+              reset: bottom
+              secondary: first
+              sort_bef_combine: bottom
+              organization_display_name_fulltext: first
+              field_tests: second
+              field_organization: first
+              title: bottom
+              field_organization1: bottom
+              title_1: first
+            change: Change
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: search_api_none
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<br />0 results. Please revise search criteria.'
+            format: basic_html
+          tokenize: false
+      sorts:
+        field_proposal_deadline:
+          id: field_proposal_deadline
+          table: search_api_index_ggcp_only
+          field: field_proposal_deadline
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      arguments: {  }
+      filters:
+        type_1:
+          id: type_1
+          table: search_api_index_ggcp_only
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value:
+            funding_opportunity: funding_opportunity
+          group: 1
+          exposed: false
+          expose:
+            operator_id: type_1_op
+            label: 'Opportunity Type'
+            description: ''
+            use_operator: false
+            operator: type_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_ggcp_only
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_api_fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            expose_fields: false
+            placeholder: 'Search all text'
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - address_line1
+            - administrative_area
+            - body
+            - comment_body
+            - field_author_name
+            - field_author_organization
+            - field_category
+            - field_country
+            - field_country_of_challenge
+            - field_country_of_solution
+            - field_country_where_implemented
+            - field_description
+            - field_doi
+            - field_eligibility_country
+            - field_eligibility_state_province
+            - field_field_of_research
+            - field_field_of_research_collab
+            - field_human_health_and_environme
+            - field_industry
+            - field_international
+            - field_inventor_owner_manufacture
+            - field_journal_name
+            - field_organization
+            - field_prerequisites
+            - field_reference_for_relevant_pub
+            - field_references
+            - field_state
+            - label
+            - langcode
+            - locality
+            - name
+            - name_6
+            - organization
+            - subject
+            - title
+        field_tests:
+          id: field_tests
+          table: search_api_index_ggcp_only
+          field: field_tests
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_tests_op
+            label: 'Eligible Recipient(s)'
+            description: ''
+            use_operator: false
+            operator: field_tests_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_tests
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_proposal_deadline_1:
+          id: field_proposal_deadline_1
+          table: search_api_index_ggcp_only
+          field: field_proposal_deadline
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: empty
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_proposal_deadline:
+          id: field_proposal_deadline
+          table: search_api_index_ggcp_only
+          field: field_proposal_deadline
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: '-1 minute'
+            type: offset
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        title_1:
+          id: title_1
+          table: search_api_index_ggcp_only
+          field: title_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_text
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_1_op
+            label: Funder
+            description: ''
+            use_operator: false
+            operator: title_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_organization
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
+      style:
+        type: grid_responsive
+        options:
+          uses_fields: false
+          columns: 3
+          cell_min_width: 300
+          grid_gutter: 10
+          alignment: horizontal
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+          query_tags: {  }
+      relationships:
+        field_organization:
+          id: field_organization
+          table: search_api_datasource_ggcp_only_entity_node
+          field: field_organization
+          relationship: none
+          group_type: group
+          admin_label: 'Submitting Organization: Content'
+          entity_type: node
+          plugin_id: search_api
+          required: false
+          skip_access: false
+      css_class: cards-responsive-grid
+      header:
+        area_1:
+          id: area_1
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: 'intro text'
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Results are displayed according to application due date, with opportunities without specific deadlines listed first. Use the search bar to refine results. Text searches are full text, not partial word searches. You can also <a href="/node/add/funding_opportunity?destination=/funding&redirect=/node/add/funding_opportunity">submit new funding opportunities</a> to share with the green chemistry community. If you are not logged in, you will be redirected to login first. All new content undergoes review by website administration before publication.'
+            format: full_html
+          tokenize: false
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: buttons
+          plugin_id: text
+          empty: true
+          content:
+            value: '<div class="clearfix my-3"><a href="/node/add/funding_opportunity?destination=/funding&redirect=/node/add/funding_opportunity"><button class="btn btn-secondary btn-secondary-outlined">Submit a Funding Opportunity</button></a>'
+            format: full_html
+          tokenize: false
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_organization'
+        - 'config:field.storage.node.field_sector_custom_select'
+        - 'config:search_api.index.ggcp_only'
+        - 'search_api_list:ggcp_only'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      exposed_block: false
+      display_extenders:
+        jsonapi_views:
+          enabled: true
+        searchtracker_enable_extender:
+          defaults:
+            searchtracker_enable_extender: true
+          searchtracker_enable_extender: false
+        webform_popup_extender:
+          enable_edit_button: false
+        simple_sitemap_display_extender: {  }
+      path: funding
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_organization'
+        - 'config:field.storage.node.field_sector_custom_select'
+        - 'config:search_api.index.ggcp_only'
+        - 'search_api_list:ggcp_only'

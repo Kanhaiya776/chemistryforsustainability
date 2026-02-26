@@ -1,0 +1,256 @@
+uuid: 8b287d2c-8906-402c-a7eb-3dc09722019b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_grid
+    - field.field.node.professional_development.body
+    - field.field.node.professional_development.field_attachment_name
+    - field.field.node.professional_development.field_attachments
+    - field.field.node.professional_development.field_field_of_interest
+    - field.field.node.professional_development.field_image
+    - field.field.node.professional_development.field_keywords
+    - field.field.node.professional_development.field_length_time_of_training
+    - field.field.node.professional_development.field_level_of_training
+    - field.field.node.professional_development.field_link
+    - field.field.node.professional_development.field_location_address
+    - field.field.node.professional_development.field_location_country
+    - field.field.node.professional_development.field_location_name
+    - field.field.node.professional_development.field_organization
+    - field.field.node.professional_development.field_pf_accept_terms
+    - field.field.node.professional_development.field_prerequisites
+    - field.field.node.professional_development.field_professional_dev_timezone
+    - field.field.node.professional_development.field_registrations_date_time
+    - field.field.node.professional_development.field_registrations_time_zone
+    - field.field.node.professional_development.field_related_technology_compend
+    - field.field.node.professional_development.field_specify_other_interest4
+    - field.field.node.professional_development.field_target_audience
+    - field.field.node.professional_development.field_time_of_training
+    - field.field.node.professional_development.field_training_format
+    - field.field.node.professional_development.field_training_registration_link
+    - node.type.professional_development
+  module:
+    - datetime_range
+    - image
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.professional_development.teaser_grid
+targetEntityType: node
+bundle: professional_development
+mode: teaser_grid
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_attachment_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_field_of_interest:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_keywords:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_length_time_of_training:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_level_of_training:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_location_address:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_location_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_pf_accept_terms:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  field_prerequisites:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_professional_dev_timezone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_registrations_date_time:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_registrations_time_zone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_related_technology_compend:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_specify_other_interest4:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_target_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  field_time_of_training:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_training_format:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_training_registration_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_attachments: true
+  field_location_country: true
+  langcode: true
+  search_api_excerpt: true

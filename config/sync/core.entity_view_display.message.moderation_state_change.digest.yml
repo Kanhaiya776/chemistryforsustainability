@@ -1,0 +1,28 @@
+uuid: a0c4e5a5-ebc4-4923-83c9-2d172a1f6685
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.moderation_state_change.field_node_reference
+    - message.template.moderation_state_change
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.moderation_state_change.digest
+targetEntityType: message
+bundle: moderation_state_change
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_node_reference: true
+  search_api_excerpt: true

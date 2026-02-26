@@ -1,0 +1,24 @@
+uuid: 016d9411-572d-490c-bb44-285bc7f8b66a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_direct_message_body
+    - filter.format.basic_html
+    - message.template.direct_messages
+  module:
+    - text
+id: message.direct_messages.field_direct_message_body
+field_name: field_direct_message_body
+entity_type: message
+bundle: direct_messages
+label: body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

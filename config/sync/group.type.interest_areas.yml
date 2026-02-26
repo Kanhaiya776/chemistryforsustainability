@@ -1,0 +1,11 @@
+uuid: 638da988-76f8-4098-bb00-c587f14661c7
+langcode: en
+status: true
+dependencies: {  }
+id: interest_areas
+label: 'Open Group'
+description: ''
+new_revision: true
+creator_membership: false
+creator_wizard: false
+creator_roles: {  }

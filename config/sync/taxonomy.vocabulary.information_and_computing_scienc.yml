@@ -1,0 +1,9 @@
+uuid: 74802042-cbb1-4f42-9376-38362b5d8169
+langcode: en
+status: true
+dependencies: {  }
+name: 'Information and Computing Sciences - Specific field of interest'
+vid: information_and_computing_scienc
+description: null
+weight: -6
+new_revision: false

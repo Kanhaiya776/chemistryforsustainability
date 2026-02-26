@@ -1,0 +1,21 @@
+uuid: 6215ff3b-bc6d-42cf-8b7c-3a598c777b05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_location
+    - group.type.accelerator
+  module:
+    - options
+id: group.accelerator.field_location
+field_name: field_location
+entity_type: group
+bundle: accelerator
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

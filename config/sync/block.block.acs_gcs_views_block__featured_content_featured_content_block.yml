@@ -1,0 +1,32 @@
+uuid: 7e67d823-57ee-43a9-80e9-5b205be4360d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.featured_content
+  module:
+    - node
+    - views
+  theme:
+    - acs_gcs
+id: acs_gcs_views_block__featured_content_featured_content_block
+theme: acs_gcs
+region: content
+weight: -13
+provider: null
+plugin: 'views_block:featured_content-featured_content_block'
+settings:
+  id: 'views_block:featured_content-featured_content_block'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page

@@ -1,0 +1,9 @@
+uuid: 24fbe1da-ddd1-439a-81e2-9cc7cbb8abc9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Agricultural and Food Sciences - Specific field of interest'
+vid: agricultural_and_food_sciences_s
+description: null
+weight: -14
+new_revision: false

@@ -1,0 +1,35 @@
+uuid: 460f75fb-47ee-4e21-8e85-1ceaf7740512
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5770d7d7-615c-45c0-90ab-e80ea90e8aea'
+  module:
+    - block_content
+    - block_visibility_groups
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_searchournetworkpeopleheaderblock
+theme: acs_gcs
+region: content
+weight: -15
+provider: null
+plugin: 'block_content:5770d7d7-615c-45c0-90ab-e80ea90e8aea'
+settings:
+  id: 'block_content:5770d7d7-615c-45c0-90ab-e80ea90e8aea'
+  label: 'Search Our Network'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /people-search

@@ -1,0 +1,9 @@
+uuid: 88697c69-63fc-4cec-ae47-d2323c31cd46
+langcode: en
+status: true
+dependencies: {  }
+name: Eligibility
+vid: eligibility
+description: 'Eligibility option values for funding opportunities content type'
+weight: 1
+new_revision: false

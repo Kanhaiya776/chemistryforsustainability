@@ -1,0 +1,29 @@
+uuid: fa230a66-5b67-4a7d-974a-4b1b210cf18a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_node_reference
+    - message.template.forum_post_replied_to
+    - node.type.forum
+id: message.forum_post_replied_to.field_node_reference
+field_name: field_node_reference
+entity_type: message
+bundle: forum_post_replied_to
+label: 'Forum Topic Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      forum: forum
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: announcements
+field_type: entity_reference

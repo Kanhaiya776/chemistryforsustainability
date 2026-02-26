@@ -1,0 +1,15 @@
+uuid: 857056dd-7e9f-4436-bbca-e6aa842d288d
+langcode: en
+status: true
+dependencies: {  }
+id: organizations_main_search_page
+label: 'Organizations Main Search Page'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network"
+breadcrumbTitles: "Home\r\nNetwork"
+type: '2'
+pathPattern: /organizations
+extraCacheContexts: ''

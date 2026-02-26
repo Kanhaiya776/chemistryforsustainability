@@ -1,0 +1,20 @@
+uuid: 7ff9518b-a8d2-4b05-a6ca-13cdd41ff3e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_webform_sync
+field_name: field_webform_sync
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

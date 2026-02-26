@@ -1,0 +1,34 @@
+uuid: 6614f6bd-49a9-4b10-a89d-9c745f968e70
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.group_files.body
+    - field.field.node.group_files.field_attachment
+    - field.field.node.group_files.field_link
+    - node.type.group_files
+  module:
+    - text
+    - user
+id: node.group_files.teaser
+targetEntityType: node
+bundle: group_files
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_attachment: true
+  field_link: true

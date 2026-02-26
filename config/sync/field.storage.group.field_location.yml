@@ -1,0 +1,27 @@
+uuid: f84393e2-2341-4820-a2ac-e8052970dbb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - options
+id: group.field_location
+field_name: field_location
+entity_type: group
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: location_specific
+      label: Location-specific
+    -
+      value: global
+      label: Global
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

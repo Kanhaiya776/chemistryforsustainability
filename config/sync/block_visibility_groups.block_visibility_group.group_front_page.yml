@@ -1,0 +1,23 @@
+uuid: c479dd4e-a915-42db-8eea-91808ddd0be3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: group_front_page
+label: 'Group Front Page'
+logic: and
+conditions:
+  cd349683-0284-4a11-a3a2-7104e2f8fa11:
+    id: request_path
+    negate: false
+    uuid: cd349683-0284-4a11-a3a2-7104e2f8fa11
+    context_mapping: {  }
+    pages: '/group/*'
+  b9cfc9b1-f8ec-46be-b397-22199c177696:
+    id: request_path
+    negate: false
+    uuid: b9cfc9b1-f8ec-46be-b397-22199c177696
+    context_mapping: {  }
+    pages: '/group/*/*'
+allow_other_conditions: true

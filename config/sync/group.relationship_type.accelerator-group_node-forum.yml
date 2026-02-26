@@ -1,0 +1,17 @@
+uuid: 87a1ad81-eb8c-4bf4-921f-cd6bc62150fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+    - node.type.forum
+  module:
+    - gnode
+    - node
+id: accelerator-group_node-forum
+group_type: accelerator
+content_plugin: 'group_node:forum'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

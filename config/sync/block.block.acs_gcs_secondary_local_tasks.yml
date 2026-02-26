@@ -1,0 +1,22 @@
+uuid: b5b8a7fa-ddb9-4b7b-bdab-9563b7eb72a5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: PEg63QPbCrJVRuKSRoUj_DEMzVk7TufyxSDekBJOyPM
+id: acs_gcs_secondary_local_tasks
+theme: acs_gcs
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

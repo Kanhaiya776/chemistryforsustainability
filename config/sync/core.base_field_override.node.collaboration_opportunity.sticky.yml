@@ -1,0 +1,22 @@
+uuid: c5563832-6346-49d0-96af-955aebaa9dba
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.collaboration_opportunity
+id: node.collaboration_opportunity.sticky
+field_name: sticky
+entity_type: node
+bundle: collaboration_opportunity
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

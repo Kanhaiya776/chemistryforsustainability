@@ -1,0 +1,25 @@
+uuid: ee07d753-492b-4fe2-b1f3-dc75e4419fef
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_footer
+theme: acs_gcs
+region: footer_fifth
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

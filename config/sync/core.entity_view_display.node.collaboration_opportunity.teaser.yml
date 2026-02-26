@@ -1,0 +1,54 @@
+uuid: 9a89d017-b89a-4ccb-96b7-0f21b11fce99
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.collaboration_opportunity.body
+    - field.field.node.collaboration_opportunity.field_academia_sub_sector
+    - field.field.node.collaboration_opportunity.field_deadline_collab
+    - field.field.node.collaboration_opportunity.field_end_date
+    - field.field.node.collaboration_opportunity.field_government_sub_sector
+    - field.field.node.collaboration_opportunity.field_industry_sub_sector
+    - field.field.node.collaboration_opportunity.field_keywords
+    - field.field.node.collaboration_opportunity.field_link
+    - field.field.node.collaboration_opportunity.field_organization
+    - field.field.node.collaboration_opportunity.field_organizational_sector
+    - field.field.node.collaboration_opportunity.field_reference_for_relevant_pub
+    - field.field.node.collaboration_opportunity.field_start_date
+    - field.field.node.collaboration_opportunity.field_supporting_document
+    - node.type.collaboration_opportunity
+  module:
+    - text
+    - user
+id: node.collaboration_opportunity.teaser
+targetEntityType: node
+bundle: collaboration_opportunity
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_academia_sub_sector: true
+  field_deadline_collab: true
+  field_end_date: true
+  field_government_sub_sector: true
+  field_industry_sub_sector: true
+  field_keywords: true
+  field_link: true
+  field_organization: true
+  field_organizational_sector: true
+  field_reference_for_relevant_pub: true
+  field_start_date: true
+  field_supporting_document: true

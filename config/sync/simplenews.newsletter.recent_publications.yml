@@ -1,0 +1,21 @@
+uuid: 237deb98-6a37-4d04-9b3d-2822f5febb1c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Recent Publications'
+id: recent_publications
+description: ''
+format: html
+priority: 0
+receipt: false
+from_name: 'Green Chemistry for sustainability'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: s_bhakre@acs.org
+hyperlinks: true
+allowed_handlers:
+  0: '0'
+  simplenews_all: '0'
+new_account: none
+access: default
+reason: ''
+weight: 0

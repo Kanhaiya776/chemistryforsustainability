@@ -1,0 +1,10 @@
+uuid: 22c6dc5e-7453-423c-8cbe-75ae1fe60c55
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8UYEKlWeJ8cK8V-9ojit-_9SwBjQKk0SU-UkiuvlWKI
+name: 'Email HTML'
+format: email_html
+weight: 10
+filters: {  }

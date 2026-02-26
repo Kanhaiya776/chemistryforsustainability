@@ -1,0 +1,31 @@
+uuid: 70ad9e04-4c95-42b1-a39e-9e4d292bb24c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.moderator_new_node_submitted.field_node_reference
+    - message.template.moderator_new_node_submitted
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.moderator_new_node_submitted.default
+targetEntityType: message
+bundle: moderator_new_node_submitted
+mode: default
+content:
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

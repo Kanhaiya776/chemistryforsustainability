@@ -1,0 +1,25 @@
+uuid: 7db05bab-5ed5-4305-942f-34820c79cb8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_technology_compend
+    - node.type.professional_development
+id: node.professional_development.field_related_technology_compend
+field_name: field_related_technology_compend
+entity_type: node
+bundle: professional_development
+label: 'Related Safer Alternative'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: technology_compendium_published
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

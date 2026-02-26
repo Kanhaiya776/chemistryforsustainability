@@ -1,0 +1,98 @@
+uuid: 2ddff1a2-d047-4d6b-82b8-71566c31d14c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcements
+    - node.type.case_study
+    - node.type.collaboration_opportunity
+    - node.type.event
+    - node.type.forum
+    - node.type.funding_opportunity
+    - node.type.innovation_challenge
+    - node.type.policy
+    - node.type.professional_development
+    - node.type.publication
+    - node.type.tool
+    - taxonomy.vocabulary.keywords
+    - workflows.workflow.editorial
+  module:
+    - aggregator
+    - comment
+    - content_moderation
+    - eu_cookie_compliance
+    - group
+    - help
+    - node
+    - node_view_permissions
+    - system
+    - taxonomy
+    - toolbar
+    - webform
+id: moderator
+label: Moderator
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access help pages'
+  - 'access news feeds'
+  - 'access toolbar'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer nodes'
+  - 'create accelerator group'
+  - 'create interest_areas group'
+  - 'create private_group group'
+  - 'delete any announcements content'
+  - 'delete any case_study content'
+  - 'delete any collaboration_opportunity content'
+  - 'delete any event content'
+  - 'delete any forum content'
+  - 'delete any funding_opportunity content'
+  - 'delete any innovation_challenge content'
+  - 'delete any policy content'
+  - 'delete any professional_development content'
+  - 'delete any publication content'
+  - 'delete any tool content'
+  - 'delete terms in keywords'
+  - 'display eu cookie compliance popup'
+  - 'edit any announcements content'
+  - 'edit any case_study content'
+  - 'edit any collaboration_opportunity content'
+  - 'edit any forum content'
+  - 'edit any funding_opportunity content'
+  - 'edit any innovation_challenge content'
+  - 'edit any professional_development content'
+  - 'edit any publication content'
+  - 'edit any tool content'
+  - 'edit terms in keywords'
+  - 'revert announcements revisions'
+  - 'revert case_study revisions'
+  - 'revert collaboration_opportunity revisions'
+  - 'revert event revisions'
+  - 'revert forum revisions'
+  - 'revert funding_opportunity revisions'
+  - 'revert innovation_challenge revisions'
+  - 'revert professional_development revisions'
+  - 'revert publication revisions'
+  - 'revert tool revisions'
+  - 'skip comment approval'
+  - 'use editorial transition moderation_rejected'
+  - 'use editorial transition moderation_under_review'
+  - 'use editorial transition publish'
+  - 'view announcements revisions'
+  - 'view any documentation_article content'
+  - 'view any unpublished content'
+  - 'view case_study revisions'
+  - 'view collaboration_opportunity revisions'
+  - 'view event revisions'
+  - 'view forum revisions'
+  - 'view funding_opportunity revisions'
+  - 'view innovation_challenge revisions'
+  - 'view own documentation_article content'
+  - 'view professional_development revisions'
+  - 'view publication revisions'
+  - 'view the administration theme'
+  - 'view tool revisions'

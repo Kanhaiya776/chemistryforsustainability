@@ -1,0 +1,19 @@
+uuid: 1a06040b-1982-48fe-905a-81849c9f659a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.invitee_mail
+    - group.relationship_type.accelerator-group_invitation
+id: group_relationship.accelerator-group_invitation.invitee_mail
+field_name: invitee_mail
+entity_type: group_relationship
+bundle: accelerator-group_invitation
+label: 'Invitee mail'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

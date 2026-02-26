@@ -1,0 +1,22 @@
+uuid: e9ddbfcf-9913-4faa-9859-207f20579f56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_country
+    - group.type.accelerator
+  module:
+    - address
+id: group.accelerator.field_country
+field_name: field_country
+entity_type: group
+bundle: accelerator
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

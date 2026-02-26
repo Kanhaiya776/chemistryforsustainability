@@ -1,0 +1,31 @@
+uuid: b458b406-85a3-4e17-8479-fd8ab1defe1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.basic_pages
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_page_title
+theme: acs_gcs
+region: content
+weight: -16
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  condition_group:
+    id: condition_group
+    negate: true
+    block_visibility_group: basic_pages
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/resources\r\n/search\r\n/user/*\r\n/professional-development\r\n/professional-development/*\r\n/organization/*"

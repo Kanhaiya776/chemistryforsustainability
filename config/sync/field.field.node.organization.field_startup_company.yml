@@ -1,0 +1,21 @@
+uuid: 0ba4cec6-7192-4ba7-b66e-4ffdd0e64aba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_startup_company
+    - node.type.organization
+id: node.organization.field_startup_company
+field_name: field_startup_company
+entity_type: node
+bundle: organization
+label: 'If Industry, is the company a startup?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

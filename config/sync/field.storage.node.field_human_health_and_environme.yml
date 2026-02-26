@@ -1,0 +1,19 @@
+uuid: f7daaa98-f17b-423d-a84d-b51e5b335de7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_human_health_and_environme
+field_name: field_human_health_and_environme
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

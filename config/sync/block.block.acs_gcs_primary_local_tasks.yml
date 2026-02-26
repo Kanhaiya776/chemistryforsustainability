@@ -1,0 +1,39 @@
+uuid: ac237983-3375-4a71-8101-99d0706ce991
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: FaKmdo2C-hw1-tVATj125rW_9SvXgyOgxRiTgbDL-yA
+id: acs_gcs_primary_local_tasks
+theme: acs_gcs
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/resources"

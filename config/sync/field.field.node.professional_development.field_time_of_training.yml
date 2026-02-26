@@ -1,0 +1,21 @@
+uuid: c2cb9753-3df5-4982-89a9-c664a8c04ac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_of_training
+    - node.type.professional_development
+  module:
+    - datetime_range
+id: node.professional_development.field_time_of_training
+field_name: field_time_of_training
+entity_type: node
+bundle: professional_development
+label: 'Time Of Training'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

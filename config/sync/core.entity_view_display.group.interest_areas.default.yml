@@ -1,0 +1,73 @@
+uuid: fe6c881e-3530-4aaf-93d2-f7692efda985
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.interest_areas.field_contact_person
+    - field.field.group.interest_areas.field_description
+    - field.field.group.interest_areas.field_featured_group_image
+    - field.field.group.interest_areas.field_location
+    - field.field.group.interest_areas.field_specify_location
+    - group.type.interest_areas
+  module:
+    - options
+    - text
+id: group.interest_areas.default
+targetEntityType: group
+bundle: interest_areas
+mode: default
+content:
+  field_contact_person:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  field_featured_group_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_location:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_specify_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  breadcrumbs: true
+  changed: true
+  created: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true

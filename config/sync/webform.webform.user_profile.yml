@@ -1,0 +1,585 @@
+uuid: 2abae1e3-f906-4574-a89f-62702f264152
+langcode: en
+status: open
+dependencies:
+  module:
+    - antibot
+third_party_settings:
+  antibot:
+    antibot: true
+weight: 0
+open: null
+close: null
+uid: 3
+template: false
+archive: false
+id: user_profile
+title: 'User Profile'
+description: ''
+categories: {  }
+elements: |-
+  container:
+    '#type': container
+    '#attributes':
+      class:
+        - container
+        - py-5
+    profile_heading:
+      '#type': processed_text
+      '#text': '<h4>Personal Information</h4>'
+      '#format': basic_html
+    contact_1_fieldset_fieldset:
+      '#type': fieldset
+      '#title': 'Contact 1'
+      '#title_display': invisible
+      first_last:
+        '#type': webform_flexbox
+        first_name:
+          '#type': textfield
+          '#title': 'First Name'
+          '#prepopulate': true
+          '#required': true
+          '#required_error': 'First name is required'
+          '#pattern': '^[a-zA-Z\s'' -]*$'
+          '#pattern_error': 'Enter valid first name'
+          '#counter_type': character
+          '#counter_maximum': 64
+          '#counter_maximum_message': ' '
+        last_name:
+          '#type': textfield
+          '#title': 'Last Name'
+          '#prepopulate': true
+          '#required': true
+          '#required_error': 'Last name is required'
+          '#pattern': '^[a-zA-Z\s'' -]*$'
+          '#pattern_error': 'Enter valid last name'
+          '#counter_type': character
+          '#counter_maximum': 64
+          '#counter_maximum_message': ' '
+    email_and_pronouns:
+      '#type': webform_flexbox
+      email_address:
+        '#type': email
+        '#title': 'Email Address'
+        '#description': '<p>Please update your email on the Change Password tab</p>'
+        '#disabled': true
+        '#required': true
+      preferred_pronouns:
+        '#type': textfield
+        '#title': 'Preferred Pronouns'
+        '#placeholder': He/him
+        '#pattern': '^[a-zA-Z]+\/[a-zA-Z]+$'
+        '#pattern_error': 'Enter valid pronouns'
+        '#counter_type': character
+        '#counter_maximum': 255
+        '#counter_maximum_message': ' '
+    upload_profile_image:
+      '#type': managed_file
+      '#title': 'Upload Profile Image'
+      '#max_filesize': '5'
+      '#file_extensions': 'jpg, jpeg, png, heif'
+      '#upload_rename': true
+    image_description:
+      '#type': webform_markup
+      '#markup': '<p><small class="text-muted">We strongly encourage you to add your head shot. Accepted file types: JPEG, JPG, HEIF, PNG. Size limit 5 MB.</small></p>'
+    country:
+      '#type': address
+      '#title': Country
+      '#wrapper_attributes':
+        class:
+          - row
+          - g-3
+          - address-bootstrap-row
+      '#required': true
+      '#field_overrides':
+        givenName: hidden
+        additionalName: hidden
+        familyName: hidden
+        organization: hidden
+        addressLine1: hidden
+        addressLine2: hidden
+        addressLine3: hidden
+        postalCode: hidden
+        sortingCode: hidden
+        dependentLocality: hidden
+        locality: hidden
+    county_state:
+      '#type': webform_flexbox
+    spoken_languages:
+      '#type': select
+      '#title': 'Spoken Languages'
+      '#multiple': 20
+      '#multiple_error': 'Allowed only 20 language'
+      '#options': languages
+      '#select2': true
+      '#required': true
+    demograpic_fieldset:
+      '#type': fieldset
+      '#title': 'Demographics Other'
+      '#title_display': invisible
+    professional_summary:
+      '#type': textarea
+      '#title': 'Professional Summary'
+      '#placeholder': 'Write a brief summary of your professional background (max 2000 characters)'
+      '#autocomplete': ''
+      '#counter_type': character
+      '#counter_maximum': 2000
+      '#extra':
+        cols: '60'
+        rows: '4'
+    fiel_of_interest_fieldset:
+      '#type': fieldset
+      '#title': 'Fields of Interest'
+      '#title_display': invisible
+      field_of_interest:
+        '#type': webform_term_select
+        '#title': 'Field of Interest'
+        '#multiple': 5
+        '#select2': true
+        '#vocabulary': field_of_interest
+        '#multiple_error': 'Please choose no more than 5 interests'
+      specify_other_fields_of_interest:
+        '#type': textfield
+        '#title': 'Specify Other Fields of Interest'
+        '#autocomplete': ''
+      fields_of_expertise:
+        '#type': webform_term_select
+        '#title': 'Fields of Expertise '
+        '#multiple': 5
+        '#select2': true
+        '#vocabulary': field_of_interest
+        '#multiple_error': 'Please choose no more than 5 expertise.'
+      other_fields_of_expertise:
+        '#type': textfield
+        '#title': 'Other Fields of Expertise'
+        '#autocomplete': ''
+  organization_fieldset_fieldset:
+    '#type': fieldset
+    '#title': Organization
+    '#title_display': invisible
+    '#attributes':
+      class:
+        - mb-3
+        - p-4
+        - mt-4
+        - bg-light-blue
+    container_02:
+      '#type': container
+      '#attributes':
+        class:
+          - container
+      organization_heading:
+        '#type': processed_text
+        '#text': '<h4>Organization</h4>'
+        '#format': basic_html
+      organization_job_title:
+        '#type': webform_flexbox
+        organization_name:
+          '#type': webform_entity_select
+          '#title': 'Organization Name'
+          '#description': '<p>Search for your organization. Organizations default to the parent hierarchy of all organizations. For example, Yale University will be listed rather than its departments.</p>'
+          '#select2': true
+          '#required': true
+          '#required_error': 'Select your organization'
+          '#target_type': node
+          '#selection_handler': 'default:node'
+          '#selection_settings':
+            target_bundles:
+              organization: organization
+        job_title:
+          '#type': textfield
+          '#title': 'Job Title'
+          '#pattern': '^[a-zA-Z0-9, &-]*$'
+          '#pattern_error': 'Enter valid job title'
+          '#counter_type': character
+          '#counter_maximum': 255
+          '#counter_maximum_message': ' '
+      roles:
+        '#type': select
+        '#title': Roles
+        '#multiple': 5
+        '#multiple_error': 'Please choose no more than 5 roles.'
+        '#description': '<p>Choose the role(s) that best describes your position (select all that apply.)</p>'
+        '#options':
+          Accounting/Finance: Accounting/Finance
+          Administrator: Administrator
+          'Business Development': 'Business Development'
+          Communications: Communications
+          Consultant: Consultant
+          EHS/Sustainability: EHS/Sustainability
+          Engineering: Engineering
+          Entrepeneur: Entrepreneur
+          'Executive Management': 'Executive Management'
+          Faculty/Educator: Faculty/Educator
+          'Graduate Student': 'Graduate Student'
+          'Grant Administration': 'Grant Administration'
+          Investor: Investor
+          Legal/Regulatory: Legal/Regulatory
+          Management: Management
+          Manufacturing/Production: Manufacturing/Production
+          Marketing: Marketing
+          Policy: Policy
+          'Post Doctoral Fellow': 'Post Doctoral Fellow'
+          'Primary/Secondary Student': 'Primary/Secondary Student'
+          'Project/Program Management': 'Project/Program Management'
+          Research: Research
+          Retiree/Emeritus: Retiree/Emeritus
+          'Supply Chain': 'Supply Chain'
+          'Technology Scouting': 'Technology Scouting'
+          'Technology Transfer': 'Technology Transfer'
+          'Undergraduate Student': 'Undergraduate Student'
+          Other: Other
+        '#select2': true
+      add_new_org_text:
+        '#type': processed_text
+        '#text': '<p>+ If your organization isn’t in the organization search box, <a href="javascript:window.open(&apos;/form/new-organization&apos;,&apos;neworgwindow&apos;)">add a new organization</a></p>'
+        '#format': full_html
+  container_01:
+    '#type': container
+    '#attributes':
+      class:
+        - container
+        - my-4
+    education_fieldset:
+      '#type': fieldset
+      '#title': Education
+      '#title_display': invisible
+      education_heading:
+        '#type': processed_text
+        '#text': '<h4>Education</h4>'
+        '#format': basic_html
+      academic_defree:
+        '#type': webform_flexbox
+        academic_institution_s:
+          '#type': textfield
+          '#title': 'Academic Institution(s)'
+          '#pattern': '^[a-zA-Z0-9, &-]*$'
+          '#pattern_error': 'Enter valid institutions name'
+          '#counter_type': character
+          '#counter_maximum': 255
+          '#counter_maximum_message': ' '
+        degree_s:
+          '#type': select
+          '#title': Degree(s)
+          '#options':
+            1: 'Secondary degree (High School)'
+            2: 'Associate degree'
+            3: "Bachelor's degree"
+            4: "Master's degree"
+            5: 'Doctoral degree'
+            6: 'Professional degree (MD, JD, DVM)'
+            7: 'Technical or Vocational certificate'
+            8: 'Some college, no degree'
+            9: 'Prefer not to say'
+            10: Other
+      academic_field_s_of_study:
+        '#type': textfield
+        '#title': 'Academic Field(s) of Study'
+        '#pattern': '^[a-zA-Z0-9, &-]*$'
+        '#pattern_error': 'Enter valid academic'
+        '#counter_type': character
+        '#counter_maximum': 255
+        '#counter_maximum_message': ' '
+  mentor_fieldset:
+    '#type': fieldset
+    '#title': Mentor
+    '#title_display': invisible
+    '#attributes':
+      class:
+        - section-title
+        - mb-3
+        - p-4
+        - mt-4
+        - bg-light-blue
+    container_04:
+      '#type': container
+      '#attributes':
+        class:
+          - container
+      mentor_heading:
+        '#type': processed_text
+        '#text': '<h4>Mentor</h4>'
+        '#format': basic_html
+      are_you_willing_to_be_a_mentor:
+        '#type': radios
+        '#title': 'Are you willing to be a mentor?'
+        '#options':
+          1: 'Yes'
+          0: 'No'
+      identify_topics_in_which_you_wish_to_mentor:
+        '#type': textarea
+        '#title': 'Identify topics in which you wish to mentor'
+        '#placeholder': 'Only 2000 characters allowed.'
+        '#pattern': '^[a-zA-Z0-9 .(),\r\n]{0,2500}$'
+        '#pattern_error': 'Mentor topics: Only 2000 characters allowed, special characters containing ".  , ()" are allowed'
+        '#counter_type': character
+        '#counter_maximum': 2000
+        '#states':
+          visible:
+            ':input[name="are_you_willing_to_be_a_mentor"]':
+              value: '1'
+  container_03:
+    '#type': container
+    '#attributes':
+      class:
+        - container
+        - my-4
+    social_links_heading:
+      '#type': processed_text
+      '#wrapper_attributes':
+        class:
+          - mt-4
+          - ''
+      '#text': '<h4>Social Profile Links</h4>'
+      '#format': basic_html
+    social_1:
+      '#type': webform_flexbox
+      linkedin_profile_url:
+        '#type': url
+        '#title': 'LinkedIn Profile URL'
+        '#placeholder': 'https://www.linkedin.com/in/USERNAME'
+        '#pattern': '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'
+        '#pattern_error': 'Enter valid linkedin url'
+        '#counter_type': character
+        '#counter_maximum': 200
+        '#counter_maximum_message': ' '
+      website:
+        '#type': url
+        '#title': Website
+        '#placeholder': 'https://www.example.com'
+        '#pattern': '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'
+        '#pattern_error': 'Enter valid website url'
+        '#counter_type': character
+        '#counter_maximum': 200
+        '#counter_maximum_message': ' '
+    social_2:
+      '#type': webform_flexbox
+      orcid_id_link:
+        '#type': url
+        '#title': 'ORCID ID Link'
+        '#placeholder': 'https://orcid.org/0000-0000-0000-0000'
+        '#pattern': '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'
+        '#pattern_error': 'Enter valid orcid url'
+        '#counter_type': character
+        '#counter_maximum': 200
+        '#counter_maximum_message': ' '
+      google_scholar_link:
+        '#type': url
+        '#title': 'Google Scholar Link'
+        '#placeholder': 'https://scholar.google.com/citations?user=XXXX'
+        '#pattern': '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'
+        '#pattern_error': 'Enter valid google scholar url'
+        '#counter_type': character
+        '#counter_maximum': 200
+        '#counter_maximum_message': ' '
+    social_3:
+      '#type': webform_flexbox
+      instagram_profile:
+        '#type': url
+        '#title': 'Instagram Profile'
+        '#placeholder': 'https://www.instagram.com/USERNAME'
+        '#pattern': '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'
+        '#pattern_error': 'Enter valid instagram url'
+        '#counter_type': character
+        '#counter_maximum': 200
+        '#counter_maximum_message': ' '
+      wechat_link:
+        '#type': url
+        '#title': 'WeChat Link'
+        '#placeholder': 'https://wechat.com/USERNAME'
+        '#pattern': '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'
+        '#pattern_error': 'Enter valid wechat url'
+        '#counter_type': character
+        '#counter_maximum': 200
+        '#counter_maximum_message': ' '
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - container
+css: ''
+javascript: ''
+settings:
+  ajax: true
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: true
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: search_api_autocomplete_search
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: true
+  form_disable_inline_errors: false
+  form_required: true
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_url: /user
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

@@ -1,0 +1,20 @@
+uuid: cd5fb7f2-70cd-480a-af0f-268bd35a8084
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_academic_field_of_study
+  module:
+    - user
+id: user.user.field_academic_field_of_study
+field_name: field_academic_field_of_study
+entity_type: user
+bundle: user
+label: 'Academic Field of Study'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,24 @@
+uuid: 85ea607e-1f0a-4775-a9bd-0fc0f150475d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_description
+    - filter.format.full_html
+    - group.type.accelerator
+  module:
+    - text
+id: group.accelerator.field_description
+field_name: field_description
+entity_type: group
+bundle: accelerator
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

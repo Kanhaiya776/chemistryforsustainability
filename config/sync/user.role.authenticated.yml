@@ -1,0 +1,144 @@
+uuid: 92429094-772c-4967-96cc-19b5c3dfe946
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.user_text_format
+    - filter.format.webform_default
+    - node.type.announcements
+    - node.type.case_study
+    - node.type.collaboration_opportunity
+    - node.type.event
+    - node.type.funding_opportunity
+    - node.type.innovation_challenge
+    - node.type.organization
+    - node.type.policy
+    - node.type.professional_development
+    - node.type.publication
+    - node.type.tool
+    - taxonomy.vocabulary.keywords
+    - taxonomy.vocabulary.organization
+    - taxonomy.vocabulary.organizational_sector
+    - workflows.workflow.editorial
+  module:
+    - aggregator
+    - comment
+    - contact
+    - content_moderation
+    - eu_cookie_compliance
+    - file
+    - filter
+    - group
+    - media
+    - node
+    - node_view_permissions
+    - search
+    - shortcut
+    - simplenews
+    - simplenews_scheduler
+    - system
+    - taxonomy
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access group overview'
+  - 'access news feeds'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'cancel account'
+  - 'change own username'
+  - 'create announcements content'
+  - 'create case_study content'
+  - 'create collaboration_opportunity content'
+  - 'create event content'
+  - 'create funding_opportunity content'
+  - 'create innovation_challenge content'
+  - 'create organization content'
+  - 'create policy content'
+  - 'create professional_development content'
+  - 'create publication content'
+  - 'create terms in keywords'
+  - 'create tool content'
+  - 'delete own announcements content'
+  - 'delete own case_study content'
+  - 'delete own collaboration_opportunity content'
+  - 'delete own event content'
+  - 'delete own files'
+  - 'delete own funding_opportunity content'
+  - 'delete own innovation_challenge content'
+  - 'delete own policy content'
+  - 'delete own professional_development content'
+  - 'delete own publication content'
+  - 'delete own tool content'
+  - 'display eu cookie compliance popup'
+  - 'edit own announcements content'
+  - 'edit own case_study content'
+  - 'edit own collaboration_opportunity content'
+  - 'edit own comments'
+  - 'edit own event content'
+  - 'edit own funding_opportunity content'
+  - 'edit own innovation_challenge content'
+  - 'edit own organization content'
+  - 'edit own policy content'
+  - 'edit own professional_development content'
+  - 'edit own publication content'
+  - 'edit own tool content'
+  - 'overview scheduled newsletters'
+  - 'post comments'
+  - 'search content'
+  - 'send scheduled newsletters'
+  - 'skip comment approval'
+  - 'subscribe to newsletters'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition moderation_submit_for_review'
+  - 'use text format basic_html'
+  - 'use text format user_text_format'
+  - 'use text format webform_default'
+  - 'view any announcements content'
+  - 'view any article content'
+  - 'view any case_study content'
+  - 'view any collaboration_opportunity content'
+  - 'view any event content'
+  - 'view any forum content'
+  - 'view any front_page content'
+  - 'view any funding_opportunity content'
+  - 'view any innovation_challenge content'
+  - 'view any organization content'
+  - 'view any page content'
+  - 'view any policy content'
+  - 'view any professional_development content'
+  - 'view any publication content'
+  - 'view any resources_page content'
+  - 'view any search_landing_page content'
+  - 'view any tool content'
+  - 'view latest version'
+  - 'view media'
+  - 'view own announcements content'
+  - 'view own article content'
+  - 'view own case_study content'
+  - 'view own collaboration_opportunity content'
+  - 'view own event content'
+  - 'view own front_page content'
+  - 'view own funding_opportunity content'
+  - 'view own innovation_challenge content'
+  - 'view own organization content'
+  - 'view own page content'
+  - 'view own policy content'
+  - 'view own professional_development content'
+  - 'view own publication content'
+  - 'view own resources_page content'
+  - 'view own search_landing_page content'
+  - 'view own tool content'
+  - 'view own unpublished content'
+  - 'view term revisions in organization'
+  - 'view term revisions in organizational_sector'

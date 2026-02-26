@@ -1,0 +1,29 @@
+uuid: b8cdb885-fab5-4316-8fe2-c1ae60962f00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_government_sub_sector
+    - node.type.collaboration_opportunity
+    - taxonomy.vocabulary.government_sub_sector
+id: node.collaboration_opportunity.field_government_sub_sector
+field_name: field_government_sub_sector
+entity_type: node
+bundle: collaboration_opportunity
+label: 'Government Sub-Sector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      government_sub_sector: government_sub_sector
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

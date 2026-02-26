@@ -1,0 +1,8 @@
+uuid: bfa4402b-8e81-4047-855a-cf7948423bc2
+langcode: en
+status: true
+dependencies: {  }
+id: custom-user-account-menu
+label: 'Custom user account menu'
+description: ''
+locked: false

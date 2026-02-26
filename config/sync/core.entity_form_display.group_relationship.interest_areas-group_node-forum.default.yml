@@ -1,0 +1,33 @@
+uuid: 094c7a77-767f-408e-835d-31c1ed2b0920
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.relationship_type.interest_areas-group_node-forum
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: group_relationship.interest_areas-group_node-forum.default
+targetEntityType: group_relationship
+bundle: interest_areas-group_node-forum
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  uid: true

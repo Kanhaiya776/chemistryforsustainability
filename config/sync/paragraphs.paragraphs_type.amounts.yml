@@ -1,0 +1,10 @@
+uuid: e74cad58-fe3a-4396-84a1-3c8f84a594fb
+langcode: en
+status: true
+dependencies: {  }
+id: amounts
+label: Amounts
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

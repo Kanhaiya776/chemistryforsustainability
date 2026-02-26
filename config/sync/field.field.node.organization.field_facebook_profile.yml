@@ -1,0 +1,23 @@
+uuid: cc59cb58-2d83-4302-8300-23a0a2c9124b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facebook_profile
+    - node.type.organization
+  module:
+    - link
+id: node.organization.field_facebook_profile
+field_name: field_facebook_profile
+entity_type: node
+bundle: organization
+label: 'Facebook Profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

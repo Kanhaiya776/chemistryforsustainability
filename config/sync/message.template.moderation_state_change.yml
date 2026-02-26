@@ -1,0 +1,19 @@
+uuid: 7c8f262f-69c4-41b3-8754-e31f7f1cb6c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: moderation_state_change
+label: 'Moderators Moderation state change'
+description: "Message for moderators when a content's moderation state has changed"
+text:
+  -
+    value: '<p>Moderation change made to [message:field_node_reference:entity:content-type], <a href="[message:field_node_reference:entity:url]">[message:field_node_reference:entity:title]</a>.</p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

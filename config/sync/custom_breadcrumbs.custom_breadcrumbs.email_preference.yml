@@ -1,0 +1,15 @@
+uuid: aa7312ed-0076-40dd-8fd0-d2b2289a3a1c
+langcode: en
+status: true
+dependencies: {  }
+id: email_preference
+label: 'Email preference'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/user"
+breadcrumbTitles: "Home\r\nProfile"
+type: '2'
+pathPattern: /form/email-settings
+extraCacheContexts: ''

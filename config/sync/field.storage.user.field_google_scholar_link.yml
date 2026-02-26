@@ -1,0 +1,21 @@
+uuid: b7734c3b-5cf6-40d8-83e5-7e3cf2b9c16b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_google_scholar_link
+field_name: field_google_scholar_link
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

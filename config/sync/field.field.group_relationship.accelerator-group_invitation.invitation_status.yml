@@ -1,0 +1,25 @@
+uuid: 158487c7-27b1-4c45-ad89-45bfb2c36073
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.invitation_status
+    - group.relationship_type.accelerator-group_invitation
+id: group_relationship.accelerator-group_invitation.invitation_status
+field_name: invitation_status
+entity_type: group_relationship
+bundle: accelerator-group_invitation
+label: 'Invitation status'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

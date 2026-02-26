@@ -1,0 +1,36 @@
+uuid: 682ccb4b-626f-450a-b072-ae820d0de878
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.interest_areas-996ae0cbc1a35b892.grequest_status
+    - field.field.group_relationship.interest_areas-996ae0cbc1a35b892.grequest_updated_by
+    - group.relationship_type.interest_areas-996ae0cbc1a35b892
+  module:
+    - options
+id: group_relationship.interest_areas-996ae0cbc1a35b892.default
+targetEntityType: group_relationship
+bundle: interest_areas-996ae0cbc1a35b892
+mode: default
+content:
+  grequest_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  grequest_updated_by:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: -3
+    region: content
+hidden:
+  breadcrumbs: true
+  entity_id: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true

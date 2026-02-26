@@ -1,0 +1,28 @@
+uuid: e12b0295-3f36-4bbf-a1f3-e7ee3eb3dedd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.forum_topic_created.field_node_reference
+    - message.template.forum_topic_created
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.forum_topic_created.digest
+targetEntityType: message
+bundle: forum_topic_created
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_node_reference: true
+  search_api_excerpt: true

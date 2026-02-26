@@ -1,0 +1,19 @@
+uuid: 6c36b551-85ae-4d17-8fb7-07f9bd7ef43a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specify_other_interest4
+    - node.type.professional_development
+id: node.professional_development.field_specify_other_interest4
+field_name: field_specify_other_interest4
+entity_type: node
+bundle: professional_development
+label: 'Specify other fields of interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

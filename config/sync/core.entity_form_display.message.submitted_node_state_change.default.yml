@@ -1,0 +1,31 @@
+uuid: 91c02e32-871e-456f-abca-3ef02c6fc8a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.submitted_node_state_change.field_node_reference
+    - message.template.submitted_node_state_change
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.submitted_node_state_change.default
+targetEntityType: message
+bundle: submitted_node_state_change
+mode: default
+content:
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

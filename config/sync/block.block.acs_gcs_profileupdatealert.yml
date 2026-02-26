@@ -1,0 +1,30 @@
+uuid: 82dd44a9-8370-431a-bc7c-93add950c11e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - ggcp_styler
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_profileupdatealert
+theme: acs_gcs
+region: highlighted
+weight: 0
+provider: null
+plugin: profile_update_alert_block
+settings:
+  id: profile_update_alert_block
+  label: 'Profile update alert'
+  label_display: '0'
+  provider: ggcp_styler
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/user\r\n/user/*"

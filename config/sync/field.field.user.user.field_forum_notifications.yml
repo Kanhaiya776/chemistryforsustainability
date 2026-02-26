@@ -1,0 +1,24 @@
+uuid: a9ee2b9b-7a56-470f-a57f-fda4f0903b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_forum_notifications
+  module:
+    - user
+id: user.user.field_forum_notifications
+field_name: field_forum_notifications
+entity_type: user
+bundle: user
+label: 'Forum Notifications'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

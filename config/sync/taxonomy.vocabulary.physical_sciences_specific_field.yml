@@ -1,0 +1,9 @@
+uuid: 93c82c3f-e55c-47f4-827d-f35818ef574c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Physical Sciences - Specific field of interest'
+vid: physical_sciences_specific_field
+description: null
+weight: -4
+new_revision: false

@@ -1,0 +1,15 @@
+uuid: d72bbdf4-b374-47a1-b399-a42df14b6802
+langcode: en
+status: true
+dependencies: {  }
+id: people_menu
+label: 'People menu'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network"
+breadcrumbTitles: "Home\r\nNetwork"
+type: '2'
+pathPattern: /people-search
+extraCacheContexts: ''

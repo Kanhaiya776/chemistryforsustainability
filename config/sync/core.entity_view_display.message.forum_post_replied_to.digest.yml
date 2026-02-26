@@ -1,0 +1,30 @@
+uuid: cc4c313a-f824-4715-b176-33eca85b5de3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.forum_post_replied_to.field_comment_reference
+    - field.field.message.forum_post_replied_to.field_node_reference
+    - message.template.forum_post_replied_to
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.forum_post_replied_to.digest
+targetEntityType: message
+bundle: forum_post_replied_to
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_comment_reference: true
+  field_node_reference: true
+  search_api_excerpt: true

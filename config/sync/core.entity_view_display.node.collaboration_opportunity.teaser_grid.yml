@@ -1,0 +1,154 @@
+uuid: 9785d476-3acc-45d5-8edd-e1f417c7940f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_grid
+    - field.field.node.collaboration_opportunity.body
+    - field.field.node.collaboration_opportunity.field_academia_sub_sector
+    - field.field.node.collaboration_opportunity.field_deadline_collab
+    - field.field.node.collaboration_opportunity.field_end_date
+    - field.field.node.collaboration_opportunity.field_government_sub_sector
+    - field.field.node.collaboration_opportunity.field_industry_sub_sector
+    - field.field.node.collaboration_opportunity.field_keywords
+    - field.field.node.collaboration_opportunity.field_link
+    - field.field.node.collaboration_opportunity.field_organization
+    - field.field.node.collaboration_opportunity.field_organizational_sector
+    - field.field.node.collaboration_opportunity.field_reference_for_relevant_pub
+    - field.field.node.collaboration_opportunity.field_start_date
+    - field.field.node.collaboration_opportunity.field_supporting_document
+    - node.type.collaboration_opportunity
+  module:
+    - datetime
+    - file
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.collaboration_opportunity.teaser_grid
+targetEntityType: node
+bundle: collaboration_opportunity
+mode: teaser_grid
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_academia_sub_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_deadline_collab:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_end_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_government_sub_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_industry_sub_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_keywords:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_organizational_sector:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_reference_for_relevant_pub:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_start_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_supporting_document:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

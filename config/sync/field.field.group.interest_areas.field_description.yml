@@ -1,0 +1,24 @@
+uuid: c008c1f3-7439-4629-bf12-8e25cc92e47d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_description
+    - filter.format.full_html
+    - group.type.interest_areas
+  module:
+    - text
+id: group.interest_areas.field_description
+field_name: field_description
+entity_type: group
+bundle: interest_areas
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

@@ -1,0 +1,9 @@
+uuid: b9346c32-8715-4a52-984f-f635ce971f69
+langcode: en
+status: true
+dependencies: {  }
+name: Industry
+vid: industry
+description: 'List of values for Industry field'
+weight: 5
+new_revision: false

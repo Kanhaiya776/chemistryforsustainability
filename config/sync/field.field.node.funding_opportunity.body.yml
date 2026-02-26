@@ -1,0 +1,26 @@
+uuid: 56381705-346c-49bd-a776-6124db284ce8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.full_html
+    - node.type.funding_opportunity
+  module:
+    - text
+id: node.funding_opportunity.body
+field_name: body
+entity_type: node
+bundle: funding_opportunity
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - full_html
+field_type: text_with_summary

@@ -1,0 +1,18 @@
+uuid: a5d1bebb-53a5-4ffe-811a-4fbe08cf4d45
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Funding Opportunity'
+type: funding_opportunity
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

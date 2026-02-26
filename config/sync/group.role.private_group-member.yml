@@ -1,0 +1,33 @@
+uuid: f7a3792f-367a-4f46-adee-67a929a5bb78
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private_group
+    - user.role.authenticated
+id: private_group-member
+label: Member
+weight: 11
+admin: false
+scope: insider
+global_role: authenticated
+group_type: private_group
+permissions:
+  - 'access group_node overview'
+  - 'create group_node:group_files relationship'
+  - 'delete own group_node:forum entity'
+  - 'delete own group_node:group_files entity'
+  - 'invite users to group'
+  - 'leave group'
+  - 'update own group_membership relationship'
+  - 'update own group_node:forum entity'
+  - 'update own group_node:group_files entity'
+  - 'view group'
+  - 'view group invitations'
+  - 'view group_membership relationship'
+  - 'view group_node:forum entity'
+  - 'view group_node:forum relationship'
+  - 'view group_term:forums entity'
+  - 'view group_term:forums relationship'
+  - 'view own unpublished group_node:forum entity'
+  - 'view own unpublished group_node:group_files entity'

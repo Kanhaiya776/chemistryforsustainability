@@ -1,0 +1,21 @@
+uuid: a96533f1-1d97-4320-9c38-089b2369586a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_deadline_collab
+    - node.type.collaboration_opportunity
+  module:
+    - datetime
+id: node.collaboration_opportunity.field_deadline_collab
+field_name: field_deadline_collab
+entity_type: node
+bundle: collaboration_opportunity
+label: Deadline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

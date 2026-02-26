@@ -1,0 +1,15 @@
+uuid: fa13a8d7-acaa-4c3e-b720-6f9f8c7d6c8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+  module:
+    - user
+id: interest_areas-group_membership
+group_type: interest_areas
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

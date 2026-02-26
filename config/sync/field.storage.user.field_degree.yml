@@ -1,0 +1,51 @@
+uuid: 5eae33fd-d6fc-4b45-96d6-4dc7aad5ead7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_degree
+field_name: field_degree
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Secondary degree (High School)'
+    -
+      value: '2'
+      label: 'Associate degree'
+    -
+      value: '3'
+      label: "Bachelor's degree"
+    -
+      value: '4'
+      label: "Master's degree"
+    -
+      value: '5'
+      label: 'Doctoral degree'
+    -
+      value: '6'
+      label: 'Professional degree (MD, JD, DVM)'
+    -
+      value: '7'
+      label: 'Technical or Vocational certificate'
+    -
+      value: '8'
+      label: 'Some college, no degree'
+    -
+      value: '9'
+      label: 'Prefer not to say'
+    -
+      value: '10'
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

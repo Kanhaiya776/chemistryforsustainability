@@ -1,0 +1,31 @@
+uuid: 13deb655-abcd-4fb9-b409-f467534b0724
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - comment.type.comment_forum
+    - field.storage.message.field_comment_reference
+    - message.template.forum_post_replied_to
+id: message.forum_post_replied_to.field_comment_reference
+field_name: field_comment_reference
+entity_type: message
+bundle: forum_post_replied_to
+label: 'Comment Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:comment'
+  handler_settings:
+    target_bundles:
+      comment_forum: comment_forum
+      comment: comment
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: comment_forum
+field_type: entity_reference

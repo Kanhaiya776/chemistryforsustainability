@@ -1,0 +1,40 @@
+uuid: dadc548c-cb6d-42ca-a742-12b3c5c995b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.author.field_author_name
+    - field.field.paragraph.author.field_author_organization
+    - paragraphs.paragraphs_type.author
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.author.default
+targetEntityType: paragraph
+bundle: author
+mode: default
+content:
+  field_author_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_author_organization:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

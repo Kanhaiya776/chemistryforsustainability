@@ -1,0 +1,15 @@
+uuid: 3c39203b-e9a2-454d-8f43-787d4c44ab5d
+langcode: en
+status: false
+dependencies: {  }
+id: groups
+label: Groups
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/network\r\n/groups"
+breadcrumbTitles: Network
+type: '2'
+pathPattern: "/network\r\n/groups"
+extraCacheContexts: ''

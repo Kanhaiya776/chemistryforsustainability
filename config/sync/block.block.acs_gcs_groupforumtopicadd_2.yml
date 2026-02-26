@@ -1,0 +1,30 @@
+uuid: be2a2961-b1b7-4d82-8776-ccf37b118cea
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - ggcp_group_customs
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_groupforumtopicadd_2
+theme: acs_gcs
+region: content
+weight: -6
+provider: null
+plugin: ggcp_group_customs_group_forum_topic_add_block
+settings:
+  id: ggcp_group_customs_group_forum_topic_add_block
+  label: 'Group Forum Topic Add'
+  label_display: '0'
+  provider: ggcp_group_customs
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/forum/*'

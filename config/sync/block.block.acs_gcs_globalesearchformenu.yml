@@ -1,0 +1,20 @@
+uuid: 5c4f5cfb-0aff-49df-8d77-8b5b686ea8db
+langcode: en
+status: true
+dependencies:
+  module:
+    - ggcp_styler
+  theme:
+    - acs_gcs
+id: acs_gcs_globalesearchformenu
+theme: acs_gcs
+region: primary_menu
+weight: -8
+provider: null
+plugin: global_search_menu
+settings:
+  id: global_search_menu
+  label: 'Globale search for menu'
+  label_display: '0'
+  provider: ggcp_styler
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: c89427a1-6cc8-4257-b32f-e5358786d059
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_civicrm_contact_id
+  module:
+    - user
+id: user.user.field_civicrm_contact_id
+field_name: field_civicrm_contact_id
+entity_type: user
+bundle: user
+label: 'Civicrm contact id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

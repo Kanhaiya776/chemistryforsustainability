@@ -1,0 +1,23 @@
+uuid: a9280da4-4dd2-4216-920c-8cb383863f57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_full_text_of_the_policy2
+    - node.type.policy
+  module:
+    - link
+id: node.policy.field_full_text_of_the_policy2
+field_name: field_full_text_of_the_policy2
+entity_type: node
+bundle: policy
+label: 'Full Text of the Policy (in English)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

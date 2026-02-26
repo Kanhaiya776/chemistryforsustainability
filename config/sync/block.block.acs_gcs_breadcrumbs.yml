@@ -1,0 +1,26 @@
+uuid: 3cb4b740-dd43-456b-8581-e7f2e98d2488
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: eNFkxCwSJqvPHV8k88pp3P5owSCEKNVjUWtGNU9AT9A
+id: acs_gcs_breadcrumbs
+theme: acs_gcs
+region: breadcrumb
+weight: -17
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

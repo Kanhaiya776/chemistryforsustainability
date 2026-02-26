@@ -1,0 +1,20 @@
+uuid: c3421f6d-1254-4480-8900-1078ca9456fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - google_translator
+  theme:
+    - acs_gcs
+id: acs_gcs_googletranslator
+theme: acs_gcs
+region: top_header_form
+weight: -6
+provider: null
+plugin: google_translator
+settings:
+  id: google_translator
+  label: 'Translate this page'
+  label_display: ''
+  provider: google_translator
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 21bbc0ca-9fe8-4708-96f7-9541fdfa9978
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.resources_banner
+    - field.storage.block_content.field_title
+id: block_content.resources_banner.field_title
+field_name: field_title
+entity_type: block_content
+bundle: resources_banner
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

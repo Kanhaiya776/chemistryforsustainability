@@ -1,0 +1,9 @@
+uuid: 0ad39e65-02e7-4048-8e6f-786eef312803
+langcode: en
+status: true
+dependencies: {  }
+name: 'Documentation Categories'
+vid: documentation_categories
+description: 'Enter a term to tag an article category. Multiple tags should be separated by a comma. Please re-use existing categories when po'
+weight: 0
+new_revision: false

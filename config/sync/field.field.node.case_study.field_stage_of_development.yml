@@ -1,0 +1,29 @@
+uuid: 1f91742a-faf3-4481-ba78-4960c616b383
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stage_of_development
+    - node.type.case_study
+    - taxonomy.vocabulary.stage_of_development
+id: node.case_study.field_stage_of_development
+field_name: field_stage_of_development
+entity_type: node
+bundle: case_study
+label: 'Stage of Development'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      stage_of_development: stage_of_development
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

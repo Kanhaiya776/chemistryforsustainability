@@ -1,0 +1,21 @@
+uuid: eea6a839-1b03-4f19-886d-08aff4151d77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_deadline
+    - node.type.innovation_challenge
+  module:
+    - datetime
+id: node.innovation_challenge.field_deadline
+field_name: field_deadline
+entity_type: node
+bundle: innovation_challenge
+label: Deadline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

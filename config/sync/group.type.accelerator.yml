@@ -1,0 +1,11 @@
+uuid: 7fa12e4c-a56a-487b-8bfb-017986d63a01
+langcode: en
+status: true
+dependencies: {  }
+id: accelerator
+label: Accelerator
+description: ''
+new_revision: true
+creator_membership: false
+creator_wizard: true
+creator_roles: {  }

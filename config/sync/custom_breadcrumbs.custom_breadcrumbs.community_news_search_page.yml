@@ -1,0 +1,15 @@
+uuid: adf7d0a2-2a07-41e6-871c-2908754a926d
+langcode: en
+status: true
+dependencies: {  }
+id: community_news_search_page
+label: 'Community News Search Page'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network"
+breadcrumbTitles: "Home\r\nNetwork"
+type: '2'
+pathPattern: /community-news
+extraCacheContexts: ''

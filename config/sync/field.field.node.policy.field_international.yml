@@ -1,0 +1,19 @@
+uuid: 881e7229-0fd3-4640-a07b-8dfda8fe50e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_international
+    - node.type.policy
+id: node.policy.field_international
+field_name: field_international
+entity_type: node
+bundle: policy
+label: International
+description: "This policy's international region or governing body. (Optional)"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+uuid: c84aacfe-6c42-4155-bca1-f770f7d28057
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: search_pages
+label: 'Search Pages'
+logic: and
+conditions:
+  8d52159f-7c9a-4bb1-8def-3989226c4e0c:
+    id: request_path
+    negate: false
+    uuid: 8d52159f-7c9a-4bb1-8def-3989226c4e0c
+    context_mapping: {  }
+    pages: '/search/*'
+allow_other_conditions: true

@@ -1,0 +1,113 @@
+uuid: 83584e2d-89d0-4ee2-9191-e9eaeb295f30
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.announcements
+    - node.type.case_study
+    - node.type.collaboration_opportunity
+    - node.type.event
+    - node.type.funding_opportunity
+    - node.type.innovation_challenge
+    - node.type.policy
+    - node.type.professional_development
+    - node.type.publication
+    - node.type.tool
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T7gMMyFbTYLalxpIOnzJebvek2OW0b1RgLVE9I2y228
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: -2
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+    rejected:
+      label: Rejected
+      weight: -3
+      published: false
+      default_revision: true
+    submitted:
+      label: Submitted
+      weight: 0
+      published: false
+      default_revision: true
+    under_review:
+      label: 'Under Review'
+      weight: -1
+      published: false
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+        - rejected
+        - submitted
+        - under_review
+      to: draft
+      weight: 0
+    moderation_rejected:
+      label: 'Moderation: Rejected'
+      from:
+        - draft
+        - published
+        - rejected
+        - submitted
+        - under_review
+      to: rejected
+      weight: 4
+    moderation_submit_for_review:
+      label: 'Moderation: Submit for Review'
+      from:
+        - draft
+        - published
+        - rejected
+        - submitted
+        - under_review
+      to: submitted
+      weight: 2
+    moderation_under_review:
+      label: 'Moderation: Under Review'
+      from:
+        - draft
+        - published
+        - rejected
+        - submitted
+        - under_review
+      to: under_review
+      weight: 3
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+        - rejected
+        - submitted
+        - under_review
+      to: published
+      weight: 1
+  entity_types:
+    node:
+      - announcements
+      - case_study
+      - collaboration_opportunity
+      - event
+      - funding_opportunity
+      - innovation_challenge
+      - policy
+      - professional_development
+      - publication
+      - tool
+  default_moderation_state: submitted

@@ -1,0 +1,15 @@
+uuid: 0de84dac-0fb8-4dde-b433-d6ab9b8c166b
+langcode: en
+status: true
+dependencies: {  }
+id: publications_main_search_page
+label: 'Publications Main Search Page'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/toolkit/publications-reports"
+breadcrumbTitles: "Home\r\nToolkit\r\nPublications & Reports"
+type: '2'
+pathPattern: /publications
+extraCacheContexts: ''

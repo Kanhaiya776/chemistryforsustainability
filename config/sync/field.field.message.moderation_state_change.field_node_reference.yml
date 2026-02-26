@@ -1,0 +1,55 @@
+uuid: 5d5929b3-fd64-424d-b45e-c40dd645b3c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_node_reference
+    - message.template.moderation_state_change
+    - node.type.announcements
+    - node.type.article
+    - node.type.collaboration_opportunity
+    - node.type.documentation_article
+    - node.type.event
+    - node.type.forum
+    - node.type.funding_opportunity
+    - node.type.innovation_challenge
+    - node.type.page
+    - node.type.policy
+    - node.type.professional_development
+    - node.type.publication
+    - node.type.search_landing_page
+    - node.type.webform
+id: message.moderation_state_change.field_node_reference
+field_name: field_node_reference
+entity_type: message
+bundle: moderation_state_change
+label: 'Node Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      policy: policy
+      collaboration_opportunity: collaboration_opportunity
+      announcements: announcements
+      documentation_article: documentation_article
+      event: event
+      forum: forum
+      funding_opportunity: funding_opportunity
+      innovation_challenge: innovation_challenge
+      professional_development: professional_development
+      publication: publication
+      search_landing_page: search_landing_page
+      webform: webform
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: announcements
+field_type: entity_reference

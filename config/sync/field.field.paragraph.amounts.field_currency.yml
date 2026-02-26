@@ -1,0 +1,23 @@
+uuid: 989c83c5-b935-40d5-8f53-a75403501464
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_currency
+    - paragraphs.paragraphs_type.amounts
+id: paragraph.amounts.field_currency
+field_name: field_currency
+entity_type: paragraph
+bundle: amounts
+label: Currency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:currency'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

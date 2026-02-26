@@ -1,0 +1,29 @@
+uuid: cb1ec282-5974-467d-83a5-f81bd0dd7a15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords
+    - node.type.innovation_challenge
+    - taxonomy.vocabulary.keywords
+id: node.innovation_challenge.field_keywords
+field_name: field_keywords
+entity_type: node
+bundle: innovation_challenge
+label: Keywords
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      keywords: keywords
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

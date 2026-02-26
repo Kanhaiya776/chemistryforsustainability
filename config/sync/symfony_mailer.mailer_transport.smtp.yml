@@ -1,0 +1,18 @@
+uuid: 85652192-ab38-441b-ad7f-214e529eea28
+langcode: en
+status: true
+dependencies: {  }
+id: smtp
+label: SMTP
+plugin: smtp
+configuration:
+  user: 519637de3328b4
+  pass: bfda684215c6fa
+  host: sandbox.smtp.mailtrap.io
+  port: 25
+  query:
+    verify_peer: false
+    local_domain: ''
+    restart_threshold: null
+    restart_threshold_sleep: null
+    ping_threshold: null

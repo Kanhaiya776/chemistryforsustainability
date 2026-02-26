@@ -1,0 +1,15 @@
+uuid: b5a58ab6-36c1-4750-878d-6d82f86dbca4
+langcode: en
+status: true
+dependencies: {  }
+id: learn
+label: 'Learn sub-menu'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/learn"
+breadcrumbTitles: "Home\r\nLearn"
+type: '2'
+pathPattern: "/learn/green-chemistry-and-green-engineering\r\n/learn/gctlc\r\n/learn/graduate-programs-green-and-sustainable-chemistry\r\n/professional-development\r\n"
+extraCacheContexts: ''

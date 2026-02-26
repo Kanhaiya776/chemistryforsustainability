@@ -1,0 +1,9 @@
+uuid: 8694b5af-326d-40c0-820b-11e65f47dc99
+langcode: en
+status: true
+dependencies: {  }
+name: 'Earth Sciences - Specific field of interest'
+vid: earth_sciences_specific_field_of
+description: null
+weight: -11
+new_revision: false

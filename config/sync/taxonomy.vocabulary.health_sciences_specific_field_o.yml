@@ -1,0 +1,9 @@
+uuid: 251d8930-4957-4a73-a457-64fba97f088a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Health Sciences - Specific field of interest'
+vid: health_sciences_specific_field_o
+description: null
+weight: -7
+new_revision: false

@@ -1,0 +1,18 @@
+uuid: 6b193fe5-994c-48b6-9db3-6878a38f9283
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Front Page'
+type: front_page
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

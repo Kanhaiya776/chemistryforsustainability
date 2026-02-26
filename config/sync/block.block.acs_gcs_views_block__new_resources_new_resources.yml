@@ -1,0 +1,37 @@
+uuid: c0c9734d-d321-48d3-a412-44d6bdb14c81
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.new_resources
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - acs_gcs
+id: acs_gcs_views_block__new_resources_new_resources
+theme: acs_gcs
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:new_resources-new_resources'
+settings:
+  id: 'views_block:new_resources-new_resources'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      resources_page: resources_page

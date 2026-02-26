@@ -1,0 +1,37 @@
+uuid: d474b8d6-3e2f-48a7-8380-e156ca84de06
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.featured_content
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - acs_gcs
+id: acs_gcs_views_featured_content_block_resources
+theme: acs_gcs
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:featured_content-featured_content_block_resources'
+settings:
+  id: 'views_block:featured_content-featured_content_block_resources'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      resources_page: resources_page

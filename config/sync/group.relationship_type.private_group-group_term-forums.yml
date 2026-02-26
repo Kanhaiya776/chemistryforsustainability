@@ -1,0 +1,17 @@
+uuid: 968352b9-007b-463a-9305-a6606021cb4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private_group
+    - taxonomy.vocabulary.forums
+  module:
+    - group_term
+    - taxonomy
+id: private_group-group_term-forums
+group_type: private_group
+content_plugin: 'group_term:forums'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

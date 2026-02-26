@@ -1,0 +1,9 @@
+uuid: 4f04eff2-7319-42d2-8ad2-ba6476c8bec9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Academia Sub-Sector'
+vid: academia_sub_sector
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,29 @@
+uuid: cba86904-ed63-49fe-8698-35181905b3d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academia_sub_sector
+    - node.type.organization
+    - taxonomy.vocabulary.academia_sub_sector
+id: node.organization.field_academia_sub_sector
+field_name: field_academia_sub_sector
+entity_type: node
+bundle: organization
+label: 'Academia Sub sector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      academia_sub_sector: academia_sub_sector
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

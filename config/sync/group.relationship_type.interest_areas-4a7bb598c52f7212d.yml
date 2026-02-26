@@ -1,0 +1,17 @@
+uuid: c793c05c-341f-4845-8d8f-8532f9ec3dd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+    - node.type.group_files
+  module:
+    - gnode
+    - node
+id: interest_areas-4a7bb598c52f7212d
+group_type: interest_areas
+content_plugin: 'group_node:group_files'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

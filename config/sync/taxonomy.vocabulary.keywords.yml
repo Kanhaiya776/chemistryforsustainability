@@ -1,0 +1,9 @@
+uuid: 2d7067ea-5d40-4a24-93ac-d8fa7a2bb411
+langcode: en
+status: true
+dependencies: {  }
+name: Keywords
+vid: keywords
+description: 'Funding opportunity keywords'
+weight: 7
+new_revision: false

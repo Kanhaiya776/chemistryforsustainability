@@ -1,0 +1,339 @@
+uuid: eaee834f-1f0a-405b-a9d9-fd2cba7392a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_spoken_language
+field_name: field_spoken_language
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Afrikaans
+      label: Afrikaans
+    -
+      value: Amharic
+      label: Amharic
+    -
+      value: Arabic
+      label: Arabic
+    -
+      value: Asturian
+      label: Asturian
+    -
+      value: Azerbaijani
+      label: Azerbaijani
+    -
+      value: Belarusian
+      label: Belarusian
+    -
+      value: Bulgarian
+      label: Bulgarian
+    -
+      value: Bengali
+      label: Bengali
+    -
+      value: Tibetan
+      label: Tibetan
+    -
+      value: Breton
+      label: Breton
+    -
+      value: Bosnian
+      label: Bosnian
+    -
+      value: Catalan
+      label: Catalan
+    -
+      value: Czech
+      label: Czech
+    -
+      value: Welsh
+      label: Welsh
+    -
+      value: Danish
+      label: Danish
+    -
+      value: German
+      label: German
+    -
+      value: Dzongkha
+      label: Dzongkha
+    -
+      value: Greek
+      label: Greek
+    -
+      value: English
+      label: English
+    -
+      value: 'English, British'
+      label: 'English, British'
+    -
+      value: Esperanto
+      label: Esperanto
+    -
+      value: Spanish
+      label: Spanish
+    -
+      value: Estonian
+      label: Estonian
+    -
+      value: Basque
+      label: Basque
+    -
+      value: 'Persian, Farsi'
+      label: 'Persian, Farsi'
+    -
+      value: Finnish
+      label: Finnish
+    -
+      value: Filipino
+      label: Filipino
+    -
+      value: Faeroese
+      label: Faeroese
+    -
+      value: French
+      label: French
+    -
+      value: 'Frisian, Western'
+      label: 'Frisian, Western'
+    -
+      value: Irish
+      label: Irish
+    -
+      value: 'Scots Gaelic'
+      label: 'Scots Gaelic'
+    -
+      value: Galician
+      label: Galician
+    -
+      value: 'Swiss German'
+      label: 'Swiss German'
+    -
+      value: Gujarati
+      label: Gujarati
+    -
+      value: Hawaiian
+      label: Hawaiian
+    -
+      value: Hebrew
+      label: Hebrew
+    -
+      value: Hindi
+      label: Hindi
+    -
+      value: Croatian
+      label: Croatian
+    -
+      value: 'Haitian Creole'
+      label: 'Haitian Creole'
+    -
+      value: Hungarian
+      label: Hungarian
+    -
+      value: Armenian
+      label: Armenian
+    -
+      value: Indonesian
+      label: Indonesian
+    -
+      value: Icelandic
+      label: Icelandic
+    -
+      value: Italian
+      label: Italian
+    -
+      value: Japanese
+      label: Japanese
+    -
+      value: Javanese
+      label: Javanese
+    -
+      value: Georgian
+      label: Georgian
+    -
+      value: Kazakh
+      label: Kazakh
+    -
+      value: Khmer
+      label: Khmer
+    -
+      value: Kannada
+      label: Kannada
+    -
+      value: Korean
+      label: Korean
+    -
+      value: Kurdish
+      label: Kurdish
+    -
+      value: Kyrgyz
+      label: Kyrgyz
+    -
+      value: Lao
+      label: Lao
+    -
+      value: Lithuanian
+      label: Lithuanian
+    -
+      value: Latvian
+      label: Latvian
+    -
+      value: Malagasy
+      label: Malagasy
+    -
+      value: Macedonian
+      label: Macedonian
+    -
+      value: Malayalam
+      label: Malayalam
+    -
+      value: Mongolian
+      label: Mongolian
+    -
+      value: Marathi
+      label: Marathi
+    -
+      value: 'Bahasa Malaysia'
+      label: 'Bahasa Malaysia'
+    -
+      value: Maltese
+      label: Maltese
+    -
+      value: Burmese
+      label: Burmese
+    -
+      value: Nepali
+      label: Nepali
+    -
+      value: Dutch
+      label: Dutch
+    -
+      value: 'Norwegian Bokmål'
+      label: 'Norwegian Bokmål'
+    -
+      value: 'Norwegian Nynorsk'
+      label: 'Norwegian Nynorsk'
+    -
+      value: Occitan
+      label: Occitan
+    -
+      value: Odia
+      label: Odia
+    -
+      value: Ossetian
+      label: Ossetian
+    -
+      value: Punjabi
+      label: Punjabi
+    -
+      value: Polish
+      label: Polish
+    -
+      value: 'Persian, Afghanistan'
+      label: 'Persian, Afghanistan'
+    -
+      value: Pashto
+      label: Pashto
+    -
+      value: 'Portuguese, International'
+      label: 'Portuguese, International'
+    -
+      value: 'Portuguese, Portugal'
+      label: 'Portuguese, Portugal'
+    -
+      value: 'Portuguese, Brazil'
+      label: 'Portuguese, Brazil'
+    -
+      value: Rohingya
+      label: Rohingya
+    -
+      value: 'Rumantsch Grischun'
+      label: 'Rumantsch Grischun'
+    -
+      value: Romanian
+      label: Romanian
+    -
+      value: Russian
+      label: Russian
+    -
+      value: Kinyarwanda
+      label: Kinyarwanda
+    -
+      value: Scots
+      label: Scots
+    -
+      value: 'Northern Sami'
+      label: 'Northern Sami'
+    -
+      value: Sinhala
+      label: Sinhala
+    -
+      value: Slovak
+      label: Slovak
+    -
+      value: Slovenian
+      label: Slovenian
+    -
+      value: Albanian
+      label: Albanian
+    -
+      value: Serbian
+      label: Serbian
+    -
+      value: Swedish
+      label: Swedish
+    -
+      value: Swahili
+      label: Swahili
+    -
+      value: Tamil
+      label: Tamil
+    -
+      value: 'Tamil, Sri Lanka'
+      label: 'Tamil, Sri Lanka'
+    -
+      value: Telugu
+      label: Telugu
+    -
+      value: Thai
+      label: Thai
+    -
+      value: Turkish
+      label: Turkish
+    -
+      value: Tuvan
+      label: Tuvan
+    -
+      value: Uyghur
+      label: Uyghur
+    -
+      value: Ukrainian
+      label: Ukrainian
+    -
+      value: Urdu
+      label: Urdu
+    -
+      value: Vietnamese
+      label: Vietnamese
+    -
+      value: Lolspeak
+      label: Lolspeak
+    -
+      value: 'Chinese, Simplified'
+      label: 'Chinese, Simplified'
+    -
+      value: 'Chinese, Traditional'
+      label: 'Chinese, Traditional'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 20
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

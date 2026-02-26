@@ -1,0 +1,20 @@
+uuid: 86be27e8-4cb5-4567-bebd-0cdb01412f96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_linkedin_profile_url
+  module:
+    - user
+id: user.user.field_linkedin_profile_url
+field_name: field_linkedin_profile_url
+entity_type: user
+bundle: user
+label: 'LinkedIn Profile URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

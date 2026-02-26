@@ -1,0 +1,22 @@
+uuid: 04315c49-52ef-40f2-a27b-2cac69a56395
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_country
+    - node.type.professional_development
+  module:
+    - address
+id: node.professional_development.field_location_country
+field_name: field_location_country
+entity_type: node
+bundle: professional_development
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

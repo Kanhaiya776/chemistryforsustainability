@@ -1,0 +1,30 @@
+uuid: f20b3278-586f-4932-95fa-aec00513bfad
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1f15b098-a73e-4ac6-8d3a-8122b9ef9c19'
+  module:
+    - block_content
+    - system
+  theme:
+    - acs_gcs
+id: acs_gcs_jointhenetworkloginpage
+theme: acs_gcs
+region: content
+weight: -4
+provider: null
+plugin: 'block_content:1f15b098-a73e-4ac6-8d3a-8122b9ef9c19'
+settings:
+  id: 'block_content:1f15b098-a73e-4ac6-8d3a-8122b9ef9c19'
+  label: 'Join the Network (login page)'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /user/login

@@ -1,0 +1,9 @@
+uuid: 4d390bfd-dd66-4fa7-ad72-0cbdeeb267df
+langcode: en
+status: true
+dependencies: {  }
+name: 'Government Sub-Sector'
+vid: government_sub_sector
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,24 @@
+uuid: c6cac78c-d650-47df-bd77-1cfda446998e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_do_not_email
+  module:
+    - user
+id: user.user.field_do_not_email
+field_name: field_do_not_email
+entity_type: user
+bundle: user
+label: 'Do not email'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: b37246a6-93e0-4a83-88e9-d700b33afcc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.policy
+  module:
+    - acs_custom_country
+id: node.policy.field_country
+field_name: field_country
+entity_type: node
+bundle: policy
+label: Country
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: country_multi

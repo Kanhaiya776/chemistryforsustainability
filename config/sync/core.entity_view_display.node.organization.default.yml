@@ -1,0 +1,169 @@
+uuid: 27c15d29-27cc-4bba-8d9e-e021ad18c06f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.organization.field_academia_sub_sector
+    - field.field.node.organization.field_add_update_org_logo
+    - field.field.node.organization.field_affiliated_user
+    - field.field.node.organization.field_city
+    - field.field.node.organization.field_civicrm_id
+    - field.field.node.organization.field_creator_user
+    - field.field.node.organization.field_facebook_profile
+    - field.field.node.organization.field_government_sub_sector
+    - field.field.node.organization.field_industry_sub_sector
+    - field.field.node.organization.field_instagram_profile
+    - field.field.node.organization.field_linkedin_profile
+    - field.field.node.organization.field_of_interest
+    - field.field.node.organization.field_organization_acronym
+    - field.field.node.organization.field_organization_description
+    - field.field.node.organization.field_organization_website
+    - field.field.node.organization.field_postal_code
+    - field.field.node.organization.field_sector_custom_select
+    - field.field.node.organization.field_startup_company
+    - field.field.node.organization.field_state
+    - field.field.node.organization.field_street_address
+    - field.field.node.organization.field_street_address_line_2
+    - field.field.node.organization.field_sub_sector
+    - field.field.node.organization.field_webform_sync
+    - field.field.node.organization.field_wechat_profile
+    - node.type.organization
+  module:
+    - address
+    - file
+    - options
+    - user
+id: node.organization.default
+targetEntityType: node
+bundle: organization
+mode: default
+content:
+  breadcrumbs:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_academia_sub_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_add_update_org_logo:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_affiliated_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_civicrm_id:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_creator_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_government_sub_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_industry_sub_sector:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_of_interest:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_organization_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_sector_custom_select:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_startup_company:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_state:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_webform_sync:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_city: true
+  field_facebook_profile: true
+  field_instagram_profile: true
+  field_linkedin_profile: true
+  field_organization_acronym: true
+  field_organization_website: true
+  field_postal_code: true
+  field_street_address: true
+  field_street_address_line_2: true
+  field_sub_sector: true
+  field_wechat_profile: true
+  langcode: true
+  search_api_excerpt: true

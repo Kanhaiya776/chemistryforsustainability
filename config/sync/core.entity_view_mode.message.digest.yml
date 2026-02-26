@@ -1,0 +1,11 @@
+uuid: 6adfcad5-b5b3-402d-8374-6cd025806784
+langcode: en
+status: true
+dependencies:
+  module:
+    - message
+id: message.digest
+label: Digest
+description: ''
+targetEntityType: message
+cache: true

@@ -1,0 +1,22 @@
+uuid: 812b8d24-9e47-4e1b-a0ff-27d424ead8d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.innovation_challenge
+id: node.innovation_challenge.sticky
+field_name: sticky
+entity_type: node
+bundle: innovation_challenge
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 28395de9-925e-48c1-9d91-a41c43c9b1fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_add_update_org_logo
+field_name: field_add_update_org_logo
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

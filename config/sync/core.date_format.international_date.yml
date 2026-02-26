@@ -1,0 +1,8 @@
+uuid: 79de6b1a-6656-44e1-8749-9e3acb740648
+langcode: en
+status: true
+dependencies: {  }
+id: international_date
+label: 'International Date'
+locked: false
+pattern: 'j M, Y'

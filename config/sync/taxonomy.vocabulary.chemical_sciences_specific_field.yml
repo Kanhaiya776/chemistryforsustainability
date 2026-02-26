@@ -1,0 +1,9 @@
+uuid: a6fb4f57-1512-4fa4-a1c8-d896f3f256c0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Chemical Sciences - Specific field of interest'
+vid: chemical_sciences_specific_field
+description: null
+weight: -12
+new_revision: false

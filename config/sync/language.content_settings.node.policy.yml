@@ -1,0 +1,11 @@
+uuid: 187a9616-8de0-4cac-aa7c-6b8ea50e257d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.policy
+id: node.policy
+target_entity_type_id: node
+target_bundle: policy
+default_langcode: site_default
+language_alterable: false

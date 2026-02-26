@@ -1,0 +1,15 @@
+uuid: f08c7e99-d922-4ca9-bc05-0d821948fd9d
+langcode: en
+status: true
+dependencies: {  }
+id: community_news_individual_content
+label: 'Community News Individual Content'
+description: ''
+entityType: node
+entityBundle: announcements
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/community-news"
+breadcrumbTitles: "Home\r\nNetwork\r\nCommunity News"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

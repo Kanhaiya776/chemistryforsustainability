@@ -1,0 +1,79 @@
+uuid: 44d58abc-70c9-4e2c-b9e6-fee8207b752d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.accelerator.field_contact_person
+    - field.field.group.accelerator.field_country
+    - field.field.group.accelerator.field_description
+    - field.field.group.accelerator.field_featured_group_image
+    - field.field.group.accelerator.field_location
+    - field.field.group.accelerator.field_specify_location
+    - group.type.accelerator
+  module:
+    - address
+    - options
+    - text
+id: group.accelerator.default
+targetEntityType: group
+bundle: accelerator
+mode: default
+content:
+  field_contact_person:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  field_country:
+    type: address_country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -3
+    region: content
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  field_featured_group_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_location:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_specify_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  uid: true

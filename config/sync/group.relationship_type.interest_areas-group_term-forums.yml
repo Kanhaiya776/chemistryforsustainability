@@ -1,0 +1,17 @@
+uuid: 95da90f3-569e-46d5-8054-0dcbb6c3a084
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.interest_areas
+    - taxonomy.vocabulary.forums
+  module:
+    - group_term
+    - taxonomy
+id: interest_areas-group_term-forums
+group_type: interest_areas
+content_plugin: 'group_term:forums'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

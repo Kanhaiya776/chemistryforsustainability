@@ -1,0 +1,19 @@
+uuid: 9880336a-8ead-4d80-a43e-f8f12f2b9115
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_time
+    - node
+id: node.field_event_time
+field_name: field_event_time
+entity_type: node
+type: time_range
+settings: {  }
+module: field_time
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

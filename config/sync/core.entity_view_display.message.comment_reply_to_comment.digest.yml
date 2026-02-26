@@ -1,0 +1,30 @@
+uuid: 94acf40c-efbb-41f4-8b94-442b771b85b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.comment_reply_to_comment.field_comment_reference
+    - field.field.message.comment_reply_to_comment.field_parent_comment
+    - message.template.comment_reply_to_comment
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.comment_reply_to_comment.digest
+targetEntityType: message
+bundle: comment_reply_to_comment
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_comment_reference: true
+  field_parent_comment: true
+  search_api_excerpt: true

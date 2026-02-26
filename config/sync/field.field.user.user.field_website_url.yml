@@ -1,0 +1,20 @@
+uuid: 06225e04-01b8-48ad-a3fa-f0c9f782611d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_website_url
+  module:
+    - user
+id: user.user.field_website_url
+field_name: field_website_url
+entity_type: user
+bundle: user
+label: 'Website URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

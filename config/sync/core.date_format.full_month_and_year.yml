@@ -1,0 +1,8 @@
+uuid: ec7055f9-638d-40a7-bc5c-4a0e7b4dbef4
+langcode: en
+status: true
+dependencies: {  }
+id: full_month_and_year
+label: 'Full Month and Year'
+locked: false
+pattern: 'F j, Y'

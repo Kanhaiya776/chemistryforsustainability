@@ -1,0 +1,19 @@
+uuid: 240fb4d9-305f-448f-9cb6-10b51173d7e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+    - user.role.authenticated
+id: accelerator-outsider
+label: Outsider
+weight: 15
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: accelerator
+permissions:
+  - 'request group membership'
+  - 'view group'
+  - 'view group invitations'
+  - 'view own group_membership_request relationship'

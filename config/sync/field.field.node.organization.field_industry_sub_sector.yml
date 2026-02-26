@@ -1,0 +1,29 @@
+uuid: d37a15e3-55a6-4314-9610-3aeb1d460adc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_industry_sub_sector
+    - node.type.organization
+    - taxonomy.vocabulary.industry_sub_sector
+id: node.organization.field_industry_sub_sector
+field_name: field_industry_sub_sector
+entity_type: node
+bundle: organization
+label: 'Industry Sub-sector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      industry_sub_sector: industry_sub_sector
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: 01d0d060-9f23-4c4c-ac05-d4097fd063d6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Training Format'
+vid: training_format
+description: 'List of values for Training Format field'
+weight: 14
+new_revision: false

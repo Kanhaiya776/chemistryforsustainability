@@ -1,0 +1,34 @@
+uuid: de40d00a-7d18-4cb1-8147-a2dac607f9cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.organization_update_notification.field_body
+    - message.template.organization_update_notification
+  module:
+    - text
+id: message.organization_update_notification.default
+targetEntityType: message
+bundle: organization_update_notification
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  partial_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+uuid: 7d6f57cf-ee18-4b1f-b055-738b7d4a8465
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_google_scholar_link
+  module:
+    - user
+id: user.user.field_google_scholar_link
+field_name: field_google_scholar_link
+entity_type: user
+bundle: user
+label: 'Google Scholar Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

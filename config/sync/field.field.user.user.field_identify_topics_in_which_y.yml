@@ -1,0 +1,20 @@
+uuid: 6399867e-2683-43b7-8d31-70cf3e6a99c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_identify_topics_in_which_y
+  module:
+    - user
+id: user.user.field_identify_topics_in_which_y
+field_name: field_identify_topics_in_which_y
+entity_type: user
+bundle: user
+label: 'Identify topics in which you wish to mentor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

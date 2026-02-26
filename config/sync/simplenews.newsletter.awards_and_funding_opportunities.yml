@@ -1,0 +1,21 @@
+uuid: 5a66bbb0-4d84-4498-b386-35a065368850
+langcode: en
+status: true
+dependencies: {  }
+name: 'Awards and Funding Opportunities'
+id: awards_and_funding_opportunities
+description: ''
+format: html
+priority: 0
+receipt: false
+from_name: 'Green Chemistry for sustainability'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: s_bhakre@acs.org
+hyperlinks: true
+allowed_handlers:
+  0: '0'
+  simplenews_all: '0'
+new_account: none
+access: default
+reason: ''
+weight: 0

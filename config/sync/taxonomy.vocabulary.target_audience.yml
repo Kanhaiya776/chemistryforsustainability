@@ -1,0 +1,9 @@
+uuid: cee8aec5-6565-43b5-96ff-ad99d84f5d5b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Target Audience'
+vid: target_audience
+description: 'List of values for Target Audience field'
+weight: 13
+new_revision: false

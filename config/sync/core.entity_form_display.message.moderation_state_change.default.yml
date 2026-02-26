@@ -1,0 +1,31 @@
+uuid: bda3d581-3b8a-4c0e-a16e-1161fa1f21c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.moderation_state_change.field_node_reference
+    - message.template.moderation_state_change
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.moderation_state_change.default
+targetEntityType: message
+bundle: moderation_state_change
+mode: default
+content:
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

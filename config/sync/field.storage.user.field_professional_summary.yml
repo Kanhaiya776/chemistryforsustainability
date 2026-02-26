@@ -1,0 +1,19 @@
+uuid: 3ebfde77-75bf-4bd3-ab0a-cbdd1f92fbb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_professional_summary
+field_name: field_professional_summary
+entity_type: user
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

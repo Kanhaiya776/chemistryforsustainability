@@ -1,0 +1,7 @@
+text:
+  -
+    value: '<p>Organization Profile Updated – Review Required</p>'
+    format: basic_html
+  -
+    value: '<p>[message:field_body]</p>'
+    format: basic_html

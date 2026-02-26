@@ -1,0 +1,15 @@
+uuid: 2ae2c9b9-7021-4929-aecd-ab10b7d5f5f3
+langcode: en
+status: true
+dependencies: {  }
+id: funding_detailed_page
+label: 'Funding detailed page'
+description: ''
+entityType: node
+entityBundle: funding_opportunity
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/funding"
+breadcrumbTitles: "Home\r\nToolkit\r\nFunding Opportunities"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

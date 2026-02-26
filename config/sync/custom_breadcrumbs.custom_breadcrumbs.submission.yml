@@ -1,0 +1,15 @@
+uuid: e300ec0a-6876-452f-84a4-c0687128985a
+langcode: en
+status: true
+dependencies: {  }
+id: submission
+label: 'Submission sub-menu'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/submissions"
+breadcrumbTitles: "Home\r\nSubmissions"
+type: '2'
+pathPattern: "/my-submissions\r\n/gcs-media-kit"
+extraCacheContexts: ''

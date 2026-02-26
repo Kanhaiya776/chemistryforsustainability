@@ -1,0 +1,27 @@
+uuid: 293657e1-c43b-4be8-b2e3-d933080ac891
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_email_digest
+field_name: field_email_digest
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: 'No digest (send all my notifications immediately)'
+    -
+      value: '1'
+      label: 'Daily digest'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

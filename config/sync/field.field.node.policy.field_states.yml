@@ -1,0 +1,21 @@
+uuid: abd5ec4b-6e36-4739-80cc-6c3d1fe84b72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_states
+    - node.type.policy
+  module:
+    - acs_custom_country
+id: node.policy.field_states
+field_name: field_states
+entity_type: node
+bundle: policy
+label: State
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: state_multi

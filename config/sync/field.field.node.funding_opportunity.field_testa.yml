@@ -1,0 +1,21 @@
+uuid: 6e3cbe8d-0074-4fb4-8fa7-07a3596c13a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_testa
+    - node.type.funding_opportunity
+  module:
+    - acs_custom_country
+id: node.funding_opportunity.field_testa
+field_name: field_testa
+entity_type: node
+bundle: funding_opportunity
+label: 'Country (select all that apply)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: country_multi

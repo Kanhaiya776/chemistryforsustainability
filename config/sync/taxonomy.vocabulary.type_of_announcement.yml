@@ -1,0 +1,9 @@
+uuid: cb03fded-5eee-4d52-9f69-05fb209786a0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Type of Announcement'
+vid: type_of_announcement
+description: 'List of values for Type of Announcement field'
+weight: 15
+new_revision: false

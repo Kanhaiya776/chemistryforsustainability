@@ -1,0 +1,19 @@
+uuid: 5c2e180c-9136-45f0-b9be-4acbe5628b6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_full_text_of_the_policy3
+field_name: field_full_text_of_the_policy3
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

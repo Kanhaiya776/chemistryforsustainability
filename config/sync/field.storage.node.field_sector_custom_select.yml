@@ -1,0 +1,36 @@
+uuid: 1559a368-44d8-4de8-a701-3096f0efec6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_sector_custom_select
+field_name: field_sector_custom_select
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: academia
+      label: Academia
+    -
+      value: government_sector
+      label: 'Government Sector'
+    -
+      value: industry
+      label: Industry
+    -
+      value: non_governmental_organization
+      label: 'Non-Governmental Organization'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

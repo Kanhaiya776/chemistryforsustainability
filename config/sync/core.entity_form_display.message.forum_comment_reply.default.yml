@@ -1,0 +1,42 @@
+uuid: 3d33746f-f5fb-4368-a29c-09409be06bcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.forum_comment_reply.field_comment_reference
+    - field.field.message.forum_comment_reply.field_parent_comment
+    - message.template.forum_comment_reply
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.forum_comment_reply.default
+targetEntityType: message
+bundle: forum_comment_reply
+mode: default
+content:
+  field_comment_reference:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_parent_comment:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

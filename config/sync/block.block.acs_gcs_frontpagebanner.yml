@@ -1,0 +1,38 @@
+uuid: c7b081d1-b5fe-475d-806b-8466db0a8360
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8a479b2a-faca-4115-b562-78f44c2bacf8'
+  module:
+    - block_content
+    - block_visibility_groups
+    - node
+  theme:
+    - acs_gcs
+id: acs_gcs_frontpagebanner
+theme: acs_gcs
+region: featured_top
+weight: -13
+provider: null
+plugin: 'block_content:8a479b2a-faca-4115-b562-78f44c2bacf8'
+settings:
+  id: 'block_content:8a479b2a-faca-4115-b562-78f44c2bacf8'
+  label: 'Front page banner'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

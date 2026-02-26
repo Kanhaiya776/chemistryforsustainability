@@ -1,0 +1,18 @@
+uuid: d6099fb5-e0f1-42c9-b4d4-d171ae318a87
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Professional Development'
+type: professional_development
+description: professional_development
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

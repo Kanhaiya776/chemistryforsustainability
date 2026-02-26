@@ -1,0 +1,15 @@
+uuid: eb469ab6-a050-427b-8f3d-d61d6a3afb04
+langcode: en
+status: true
+dependencies: {  }
+id: funding
+label: 'Toolkit sub-menu'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/toolkit"
+breadcrumbTitles: "Home\r\nToolkit"
+type: '2'
+pathPattern: "/funding\r\n/tools\r\n/safer-alternatives\r\n/toolkit/publications-reports\r\n/toolkit/chemical-policy\r\n/toolkit/accelerator-program"
+extraCacheContexts: ''

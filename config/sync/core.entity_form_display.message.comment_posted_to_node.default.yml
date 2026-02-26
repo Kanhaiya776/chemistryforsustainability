@@ -1,0 +1,42 @@
+uuid: af6bb5c9-8b80-45b4-947e-6afa5d124fc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.comment_posted_to_node.field_comment_reference
+    - field.field.message.comment_posted_to_node.field_node_reference
+    - message.template.comment_posted_to_node
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.comment_posted_to_node.default
+targetEntityType: message
+bundle: comment_posted_to_node
+mode: default
+content:
+  field_comment_reference:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

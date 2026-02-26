@@ -1,0 +1,38 @@
+uuid: 5e84c0b9-3aac-42ab-85ef-fbf902e4e9d2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:resources_banner:b3cb694f-b54f-4262-ac87-2e8f49eb567f'
+  module:
+    - block_content
+    - block_visibility_groups
+    - node
+  theme:
+    - acs_gcs
+id: acs_gcs_resourcesbanner
+theme: acs_gcs
+region: content
+weight: -14
+provider: null
+plugin: 'block_content:b3cb694f-b54f-4262-ac87-2e8f49eb567f'
+settings:
+  id: 'block_content:b3cb694f-b54f-4262-ac87-2e8f49eb567f'
+  label: 'Resources Banner'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      resources_page: resources_page

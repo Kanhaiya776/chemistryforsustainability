@@ -1,0 +1,22 @@
+uuid: 9852fea1-10b5-4e82-aa39-7076b88b3d6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: 5qKoLmivEEAS3S38HZdQjTK24Pt22pJ5QeMRrizCZig
+id: acs_gcs_help
+theme: acs_gcs
+region: highlighted
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

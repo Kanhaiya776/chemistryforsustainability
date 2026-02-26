@@ -1,0 +1,9 @@
+uuid: 58d70710-5fdb-4c62-a0f7-af21e2534b25
+langcode: en
+status: true
+dependencies: {  }
+name: 'Stage of Development'
+vid: stage_of_development
+description: 'Lisf of values for Stage of Development field'
+weight: 10
+new_revision: false

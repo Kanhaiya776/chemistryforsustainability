@@ -1,0 +1,23 @@
+uuid: aae2cb32-0a21-496f-95b3-1558a8eef4ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.accelerator-group_membership.group_roles
+    - group.relationship_type.accelerator-group_membership
+id: group_relationship.accelerator-group_membership.default
+targetEntityType: group_relationship
+bundle: accelerator-group_membership
+mode: default
+content:
+  group_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+hidden:
+  entity_id: true
+  uid: true

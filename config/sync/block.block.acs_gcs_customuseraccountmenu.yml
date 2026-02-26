@@ -1,0 +1,33 @@
+uuid: 78d6d2bd-a86c-4efb-8fd5-cd5cee5759be
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - tb_megamenu
+    - user
+  theme:
+    - acs_gcs
+id: acs_gcs_customuseraccountmenu
+theme: acs_gcs
+region: primary_menu
+weight: -7
+provider: null
+plugin: 'tb_megamenu_menu_block:custom-user-account-menu'
+settings:
+  id: 'tb_megamenu_menu_block:custom-user-account-menu'
+  label: 'Custom user account menu'
+  label_display: '0'
+  provider: tb_megamenu
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

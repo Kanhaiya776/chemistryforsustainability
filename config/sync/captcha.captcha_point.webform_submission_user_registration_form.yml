@@ -1,0 +1,7 @@
+uuid: cdbb19e6-c67c-49be-a82f-e957485b3ccd
+langcode: en
+status: true
+dependencies: {  }
+formId: webform_submission_user_registration_form
+captchaType: recaptcha_v3/google_recaptcha_1
+label: webform_submission_user_registration_form

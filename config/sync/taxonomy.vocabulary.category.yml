@@ -1,0 +1,9 @@
+uuid: 62ce2e71-8b46-442b-a6af-cf9547867b75
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'List of values for Category field'
+weight: -1
+new_revision: false

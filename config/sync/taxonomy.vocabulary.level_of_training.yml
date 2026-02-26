@@ -1,0 +1,9 @@
+uuid: 98d80d2d-1ee1-45c0-9d3e-eeeacab35327
+langcode: en
+status: true
+dependencies: {  }
+name: 'Level of Training'
+vid: level_of_training
+description: 'List of values for Level of Training field'
+weight: 8
+new_revision: false

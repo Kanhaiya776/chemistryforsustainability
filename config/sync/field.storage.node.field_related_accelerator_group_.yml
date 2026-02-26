@@ -1,0 +1,20 @@
+uuid: b19069d3-4188-418d-97c2-dd527eb60c16
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - node
+id: node.field_related_accelerator_group_
+field_name: field_related_accelerator_group_
+entity_type: node
+type: entity_reference
+settings:
+  target_type: group
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

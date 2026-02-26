@@ -1,0 +1,30 @@
+uuid: dceb8d9d-cb0c-4e60-94f1-ccc88ba3e5a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.digest
+    - field.field.message.forum_comment_reply.field_comment_reference
+    - field.field.message.forum_comment_reply.field_parent_comment
+    - message.template.forum_comment_reply
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: message.forum_comment_reply.digest
+targetEntityType: message
+bundle: forum_comment_reply
+mode: digest
+content:
+  partial_0:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_comment_reference: true
+  field_parent_comment: true
+  search_api_excerpt: true

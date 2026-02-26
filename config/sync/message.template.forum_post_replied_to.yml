@@ -1,0 +1,19 @@
+uuid: 5da58b2b-3ef9-4193-a48b-f4180a155953
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: forum_post_replied_to
+label: 'Forum post replied to'
+description: "Message when a user's forum post is replied to"
+text:
+  -
+    value: '<p>[message:field_comment_reference:entity:author] has replied to your [message:field_comment_reference:entity:entity:content-type], <a href="[message:field_comment_reference:entity:entity:url]">[message:field_comment_reference:entity:entity:title]</a></p><p><strong>Comment: </strong><em><strong>[message:field_comment_reference:entity:title]</strong></em><strong>&nbsp;</strong><br><a href="[message:field_comment_reference:entity:url]"><strong>Read more and reply</strong></a></p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

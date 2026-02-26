@@ -1,0 +1,15 @@
+uuid: 5c8c8b05-820b-4474-b7d3-e9be6981b9c2
+langcode: en
+status: true
+dependencies: {  }
+id: main_menu
+label: 'Main Menu'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: /
+breadcrumbTitles: Home
+type: '2'
+pathPattern: "/about\r\n/network\r\n/learn\r\n/toolkit\r\n/submissions\r\n"
+extraCacheContexts: ''

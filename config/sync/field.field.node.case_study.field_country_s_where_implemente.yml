@@ -1,0 +1,22 @@
+uuid: 72916cdf-25ea-4337-98a8-8b3258b1719d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country_s_where_implemente
+    - node.type.case_study
+  module:
+    - address
+id: node.case_study.field_country_s_where_implemente
+field_name: field_country_s_where_implemente
+entity_type: node
+bundle: case_study
+label: 'Country where implemented'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

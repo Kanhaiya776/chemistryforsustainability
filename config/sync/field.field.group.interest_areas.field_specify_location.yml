@@ -1,0 +1,19 @@
+uuid: 85777a3c-1a16-44f4-8162-3ded9cd97a3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_specify_location
+    - group.type.interest_areas
+id: group.interest_areas.field_specify_location
+field_name: field_specify_location
+entity_type: group
+bundle: interest_areas
+label: 'Specify Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

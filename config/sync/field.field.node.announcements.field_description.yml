@@ -1,0 +1,24 @@
+uuid: 91368cb2-5652-4c90-b260-30f278f36e63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - filter.format.basic_html
+    - node.type.announcements
+  module:
+    - text
+id: node.announcements.field_description
+field_name: field_description
+entity_type: node
+bundle: announcements
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

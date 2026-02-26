@@ -1,0 +1,21 @@
+uuid: d690a1a5-7df3-4f91-bd2b-c808da3e7b2b
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - acs_gcs
+id: acs_gcs_searchform
+theme: acs_gcs
+region: primary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

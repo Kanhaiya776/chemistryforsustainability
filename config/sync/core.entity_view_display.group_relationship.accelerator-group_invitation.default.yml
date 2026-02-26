@@ -1,0 +1,44 @@
+uuid: 824a43dd-4a87-4a6c-96f4-1d34316fd8a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_relationship.accelerator-group_invitation.group_roles
+    - field.field.group_relationship.accelerator-group_invitation.invitation_status
+    - field.field.group_relationship.accelerator-group_invitation.invitee_mail
+    - group.relationship_type.accelerator-group_invitation
+id: group_relationship.accelerator-group_invitation.default
+targetEntityType: group_relationship
+bundle: accelerator-group_invitation
+mode: default
+content:
+  group_roles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  invitation_status:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: -2
+    region: content
+  invitee_mail:
+    type: email_mailto
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -3
+    region: content
+hidden:
+  breadcrumbs: true
+  entity_id: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true

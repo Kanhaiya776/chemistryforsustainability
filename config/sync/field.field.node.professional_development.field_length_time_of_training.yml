@@ -1,0 +1,19 @@
+uuid: 68ba1135-10be-491d-8866-3ad6495fca8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_length_time_of_training
+    - node.type.professional_development
+id: node.professional_development.field_length_time_of_training
+field_name: field_length_time_of_training
+entity_type: node
+bundle: professional_development
+label: 'Duration (time) of training'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

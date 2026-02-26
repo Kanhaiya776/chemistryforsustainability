@@ -1,0 +1,15 @@
+uuid: 19345311-beb9-44c7-a487-a2480a3edef2
+langcode: en
+status: true
+dependencies: {  }
+id: add_community_news_content
+label: 'Add Community News Content'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/community-news"
+breadcrumbTitles: "Home\r\nNetwork\r\nCommunity News"
+type: '2'
+pathPattern: /node/add/announcements
+extraCacheContexts: ''

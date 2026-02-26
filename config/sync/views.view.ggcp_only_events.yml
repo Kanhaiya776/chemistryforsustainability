@@ -1,0 +1,1120 @@
+uuid: dc2a5805-13e6-4be2-b11d-fbb523976d4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_event_date_s_2
+    - field.storage.node.field_event_format
+    - field.storage.node.field_event_type
+    - search_api.index.ggcp_only
+    - taxonomy.vocabulary.event_format
+    - taxonomy.vocabulary.event_type
+  module:
+    - datetime_range
+    - search_api
+    - text
+    - vefl_bef
+id: ggcp_only_events
+label: 'GGCP Only Events'
+module: views
+description: ''
+tag: ''
+base_table: search_api_index_ggcp_only
+base_field: search_api_id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Events
+      fields:
+        search_api_url:
+          id: search_api_url
+          table: search_api_index_ggcp_only
+          field: search_api_url
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          link_to_item: false
+          use_highlighting: false
+          multi_type: separator
+          multi_separator: ', '
+        title:
+          id: title
+          table: search_api_datasource_ggcp_only_entity_node
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: '{{ search_api_url }}'
+            absolute: true
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: _blank
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h3
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+        body:
+          id: body
+          table: search_api_index_ggcp_only
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: false
+          fallback_handler: search_api_text
+          fallback_options:
+            link_to_item: false
+            use_highlighting: true
+            multi_type: separator
+            multi_separator: ', '
+            filter_type: xss
+        field_event_date_s_2:
+          id: field_event_date_s_2
+          table: search_api_index_ggcp_only
+          field: field_event_date_s_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_default
+          settings:
+            timezone_override: ''
+            format_type: medium
+            from_to: both
+            separator: '-'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+        field_event_format:
+          id: field_event_format
+          table: search_api_index_ggcp_only
+          field: field_event_format
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_entity
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            display_methods:
+              academia_sub_sector:
+                display_method: label
+              agricultural_and_food_sciences_s:
+                display_method: label
+              award_type:
+                display_method: label
+              biological_sciences_specific_fie:
+                display_method: label
+              category:
+                display_method: label
+              challenge_applicability:
+                display_method: label
+              chemical_sciences_specific_field:
+                display_method: label
+              documentation_categories:
+                display_method: label
+              earth_sciences_specific_field_of:
+                display_method: label
+              economics_specific_field_of_inte:
+                display_method: label
+              eligibility:
+                display_method: label
+              engineering_specific_field_of_in:
+                display_method: label
+              environmental_sciences_specific_:
+                display_method: label
+              estimated_capacity:
+                display_method: label
+              event_format:
+                display_method: label
+              event_type:
+                display_method: label
+              field_of_interest:
+                display_method: label
+              fields_of_research:
+                display_method: label
+              forums:
+                display_method: label
+                view_mode: default
+              government_sub_sector:
+                display_method: label
+              health_sciences_specific_field_o:
+                display_method: label
+              industry:
+                display_method: label
+              industry_sub_sector:
+                display_method: label
+              information_and_computing_scienc:
+                display_method: label
+              journal_name:
+                display_method: label
+              keywords:
+                display_method: label
+              level_of_training:
+                display_method: label
+              mathematical_sciences_specific_f:
+                display_method: label
+              organization:
+                display_method: label
+              organizational_sector:
+                display_method: label
+              physical_sciences_specific_field:
+                display_method: label
+              social_sciences_specific_field_o:
+                display_method: label
+              stage_of_development:
+                display_method: label
+              subsector:
+                display_method: label
+              tags:
+                display_method: label
+              target_audience:
+                display_method: label
+              training_format:
+                display_method: label
+              type_of_announcement:
+                display_method: label
+        field_event_type:
+          id: field_event_type
+          table: search_api_index_ggcp_only
+          field: field_event_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_entity
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            display_methods:
+              academia_sub_sector:
+                display_method: label
+              agricultural_and_food_sciences_s:
+                display_method: label
+              award_type:
+                display_method: label
+              biological_sciences_specific_fie:
+                display_method: label
+              category:
+                display_method: label
+              challenge_applicability:
+                display_method: label
+              chemical_sciences_specific_field:
+                display_method: label
+              documentation_categories:
+                display_method: label
+              earth_sciences_specific_field_of:
+                display_method: label
+              economics_specific_field_of_inte:
+                display_method: label
+              eligibility:
+                display_method: label
+              engineering_specific_field_of_in:
+                display_method: label
+              environmental_sciences_specific_:
+                display_method: label
+              estimated_capacity:
+                display_method: label
+              event_format:
+                display_method: label
+              event_type:
+                display_method: label
+              field_of_interest:
+                display_method: label
+              fields_of_research:
+                display_method: label
+              forums:
+                display_method: label
+                view_mode: default
+              government_sub_sector:
+                display_method: label
+              health_sciences_specific_field_o:
+                display_method: label
+              industry:
+                display_method: label
+              industry_sub_sector:
+                display_method: label
+              information_and_computing_scienc:
+                display_method: label
+              journal_name:
+                display_method: label
+              keywords:
+                display_method: label
+              level_of_training:
+                display_method: label
+              mathematical_sciences_specific_f:
+                display_method: label
+              organization:
+                display_method: label
+              organizational_sector:
+                display_method: label
+              physical_sciences_specific_field:
+                display_method: label
+              social_sciences_specific_field_o:
+                display_method: label
+              stage_of_development:
+                display_method: label
+              subsector:
+                display_method: label
+              tags:
+                display_method: label
+              target_audience:
+                display_method: label
+              training_format:
+                display_method: label
+              type_of_announcement:
+                display_method: label
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: vefl_bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: aggregator_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_textfield_minimum_length: 3
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+              field_event_format:
+                plugin_id: default
+                advanced:
+                  sort_options: 0
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+              field_event_type:
+                plugin_id: default
+                advanced:
+                  sort_options: 0
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: 0
+                  is_secondary: 0
+              field_event_date_s_2:
+                plugin_id: bef_datepicker
+                advanced:
+                  collapsible: 0
+                  is_secondary: 0
+                date_format: full_month_and_year
+          layout:
+            layout_id: layout_twocol_bricks
+            regions: {  }
+            widget_region:
+              fulltext: top
+              field_event_format: first_above
+              field_event_type: second_above
+              sort_by: bottom
+              sort_order: bottom
+              items_per_page: bottom
+              offset: bottom
+              submit: bottom
+              reset: bottom
+              secondary: middle
+              sort_bef_combine: bottom
+              field_event_date_s_2: first_below
+            change: Change
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: search_api_none
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<br>0 results. Please revise search criteria.'
+            format: basic_html
+          tokenize: false
+      sorts:
+        field_event_date_s_2:
+          id: field_event_date_s_2
+          table: search_api_index_ggcp_only
+          field: field_event_date_s_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      arguments: {  }
+      filters:
+        type:
+          id: type
+          table: search_api_index_ggcp_only
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value:
+            event: event
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_ggcp_only
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: fulltext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            expose_fields: false
+            placeholder: 'Search all text'
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+            value_max_words: null
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
+        field_event_format:
+          id: field_event_format
+          table: search_api_index_ggcp_only
+          field: field_event_format
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_event_format_op
+            label: 'Event Format'
+            description: ''
+            use_operator: false
+            operator: field_event_format_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_event_format
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_format
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_event_type:
+          id: field_event_type
+          table: search_api_index_ggcp_only
+          field: field_event_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_term
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_event_type_op
+            label: 'Event Type'
+            description: ''
+            use_operator: false
+            operator: field_event_type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_event_type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_type
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_event_date_s_2:
+          id: field_event_date_s_2
+          table: search_api_index_ggcp_only
+          field: field_event_date_s_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: between
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_event_date_s_2_op
+            label: 'Date between'
+            description: ''
+            use_operator: false
+            operator: field_event_date_s_2_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_event_date_s_2
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              moderator: '0'
+            min_placeholder: 'Event after (date = MM/DD/YY)'
+            max_placeholder: 'Event before (date = MM/DD/YY)'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_event_end_date_s_2:
+          id: field_event_end_date_s_2
+          table: search_api_index_ggcp_only
+          field: field_event_end_date_s_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: '+0 day'
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: grid_responsive
+        options:
+          grouping: {  }
+          columns: 3
+          cell_min_width: 300
+          grid_gutter: 10
+          alignment: horizontal
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+          query_tags: {  }
+      relationships: {  }
+      css_class: cards-responsive-grid
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<p>Results are displayed by event start date. Use the search bar to refine results. Text searches are full text, not partial word searches. Do you have an event to add? Click the button. If you are not already logged in, you will be re-directed to login first. All new submissions are automatically directed to site administration for approval to post.</p>\r\n"
+            format: full_html
+          tokenize: false
+        area_1:
+          id: area_1
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: 'Textarea: submit button'
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p><a href="/node/add/event?destination=/events&redirect=/node/add/event"><button class="btn btn-secondary btn-secondary-outlined">Submit an Event</button></a></p>'
+            format: full_html
+          tokenize: false
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_event_date_s_2'
+        - 'config:field.storage.node.field_event_format'
+        - 'config:field.storage.node.field_event_type'
+        - 'config:search_api.index.ggcp_only'
+        - 'search_api_list:ggcp_only'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders:
+        jsonapi_views:
+          enabled: true
+        webform_popup_extender:
+          enable_edit_button: false
+      path: events
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_event_date_s_2'
+        - 'config:field.storage.node.field_event_format'
+        - 'config:field.storage.node.field_event_type'
+        - 'config:search_api.index.ggcp_only'
+        - 'search_api_list:ggcp_only'

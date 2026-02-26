@@ -1,0 +1,30 @@
+uuid: 600a7c90-3a89-4b4b-9c2b-683399661aab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.author.field_author_name
+    - field.field.paragraph.author.field_author_organization
+    - paragraphs.paragraphs_type.author
+id: paragraph.author.default
+targetEntityType: paragraph
+bundle: author
+mode: default
+content:
+  field_author_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_author_organization:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

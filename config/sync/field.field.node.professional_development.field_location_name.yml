@@ -1,0 +1,19 @@
+uuid: 526127f9-647c-4958-85f9-5c6da129bc54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_name
+    - node.type.professional_development
+id: node.professional_development.field_location_name
+field_name: field_location_name
+entity_type: node
+bundle: professional_development
+label: 'Location name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

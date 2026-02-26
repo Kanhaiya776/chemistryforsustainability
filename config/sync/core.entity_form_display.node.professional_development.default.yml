@@ -1,0 +1,464 @@
+uuid: b38c8578-ad8c-4b39-8381-712075bcda03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.professional_development.body
+    - field.field.node.professional_development.field_attachment_name
+    - field.field.node.professional_development.field_attachments
+    - field.field.node.professional_development.field_field_of_interest
+    - field.field.node.professional_development.field_image
+    - field.field.node.professional_development.field_keywords
+    - field.field.node.professional_development.field_length_time_of_training
+    - field.field.node.professional_development.field_level_of_training
+    - field.field.node.professional_development.field_link
+    - field.field.node.professional_development.field_location_address
+    - field.field.node.professional_development.field_location_country
+    - field.field.node.professional_development.field_location_name
+    - field.field.node.professional_development.field_organization
+    - field.field.node.professional_development.field_pf_accept_terms
+    - field.field.node.professional_development.field_prerequisites
+    - field.field.node.professional_development.field_professional_dev_timezone
+    - field.field.node.professional_development.field_registrations_date_time
+    - field.field.node.professional_development.field_registrations_time_zone
+    - field.field.node.professional_development.field_related_technology_compend
+    - field.field.node.professional_development.field_specify_other_interest4
+    - field.field.node.professional_development.field_target_audience
+    - field.field.node.professional_development.field_time_of_training
+    - field.field.node.professional_development.field_training_format
+    - field.field.node.professional_development.field_training_registration_link
+    - image.style.thumbnail
+    - node.type.professional_development
+    - workflows.workflow.editorial
+  module:
+    - address
+    - content_moderation
+    - field_group
+    - field_layout
+    - file
+    - ggcp_customs
+    - image
+    - layout_discovery
+    - link
+    - path
+    - select2
+    - textfield_counter
+third_party_settings:
+  field_group:
+    group_training_location:
+      children:
+        - group_location_name
+        - group_location_country_address
+      label: 'Training Location'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: 'd-flex training-format-locations'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: collapsible
+        speed: fast
+        required_fields: true
+    group_location_name:
+      children:
+        - field_location_name
+      label: 'Location name'
+      region: content
+      parent_name: group_training_location
+      weight: 7
+      format_type: html_element
+      format_settings:
+        classes: location-name-container
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_location_country_address:
+      children:
+        - field_location_country
+        - field_location_address
+      label: "\tlocation country address"
+      region: content
+      parent_name: group_training_location
+      weight: 8
+      format_type: html_element
+      format_settings:
+        classes: 'location-address-country-container mt--12'
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_training_time:
+      children:
+        - field_time_of_training
+        - field_professional_dev_timezone
+      label: 'Training Time'
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: html_element
+      format_settings:
+        classes: training_time_group
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_training_website:
+      children:
+        - field_link
+        - field_training_registration_link
+      label: 'Training Website'
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: html_element
+      format_settings:
+        classes: training-website-group
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_registration:
+      children:
+        - field_registrations_date_time
+        - field_registrations_time_zone
+      label: Registration
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: html_element
+      format_settings:
+        classes: registartion_date_time_group
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+    group_pf_attachment:
+      children:
+        - field_attachment_name
+        - field_attachments
+      label: pf_attachment
+      region: content
+      parent_name: ''
+      weight: 13
+      format_type: html_element
+      format_settings:
+        classes: pf-attachment-group
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.professional_development.default
+targetEntityType: node
+bundle: professional_development
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary_and_counter
+    weight: 1
+    region: content
+    settings:
+      rows: 4
+      enable_summary: false
+      summary_rows: 2
+      show_summary: false
+      summary_maxlength: 0
+      placeholder: ''
+      maxlength: 2500
+      counter_position: after
+      js_prevent_submit: true
+      count_only_mode: false
+      count_html_characters: false
+      textcount_status_message: '<span class="custom-text"><span class="current_count">@current_length</span>/<span class="maxlength_count">@maxlength</span><span> characters.</span> </span>'
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_attachment_name:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_attachments:
+    type: file_generic
+    weight: 24
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_field_of_interest:
+    type: select2_entity_reference
+    weight: 15
+    region: content
+    settings:
+      width: 100%
+      autocomplete: false
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 14
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_length_time_of_training:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_level_of_training:
+    type: options_buttons
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 13
+    region: content
+    settings:
+      placeholder_url: 'e.g. http://www.example.com'
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_location_address:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Please enter street address'
+    third_party_settings: {  }
+  field_location_country:
+    type: address_country_default
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_location_name:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: 'Enter hotel or business where the training will take place'
+    third_party_settings: {  }
+  field_organization:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: 'Please select an organization to search. Enter the first three characters of the organization name.'
+    third_party_settings: {  }
+  field_pf_accept_terms:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_prerequisites:
+    type: text_textarea_with_counter
+    weight: 7
+    region: content
+    settings:
+      rows: 4
+      placeholder: ''
+      maxlength: 2500
+      counter_position: after
+      js_prevent_submit: true
+      count_only_mode: false
+      count_html_characters: false
+      textcount_status_message: '<span class="current_count">@current_length</span>/<span class="maxlength_count">@maxlength</span><span> characters.</span> '
+    third_party_settings: {  }
+  field_professional_dev_timezone:
+    type: timezone_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_registrations_date_time:
+    type: custom_date_range_widget
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_registrations_time_zone:
+    type: timezone_select
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_related_technology_compend:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_specify_other_interest4:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_target_audience:
+    type: options_buttons
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_time_of_training:
+    type: custom_date_range_widget
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_training_format:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_training_registration_link:
+    type: link_default
+    weight: 15
+    region: content
+    settings:
+      placeholder_url: 'e.g. http://www.example.com'
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 25
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 23
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 21
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: Title
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_keywords: true

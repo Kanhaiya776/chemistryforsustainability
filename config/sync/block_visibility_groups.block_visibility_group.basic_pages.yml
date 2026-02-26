@@ -1,0 +1,19 @@
+uuid: 3afaeda9-a0de-484d-9ee4-e9c44d183d41
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: basic_pages
+label: 'Basic Pages'
+logic: and
+conditions:
+  c2a52161-1243-447e-a31b-647445c6ae07:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c2a52161-1243-447e-a31b-647445c6ae07
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page
+allow_other_conditions: false

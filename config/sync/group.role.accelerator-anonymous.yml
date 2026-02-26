@@ -1,0 +1,15 @@
+uuid: a6f12852-606d-4748-a958-4593687e0537
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+    - user.role.anonymous
+id: accelerator-anonymous
+label: Anonymous
+weight: 14
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: accelerator
+permissions: {  }

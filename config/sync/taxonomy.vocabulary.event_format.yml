@@ -1,0 +1,9 @@
+uuid: daf3e30c-dfe7-48a6-93fe-278a71ad806f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Format'
+vid: event_format
+description: 'List of values for Event Format field'
+weight: 3
+new_revision: false

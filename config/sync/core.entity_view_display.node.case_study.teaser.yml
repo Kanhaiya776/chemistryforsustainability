@@ -1,0 +1,55 @@
+uuid: ef51d383-204b-4556-bba3-276ab28bdf91
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.case_study.body
+    - field.field.node.case_study.field_attachments
+    - field.field.node.case_study.field_category
+    - field.field.node.case_study.field_country_s_where_implemente
+    - field.field.node.case_study.field_human_health_and_environme
+    - field.field.node.case_study.field_images
+    - field.field.node.case_study.field_inventor_owner_manufacture
+    - field.field.node.case_study.field_keywords
+    - field.field.node.case_study.field_link
+    - field.field.node.case_study.field_organization
+    - field.field.node.case_study.field_references
+    - field.field.node.case_study.field_stage_of_development
+    - node.type.case_study
+  module:
+    - text
+    - user
+id: node.case_study.teaser
+targetEntityType: node
+bundle: case_study
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true
+  field_attachments: true
+  field_category: true
+  field_country_s_where_implemente: true
+  field_human_health_and_environme: true
+  field_images: true
+  field_inventor_owner_manufacture: true
+  field_keywords: true
+  field_link: true
+  field_organization: true
+  field_references: true
+  field_stage_of_development: true
+  langcode: true
+  search_api_excerpt: true

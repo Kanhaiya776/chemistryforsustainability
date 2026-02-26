@@ -1,0 +1,9 @@
+uuid: fa9f2cf7-427a-4c22-89c6-e108b0b6a0ec
+langcode: en
+status: true
+dependencies: {  }
+name: 'Organizational Sector'
+vid: organizational_sector
+description: null
+weight: 9
+new_revision: false

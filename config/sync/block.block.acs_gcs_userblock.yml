@@ -1,0 +1,28 @@
+uuid: 057dedbb-b3c6-4cf8-a715-471fcdb92e55
+langcode: en
+status: true
+dependencies:
+  module:
+    - ggcp_styler
+    - user
+  theme:
+    - acs_gcs
+id: acs_gcs_userblock
+theme: acs_gcs
+region: primary_menu
+weight: -6
+provider: null
+plugin: header_user_block
+settings:
+  id: header_user_block
+  label: 'User block'
+  label_display: '0'
+  provider: ggcp_styler
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

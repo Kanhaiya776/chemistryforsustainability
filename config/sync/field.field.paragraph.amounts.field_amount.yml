@@ -1,0 +1,23 @@
+uuid: ab5a3f78-fbcf-428b-ab76-6758c6d30ccb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amount
+    - paragraphs.paragraphs_type.amounts
+id: paragraph.amounts.field_amount
+field_name: field_amount
+entity_type: paragraph
+bundle: amounts
+label: Amount
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

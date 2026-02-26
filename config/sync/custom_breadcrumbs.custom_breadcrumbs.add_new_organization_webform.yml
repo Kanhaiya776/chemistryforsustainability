@@ -1,0 +1,15 @@
+uuid: 92eb2d38-38d8-46f0-b93c-e52da34a9457
+langcode: en
+status: true
+dependencies: {  }
+id: add_new_organization_webform
+label: 'Add New Organization Webform'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/organizations"
+breadcrumbTitles: "Home\r\nNetwork\r\nOrganizations"
+type: '2'
+pathPattern: /form/new-organization
+extraCacheContexts: ''

@@ -1,0 +1,29 @@
+uuid: f4f4fca8-bdc0-4784-bce7-09f80789f9fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organization
+    - node.type.announcements
+    - node.type.organization
+id: node.announcements.field_organization
+field_name: field_organization
+entity_type: node
+bundle: announcements
+label: 'Submitting Organization'
+description: 'To look up an existing organization or institution, start typing its name below. If the organization or institution is not already in the system, you can <a href="/form/new-organization" target="_blank">add a new organization.</a>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      organization: organization
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

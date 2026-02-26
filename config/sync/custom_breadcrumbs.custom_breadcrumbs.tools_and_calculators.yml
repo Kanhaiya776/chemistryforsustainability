@@ -1,0 +1,15 @@
+uuid: a03b6827-294d-4fe5-b506-4eae675076db
+langcode: en
+status: true
+dependencies: {  }
+id: tools_and_calculators
+label: 'Tools and Calculators'
+description: ''
+entityType: node
+entityBundle: tool
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/tools"
+breadcrumbTitles: "Home\r\nToolkit\r\nTools and Calculators"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

@@ -1,0 +1,21 @@
+uuid: 4d926238-206e-48b1-bce0-37bc6faaae2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_location
+    - group.type.interest_areas
+  module:
+    - options
+id: group.interest_areas.field_location
+field_name: field_location
+entity_type: group
+bundle: interest_areas
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

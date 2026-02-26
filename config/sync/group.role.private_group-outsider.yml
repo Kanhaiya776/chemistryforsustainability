@@ -1,0 +1,16 @@
+uuid: 310a5ab8-255c-45de-9efc-d512b55d6808
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private_group
+    - user.role.authenticated
+id: private_group-outsider
+label: Outsider
+weight: 10
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: private_group
+permissions:
+  - 'view group invitations'

@@ -1,0 +1,14 @@
+uuid: 5295322f-8d56-4623-b213-b62426cda7c6
+langcode: en
+status: true
+dependencies: {  }
+name: professional_development_card_thumbnail
+label: 'professional development card thumbnail'
+effects:
+  0e224caa-b6ca-4d2e-a85b-9f7269e995f7:
+    uuid: 0e224caa-b6ca-4d2e-a85b-9f7269e995f7
+    id: image_resize
+    weight: 1
+    data:
+      width: 413
+      height: 276

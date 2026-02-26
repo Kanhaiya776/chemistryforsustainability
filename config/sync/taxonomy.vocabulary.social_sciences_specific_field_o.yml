@@ -1,0 +1,9 @@
+uuid: ab301cb9-02d3-4716-94fd-4d181c8c22f2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Social Sciences - Specific field of interest'
+vid: social_sciences_specific_field_o
+description: null
+weight: -3
+new_revision: false

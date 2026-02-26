@@ -1,0 +1,19 @@
+uuid: 6afa3aa4-3654-44cb-9902-7a7d08fcc37b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_specify_location
+    - group.type.accelerator
+id: group.accelerator.field_specify_location
+field_name: field_specify_location
+entity_type: group
+bundle: accelerator
+label: 'Specify Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

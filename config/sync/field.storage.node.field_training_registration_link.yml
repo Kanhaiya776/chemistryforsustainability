@@ -1,0 +1,19 @@
+uuid: e265ee6b-0acc-4e3f-8fe4-6dc8095b0863
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_training_registration_link
+field_name: field_training_registration_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

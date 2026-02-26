@@ -1,0 +1,15 @@
+uuid: 2143fbe4-40c4-4477-a448-a89b3526d540
+langcode: en
+status: true
+dependencies: {  }
+id: add_funding
+label: 'Add funding'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/funding"
+breadcrumbTitles: "Home\r\nToolkit\r\nFunding Opportunities"
+type: '2'
+pathPattern: /node/add/funding_opportunity
+extraCacheContexts: ''

@@ -1,0 +1,21 @@
+uuid: 17d21556-1a40-44e6-8253-f6aee0f45e13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_proposal_deadline
+    - node.type.funding_opportunity
+  module:
+    - datetime
+id: node.funding_opportunity.field_proposal_deadline
+field_name: field_proposal_deadline
+entity_type: node
+bundle: funding_opportunity
+label: 'Application Deadline'
+description: 'Enter a specific date, if applicable.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

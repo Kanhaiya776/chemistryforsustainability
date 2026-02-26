@@ -1,0 +1,33 @@
+uuid: a8fb18c7-fb59-47e1-9640-70660548c6cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_group_reference
+    - group.type.accelerator
+    - group.type.interest_areas
+    - group.type.private_group
+    - message.template.group_content_created
+id: message.group_content_created.field_group_reference
+field_name: field_group_reference
+entity_type: message
+bundle: group_content_created
+label: 'Group Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles:
+      accelerator: accelerator
+      interest_areas: interest_areas
+      private_group: private_group
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: accelerator
+field_type: entity_reference

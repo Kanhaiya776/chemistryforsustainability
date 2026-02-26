@@ -1,0 +1,20 @@
+uuid: 2d1e9c7e-9478-4ff7-9220-92cbbb62107b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_academic_institution
+  module:
+    - user
+id: user.user.field_academic_institution
+field_name: field_academic_institution
+entity_type: user
+bundle: user
+label: 'Academic Institution'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

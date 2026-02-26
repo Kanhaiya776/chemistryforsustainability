@@ -1,0 +1,31 @@
+uuid: 58c806e0-39a7-42ac-88b5-e63a110cde0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.forum_topic_created.field_node_reference
+    - message.template.forum_topic_created
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.forum_topic_created.default
+targetEntityType: message
+bundle: forum_topic_created
+mode: default
+content:
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

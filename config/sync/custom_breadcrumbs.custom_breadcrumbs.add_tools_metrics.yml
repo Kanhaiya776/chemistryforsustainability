@@ -1,0 +1,15 @@
+uuid: bbfe8a19-2cfc-4c0a-aecf-bf29394fe5f2
+langcode: en
+status: true
+dependencies: {  }
+id: add_tools_metrics
+label: 'Add Tools & Metrics'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/toolkit\r\n/tools"
+breadcrumbTitles: "Home\r\nToolkit\r\nTools"
+type: '2'
+pathPattern: /node/add/tool
+extraCacheContexts: ''

@@ -1,0 +1,15 @@
+uuid: 13f412ed-705b-4165-9915-d242e55c8a09
+langcode: en
+status: true
+dependencies: {  }
+id: people_search
+label: 'People Search'
+description: ''
+entityType: user
+entityBundle: user
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/people-search"
+breadcrumbTitles: "Home\r\nNetwork\r\nPeople Search"
+type: '1'
+pathPattern: "/network\r\n/people-search"
+extraCacheContexts: ''

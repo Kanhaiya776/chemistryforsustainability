@@ -1,0 +1,29 @@
+uuid: b0c3b985-b5b4-4695-a5c9-2888a2ce6e87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documentation_category
+    - node.type.documentation_article
+    - taxonomy.vocabulary.documentation_categories
+id: node.documentation_article.field_documentation_category
+field_name: field_documentation_category
+entity_type: node
+bundle: documentation_article
+label: 'Documentation Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      documentation_categories: documentation_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

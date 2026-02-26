@@ -1,0 +1,18 @@
+uuid: 71ebdce1-a3e4-4160-9dc9-e29b0fb48207
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.accelerator
+id: group.accelerator.label
+field_name: label
+entity_type: group
+bundle: accelerator
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

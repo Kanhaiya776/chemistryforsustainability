@@ -1,0 +1,26 @@
+uuid: a36183bc-6ce4-4c12-a023-d1e8b31b9c4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - message.template.organization_update_notification
+  module:
+    - text
+id: message.organization_update_notification.field_body
+field_name: field_body
+entity_type: message
+bundle: organization_update_notification
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long

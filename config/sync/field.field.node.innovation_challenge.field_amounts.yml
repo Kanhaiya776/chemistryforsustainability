@@ -1,0 +1,34 @@
+uuid: afae18dc-0486-4c52-b6e4-5d932e9c0194
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amounts
+    - node.type.innovation_challenge
+    - paragraphs.paragraphs_type.amounts
+  module:
+    - entity_reference_revisions
+id: node.innovation_challenge.field_amounts
+field_name: field_amounts
+entity_type: node
+bundle: innovation_challenge
+label: 'Award Amount'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      amounts: amounts
+    negate: 0
+    target_bundles_drag_drop:
+      amounts:
+        weight: 3
+        enabled: true
+      author:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

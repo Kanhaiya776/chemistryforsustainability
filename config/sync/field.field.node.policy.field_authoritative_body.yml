@@ -1,0 +1,19 @@
+uuid: 495dd54b-dfb2-483e-9fd4-2d073dc85118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_authoritative_body
+    - node.type.policy
+id: node.policy.field_authoritative_body
+field_name: field_authoritative_body
+entity_type: node
+bundle: policy
+label: 'Responsible Entity'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

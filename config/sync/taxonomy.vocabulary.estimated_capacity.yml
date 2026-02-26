@@ -1,0 +1,9 @@
+uuid: d9b28566-7a11-4784-a663-73653ac38f46
+langcode: en
+status: true
+dependencies: {  }
+name: 'Estimated Capacity'
+vid: estimated_capacity
+description: 'List of values for Estimated Capacity field'
+weight: 2
+new_revision: false

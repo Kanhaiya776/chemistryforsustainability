@@ -1,0 +1,11 @@
+uuid: 3547b1d6-d3c6-45c4-a8ae-9a86829f388f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.innovation_challenge
+id: node.innovation_challenge
+target_entity_type_id: node
+target_bundle: innovation_challenge
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,42 @@
+uuid: f91fcc4e-fffd-4458-b7ff-0c3d8b1c859a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.forum_post_replied_to.field_comment_reference
+    - field.field.message.forum_post_replied_to.field_node_reference
+    - message.template.forum_post_replied_to
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.forum_post_replied_to.default
+targetEntityType: message
+bundle: forum_post_replied_to
+mode: default
+content:
+  field_comment_reference:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

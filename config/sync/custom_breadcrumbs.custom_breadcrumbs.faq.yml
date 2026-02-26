@@ -1,0 +1,15 @@
+uuid: a55c8686-aadd-42e5-bccc-8279c0e3e6d2
+langcode: en
+status: true
+dependencies: {  }
+id: faq
+label: FAQ
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/about"
+breadcrumbTitles: "Home\r\nAbout"
+type: '2'
+pathPattern: /about/faqs-green-chemistry-sustainability
+extraCacheContexts: ''

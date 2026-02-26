@@ -1,0 +1,24 @@
+uuid: 6ce80b0f-6a1b-438c-95c6-7aea879a69fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_no_marketing_emails
+  module:
+    - user
+id: user.user.field_no_marketing_emails
+field_name: field_no_marketing_emails
+entity_type: user
+bundle: user
+label: 'No marketing emails'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

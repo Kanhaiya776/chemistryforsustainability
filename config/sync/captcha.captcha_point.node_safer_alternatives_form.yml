@@ -1,0 +1,7 @@
+uuid: cfde42f0-e801-4aac-adba-b2dc8fd0df04
+langcode: en
+status: false
+dependencies: {  }
+formId: node_safer_alternatives_form
+captchaType: default
+label: node_safer_alternatives_form

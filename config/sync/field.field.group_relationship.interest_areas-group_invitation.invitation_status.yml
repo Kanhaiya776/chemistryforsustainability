@@ -1,0 +1,25 @@
+uuid: 28c65224-6dc4-4f7f-9a0a-2feaca2bc7b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.invitation_status
+    - group.relationship_type.interest_areas-group_invitation
+id: group_relationship.interest_areas-group_invitation.invitation_status
+field_name: invitation_status
+entity_type: group_relationship
+bundle: interest_areas-group_invitation
+label: 'Invitation status'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

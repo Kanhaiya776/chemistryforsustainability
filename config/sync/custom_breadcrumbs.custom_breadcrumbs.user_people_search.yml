@@ -1,0 +1,15 @@
+uuid: bc9f3281-a41f-4bf5-8c11-b5bee9fe9584
+langcode: en
+status: true
+dependencies: {  }
+id: user_people_search
+label: 'People (individual card)'
+description: ''
+entityType: user
+entityBundle: user
+language: und
+breadcrumbPaths: "/\r\n/network\r\n/people-search"
+breadcrumbTitles: "Home\r\nNetwork\r\nPeople Search"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

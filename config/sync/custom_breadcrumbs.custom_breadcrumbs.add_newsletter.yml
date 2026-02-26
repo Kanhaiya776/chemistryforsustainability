@@ -1,0 +1,15 @@
+uuid: a9199235-7fc0-441d-a2b0-2d8279920268
+langcode: en
+status: true
+dependencies: {  }
+id: add_newsletter
+label: 'Add Newsletter'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/admin/content/simplenews"
+breadcrumbTitles: "Home\r\nNewsletter"
+type: '2'
+pathPattern: /node/add/simplenews_issue
+extraCacheContexts: ''

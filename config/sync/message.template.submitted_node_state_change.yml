@@ -1,0 +1,19 @@
+uuid: 948199fb-7cd3-4518-a455-b0b9a3a10b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+template: submitted_node_state_change
+label: 'Submitted node state change'
+description: 'Message to author of a node when the moderation state changes from submitted to published or rejected'
+text:
+  -
+    value: '<p>Your [message:field_node_reference:entity:content-type], <a href="[message:field_node_reference:entity:url]">[message:field_node_reference:entity:title]</a>, has been moderated.</p>'
+    format: full_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

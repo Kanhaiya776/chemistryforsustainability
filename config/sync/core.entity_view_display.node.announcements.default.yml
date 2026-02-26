@@ -1,0 +1,108 @@
+uuid: 7ab93597-de93-4c82-b922-b5bf30218ee7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.announcements.field_description
+    - field.field.node.announcements.field_field_of_interest
+    - field.field.node.announcements.field_image
+    - field.field.node.announcements.field_keywords
+    - field.field.node.announcements.field_link
+    - field.field.node.announcements.field_organization
+    - field.field.node.announcements.field_specify_other_interest3
+    - field.field.node.announcements.field_type_of_announcement
+    - image.style.promoted_blo
+    - node.type.announcements
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.announcements.default
+targetEntityType: node
+bundle: announcements
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_field_of_interest:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: promoted_blo
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_keywords:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_type_of_announcement:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  flag_email_node:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  flag_subscribe_node:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  content_moderation_control: true
+  field_specify_other_interest3: true
+  langcode: true
+  search_api_excerpt: true

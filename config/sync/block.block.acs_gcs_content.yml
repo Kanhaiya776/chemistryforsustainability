@@ -1,0 +1,22 @@
+uuid: 0ac7fe07-67ee-49ee-9c30-743dc66be3ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - acs_gcs
+_core:
+  default_config_hash: rHIorDdE4i0K9HUN4k-avhWf5n7VusjDc80wq_qsNRQ
+id: acs_gcs_content
+theme: acs_gcs
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

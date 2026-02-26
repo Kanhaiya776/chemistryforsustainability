@@ -1,0 +1,22 @@
+uuid: bc558e35-bf61-4b73-a704-a9ef83fd8f66
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: organization_node_page
+label: 'Organization Node page'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:nid]'
+selection_criteria:
+  c343f033-64e1-4e9d-a504-938aa6ac0b72:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c343f033-64e1-4e9d-a504-938aa6ac0b72
+    context_mapping:
+      node: node
+    bundles:
+      organization: organization
+selection_logic: and
+weight: -5
+relationships: {  }

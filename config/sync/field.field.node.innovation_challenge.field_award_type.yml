@@ -1,0 +1,29 @@
+uuid: 5c1770fd-3106-4520-8190-57a9fef4ad33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_award_type
+    - node.type.innovation_challenge
+    - taxonomy.vocabulary.award_type
+id: node.innovation_challenge.field_award_type
+field_name: field_award_type
+entity_type: node
+bundle: innovation_challenge
+label: 'Award Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      award_type: award_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,24 @@
+uuid: 4f44da7c-6005-41d1-a2d8-e61a2bdf0389
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_comment_notifications
+  module:
+    - user
+id: user.user.field_comment_notifications
+field_name: field_comment_notifications
+entity_type: user
+bundle: user
+label: 'Comment Notifications'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

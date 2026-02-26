@@ -1,0 +1,162 @@
+uuid: bf5180fd-8850-4fbf-9f1f-98fad003a213
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.funding_opportunity.body
+    - field.field.node.funding_opportunity.field_application_deadline2
+    - field.field.node.funding_opportunity.field_attachment
+    - field.field.node.funding_opportunity.field_featured_image
+    - field.field.node.funding_opportunity.field_field_of_interest
+    - field.field.node.funding_opportunity.field_keywords
+    - field.field.node.funding_opportunity.field_link
+    - field.field.node.funding_opportunity.field_organization
+    - field.field.node.funding_opportunity.field_proposal_deadline
+    - field.field.node.funding_opportunity.field_specify_other_interest2
+    - field.field.node.funding_opportunity.field_testa
+    - field.field.node.funding_opportunity.field_tests
+    - image.style.promoted_blo
+    - node.type.funding_opportunity
+  module:
+    - acs_custom_country
+    - datetime
+    - field_group
+    - file
+    - image
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_eligibility:
+      children:
+        - field_tests
+      label: Eligibility
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.funding_opportunity.default
+targetEntityType: node
+bundle: funding_opportunity
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_application_deadline2:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_featured_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: promoted_blo
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_field_of_interest:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_keywords:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_proposal_deadline:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_specify_other_interest2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_testa:
+    type: country_multi_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tests:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  breadcrumbs: true
+  content_moderation_control: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

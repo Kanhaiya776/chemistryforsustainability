@@ -1,0 +1,15 @@
+uuid: e1a2aa9a-ab7d-4d23-a224-fc20230e47a9
+langcode: en
+status: true
+dependencies: {  }
+id: gce_sub_page
+label: 'Learn GCE sub-page'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: "/\r\n/learn\r\n/learn/green-chemistry-and-green-engineering"
+breadcrumbTitles: "Home\r\nLearn\r\nGreen Chemistry and Green Engineering"
+type: '2'
+pathPattern: '/learn/green-chemistry-and-green-engineering/*'
+extraCacheContexts: ''

@@ -1,0 +1,22 @@
+uuid: d8ae2826-b893-4190-b273-9efd49f71626
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_are_you_interested_in_ment
+  module:
+    - user
+id: user.user.field_are_you_interested_in_ment
+field_name: field_are_you_interested_in_ment
+entity_type: user
+bundle: user
+label: 'Are you interested in mentoring others?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,15 @@
+uuid: da6e0e6d-b0ad-4360-a127-b306a1d4db9c
+langcode: en
+status: true
+dependencies: {  }
+id: add_content_chemical_policy
+label: 'Add Content Chemical Policy'
+description: ''
+entityType: _none
+entityBundle: _none
+language: en
+breadcrumbPaths: "/\r\n/toolkit\r\n/toolkit/chemical-policy"
+breadcrumbTitles: "Home\r\nToolkit\r\nChemical Policies"
+type: '2'
+pathPattern: /node/add/policy
+extraCacheContexts: ''

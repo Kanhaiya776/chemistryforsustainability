@@ -1,0 +1,19 @@
+uuid: ae654dff-9946-4c73-8674-90093985f800
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_specify_other_interest2
+    - node.type.funding_opportunity
+id: node.funding_opportunity.field_specify_other_interest2
+field_name: field_specify_other_interest2
+entity_type: node
+bundle: funding_opportunity
+label: 'Specify "Other" Interest'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

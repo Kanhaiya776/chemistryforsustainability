@@ -1,0 +1,42 @@
+uuid: 71fff9de-f93f-4193-b0c6-7e3e46342d59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.comment_reply_to_comment.field_comment_reference
+    - field.field.message.comment_reply_to_comment.field_parent_comment
+    - message.template.comment_reply_to_comment
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: message.comment_reply_to_comment.default
+targetEntityType: message
+bundle: comment_reply_to_comment
+mode: default
+content:
+  field_comment_reference:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_parent_comment:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

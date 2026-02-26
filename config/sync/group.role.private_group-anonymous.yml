@@ -1,0 +1,15 @@
+uuid: c15d5549-4c3f-469e-a0e6-00ce0a7409ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.private_group
+    - user.role.anonymous
+id: private_group-anonymous
+label: Anonymous
+weight: 9
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: private_group
+permissions: {  }

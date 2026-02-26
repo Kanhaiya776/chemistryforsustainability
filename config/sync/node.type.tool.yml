@@ -1,0 +1,18 @@
+uuid: a93e5b58-1076-447e-90b0-7483196af5ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Tools & Metrics'
+type: tool
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,8 @@
+uuid: e72cca92-00aa-4d7a-a096-7e10e6944f30
+langcode: en
+status: true
+dependencies: {  }
+id: resources_banner
+label: 'Resources Banner'
+revision: false
+description: ''

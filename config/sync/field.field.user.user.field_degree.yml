@@ -1,0 +1,21 @@
+uuid: 595fed3f-f6b1-4b60-8e3b-64242ca88771
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_degree
+  module:
+    - options
+    - user
+id: user.user.field_degree
+field_name: field_degree
+entity_type: user
+bundle: user
+label: Degree
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
